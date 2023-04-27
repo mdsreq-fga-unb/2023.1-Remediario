@@ -1,67 +1,53 @@
-# Home page
+# MedicaCerto
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## Introdução
+Bem-vindo(a) a documentação do projeto MedicaCerto, uma aplicação que está sendo criado para a disciplina de 
+Requisitos de Software, materia do curso de Engenharia de Software - Universidade de Brasília 2023.1.
 
-## Code Annotation Exemples
+## Objetivo
+Nosso projeto visa resolver problemas relacionados a má gestão do uso de medicamentos. Decidimos criar uma aplicação que ajude os pacientes a manter um controle mais preciso sobre suas doses e horários de medicamentos. Com recursos como alertas de dosagem, lembretes de horário, informações sobre interações entre medicações e um registro de histórico de medicações feitas, acreditamos fortemente que podemos fazer a diferença na vida de muitas pessoas. Estamos animados para trabalhar neste projeto desafiador, nosso foco será criar uma solução inovadora e eficaz para melhorar a saúde e o bem-estar de muitos usuários de medicamentos.
 
-### Codeblocks
+## Equipe 
+Nossa equipe é formada por:
 
-Some`code` goes here.
 
+<div style="display: flex; justify-content: center;">
 
-### Plain codeblock
+<table style=" border-radius: 10px; max-width: 900px;">
+    <tr>
+      <td valign="top">
+        <a href="http://github.com/CarlosEduardoMendesDeMesquita">
+          <img align="center" src="http://github.com/CarlosEduardoMendesDeMesquita.png" width="125" style="border-radius: 200px;" />
+          <p align="center"> Carlos Eduardo </p>
+        </a>
+      </td>
+        <td valign="top">
+        <a href="http://github.com/Luanmq">
+          <img align="center" src="http://github.com/Luanmq.png" width="125" style="border-radius: 200px;" />
+          <p align="center"> Luan </p>
+        </a>
+      </td>
+        <td valign="top">
+        <a href="http://github.com/RodrigoWright">
+          <img align="center" src="http://github.com/RodrigoWright.png" width="125" style="border-radius: 200px;" />
+          <p align="center"> Rodrigo </p>
+        </a>
+      </td>
+        <td valign="top">
+        <a href="http://github.com/typejulio">
+          <img align="center" src="http://github.com/typejulio.png" width="125" style="border-radius: 200px;" />
+          <p align="center"> Júlio César </p>
+        </a>
+      </td>
+        <td valign="top">
+        <a href="http://github.com/Mateuszinnn">
+          <img align="center" src="http://github.com/Mateuszinnn.png" width="125" style="border-radius: 200px;" />
+          <p align="center"> Mateus </p>
+        </a>
+      </td>
+    </tr>
+    
+  </table>
 
-A plain codeblock:
+</div>
 
-```
-Some code here 
-def myfunction()
-// some comment
-```
-#### Code for a specif language
-
-Some more code with the `py` at the start:
-
-``` py
-import tensorflow as tf
-def whatever()
-```
-#### With a title
-
-``` py title="bubble_sort.py"
-def bubble_sort(items):
-    for i in range(len(items)):
-        for j in range(len(items) - 1 - i):
-            if items[j] > items[j + 1]:
-                items[j], items[j + 1] = items[j + 1], items[j]
-```
-
-#### With line numbers
-
-``` py linenums="1"
-def bubble_sort(items):
-    for i in range(len(items)):
-        for j in range(len(items) - 1 - i):
-            if items[j] > items[j + 1]:
-                items[j], items[j + 1] = items[j + 1], items[j]
-```
-
-#### Highlighting lines
-
-``` py hl_lines="2 3"
-def bubble_sort(items):
-    for i in range(len(items)):
-        for j in range(len(items) - 1 - i):
-            if items[j] > items[j + 1]:
-                items[j], items[j + 1] = items[j + 1], items[j]
-```
-
-## Icons and Emojs
-
-:smile: 
-
-:fontawesome-regular-face-laugh-wink:
-
-:fontawesome-brands-twitter:{ .twitter }
-
-:octicons-heart-fill-24:{ .heart }

@@ -1,39 +1,46 @@
 site_name: MedicaCerto
+
+repo_name: "2023.1-MedicaCerto"
+repo_url: "https://github.com/mdsreq-fga-unb/2023.1-MedicaCerto"
+
 theme:
   name: material
   features:
-    - navigation.tabs
-    - navigation.sections
-    - toc.integrate
+    - navigation.instant
+    - navigation.section
+    - navigation.path
     - navigation.top
-    - search.suggest
-    - search.highlight
-    - content.tabs.link
-    - content.code.annotation
-    - content.code.copy
-  language: pt
+    - tabs
+  language: pt-BR
   palette:
     - scheme: default
       toggle:
-        icon: material/toggle-switch-off-outline 
+        icon: material/toggle-switch-off-outline
         name: Switch to dark mode
       primary: teal
-      accent: purple 
-    - scheme: slate 
+      accent: purple
+    - scheme: slate
       toggle:
         icon: material/toggle-switch
-        name: Switch to light mode    
-      primary: teal
+        name: Switch to light mode
       accent: lime
+
+nav:
+  - Home: index.md
+  - Documentação:
+      - 1ª apresentação: "documentacao/Apresentacao1.md"
+      - 2ª apresentação: "documentacao/Apresentacao2.md"
+      - 3ª apresentação: "documentacao/Apresentacao3.md"
+  - Entregas:
+      - Unidade 1:
+          - Visão Geral do Produto: "entregas/unidade1/VisaoProdutoProjeto.md"
+          
 
 extra:
   social:
     - icon: fontawesome/brands/github-alt
-      link: https://github.com/james-willett
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/TheJamesWillett
-    - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/willettjames/ 
+      link: https://github.com/mdsreq-fga-unb/2023.1-MedicaCerto
+  footer: false
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -51,6 +58,8 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-
-copyright: |
-  &copy; 2023 <a href="https://github.com/james-willett"  target="_blank" rel="noopener">James Willett</a>
+  - tables
+  - attr_list
+  - md_in_html
+  - def_list
+  
