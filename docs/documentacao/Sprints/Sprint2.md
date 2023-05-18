@@ -1,10 +1,10 @@
-#### Data e hora: 17/05/2023 às 19:10
+#### Data e hora: 03/05/2023 às 19:00
 
 ## Presentes na reunião:
 
-- Luan Melo
-- Rodrigo Wright
-- Julio Dourado
+- Luan Melo.
+- Rodrigo Wright.
+- Julio Dourado.
     
 ## Sprint Review
 #### Carlos Eduardo
@@ -13,23 +13,23 @@ O que fez:
 #### Júlio Dourado
 O que fez: 
 
- - Respondi o formulário da monitora 
- - Reunião de verficação e validação com a cliente dia 15/05/2023
- - Análise da Organização e atualização da equipe 0011
- - Alterações no MoscoW do Mural
- - Metrificamos as US Utlizando Valor de Negócio(1 a 5), Complexidade tecnica(5 a 1) e Viabilidade(1 a 5)
- - Definição do MVP 1 e MVP 2
+ - Respondi o formulário da monitora.
+ - Reunião de verficação e validação com a cliente dia 15/05/2023.
+ - Análise da Organização e atualização da equipe 0011.
+ - Alterações no MoscoW do Mural.
+ - Metrificamos as US Utlizando Valor de Negócio(1 a 5), Complexidade tecnica(5 a 1) e Viabilidade(1 a 5).
+ - Definição do MVP 1 e MVP 2.
 
 #### Luan Melo
 O que fez:
 
-- Respondi o formulário da monitora 
-- Reunião de verficação e validação com a cliente dia 15/05/2023
-- Análise da Verificação e validação da equipe 0011
-- Alterações no MoscoW do Mural
-- Metrificamos as US Utlizando Valor de Negócio(1 a 5), Complexidade tecnica(5 a 1) e Viabilidade(1 a 5)
-- Definição do MVP 1 e MVP 2
-- Telas de Listar, cadastrar, editar e deletar medicamentos no Figma
+- Respondi o formulário da monitora.
+- Reunião de verficação e validação com a cliente dia 15/05/2023.
+- Análise da Verificação e validação da equipe 0011.
+- Alterações no MoscoW do Mural.
+- Metrificamos as US Utlizando Valor de Negócio(1 a 5), Complexidade tecnica(5 a 1) e Viabilidade(1 a 5).
+- Definição do MVP 1 e MVP 2.
+- Telas de Listar, cadastrar, editar e deletar medicamentos no Figma.
 
 #### Mateus de Almeida
 O que fez:
@@ -38,25 +38,25 @@ O que fez:
 #### Rodrigo Edmar
 O que fez:
 
-   - Reunião de verficação e validação com a cliente dia 15/05/2023
-   - Análise da Declaração da equipe 0011
-   - Alterações no MoscoW do Mural
-   - Metrificamos as US Utlizando Valor de Negócio(1 a 5), Complexidade tecnica(5 a 1) e Viabilidade(1 a 5)
-   - Definição do MVP 1 e MVP 2
-   - Criou o backlog com os TEMAS, ÉPICOS e US criadas anteriormente
+   - Reunião de verficação e validação com a cliente dia 15/05/2023.
+   - Análise da Declaração da equipe 0011.
+   - Alterações no MoscoW do Mural.
+   - Metrificamos as US Utlizando Valor de Negócio(1 a 5), Complexidade tecnica(5 a 1) e Viabilidade(1 a 5).
+   - Definição do MVP 1 e MVP 2.
+   - Criou o backlog com os TEMAS, ÉPICOS e US criadas anteriormente.
 
 ## Demandas entreges nessa Sprint
 
-   - Mural finalizado com nossos Temas, Épicos e US
-   - Definição do MVP 1 e 2
+   - Mural finalizado com nossos Temas, Épicos e US.
+   - Definição do MVP 1 e 2.
 
 ## Sprint Retrospective 
 Resumo:
 
-   - Problemas com as dailies
-   - Problemas com nomeação de responsáveis para as tarefas das sprints
-   - Reuniões muito demoradas e não eficientes
-   - Encaixar as demandas da disciplina nas sprints e não só do projeto
+   - Problemas com as dailies.
+   - Problemas com nomeação de responsáveis para as tarefas das sprints.
+   - Reuniões muito demoradas e não eficientes.
+   - Encaixar as demandas da disciplina nas sprints e não só do projeto.
 
 ## Sprint Planning 3
 

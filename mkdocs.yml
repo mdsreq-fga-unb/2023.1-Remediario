@@ -33,6 +33,7 @@ nav:
           - 2ª apresentação: "documentacao/Apresentacao/Apresentacao2.md"
           - 3ª apresentação: "documentacao/Apresentacao/Apresentacao3.md"
       - Sprints:
+          - Sprint 0: "documentacao/Sprints/Sprint0.md"
           - Sprint 1: "documentacao/Sprints/Sprint1.md"
           - Sprint 2: "documentacao/Sprints/Sprint2.md"
   - Entregas:
