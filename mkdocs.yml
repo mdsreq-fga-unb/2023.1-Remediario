@@ -38,7 +38,8 @@ nav:
   - Entregas:
       - Unidade 1:
           - Visão Geral do Produto: "entregas/unidade1/VisaoProdutoProjeto.md"
-
+          - Backlog do Produto: "entregas/unidade1/Backlog.md"
+          
 extra:
   social:
     - icon: fontawesome/brands/github-alt
