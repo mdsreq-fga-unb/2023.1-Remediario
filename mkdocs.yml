@@ -27,14 +27,17 @@ theme:
 
 nav:
   - Home: index.md
-  - Documentação:
-      - 1ª apresentação: "documentacao/Apresentacao1.md"
-      - 2ª apresentação: "documentacao/Apresentacao2.md"
-      - 3ª apresentação: "documentacao/Apresentacao3.md"
+  - Documentação de Atividades:
+      - Apresentações:
+          - 1ª apresentação: "documentacao/Apresentacao/Apresentacao1.md"
+          - 2ª apresentação: "documentacao/Apresentacao/Apresentacao2.md"
+          - 3ª apresentação: "documentacao/Apresentacao/Apresentacao3.md"
+      - Sprints:
+          - Sprint 1: "documentacao/Sprints/Sprint1.md"
+          - Sprint 2: "documentacao/Sprints/Sprint2.md"
   - Entregas:
       - Unidade 1:
           - Visão Geral do Produto: "entregas/unidade1/VisaoProdutoProjeto.md"
-          
 
 extra:
   social:
@@ -62,4 +65,3 @@ markdown_extensions:
   - attr_list
   - md_in_html
   - def_list
-  
