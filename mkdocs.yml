@@ -39,7 +39,8 @@ nav:
   - Entregas:
       - Unidade 1:
           - Visão Geral do Produto: "entregas/unidade1/VisaoProdutoProjeto.md"
-          - Backlog do Produto: "entregas/unidade1/Backlog.md"
+      - Unidade 2:
+          - Backlog do Produto: "entregas/unidade2/Backlog.md"
 
 extra:
   social:
