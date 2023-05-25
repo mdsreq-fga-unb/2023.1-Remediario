@@ -42,6 +42,7 @@ nav:
           - Visão Geral do Produto: "entregas/unidade1/VisaoProdutoProjeto.md"
       - Unidade 2:
           - Backlog do Produto: "entregas/unidade2/Backlog.md"
+          - Mural do projeto : "entregas/unidade2/Mural.md"
 
 extra:
   social:
