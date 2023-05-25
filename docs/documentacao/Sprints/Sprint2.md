@@ -10,6 +10,8 @@
 #### Carlos Eduardo
 O que fez:
 
+- Auxiliou nas entregas.
+
 #### Júlio Dourado
 O que fez: 
 
@@ -33,6 +35,8 @@ O que fez:
 
 #### Mateus de Almeida
 O que fez:
+
+- Auxiliou nas entregas.
 
 
 #### Rodrigo Edmar

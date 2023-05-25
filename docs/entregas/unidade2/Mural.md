@@ -20,3 +20,11 @@ Mural criado para administração dos requisitos do projeto:
         style='min-width: 640px; min-height: 480px; background-color: #f4f4f4; border: 1px solid #efefef'
         sandbox='allow-same-origin allow-scripts allow-modals allow-popups allow-popups-to-escape-sandbox'>
 </iframe>
+
+
+<iframe src='https://docs.google.com/spreadsheets/d/1UX_EsvpYJz_b_KXNsCnX12jYCwKAnS9w7NYoue2S4uo/edit#gid=0&range=A1:F20'
+        width='100%'
+        height='480px'
+        style='min-width: 640px; min-height: 480px; background-color: #f4f4f4; border: 1px solid #efefef'
+        sandbox='allow-same-origin allow-scripts allow-modals allow-popups allow-popups-to-escape-sandbox'>
+</iframe>
