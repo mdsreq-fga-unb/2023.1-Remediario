@@ -10,6 +10,8 @@
 
 ## 5. Organização e atualização
 
+No nosso grupo, adotamos o método MoSCoW para escolher e priorizar os Temas, Épicos e User Stories do nosso backlog. Dividimos o backlog em Temas, identificamos Épicos dentro de cada Tema e priorizamos as User Stories usando critérios como valor para o usuário, impacto no projeto, complexidade e dependências. Utilizamos uma tabela para classificar as User Stories e agrupamos em MVPs para entregas iterativas. Como equipe, mantemos uma comunicação constante e colaborativa para alcançar os objetivos do projeto, garantindo que as necessidades dos usuários sejam atendidas de forma eficiente.
+
 ## 6. Nosso Mural
 
 Mural criado para administração dos requisitos do projeto:
