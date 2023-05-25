@@ -18,6 +18,8 @@ Além disso, nessa etapa também se deu início a realização do protótipo da 
 
 ## 4. Verificação e Validação
 
+Depois do processo de Declaração partimos para a Verificação e Validação, com o objetivo de garantir a qualidade baseados nos requisitos elicitados e atender as necessidades do cliente. Foi verificada a consistência, correção, completude e rastreabilidade dos requisitos e depois foram feitas as devidas mudanças para garantir tais características. Também foi verficados e validados os Temas, Épicos e User stories descritos na etapa anterior utilizando-se as técnicas do INVEST, revisão em pares, Feedback e DoR. A maior parte das alterações relacionadas a esse processo foi evidente nas User Stories, em que refatoramos algumas histórias, descartamos as que estavam duplicadas e esclarecemos as que estavam elusivas. Neste processo recebemos um Feedbakc da equipe 0011, em que foram apontadas irregularidades em algumas User Stories e Épicos, depois disso realizamos as mudanças necessárias e completamos o processo de Verificação e Validação.
+
 ## 5. Organização e atualização
 
 Utilizamos o método MoSCoW para a escolha e priorização dos Temas, Épicos e User Stories. Começamos dividindo o backlog em Temas relevantes, como "Tratamentos", "Alerta", "Medicamentos" e "Histórico". Em seguida, identificamos os Épicos dentro de cada Tema, representando as funcionalidades de alto nível que precisamos desenvolver.
