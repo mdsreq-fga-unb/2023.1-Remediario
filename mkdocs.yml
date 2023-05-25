@@ -1,7 +1,7 @@
-site_name: MedicaCerto
+site_name: Remediario
 
-repo_name: "2023.1-MedicaCerto"
-repo_url: "https://github.com/mdsreq-fga-unb/2023.1-MedicaCerto"
+repo_name: "2023.1-Remediario"
+repo_url: "https://github.com/mdsreq-fga-unb/2023.1-Remediario"
 
 theme:
   name: material
@@ -42,7 +42,7 @@ nav:
           - Visão Geral do Produto: "entregas/unidade1/VisaoProdutoProjeto.md"
       - Unidade 2:
           - Backlog do Produto: "entregas/unidade2/Backlog.md"
-          - Mural do projeto : "entregas/unidade2/Mural.md"
+          - Mural do projeto: "entregas/unidade2/Mural.md"
 
 extra:
   social:
