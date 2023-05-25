@@ -4,6 +4,8 @@
 - Luan Melo
 - Rodrigo Wright
 - Julio Dourado
+- Carlos Eduardo
+- Mateus de Almeida
     
 ## Sprint Review
 #### Carlos Eduardo
@@ -30,7 +32,8 @@ O que fez:
 
 
 #### Mateus de Almeida
-O que fez:- Modificações no Mural/Backlog
+O que fez:
+- Modificações no Mural/Backlog
 - Estudei o material do professor
 - Modificações no Mural/Backlog
 - Estudei a tecnologia que usaremos
@@ -56,5 +59,6 @@ Resumo:
 
 ## Sprint Planning
 
-- Estudar onde serão armazenados os dados(Equipe Requisitos)
-- Criar os components e navegação no React Native
+- Estudar onde serão armazenados os dados(Equipe Requisitos) <a href="https://github.com/mdsreq-fga-unb/2023.1-Remediario/issues/31" target="_blank"> Issue #31 Github</a>
+- Criar os components e navegação no React Native <a href="https://github.com/mdsreq-fga-unb/2023.1-Remediario/issues/30" target="_blank"> Issue #30 Github</a>
+- Entregas da unidade 2 <a href="https://github.com/mdsreq-fga-unb/2023.1-Remediario/issues/27" target="_blank"> Issue #27 Github</a>

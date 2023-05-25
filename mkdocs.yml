@@ -48,7 +48,7 @@ nav:
 extra:
   social:
     - icon: fontawesome/brands/github-alt
-      link: https://github.com/mdsreq-fga-unb/2023.1-MedicaCerto
+      link: https://github.com/mdsreq-fga-unb/2023.1-Remediario
   footer: false
 
 markdown_extensions:
