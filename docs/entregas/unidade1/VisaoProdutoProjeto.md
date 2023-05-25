@@ -5,6 +5,7 @@
 | Data     | Versão | Descrição          | Autor                 |
 | -------- | ------ | ------------------ | --------------------- |
 | 24/04/23 | 1.0    | Criação do arquivo | Júlio, Luan e Rodrigo |
+| 25/04/23 | 1.1    | Correção unidade 1 |                       |
 
 ## 1. VISÃO GERAL DO PRODUTO
 
@@ -62,6 +63,15 @@ O objetivo principal do produto será fornecer um meio para as pessoas que preci
 
 ### 2.3. Matriz de Comunicação
 
+A equipe deverá ter uma comunicação periódica como evidenciado na tabela:
+
+| Descrição | Área/ Envolvidos | Periodicidade | Produtos Gerados |
+| -------------------- | ------------------------- | --------------------- | ---------------- |
+| Deily Meeting        | Equipe do Projeto         | Diário                | - Relatório das atividades feitas no dia por cada um dos membros |
+| Sprint Panning       | Equipe do Projeto         | Semanal (Toda Quarta) | - Sprint Backlog                   |
+| Sprint Retrospective | Equipe Projeto e monitora | Semanal (Toda Quarta) | - Lista do que pode ser melhorado  |
+| Sprint Review        | Equipe do projeto         | Semanal (Toda Quarta) | - Entregas feitas durante a sprint |
+
 ### 2.4. Gerenciamento de Riscos
 
 | Possível risco                      | Causa                                                                                     | Prevenção de risco                                                                     | Correção                                                              |
@@ -97,7 +107,7 @@ Nosso projeto tem um prazo curto e fixo para entrega, e ainda não temos todos o
 
 ### 3.2. PROCESSO DE ENGENHARIA DE REQUISITOS
 
-Tendo em vista todos os fatores apresentados para a escolha do Processo de Desenvolvimento, também fizemos a escolha do Processo de Engenharia de Requisitos, que foi o Processo participativo. Esse processo prevê uma relação próxima e constante com o cliente e um fluxo de trabalho formado por iterações contínuas na qual a equipe de desenvolvimento realiza pequenas atividades que são validadas pelo cliente.
+Levando em conta que o processo de desenvolvimento escolhido foi ágil, também fizemos a escolha do Processo de Engenharia de Requisitos participativo. Isso porque o processo participativo prevê uma relação próxima e constante com o cliente e um fluxo de trabalho formado por iterações contínuas na qual a equipe de desenvolvimento realiza pequenas atividades que são validadas pelo cliente. Esse comportamento do processo participativo interage muito bem com o processo ágil por terem os mesmos princípios. Com isso, tendo como referência Sommerville, que diz que o processo de escolha de requisitos deve passar por um estudo de viabilidade, levantamento e análise, pela documentação e validação, todos esses processos terão a participação direta do cliente.
 
 ## 4. ATIVIDADES
 

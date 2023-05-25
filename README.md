@@ -1,3 +1,3 @@
-# 2023.1-MedicaCerto
+# 2023.1-Remediário
 
 # Equipe Rocket
