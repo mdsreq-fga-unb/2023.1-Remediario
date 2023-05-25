@@ -1,5 +1,11 @@
 # Backlog
 
+## Histórico de Revisão
+
+| Data     | Versão | Descrição          | Autor                 |
+| -------- | ------ | ------------------ | --------------------- |
+| 17/05/23 | 1.0    | Criação do arquivo | Rodrigo               |
+
 Nesta seção será dividido o Backlog a ser trabalhado nas sprints do projeto. Ele estará dividido em Temas (T), Épicos (EP) e User Stories (US).
 
 ## TEMA 01 Tratamentos:
