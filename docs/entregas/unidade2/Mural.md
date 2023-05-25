@@ -1,5 +1,3 @@
-# Entrega da Unidade 2
-
 ## 1. Elicitação e Descoberta
 
 ## 2. Análise e Concenso

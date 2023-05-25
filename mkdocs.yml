@@ -28,10 +28,10 @@ theme:
 nav:
   - Home: index.md
   - Documentação de Atividades:
-      - Apresentações:
-          - 1ª apresentação: "documentacao/Apresentacao/Apresentacao1.md"
-          - 2ª apresentação: "documentacao/Apresentacao/Apresentacao2.md"
-          - 3ª apresentação: "documentacao/Apresentacao/Apresentacao3.md"
+      - Semninários:
+          - 1° Semninário: "documentacao/Seminario/Apresentacao1.md"
+          - 2° Semninário: "documentacao/Seminario/Apresentacao2.md"
+          - 3° Semninário: "documentacao/Seminario/Apresentacao3.md"
       - Sprints:
           - Sprint 0: "documentacao/Sprints/Sprint0.md"
           - Sprint 1: "documentacao/Sprints/Sprint1.md"
@@ -42,7 +42,8 @@ nav:
           - Visão Geral do Produto: "entregas/unidade1/VisaoProdutoProjeto.md"
       - Unidade 2:
           - Backlog do Produto: "entregas/unidade2/Backlog.md"
-          - Mural do projeto: "entregas/unidade2/Mural.md"
+          - Mural de requisitos: "entregas/unidade2/Mural.md"
+          - Apresentação da Unidade 2: "entregas/unidade2/Apresentacao.md"
 
 extra:
   social:
