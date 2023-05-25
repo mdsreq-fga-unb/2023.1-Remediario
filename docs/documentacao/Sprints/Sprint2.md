@@ -1,4 +1,4 @@
-#### Data e hora: 03/05/2023 às 19:00
+#### Data e hora: 17/05/2023 às 19:00
 
 ## Presentes na reunião:
 
