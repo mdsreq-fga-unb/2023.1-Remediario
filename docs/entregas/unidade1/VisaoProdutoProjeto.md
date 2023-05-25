@@ -52,14 +52,51 @@ O objetivo principal do produto será fornecer um meio para as pessoas que preci
 
 - React Native
 - NodeJS
-- MongoDB
 - Docker
 
 ## 2. VISÃO GERAL DO PROJETO
 
 ### 2.1. Organização do Projeto
 
+_Tabela de Organização da Equipe_
+
+| Papel                            | Atribuições                        | Responsável | Participantes |
+| -------------------------------- | ---------------------------------- | ----------- | -------- |
+| Equipe1: Desenvolvedor Backend   | Garantir percistência de dados     | Rodrigo     | Carlos, Mateus |
+| Equipe 2: Desenvolvedor Frontend | Desenvolver UI                     | Júlio       | Luan, Mateus |
+| Product Owner                    | Garantir interesses do cliente     | Luan        | X |
+| Scrum Master                     | Garantir o uso do scrum            | Júlio       | X |
+| Designer de Interface do Usuário | Desenvolver protótipos visuais     | Luan        | Júlio, Mateus |
+| Engenheiros de Requisitos        | Garantir atulização dos requisitos | Carlos      | Rodrigo | 
+| Cliente                          | Definir o valor de negócio         | Mariana     | X |
+
 ### 2.2. Planejamento das Fases e/ou Iterações do Projeto
+
+**UNIDADE 2:** Definição do Backlog, Definição das US, Definição do MVP e Protótipo de Alta Fidelidade:
+
+| Sprint   | Produto (Entrega)                               | Data Início | Data Fim |
+| -------- | ----------------------------------------------- | ----------- | -------- |
+| sprint 1 | Elicitação de requisitos e Definição do Backlog | 03/05/23    | 10/05/23 |
+| sprint 2 | Equipe 1: Alterações do Backlog, Definição de US (User Story Mapping) e Definição de MVP <br/> Equipe 2: Protótipo de Alta Fidelidade.                                             | 10/05/22    | 17/05/23 |
+| sprint 3 | Refinamento e Configuração de Ambiente          | 17/05/23    | 23/05/23 |
+
+**UNIDADE 3:** MVP 1:
+
+| Sprint   | Produto (Entrega)                         | Data Início | Data Fim |
+| -------- | ----------------------------------------- | ----------- | -------- |
+| sprint 4 | Organização das Sprints e Desenvolvimento | 24/05/23 | 31/05/23 |
+| sprint 5 | Desenvolvimento                           | 31/05/23 | 07/06/23 |
+| sprint 6 | Desenvolvimento                           | 07/06/23 | 14/06/23 |
+| sprint 7 | Desenvolvimento                           | 14/06/23 | 20/06/23 |
+
+**UNIDADE 4:** MVP 2:
+
+| Sprint    | Produto (Entrega)                         | Data Início | Data Fim |
+| --------- | ----------------------------------------- | ----------- | -------- |
+| sprint 8  | Organização das Sprints e Desenvolvimento | 24/05/23 | 31/05/23 |
+| sprint 9  | Desenvolvimento                           | 31/05/23 | 07/06/23 |
+| sprint 10 | Desenvolvimento                           | 07/06/23 | 14/06/23 |
+| sprint 11 | Desenvolvimento                           | 14/06/23 | 20/06/23 |
 
 ### 2.3. Matriz de Comunicação
 
