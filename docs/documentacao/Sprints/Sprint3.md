@@ -1,4 +1,4 @@
-#### Data: 17/05/2023
+#### Data e hora: 24/05/2023 às 19:00
 #### Presentes na reunião:
 
 - Luan Melo
