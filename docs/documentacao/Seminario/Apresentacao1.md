@@ -1,2 +1,0 @@
-# Slide 1 - Nossa análise e pesquisas sobre o problema
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQvQ_w_Pz1wJI88kRokiFruI7dbLe9UaEW7SqRPrpwJRr6nIyOo_QHKmi_iGOi9p8XIX86hS3sgf2fu/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
