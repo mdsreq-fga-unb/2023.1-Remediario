@@ -1,4 +1,4 @@
-#### Data e hora: 03/05/2023 às 19:00
+#### Data e hora: 17/05/2023 às 19:00
 
 ## Presentes na reunião:
 
@@ -9,6 +9,8 @@
 ## Sprint Review
 #### Carlos Eduardo
 O que fez:
+
+- Auxiliou nas entregas.
 
 #### Júlio Dourado
 O que fez: 
@@ -33,6 +35,8 @@ O que fez:
 
 #### Mateus de Almeida
 O que fez:
+
+- Auxiliou nas entregas.
 
 
 #### Rodrigo Edmar

@@ -1,7 +1,7 @@
-# MedicaCerto
+# Remediário
 
 ## Introdução
-Bem-vindo(a) a documentação do projeto MedicaCerto, uma aplicação que está sendo criado para a disciplina de 
+Bem-vindo(a) a documentação do projeto Remediário, uma aplicação que está sendo criado para a disciplina de 
 Requisitos de Software, materia do curso de Engenharia de Software - Universidade de Brasília 2023.1.
 
 ## Objetivo
