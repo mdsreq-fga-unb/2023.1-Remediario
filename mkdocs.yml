@@ -32,15 +32,20 @@ nav:
           - 1ª apresentação: "documentacao/Apresentacao/Apresentacao1.md"
           - 2ª apresentação: "documentacao/Apresentacao/Apresentacao2.md"
           - 3ª apresentação: "documentacao/Apresentacao/Apresentacao3.md"
-      - Sprints:
-          - Sprint 0: "documentacao/Sprints/Sprint0.md"
-          - Sprint 1: "documentacao/Sprints/Sprint1.md"
-          - Sprint 2: "documentacao/Sprints/Sprint2.md"
-          - Sprint 3: "documentacao/Sprints/Sprint3.md"
+      - Reuniões de Sprints:
+          - Sprint 1: "documentacao/Reuniões de Sprints/Sprint1.md"
+          - Sprint 2: "documentacao/Reuniões de Sprints/Sprint2.md"
+          - Sprint 3: "documentacao/Reuniões de Sprints/Sprint3.md"
+          - Sprint 4: "documentacao/Reuniões de Sprints/Sprint4.md"
+          - Sprint 5: "documentacao/Reuniões de Sprints/Sprint5.md"
 
   - Entregas:
       - Unidade 1:
           - Visão Geral do Produto: "entregas/unidade1/VisaoProdutoProjeto.md"
+      - Unidade 2:
+          - Backlog do Produto: "entregas/unidade2/Backlog.md"
+          - Mural de requisitos: "entregas/unidade2/Mural.md"
+          - Apresentação da Unidade 2: "entregas/unidade2/Apresentacao.md"
 
 extra:
   social:
