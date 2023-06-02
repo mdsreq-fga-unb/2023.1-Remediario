@@ -4,7 +4,7 @@ import { Picker } from '@react-native-picker/picker';
 import { styles } from './styles';
 import { TextInput } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import DropDownPicker from 'react-native-dropdown-picker';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 export default function AddRemedio() {
   const [remedio, setRemedio] = useState('');
@@ -22,27 +22,31 @@ export default function AddRemedio() {
   };
 
   return (
-    <ScrollView contentContainerStyle={styles.scrollContainer}>
-      <View style={styles.container}>
+  <KeyboardAwareScrollView contentContainerStyle={styles.scrollContainer}>
+    <View style={styles.container}>
+      <View style={styles.container2}>
         <Text style={styles.label}>Nome do Remédio</Text>
-        <TextInput
-          style={styles.input}
+        <TextInput style={[styles.input, {outline: 'none'}]}
           value={remedio}
           onChangeText={setRemedio}
           placeholder="Digite o nome do remédio"
-          underlineColor="white"
-          placeholderTextColor="white"
+          placeholderTextColor="white"          
+          theme={{
+            roundness: 0,
+          }}
         />
-
-        <Text style={styles.label}>Dosagem</Text>
-        <View style={styles.ContainerDropdown}>
-          <View style={styles.dropdown}>
-            <Picker
-              style={styles.dropdownPicker}
-              selectedValue={quantidade}
-              onValueChange={(itemValue) => setQuantidade(itemValue)}
-              mode="dialog"
-            >
+      </View>
+        
+    <View style={styles.container2}>
+    <Text style={styles.label}>Dosagem</Text>
+      <View style={styles.ContainerDropdown}>
+        <View style={styles.dropdown}>
+          <Picker
+            style={styles.dropdownPicker}
+            selectedValue={quantidade}
+            onValueChange={(itemValue) => setQuantidade(itemValue)}
+            mode="dialog"
+          >
               {Array.from({ length: 1000 }, (_, index) => (
                 <Picker.Item key={index} label={`${index + 1}`} value={index + 1} />
               ))}
@@ -52,7 +56,7 @@ export default function AddRemedio() {
               style={styles.icon}
             />
           </View>
-          <View style={styles.dropdown}>
+          <View style={styles.dropdown2}>
             <Picker
               style={styles.dropdownPicker}
               selectedValue={unidade}
@@ -64,6 +68,10 @@ export default function AddRemedio() {
               <Picker.Item label="ml" value="ml" />
               <Picker.Item label="mg" value="mg" />
             </Picker>
+            <Icon
+              name={isDropdownOpen ? 'angle-up' : 'angle-down'}
+              style={styles.icon}
+            />
           </View>
 
           <Text style={styles.secondarylabel}>por dosagem</Text>
@@ -81,8 +89,12 @@ export default function AddRemedio() {
                 <Picker.Item key={index} label={`${index + 1}`} value={index + 1} />
               ))}
             </Picker>
+            <Icon
+              name={isDropdownOpen ? 'angle-up' : 'angle-down'}
+              style={styles.icon}
+            />
           </View>
-          <View style={styles.dropdown}>
+          <View style={styles.dropdown2}>
             <Picker
               style={styles.dropdownPicker}
               selectedValue={unidadeIntervalo}
@@ -93,10 +105,17 @@ export default function AddRemedio() {
               <Picker.Item label="horas" value="horas" />
               <Picker.Item label="minutos" value="minutos" />
             </Picker>
+            <Icon
+              name={isDropdownOpen ? 'angle-up' : 'angle-down'}
+              style={styles.icon}
+            />
           </View>
         </View>
-
-        <Text style={styles.label}>Quantidade Total</Text>
+      </View>
+        
+      
+      <View style={styles.container2}>
+      <Text style={styles.label}>Quantidade Total</Text>
         <View style={styles.ContainerDropdown}>
           <View style={styles.dropdown}>
             <Picker
@@ -114,7 +133,7 @@ export default function AddRemedio() {
               style={styles.icon}
             />
           </View>
-          <View style={styles.dropdown}>
+          <View style={styles.dropdown2}>
             <Picker
               style={styles.dropdownPicker}
               selectedValue={unidade}
@@ -125,25 +144,42 @@ export default function AddRemedio() {
               <Picker.Item label="g" value="g" />
               <Picker.Item label="ml" value="ml" />
               <Picker.Item label="mg" value="mg" />
-            </Picker>
+            </Picker>  
+            <Icon
+              name={isDropdownOpen ? 'angle-up' : 'angle-down'}
+              style={styles.icon}
+            />
           </View>
 
           <Text style={styles.secondarylabel}>no total</Text>
         </View>
-
-        <Text style={styles.label}>Observações</Text>
+      </View>
+      
+      
+        
+      <View style={styles.container2}>
+      <Text style={styles.label}>Observações</Text>
         <TextInput
           style={styles.input}
           value={observacoes}
           onChangeText={setObservacoes}
           placeholder="Digite suas observações..."
           multiline
-          underlineColor="white"
           placeholderTextColor="white"
+          underlineColorAndroid="transparent"
+          shadowColor="transparent"
+          autoCompleteType="off"
+          theme={{
+            roundness: 0,
+          }}
         />
-
+      </View>
+      
+      <View style={styles.container2}>
         <Text style={styles.label}>Começar Alarme</Text>
       </View>
-    </ScrollView>
+        
+    </View>
+  </KeyboardAwareScrollView>
   );
 }
