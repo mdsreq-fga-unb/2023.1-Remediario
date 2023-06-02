@@ -10,6 +10,7 @@ export default function AddRemedio() {
   const [remedio, setRemedio] = useState('');
   const [dosagem, setDosagem] = useState('');
   const [quantidade, setQuantidade] = useState(1);
+  const [quantidade2, setQuantidade2] = useState(1);
   const [unidade, setUnidade] = useState('comprimidos');
   const [intervalo, setIntervalo] = useState(1);
   const [unidadeIntervalo, setUnidadeIntervalo] = useState('horas');
@@ -59,6 +60,7 @@ export default function AddRemedio() {
               mode="dialog"
             >
               <Picker.Item label="comprimidos" value="comprimidos" />
+              <Picker.Item label="g" value="g" />
               <Picker.Item label="ml" value="ml" />
               <Picker.Item label="mg" value="mg" />
             </Picker>
@@ -99,8 +101,8 @@ export default function AddRemedio() {
           <View style={styles.dropdown}>
             <Picker
               style={styles.dropdownPicker}
-              selectedValue={quantidade}
-              onValueChange={(itemValue) => setQuantidade(itemValue)}
+              selectedValue={quantidade2}
+              onValueChange={(itemValue) => setQuantidade2(itemValue)}
               mode="dialog"
             >
               {Array.from({ length: 1000 }, (_, index) => (
@@ -120,6 +122,7 @@ export default function AddRemedio() {
               mode="dialog"
             >
               <Picker.Item label="comprimidos" value="comprimidos" />
+              <Picker.Item label="g" value="g" />
               <Picker.Item label="ml" value="ml" />
               <Picker.Item label="mg" value="mg" />
             </Picker>
