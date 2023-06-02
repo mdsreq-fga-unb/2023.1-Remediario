@@ -4,6 +4,9 @@ import { Dimensions } from 'react-native';
 const { width } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
+  scrollContainer: {
+    flexGrow: 1,
+  },
   container: {
     flex: 1,
     backgroundColor: '#161B1B',
@@ -14,14 +17,14 @@ export const styles = StyleSheet.create({
     fontSize: 18,
     color: 'white',
     marginBottom: 10,
-    marginTop: 10,
+    marginTop: 20,
     marginLeft: 10,
     alignSelf: 'flex-start',
   },
   secondarylabel: {
     color: 'white',
-    marginLeft: 5,
-    marginRight: 5,
+    marginLeft: 10,
+    marginRight: 10,
   },
   input: {
     backgroundColor: '#161B1B',
@@ -42,14 +45,19 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
     borderColor: 'white',
     borderWidth: 2,
-    marginLeft: 5,
-    marginRight: 5,
+    marginLeft: 10,
+    marginRight: 10,
   },
   dropdownPicker: {
     color: 'white',
+    mode: 'dropdown',
   },
-  optionIcon: {
-    fontSize: 10,
+  icon: {
+    position: 'absolute',
+    right: 10,
+    top: '50%',
+    transform: [{ translateY: -8 }],
+    fontSize: 20,
     color: 'white',
   },
 });
