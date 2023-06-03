@@ -35,7 +35,7 @@ function TabRoutes() {
 
                     if (route.name === 'Meus Remédios') {
                         return (
-                            <FontAwesome5Icon name={iconName} color={color} size={sizeIcons} />
+                            <FontAwesome5Icon name={iconName} color={color} size={sizeIcons - 5} />
                         );
                     } else {
                         return <Icon name={iconName} color={color} size={sizeIcons} />;
