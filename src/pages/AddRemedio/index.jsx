@@ -5,6 +5,7 @@ import { styles } from './styles';
 import { TextInput } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import BotaoSalvar from '../../Components/Salvar';
 
 export default function AddRemedio() {
   const [remedio, setRemedio] = useState('');
@@ -16,7 +17,9 @@ export default function AddRemedio() {
   const [unidadeIntervalo, setUnidadeIntervalo] = useState('horas');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [observacoes, setObservacoes] = useState('');
-
+  const [Horario, setHorario]= useState('');
+  const hours = Array.from({ length: 23 }, (_, index) => index + 1);
+  const minutes = ["00", "15", "30", "45"];
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
@@ -26,11 +29,11 @@ export default function AddRemedio() {
     <View style={styles.container}>
       <View style={styles.container2}>
         <Text style={styles.label}>Nome do Remédio</Text>
-        <TextInput style={[styles.input, {outline: 'none'}]}
+        <TextInput style={[styles.input, styles.textInput]}
           value={remedio}
           onChangeText={setRemedio}
           placeholder="Digite o nome do remédio"
-          placeholderTextColor="white"          
+          placeholderTextColor="white"       
           theme={{
             roundness: 0,
           }}
@@ -85,7 +88,7 @@ export default function AddRemedio() {
               selectedValue={intervalo}
               onValueChange={(itemValue) => setIntervalo(itemValue)}
             >
-              {Array.from({ length: 10 }, (_, index) => (
+              {Array.from({ length: 60 }, (_, index) => (
                 <Picker.Item key={index} label={`${index + 1}`} value={index + 1} />
               ))}
             </Picker>
@@ -176,9 +179,33 @@ export default function AddRemedio() {
       </View>
       
       <View style={styles.container2}>
-        <Text style={styles.label}>Começar Alarme</Text>
+        <Text style={styles.label}>Início do Alarme</Text>
+        <View style={styles.ContainerDropdown}>
+          <View style={styles.dropdown}>
+          <Picker
+            style={styles.dropdownPicker}
+            selectedValue={Horario}
+            onValueChange={(itemValue) => setHorario(itemValue)}
+            mode="dialog"
+          >
+            {hours.map((hour) =>
+              minutes.map((minute) => (
+                <Picker.Item
+                  key={`${hour}:${minute}`}
+                  label={`${hour}:${minute}`}
+                  value={`${hour}:${minute}`}
+                />
+              ))
+            )}
+          </Picker>
+            <Icon
+              name={isDropdownOpen ? 'angle-up' : 'angle-down'}
+              style={styles.icon}
+            />
+          </View>
+        </View>
       </View>
-        
+      <BotaoSalvar/>
     </View>
   </KeyboardAwareScrollView>
   );

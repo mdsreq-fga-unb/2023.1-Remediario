@@ -42,6 +42,10 @@ export const styles = StyleSheet.create({
     borderColor: 'white',
     backgroundColor: 'transparent',
     width: width - 20,
+    color: 'white',
+  },
+  textInput: {
+    color: 'white',
   },
   ContainerDropdown: {
     flexDirection: 'row',
@@ -57,7 +61,7 @@ export const styles = StyleSheet.create({
     borderWidth: 2,
     marginLeft: 5,
     marginRight: 5,
-    maxWidth: 80,
+    maxWidth: 90,
   },
   dropdown2: {
     flex: 1,
