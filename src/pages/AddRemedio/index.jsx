@@ -33,7 +33,8 @@ export default function AddRemedio() {
           value={remedio}
           onChangeText={setRemedio}
           placeholder="Digite o nome do remédio"
-          placeholderTextColor="white"       
+          placeholderTextColor="white" 
+          textColor='white'
           theme={{
             roundness: 0,
           }}
@@ -170,6 +171,7 @@ export default function AddRemedio() {
           multiline
           placeholderTextColor="white"
           underlineColorAndroid="transparent"
+          textColor='white'
           shadowColor="transparent"
           autoCompleteType="off"
           theme={{

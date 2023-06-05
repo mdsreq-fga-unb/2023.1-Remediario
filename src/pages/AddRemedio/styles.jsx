@@ -45,7 +45,7 @@ export const styles = StyleSheet.create({
     color: 'white',
   },
   textInput: {
-    color: 'white',
+    color: 'white'
   },
   ContainerDropdown: {
     flexDirection: 'row',
