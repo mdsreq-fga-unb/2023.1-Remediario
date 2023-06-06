@@ -9,6 +9,6 @@ export default function Medicine() {
             <Text style={styles.text}>TODOS OS MEDICAMENTOS</Text>
             <RemedioDropdown nomeRemedio="Nome do Remedio" />
         </View>
-        
+
     )
 }
