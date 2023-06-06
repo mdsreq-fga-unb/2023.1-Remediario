@@ -5,7 +5,6 @@ import Home from '../pages/Home';
 import History from '../pages/History';
 import Medicine from '../pages/Medicine';
 import About from '../pages/About';
-import AddRemedio from '../pages/AddRemedio'
 
 
 const Tab = createBottomTabNavigator();
@@ -17,7 +16,6 @@ function TabRoutes() {
             <Tab.Screen name="Medicine" component={Medicine} />
             <Tab.Screen name="History" component={History} />
             <Tab.Screen name="About" component={About} />
-            <Tab.Screen name="AddRemedio" component={AddRemedio} />
         </Tab.Navigator>
     );
 }
