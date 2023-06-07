@@ -8,8 +8,10 @@ Notifications.setNotificationHandler({
     shouldShowAlert: true,
     shouldPlaySound: false,
     shouldSetBadge: true,
+    
   }),
 });
+
 
 let medicineName = 'Dipirona';
 let medicineTimer = 5;
@@ -23,12 +25,17 @@ export default function App() {
       Alert.alert("Você não deixou as notificações ativas");
 
       return;
-
     }
     
-    const token = await Notifications.getExpoPushTokenAsync();
-    console.log(token);
-
+    await Notifications.scheduleNotificationAsync({
+      content: {
+        title: medicineName,
+        body: 'Está na hora de tomar o remédio',
+      },
+      trigger: {
+        seconds: medicineTimer,
+      },
+    })
   }
 
   return (
