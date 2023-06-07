@@ -1,6 +1,16 @@
-// import Medicamentos from '../Services/medicamento.js';
-const { Medicamentos } = require('../Services/medicamento.js')
+import AsyncStorage from '@react-native-async-storage/async-storage';
+const { SalvarMedicamento } = require('../Services/medicamento');
 
-it('Salva medicamentos', () => {    
-    expect(Medicamentos.SalvarMedicamento(2)).toBe(0);
+
+
+describe ('Medicamentos Storage', () => {
+    it('Deve chamar a função AsyncStorage', async () =>{
+        const mock = jest.spyOn(AsyncStorage,"setItem");
+        mock.mockImplementation(() => Promise.resolve());
+
+        const result = await SalvarMedicamento("testKey", "testValue");
+
+        expect(result).toStrictEqual(["testKey", "testValue"]);
+        expect(AsyncStorage.setItem).toHaveBeenCalledWith("@Remediario:testKey", "testValue");
+    })
 })

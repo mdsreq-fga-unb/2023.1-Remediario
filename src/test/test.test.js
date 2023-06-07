@@ -1,4 +1,4 @@
-const { sum } = require('../Services/foo');
+const { sum } = require('./foo');
 
 it('sums two numbers', () => {
     expect(sum(1,2)).toBe(3);
