@@ -5,6 +5,7 @@ import { StyleSheet } from 'react-native';
 import Home from '../pages/Home';
 import History from '../pages/History';
 import Medicine from '../pages/Medicine';
+import Confirmation from '../pages/ConfirmationMedicine';
 import About from '../pages/About';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
@@ -53,7 +54,7 @@ function TabRoutes() {
             <Tab.Screen name="Home" component={Home} />
             <Tab.Screen name="Meus Remédios" component={Medicine} />
             <Tab.Screen name="Histórico" component={History} />
-            <Tab.Screen name="Editar Remedios" component={EditMedicine} />
+            <Tab.Screen name="Editar Remedios" component={Confirmation} />
         </Tab.Navigator>
     );
 }
