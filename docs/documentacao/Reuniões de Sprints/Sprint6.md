@@ -40,16 +40,16 @@
 - Estudei o conteúdo do módulo 3.
 
 
+#### Mateus de Almeida
+**O que fiz:**
+
+- Fiz o componente de remédio.
+- Fiz a página Add remédio. 
+- Ajudei um pouco no PBB.
+- Estudei o conteúdo do módulo 3.
+
 #### Rodrigo Edmar
 **O que fiz:**
-=======
-#### Mateus de Almeida
-**O que fez:**
-
-- 
-
-#### Rodrigo Edmar
-**O que fez:**
 
 - Terminei o cadastramento de medicamentos no back-end.
 - Ajudei no PBB.
