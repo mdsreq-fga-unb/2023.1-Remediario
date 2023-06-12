@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { View, Text, TouchableOpacity } from "react-native";
 import { styles } from './styles';
 import MedicineUse from "../../Components/MedicineUse";
+
 
 export default function ConfirmationMedicine ({ navigation }) {
     let hours = new Date().getHours(); //To get the Current Hours
