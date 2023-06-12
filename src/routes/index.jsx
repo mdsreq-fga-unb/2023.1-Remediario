@@ -5,6 +5,7 @@ import { StyleSheet } from 'react-native';
 import Home from '../pages/Home';
 import History from '../pages/History';
 import Medicine from '../pages/Medicine';
+import { createStackNavigator } from '@react-navigation/stack';
 import Confirmation from '../pages/ConfirmationMedicine';
 import About from '../pages/About';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -12,6 +13,7 @@ import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
 import EditMedicine from '../pages/EditMedicine';
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 function TabRoutes() {
     const sizeIcons = 24; // Define o tamanho dos ícones como 24px
@@ -54,7 +56,7 @@ function TabRoutes() {
             <Tab.Screen name="Home" component={Home} />
             <Tab.Screen name="Meus Remédios" component={Medicine} />
             <Tab.Screen name="Histórico" component={History} />
-            <Tab.Screen name="Editar Remedios" component={Confirmation} />
+            <Tab.Screen name="Editar Remedios" component={EditMedicine} />
         </Tab.Navigator>
     );
 }
@@ -75,7 +77,13 @@ const styles = StyleSheet.create({
 export default function Routes() {
     return (
         <NavigationContainer>
-            <TabRoutes />
+            <Stack.Navigator>
+                <Stack.Screen name="Home" component={TabRoutes}/>
+                <Stack.Screen name="Meus Remédios" component={TabRoutes}/>
+                <Stack.Screen name="Histórico" component={TabRoutes}/>
+                <Stack.Screen name="Editar Remedios" component={TabRoutes}/>
+                <Stack.Screen options={{ headerShown: false }} component={Confirmation}/>
+            </Stack.Navigator>
         </NavigationContainer>
     );
 }
