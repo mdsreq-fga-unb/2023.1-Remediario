@@ -10,7 +10,7 @@ import Confirmation from '../pages/ConfirmationMedicine';
 import About from '../pages/About';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
-import EditMedicine from '../pages/EditMedicine';
+import AddMedicine from '../pages/AddRemedio/index';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -56,7 +56,7 @@ function TabRoutes() {
             <Tab.Screen name="Home" component={Home} />
             <Tab.Screen name="Meus Remédios" component={Medicine} />
             <Tab.Screen name="Histórico" component={History} />
-            <Tab.Screen name="Editar Remedios" component={EditMedicine} />
+            <Tab.Screen name="Adicionar remédio" component={AddMedicine} />
         </Tab.Navigator>
     );
 }
@@ -78,11 +78,8 @@ export default function Routes() {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                <Stack.Screen name="Home" component={TabRoutes}/>
-                <Stack.Screen name="Meus Remédios" component={TabRoutes}/>
-                <Stack.Screen name="Histórico" component={TabRoutes}/>
-                <Stack.Screen name="Editar Remedios" component={TabRoutes}/>
-                <Stack.Screen options={{ headerShown: false }} component={Confirmation}/>
+                <Stack.Screen options={{ headerShown: false }} name="BottomTab" component={TabRoutes}/>
+                <Stack.Screen options={{ headerShown: false }} name='Confirmacao' component={Confirmation}/>
             </Stack.Navigator>
         </NavigationContainer>
     );
