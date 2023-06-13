@@ -10,8 +10,8 @@ export default function App() {
 
   return (
     <>
-      <Routes />
       <Text>{redirectURL}</Text>
+      <Routes />
     </>
   );
 }
