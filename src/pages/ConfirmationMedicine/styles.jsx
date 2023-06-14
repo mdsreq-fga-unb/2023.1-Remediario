@@ -36,8 +36,9 @@ export const styles = StyleSheet.create({
     },
 
     confirmButton:{
-        width: 150,
-
+        height: 60,
+        width: 220,
+        
         alignItems: 'center',
         justifyContent: "center",
         paddingVertical: 8,
@@ -49,8 +50,8 @@ export const styles = StyleSheet.create({
     },
 
     delayButton:{
-        width: 150,
-
+        height: 60,
+        width: 220,
         alignItems: 'center',
         justifyContent: "center",
         paddingVertical: 8,
@@ -63,7 +64,7 @@ export const styles = StyleSheet.create({
 
     textDelayButton:{
         color: '#FFF',
-        fontSize: 32,
+        fontSize: 24,
     },
 
     medicineUseContainer:{

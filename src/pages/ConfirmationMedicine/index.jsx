@@ -36,6 +36,7 @@ export default function ConfirmationMedicine ({ navigation }) {
 
     setIndiceAtual((prevIndice) => (prevIndice + 1) % quantidade);
     
+    //SE ABERTO NA TELA PELA PRIMEIRA VEZ NAO NAVEGA PARA HOME (usar deeplink?)
     setTimeout(() => {
         navigation.navigate('Home');
       }, 1000);
@@ -52,7 +53,7 @@ export default function ConfirmationMedicine ({ navigation }) {
                     <Icon name="check" color="#FFF" size={40}/>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.delayButton}>
-                    <Text style={styles.textDelayButton}>+5</Text>
+                    <Text style={styles.textDelayButton}>Adiar 5 minutos</Text>
                 </TouchableOpacity>
             </View>
             <View style={styles.medicineUseContainer}>
