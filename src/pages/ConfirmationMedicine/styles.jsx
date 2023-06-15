@@ -6,13 +6,17 @@ export const styles = StyleSheet.create({
         flexDirection: 'column',
         backgroundColor: '#006B65',
         alignItems: 'center',
+        justifyContent: 'center',
+        paddingVertical: 50,
+        gap: 40,
     },
 
     header: {
+        flex: 1.5,
+        flexDirection: 'column',
+        justifyContent: 'center',
         alignItems: 'center',
-        justifyContent: "center",
-        marginBottom: 50,
-        marginTop: 40,
+        marginTop: 50,
     },
 
     remedio: {
@@ -29,15 +33,18 @@ export const styles = StyleSheet.create({
     },
 
     buttons:{
-        flex: 1,
+        flex: 7,
         flexDirection: 'column',
         gap: 40,
         justifyContent: 'center',
+        alignItems: 'center',
+
     },
 
     confirmButton:{
-        width: 150,
-
+        height: 60,
+        width: 220,
+        
         alignItems: 'center',
         justifyContent: "center",
         paddingVertical: 8,
@@ -49,8 +56,8 @@ export const styles = StyleSheet.create({
     },
 
     delayButton:{
-        width: 150,
-
+        height: 60,
+        width: 220,
         alignItems: 'center',
         justifyContent: "center",
         paddingVertical: 8,
@@ -63,15 +70,14 @@ export const styles = StyleSheet.create({
 
     textDelayButton:{
         color: '#FFF',
-        fontSize: 32,
+        fontSize: 24,
     },
 
     medicineUseContainer:{
-        width: 300,
-        flex: 1,
-        alignContent: 'center',
-        justifyContent: 'center',
+        flex: 1.5,
         flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
         flexWrap: 'wrap',
         gap: 8,
     }
