@@ -4,14 +4,15 @@ import { View, Text, TouchableOpacity } from "react-native";
 import { styles } from './styles';
 import MedicineUse from "../../Components/MedicineUse";
 
+export default function ConfirmationMedicine({ route, navigation }) {
+    const { medicineName } = route.params;
+    const { medicineQuantity } = route.params;
 
-export default function ConfirmationMedicine ({ navigation }) {
     let hours = new Date().getHours(); //To get the Current Hours
     let min = new Date().getMinutes(); //To get the Current Minutes
-    let quantidade = 3;
 
     const [componentes, setComponentes] = useState(
-        Array.from({ length: quantidade }, (_, index) => ({
+        Array.from({ length: medicineQuantity }, (_, index) => ({
           key: index,
           variante: "medicineNotUsed",
         }))
@@ -25,7 +26,7 @@ export default function ConfirmationMedicine ({ navigation }) {
             const componenteAtual = updatedComponentes[indiceAtual];
             componenteAtual.variante = componenteAtual.variante === 'medicineNotUsed' ? "medicineUsed" : 'medicineUsed';
             
-            if (indiceAtual === quantidade - 1) {
+            if (indiceAtual === medicineQuantity - 1) {
                 updatedComponentes.forEach((componente) => {
                     componente.variante = "medicineNotUsed";
                 });
@@ -34,7 +35,7 @@ export default function ConfirmationMedicine ({ navigation }) {
             return updatedComponentes;
         });
 
-    setIndiceAtual((prevIndice) => (prevIndice + 1) % quantidade);
+    setIndiceAtual((prevIndice) => (prevIndice + 1) % medicineQuantity);
     
     //SE ABERTO NA TELA PELA PRIMEIRA VEZ NAO NAVEGA PARA HOME (usar deeplink?)
     setTimeout(() => {
@@ -44,30 +45,31 @@ export default function ConfirmationMedicine ({ navigation }) {
 
     return (
         <View style={styles.container}>
-            <View style={styles.header}>
-                <Text style={styles.horario}>{hours}:{min}</Text>
-                <Text style={styles.remedio}>Dipirona</Text>
-            </View>
-            <View style={styles.buttons}>
-                <TouchableOpacity style={styles.confirmButton} onPress={mudarVariante}>
-                    <Icon name="check" color="#FFF" size={40}/>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.delayButton}>
-                    <Text style={styles.textDelayButton}>Adiar 5 minutos</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.medicineUseContainer}>
-                {componentes.map((componente, index) => (
-                    <MedicineUse
-                    key={componente.key}
-                    variante={componente.variante}
-                    onPress={() => mudarVariante(index)}
-                    />
-                ))}
+            <View>
+                <View style={styles.header}>
+                    <Text style={styles.horario}>{hours}:{min}</Text>
+                    <Text style={styles.remedio}>{medicineName}</Text>
+                </View>
+                <View style={styles.buttons}>
+                    <TouchableOpacity style={styles.confirmButton} onPress={mudarVariante}>
+                        <Icon name="check" color="#FFF" size={40}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.delayButton}>
+                        <Text style={styles.textDelayButton}>Adiar 5 minutos</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.medicineUseContainer}>
+                    {componentes.map((componente, index) => (
+                        <MedicineUse
+                        key={componente.key}
+                        variante={componente.variante}
+                        onPress={() => mudarVariante(index)}
+                        />
+                    ))}
+                </View>
             </View>
         </View>
     );
 };
-
 
 
