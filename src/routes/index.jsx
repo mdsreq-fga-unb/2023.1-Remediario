@@ -12,9 +12,14 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
 import AddMedicine from '../pages/AddRemedio/index';
 import * as Notifications from 'expo-notifications';
+import { styles } from './styles';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
+
+const medicineName = 'Remedio';
+const medicineTimer = 2;
+const medicineQuantity = 5;
 
 Notifications.setNotificationHandler({
     handleNotification: async () => ({
@@ -62,29 +67,13 @@ function TabRoutes() {
                 tabBarActiveTintColor: 'yellow', // Define a cor do ícone selecionado como amarelo
             })}
         >
-            <Tab.Screen name="Home" component={Home} />
-            <Tab.Screen name="Meus Remédios" component={Medicine} />
-            <Tab.Screen name="Histórico" component={History} />
-            <Tab.Screen name="Adicionar remédio" component={AddMedicine} />
+            <Tab.Screen options={{ headerShown: false }} name="Home" component={Home} />
+            <Tab.Screen options={{ headerShown: false }} name="Meus Remédios" component={Medicine} />
+            <Tab.Screen options={{ headerShown: false }} name="Histórico" component={History} />
+            <Tab.Screen options={{ headerShown: false }} name="Adicionar remédio" component={AddMedicine} />
         </Tab.Navigator>
     );
 }
-
-const styles = StyleSheet.create({
-    tabBarStyle: {
-        backgroundColor: '#006B65',
-        height: 60,
-        borderTopWidth: 0,
-        paddingEnd: 200, // Adiciona o espaçamento horizontal
-    },
-    alignLeft: {
-        alignItems: 'flex-start', // Alinha os ícones à esquerda
-        justifyContent: 'flex-start', // Alinha os ícones ao topo
-    },
-});
-
-let medicineName = 'Dipirona';
-let medicineTimer = 2;
 
 async function schedulePushNotification() {
     const { status } = await Notifications.getPermissionsAsync();
@@ -96,9 +85,9 @@ async function schedulePushNotification() {
         await Notifications.scheduleNotificationAsync({
             content: {
               title: medicineName,
-              subtitle: 'Está na hora de tomar o remédio',
+              body: 'Está na hora de tomar o remédio',
               data: {
-                url: 'exp://192.168.42.152:19000//--/remediario/Confirmacao'
+                url: 'exp://192.168.42.152:19000/--/remediario/Confirmacao/${medicineName}'
               }
             },
             trigger: {
@@ -111,11 +100,11 @@ async function schedulePushNotification() {
 export default function Routes() {
     return (
         <NavigationContainer linking={{
-            prefixes: ['exp://192.168.42.152:19000/--/remediario'],
+            prefixes: ['exp://192.168.42.152:19000/--/remediario', 'remediario://', 'com.remediario://'],
             config: {
                 screens: {
                     Confirmacao: {
-                        path: 'Confirmacao'
+                        path: 'Confirmacao/:id'
                     }
                 }
             },
@@ -155,7 +144,11 @@ export default function Routes() {
         }}>
             <Stack.Navigator>
                 <Stack.Screen options={{ headerShown: false }} name="BottomTab" component={TabRoutes}/>
-                <Stack.Screen options={{ headerShown: false }} name='Confirmacao' component={Confirmacao}/>
+                <Stack.Screen
+                    options={{ headerShown: false }}
+                    name='Confirmacao' component={Confirmacao}
+                    initialParams={{ medicineName: medicineName, medicineQuantity: medicineQuantity}}
+                />
             </Stack.Navigator>
             <TouchableOpacity style={styles.button} onPress={async () => {await schedulePushNotification();}}>
                 <Text>Enviar notificação</Text>
