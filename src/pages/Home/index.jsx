@@ -12,9 +12,6 @@ export default function Home({ navigation }) {
     return (
         <View style={styles.container}>
             <Text style={styles.text}>REMEDIOS DO DIA</Text>
-            <TouchableOpacity onPress={trocarTela}>
-                    <Text style={styles.text}>Tela de confirmacao</Text>
-            </TouchableOpacity>
         </View>
     );
 }
