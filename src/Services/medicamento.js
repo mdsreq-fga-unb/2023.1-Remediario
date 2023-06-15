@@ -5,15 +5,29 @@ var SalvarMedicamento = async (chave, valor) => {
         await AsyncStorage.setItem(
         '@Remediario:' + chave,
         valor,
-        );
-        return [chave, valor];
+        );        
     } catch (e) {
+        console.log(e);
         return e;
     };
+    console.log("oi");
+    return [chave, valor];
     
 }; 
 
-export { SalvarMedicamento };
+var ListarMedicamento = async (chave) => {
+    var valor;
+    try {
+        valor = await AsyncStorage.getItem('@Remediario:' + chave);
+        console.log(valor + "oi");
+    } catch (e) {
+        console.log(e);
+        return e;
+    }
+    return valor;
+}
+
+export { SalvarMedicamento, ListarMedicamento };
 
 
 // const { AsyncStorage } = require('@react-native-community/async-storage');
