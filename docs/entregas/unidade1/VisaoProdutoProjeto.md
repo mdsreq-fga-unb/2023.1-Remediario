@@ -84,10 +84,10 @@ _Tabela de Organização da Equipe_
 
 | Sprint   | Produto (Entrega)                         | Data Início | Data Fim |
 | -------- | ----------------------------------------- | ----------- | -------- |
-| sprint 4 | Organização das Sprints e Desenvolvimento | 24/05/23 | 31/05/23 |
-| sprint 5 | Desenvolvimento                           | 31/05/23 | 07/06/23 |
-| sprint 6 | Desenvolvimento                           | 07/06/23 | 14/06/23 |
-| sprint 7 | Desenvolvimento                           | 14/06/23 | 20/06/23 |
+| sprint 4 | Organização das Sprints e Confuguração de ambiente | 24/05/23 | 31/05/23 |
+| sprint 5 | Desenvolvimento: US07, US09 & US11        | 31/05/23 | 07/06/23 |
+| sprint 6 | Desenvolvimento: US13, US05 & US10        | 07/06/23 | 14/06/23 |
+| sprint 7 | Desenvolvimento: US16 & US21; Integrações finais | 14/06/23 | 20/06/23 |
 
 **UNIDADE 4:** MVP 2:
 
