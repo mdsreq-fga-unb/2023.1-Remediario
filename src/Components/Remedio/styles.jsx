@@ -2,9 +2,9 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#1E1E1E',
+    backgroundColor: '#1B2020',
     padding: 10,
-    borderRadius: 8,
+    borderRadius: 4,
     marginBottom: 10,
     marginLeft: 10,
     marginRight: 10,
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#006B65',
     padding: 8,
-    borderRadius: 999999999999,
+    borderRadius: 4,
     marginRight: 5,
   },
   optionText: {
