@@ -1,27 +1,28 @@
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import { styles } from './styles';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import RemedioDropdown from '../../Components/Remedio';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 export default function History() {
     return (
-        <KeyboardAwareScrollView contentContainerStyle={styles.scrollContainer}>
-            <View style={styles.container}>
-                <View>
-                    <Text style={styles.titleLarge}>Baixar relatório de uso</Text>
+            <ScrollView style={styles.scrollView}>
+                <View style={styles.container}>
+                    <TouchableOpacity style={styles.downloadContainer}>
+                        <Text style={styles.titleLarge}>Baixar relatório de uso</Text>
+                        <FontAwesome5Icon name="download" color='#006B65' size={16} />
+                    </TouchableOpacity>
+                    <RemedioDropdown nomeRemedio="Nome do Remedio" />
+                    <RemedioDropdown nomeRemedio="Nome do Remedio" />
+                    <RemedioDropdown nomeRemedio="Nome do Remedio" />
+                    <RemedioDropdown nomeRemedio="Nome do Remedio" />
+                    <RemedioDropdown nomeRemedio="Nome do Remedio" />
+                    <RemedioDropdown nomeRemedio="Nome do Remedio" />
+                    <RemedioDropdown nomeRemedio="Nome do Remedio" />
+                    <RemedioDropdown nomeRemedio="Nome do Remedio" />
+                    <RemedioDropdown nomeRemedio="Nome do Remedio" />
+                    <RemedioDropdown nomeRemedio="Nome do Remedio" />
                 </View>
-                <RemedioDropdown nomeRemedio="Nome do Remedio" />
-                <RemedioDropdown nomeRemedio="Nome do Remedio" />
-                <RemedioDropdown nomeRemedio="Nome do Remedio" />
-                <RemedioDropdown nomeRemedio="Nome do Remedio" />
-                <RemedioDropdown nomeRemedio="Nome do Remedio" />
-                <RemedioDropdown nomeRemedio="Nome do Remedio" />
-                <RemedioDropdown nomeRemedio="Nome do Remedio" />
-                <RemedioDropdown nomeRemedio="Nome do Remedio" />
-                <RemedioDropdown nomeRemedio="Nome do Remedio" />
-                <RemedioDropdown nomeRemedio="Nome do Remedio" />
-            </View>
-        </KeyboardAwareScrollView>
+            </ScrollView>
     )
 }
