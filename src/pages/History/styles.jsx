@@ -1,18 +1,20 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
+    scrollContainer: {
+        flexGrow: 1,
+        backgrounColor: '#161B1B',
+    },
     container: {
-        flex: 1,
-        backgroundColor: '#161B1B',
+        paddingVertical: 20,
+        backgrounColor: '#161B1B',
         alignItems: 'center',
         justifyContent: "center",
+        gap: 8,
     },
-
-    text: {
+    titleLarge: {
         color: '#FFF',
-        fontSize: 30,
+        fontSize: 16,
         fontWeight: 'bold',
-
     }
-
 });
