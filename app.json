@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "AppTeste",
-    "slug": "AppTeste",
+    "name": "Remediario",
+    "slug": "remediario",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -15,16 +15,24 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.remediario"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.remediario"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "scheme": "remediario",
+    "extra": {
+      "eas": {
+        "projectId": "d8cb01d5-1e09-4ac0-b8df-6be8ee74641f"
+      }
     }
   }
 }
