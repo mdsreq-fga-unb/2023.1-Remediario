@@ -43,6 +43,9 @@ export default function ConfirmationMedicine({ route, navigation }) {
       }, 1000);
   };
 
+    //<TouchableOpacity style={styles.delayButton}>
+    //                    <Text style={styles.textDelayButton}>Adiar 5 minutos</Text>
+    //</TouchableOpacity>
     return (
         <View style={styles.container}>
             <View>
@@ -53,9 +56,6 @@ export default function ConfirmationMedicine({ route, navigation }) {
                 <View style={styles.buttons}>
                     <TouchableOpacity style={styles.confirmButton} onPress={mudarVariante}>
                         <Icon name="check" color="#FFF" size={40}/>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.delayButton}>
-                        <Text style={styles.textDelayButton}>Adiar 5 minutos</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.medicineUseContainer}>
