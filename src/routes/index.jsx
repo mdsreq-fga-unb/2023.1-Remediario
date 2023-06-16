@@ -13,6 +13,7 @@ import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
 import AddMedicine from '../pages/AddRemedio/index';
 import * as Notifications from 'expo-notifications';
 import { styles } from './styles';
+import Header from '../Components/Header';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -27,7 +28,7 @@ Notifications.setNotificationHandler({
       shouldPlaySound: false,
       shouldSetBadge: false,
     }),
-});
+})
 
 function TabRoutes() {
     const sizeIcons = 24; // Define o tamanho dos ícones como 24px
@@ -67,10 +68,38 @@ function TabRoutes() {
                 tabBarActiveTintColor: 'yellow', // Define a cor do ícone selecionado como amarelo
             })}
         >
-            <Tab.Screen options={{ headerShown: false }} name="Home" component={Home} />
-            <Tab.Screen options={{ headerShown: false }} name="Meus Remédios" component={Medicine} />
-            <Tab.Screen options={{ headerShown: false }} name="Histórico" component={History} />
-            <Tab.Screen options={{ headerShown: false }} name="Adicionar remédio" component={AddMedicine} />
+            <Tab.Screen
+                options={{
+                    headerStyle: styles.header,
+                    headerTitle: () => <Header nomeTela="Home"/>,
+                }}
+                name="Home"
+                component={Home}
+            />
+             <Tab.Screen
+                options={{
+                    headerStyle: styles.header,
+                    headerTitle: () => <Header nomeTela="Meus Remédios"/>,
+                }}
+                name="Meus Remédios"
+                component={Medicine}
+            />
+             <Tab.Screen
+                options={{
+                    headerStyle: styles.header,
+                    headerTitle: () => <Header nomeTela="Histórico"/>,
+                }}
+                name="Histórico"
+                component={History}
+            />
+             <Tab.Screen
+                options={{
+                    headerStyle: styles.header,
+                    headerTitle: () => <Header nomeTela="Adicionar remédio"/>,
+                }}
+                name="Adicionar remédio"
+                component={AddMedicine}
+            />
         </Tab.Navigator>
     );
 }
@@ -95,7 +124,7 @@ async function schedulePushNotification() {
             },
         });
     }
-};
+}
 
 export default function Routes() {
     return (
