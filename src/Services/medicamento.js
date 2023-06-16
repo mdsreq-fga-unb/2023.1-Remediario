@@ -1,25 +1,38 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-var SalvarMedicamento = async (chave, valor) => {    
+var SalvarMedicamento = async (valor) => {
+    let storage;
+    try {
+        storage = await AsyncStorage.getItem('Remediario:Medicamentos');        
+    } catch (e) {
+        console.log(e);
+    } 
+    if (storage == undefined){
+        storage = {
+            data: Array
+        }
+    } else {
+        storage = JSON.parse(storage);
+    }
+    storage.data.push(valor);
+    storage = JSON.stringify(storage);
     try {
         await AsyncStorage.setItem(
-        '@Remediario:' + chave,
-        valor,
+        '@Remediario:Medicamentos',
+        storage,
         );        
     } catch (e) {
         console.log(e);
         return e;
     };
-    console.log("oi");
-    return [chave, valor];
+    return valor;
     
 }; 
 
 var ListarMedicamento = async (chave) => {
     var valor;
     try {
-        valor = await AsyncStorage.getItem('@Remediario:' + chave);
-        console.log(valor + "oi");
+        valor = await AsyncStorage.getItem('@Remediario:Medicamentos');
     } catch (e) {
         console.log(e);
         return e;
@@ -28,23 +41,3 @@ var ListarMedicamento = async (chave) => {
 }
 
 export { SalvarMedicamento, ListarMedicamento };
-
-
-// const { AsyncStorage } = require('@react-native-community/async-storage');
-// export type MedicamentoProps = {
-
-// }
-// class Medicamentos{
-//     SalvarMedicamento = async(MedicamentoProps) => {
-//         const Pack = JASON.stringfy(MedicamentoProps);
-//         try {
-//             await AsyncStorage.setItem(
-//             '@Remediario:remedio',
-//             'Pack',
-//             );
-//             return Pack;
-//         } catch (e) {
-//             console.log(e);
-//         }
-//     } 
-// }

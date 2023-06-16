@@ -6,7 +6,7 @@ import { SalvarMedicamento, ListarMedicamento } from '../../Services/medicamento
 export default function Home() {
     async function teste(){
         try {
-            let valor = await SalvarMedicamento("oi", "thcau");
+            let valor = await SalvarMedicamento({thcau: "fui", oi: 3});
             console.log(valor);
         } catch (err) {
             console.log(err);
@@ -14,7 +14,7 @@ export default function Home() {
     }
     async function teste2(){
         try {
-            let valor = await ListarMedicamento("oi");
+            let valor = await ListarMedicamento();
             console.log(valor);
         } catch (e) {
             console.log(e);
