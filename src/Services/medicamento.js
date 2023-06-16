@@ -1,43 +1,55 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-var SalvarMedicamento = async (valor) => {
-    let storage;
+var SalvarMedicamento = async (object) => {
+    let storage;  
     try {
-        storage = await AsyncStorage.getItem('Remediario:Medicamentos');        
+        storage = await AsyncStorage.getItem('@Remediario:Medicamentos');
     } catch (e) {
         console.log(e);
-    } 
-    if (storage == undefined){
-        storage = {
-            data: Array
-        }
-    } else {
-        storage = JSON.parse(storage);
     }
-    storage.data.push(valor);
-    storage = JSON.stringify(storage);
+    if (storage == null){
+        storage = {
+            data: []
+        }; 
+        console.log("oi");
+    } else{
+        storage = JSON.parse(storage);
+    }        
+    storage.data.push(object)
+    console.log(storage);
+    object = JSON.stringify(storage);   
     try {
         await AsyncStorage.setItem(
-        '@Remediario:Medicamentos',
-        storage,
+        "@Remediario:Medicamentos",
+        object,
         );        
     } catch (e) {
         console.log(e);
-        return e;
+        return "Erro ao salvar medicamento";
     };
-    return valor;
-    
+    return object;  
 }; 
 
-var ListarMedicamento = async (chave) => {
-    var valor;
+var ListarMedicamento = async () => {
+    var storage;
     try {
-        valor = await AsyncStorage.getItem('@Remediario:Medicamentos');
+        storage = await AsyncStorage.getItem('@Remediario:Medicamentos');
     } catch (e) {
         console.log(e);
         return e;
     }
-    return valor;
+    return storage;
 }
 
-export { SalvarMedicamento, ListarMedicamento };
+var DeletarMedicamento = async() => {
+    try {
+        await AsyncStorage.removeItem('@Remediario:Medicamentos');
+        console.log("Medicamentos removidos");
+    } catch (e) {
+        console.log(e);
+        return false;
+    }
+    return true;
+}
+
+export { SalvarMedicamento, ListarMedicamento, DeletarMedicamento };
