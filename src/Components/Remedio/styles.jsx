@@ -6,8 +6,6 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 4,
     marginBottom: 10,
-    marginLeft: 10,
-    marginRight: 10,
   },
   header: {
     flexDirection: 'row',
