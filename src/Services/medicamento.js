@@ -23,6 +23,16 @@ var SalvarMedicamento = async (prop) => {
     if (nomeRemedio) {
         throw new Error('Já existe um remédio com esse nome: ' + nomeRemedio.nomeRemedio);
     }
+    //foo
+    const hora = parseInt(prop.ultimoAlarme.substr(0, 2));
+    const minutos = parseInt(prop.ultimoAlarme.substr(3, 2));
+    let day = new Date();
+
+    if(hora < day.getHours() || (hora == day.getHours && minutos < day.getMinutes)){
+        day.setDate(day.getDate() + 1);        
+    }
+    day.setHours(hora, minutos);
+    prop.ultimoAlarme = day;
     //Pega o objeto e salva ele no data.        
     storage.data.push(prop)
     prop = JSON.stringify(storage);   
@@ -34,7 +44,7 @@ var SalvarMedicamento = async (prop) => {
         );        
     } catch (e) {
         console.log(e);
-        return "Erro ao salvar medicamento";
+        return e;
     };
     return prop;  
 }; 
@@ -58,7 +68,6 @@ var DeletarMedicamento = async() => {
         console.log(e);
         return false;
     }
-    console.log("Medicamentos removidos");
     return true;
 }
 
@@ -93,4 +102,47 @@ var RemoverMedicamento = async (prop) => {
     return value;
 }
 
-export { SalvarMedicamento, ListarMedicamento, DeletarMedicamento, RemoverMedicamento };
+var medicamentosDia = async() => {    
+    let storage;
+    let result = {
+        data: []
+    }
+    try {
+        storage = await AsyncStorage.getItem('@Remediario:Medicamentos')
+    } catch (e) {
+        return e;
+    }
+    if (storage == null) return {data: []};
+    storage = JSON.parse(storage);
+    storage.data.map(remedio => {
+        let today = new Date(remedio.ultimoAlarme);
+        let tommorow = new Date();
+        tommorow.setDate(tommorow.getDate() + 1);   
+        while (today.getDate() < tommorow.getDate()){
+            let index = result.data.findIndex(nome => nome.nomeRemedio == remedio.nomeRemedio)
+            if (index == -1) {
+                result.data.push( {...remedio, qtd: 0});
+                result.data[0].qtd ++;
+            } else result.data[index].qtd ++;           
+            switch (remedio.unidadeFrequencia) {
+                case "meses":
+                    today.setMonth(today.getMonth() + remedio.frequencia);
+                    break;
+                case "dias":
+                    today.setDate(today.getDate() + remedio.frequencia);
+                    break;
+                case "horas":
+                    today.setHours(today.getHours() + remedio.frequencia);
+                    break;
+                case "minutos":
+                    today.setMinutes(today.getMinutes() + remedio.frequencia);
+                    break;
+                default:
+                    throw new Error("Tipo de frequencia mal definido em: " + remedio.nomeRemedio);
+            }
+        }
+    })
+    return result;
+}
+
+export { SalvarMedicamento, ListarMedicamento, DeletarMedicamento, RemoverMedicamento, medicamentosDia };
