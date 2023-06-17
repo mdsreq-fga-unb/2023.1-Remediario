@@ -17,7 +17,7 @@ export default function Home() {
         estoque: 6,
         unidadeEstoque: "g",
         frequencia: 5,
-        unidadeFrequencia: "minutos",
+        unidadeFrequencia: "horas",
         obs: "observacoes teste 1",
         ultimoAlarme: "2:00"
     };
@@ -41,12 +41,33 @@ export default function Home() {
         obs: "observacoes teste 3",
         ultimoAlarme: "10:00"
     };
+    objectTeste4 = {
+        nomeRemedio: "Falha Diaria",
+        dosagem: 5,
+        estoque: 200,
+        unidadeEstoque: "comprimidos",
+        frequencia: 12,
+        unidadeFrequencia: "qualquer coisa",
+        obs: "observacoes teste 3",
+        ultimoAlarme: "23:00"
+    };
+    objectTeste4 = {
+        nomeRemedio: "Falha Diaria",
+        dosagem: 5,
+        estoque: 200,
+        unidadeEstoque: "comprimidos",
+        frequencia: 12,
+        unidadeFrequencia: "qualquer coisa",
+        obs: "observacoes teste 3",
+        ultimoAlarme: "23:00"
+    };
     async function testeSalvar(){
         
         try {
             await SalvarMedicamento(objectTeste1);
             await SalvarMedicamento(objectTeste2);
             await SalvarMedicamento(objectTeste3);
+            await SalvarMedicamento(objectTeste4);
             console.log("Ambiente De Teste setado")
         } catch (e) {
             console.log(e);
@@ -77,8 +98,10 @@ export default function Home() {
         }
     }
     async function testeListarDiaAtual(){
+        
         try {
-            await medicamentosDia();
+            let response = await medicamentosDia();
+            console.log(JSON.stringify(response));
         } catch (e) {
             console.log(e);
         }
