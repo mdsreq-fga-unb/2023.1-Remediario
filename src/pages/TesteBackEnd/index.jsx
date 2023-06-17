@@ -1,25 +1,46 @@
 import React from "react";
 import { View, Text, Button } from "react-native";
 import { styles } from './styles';
-import { SalvarMedicamento, ListarMedicamento, DeletarMedicamento, RemoverMedicamento } from '../../Services/medicamento';
+import { 
+    SalvarMedicamento, 
+    ListarMedicamento, 
+    DeletarMedicamento, 
+    RemoverMedicamento,
+    medicamentosDia } from '../../Services/medicamento';
+
+    // "meses""dias""horas""minutos"
 
 export default function Home() {
     objectTeste1 = {
-            nomeRemedio: "teste1", 
-            dosagem:2, 
-            tipo:"dia"
-            };
+        nomeRemedio: "remedio",
+        dosagem: 3,
+        estoque: 6,
+        unidadeEstoque: "g",
+        frequencia: 5,
+        unidadeFrequencia: "minutos",
+        obs: "observacoes teste 1",
+        ultimoAlarme: "2:00"
+    };
     objectTeste2 = {
-            nomeRemedio: "teste2", 
-            dosagem:5, 
-            tipo:"dia",
-            eticetera: "mucha plata"
-            };
+        nomeRemedio: "dipironga",
+        dosagem: 1,
+        estoque: 10,
+        unidadeEstoque: "ml",
+        frequencia: 1,
+        unidadeFrequencia: "dias",
+        obs: "observacoes teste 2",
+        ultimoAlarme: "20:30"
+    };
     objectTeste3 = {
-        nomeRemedio: "teste3", 
-        dosagem:8, 
-        tipo:"mes"
-        };
+        nomeRemedio: "misibulida",
+        dosagem: 5,
+        estoque: 100,
+        unidadeEstoque: "comprimidos",
+        frequencia: 12,
+        unidadeFrequencia: "horas",
+        obs: "observacoes teste 3",
+        ultimoAlarme: "10:00"
+    };
     async function testeSalvar(){
         
         try {
@@ -41,7 +62,8 @@ export default function Home() {
     }
     async function testeDeletar(){
         try {
-            await DeletarMedicamento();
+            let success = await DeletarMedicamento();
+            if(success) console.log("Medicamentos removidos");
         } catch (e) {
             console.log(e);
         }
@@ -54,13 +76,21 @@ export default function Home() {
             console.log(e);
         }
     }
+    async function testeListarDiaAtual(){
+        try {
+            await medicamentosDia();
+        } catch (e) {
+            console.log(e);
+        }
+    }
     return (
         <View style={styles.container}>
             <Text style={styles.text}>Teste BackEnd</Text>
-            <Button title="Salvar" onPress={testeSalvar} />
-            <Button title="Listar" onPress={testeListar} />
-            <Button title="Deletar" onPress={testeDeletar} />
-            <Button title="Remover" onPress={testeRemover} />
+            <Button style={styles.buttons} title="Salvar" onPress={testeSalvar} />
+            <Button style={styles.buttons} title="Listar" onPress={testeListar} />
+            <Button style={styles.buttons} title="Deletar" onPress={testeDeletar} />
+            <Button style={styles.buttons} title="Remover" onPress={testeRemover} />
+            <Button style={styles.buttons} title="Listar Dia Atual" onPress={testeListarDiaAtual} />
         </View>
     );
 }

@@ -23,6 +23,8 @@ var SalvarMedicamento = async (prop) => {
     if (nomeRemedio) {
         throw new Error('Já existe um remédio com esse nome: ' + nomeRemedio.nomeRemedio);
     }
+    //foo
+    
     //Pega o objeto e salva ele no data.        
     storage.data.push(prop)
     prop = JSON.stringify(storage);   
@@ -34,7 +36,7 @@ var SalvarMedicamento = async (prop) => {
         );        
     } catch (e) {
         console.log(e);
-        return "Erro ao salvar medicamento";
+        return e;
     };
     return prop;  
 }; 
@@ -58,7 +60,6 @@ var DeletarMedicamento = async() => {
         console.log(e);
         return false;
     }
-    console.log("Medicamentos removidos");
     return true;
 }
 
@@ -93,4 +94,42 @@ var RemoverMedicamento = async (prop) => {
     return value;
 }
 
-export { SalvarMedicamento, ListarMedicamento, DeletarMedicamento, RemoverMedicamento };
+var medicamentosDia = async() => {
+    
+    let storage;
+    try {
+        storage = await AsyncStorage.getItem('@Remediario:Medicamentos')
+    } catch (e) {
+        return e;
+    }
+    if (storage == null) return {data: []};
+    storage = JSON.parse(storage);
+    storage.data.map(remedio => {
+        let today = new Date(remedio.ultimoAlarme);
+        console.log(today);
+        let tommorow = new Date;
+        tommorow.setDate(today.getDate() + 1);   
+        while (today.getDate() < tommorow.getDate()){
+            console.log("oi");
+            switch (remedio.unidadeFrequencia) {
+                case "meses":
+                    today.setMonth(today.getMonth() + remedio.frequencia);
+                    break;
+                case "dias":
+                    today.setDate(today.getDate() + remedio.frequencia);
+                    break;
+                case "horas":
+                    today.setHours(today.getHours() + remedio.frequencia);
+                    break;
+                case "minutos":
+                    today.setMinutes(today.getMinutes() + remedio.frequencia);
+                    break;
+                default:
+                    break;
+            }
+        }
+    })
+    return "cu";
+}
+
+export { SalvarMedicamento, ListarMedicamento, DeletarMedicamento, RemoverMedicamento, medicamentosDia };

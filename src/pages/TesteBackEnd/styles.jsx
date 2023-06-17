@@ -7,7 +7,14 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: "center",
     },
+    buttons:{
+        flex: 7,
+        flexDirection: 'column',
+        gap: 40,
+        justifyContent: 'center',
+        alignItems: 'center',
 
+    },
     text: {
         color: '#FFF',
         fontSize: 30,
