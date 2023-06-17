@@ -228,8 +228,8 @@ export default function AddRemedio() {
         </View>
       </View>
 
-        <BotaoSalvar/>
-        <Button onPress={Save} title='Salvar'/>
+        <BotaoSalvar onPress={Save}/>
+        {/* <Button onPress={Save} title='Salvar'/> */}
       
     </View>
   </KeyboardAwareScrollView>
