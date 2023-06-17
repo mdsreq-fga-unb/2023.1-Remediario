@@ -3,6 +3,7 @@ import { NavigationContainer, useIsFocused } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet, TouchableOpacity, Linking, Text } from 'react-native';
 import Home from '../pages/Home';
+import TesteBackEnd from '../pages/TesteBackEnd';
 import History from '../pages/History';
 import Medicine from '../pages/Medicine';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -48,6 +49,8 @@ function TabRoutes() {
                         iconName = 'history';
                     } else if (route.name === 'Editar Remedios' && isMedicineFocused) {
                         iconName = 'pencil';
+                    } else if (route.name === 'Teste BackEnd') {
+                        iconName = 'pencil';
                     }
 
                     if (route.name === 'Meus Remédios') {
@@ -71,6 +74,7 @@ function TabRoutes() {
             <Tab.Screen options={{ headerShown: false }} name="Meus Remédios" component={Medicine} />
             <Tab.Screen options={{ headerShown: false }} name="Histórico" component={History} />
             <Tab.Screen options={{ headerShown: false }} name="Adicionar remédio" component={AddMedicine} />
+            <Tab.Screen options={{ headerShown: false }} name="Teste BackEnd" component={TesteBackEnd} />
         </Tab.Navigator>
     );
 }
