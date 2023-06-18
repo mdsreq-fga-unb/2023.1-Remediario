@@ -47,11 +47,11 @@ function TabRoutes() {
                         iconName = 'prescription-bottle'; // Nome do ícone correspondente em FontAwesome5
                     } else if (route.name === 'Histórico') {
                         iconName = 'history';
-                    } else if (route.name === 'Editar Remedios' && isMedicineFocused) {
-                        iconName = 'pencil';
                     } else if (route.name === 'Teste BackEnd') {
                         iconName = 'pencil';
-                    }
+                    } else if (route.name === 'Editar Remedios' && isMedicineFocused) {
+                        iconName = 'pencil';
+                    } 
 
                     if (route.name === 'Meus Remédios') {
                         return (

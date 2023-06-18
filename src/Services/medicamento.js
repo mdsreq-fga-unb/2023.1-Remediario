@@ -112,7 +112,7 @@ var medicamentosDia = async() => {
     } catch (e) {
         return e;
     }
-    if (storage == null) return {data: []};
+    if (storage == null) return null;
     storage = JSON.parse(storage);
     storage.data.map(remedio => {
         let today = new Date(remedio.ultimoAlarme);

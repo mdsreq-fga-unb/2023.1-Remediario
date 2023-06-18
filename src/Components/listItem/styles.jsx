@@ -7,15 +7,6 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: "center",
     },
-    botao: {
-        backgroundColor: '#006B65',
-        paddingHorizontal: 16,
-        paddingVertical: 10,
-        borderRadius: 200,
-        width: 200,
-        marginBottom: 10,
-        marginTop: 10, 
-      },
 
     text: {
         color: '#FFF',

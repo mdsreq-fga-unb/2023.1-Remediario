@@ -39,16 +39,6 @@ export default function Home() {
         frequencia: 12,
         unidadeFrequencia: "horas",
         obs: "observacoes teste 3",
-        ultimoAlarme: "10:00"
-    };
-    objectTeste4 = {
-        nomeRemedio: "Falha Diaria",
-        dosagem: 5,
-        estoque: 200,
-        unidadeEstoque: "comprimidos",
-        frequencia: 12,
-        unidadeFrequencia: "qualquer coisa",
-        obs: "observacoes teste 3",
         ultimoAlarme: "23:00"
     };
     objectTeste4 = {
@@ -61,13 +51,23 @@ export default function Home() {
         obs: "observacoes teste 3",
         ultimoAlarme: "23:00"
     };
+    // objectTeste4 = {
+    //     nomeRemedio: "Falha Diaria",
+    //     dosagem: 5,
+    //     estoque: 200,
+    //     unidadeEstoque: "comprimidos",
+    //     frequencia: 12,
+    //     unidadeFrequencia: "qualquer coisa",
+    //     obs: "observacoes teste 3",
+    //     ultimoAlarme: "23:00"
+    // };
     async function testeSalvar(){
         
         try {
             await SalvarMedicamento(objectTeste1);
             await SalvarMedicamento(objectTeste2);
             await SalvarMedicamento(objectTeste3);
-            await SalvarMedicamento(objectTeste4);
+            // await SalvarMedicamento(objectTeste4);
             console.log("Ambiente De Teste setado")
         } catch (e) {
             console.log(e);
