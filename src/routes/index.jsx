@@ -1,14 +1,13 @@
 import React from 'react';
 import { NavigationContainer, useIsFocused } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { StyleSheet, TouchableOpacity, Linking, Text } from 'react-native';
+import { TouchableOpacity, Linking, Text } from 'react-native';
 import Home from '../pages/Home';
 import TesteBackEnd from '../pages/TesteBackEnd';
 import History from '../pages/History';
 import Medicine from '../pages/Medicine';
 import { createStackNavigator } from '@react-navigation/stack';
 import Confirmacao from '../pages/ConfirmationMedicine';
-import About from '../pages/About';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
 import AddMedicine from '../pages/AddRemedio/index';
@@ -24,9 +23,9 @@ const medicineQuantity = 5;
 
 Notifications.setNotificationHandler({
     handleNotification: async () => ({
-      shouldShowAlert: true,
-      shouldPlaySound: true,
-      shouldSetBadge: false,
+        shouldShowAlert: true,
+        shouldPlaySound: true,
+        shouldSetBadge: false,
     }),
 });
 
@@ -51,7 +50,7 @@ function TabRoutes() {
                         iconName = 'pencil';
                     } else if (route.name === 'Editar Remedios' && isMedicineFocused) {
                         iconName = 'pencil';
-                    } 
+                    }
 
                     if (route.name === 'Meus Remédios') {
                         return (
@@ -83,19 +82,19 @@ async function schedulePushNotification() {
     const { status } = await Notifications.getPermissionsAsync();
 
     if (status !== 'granted') {
-      Alert.alert('Você não deixou as notificações ativas');
-      return;
-    }else {
+        Alert.alert('Você não deixou as notificações ativas');
+        return;
+    } else {
         await Notifications.scheduleNotificationAsync({
             content: {
-              title: medicineName,
-              body: 'Está na hora de tomar o remédio',
-              data: {
-                url: 'exp://192.168.42.152:19000/--/remediario/Confirmacao/${medicineName}'
-              }
+                title: medicineName,
+                body: 'Está na hora de tomar o remédio',
+                data: {
+                    url: 'exp://192.168.42.152:19000/--/remediario/Confirmacao/${medicineName}'
+                }
             },
             trigger: {
-              seconds: medicineTimer,
+                seconds: medicineTimer,
             },
         });
     }
@@ -119,23 +118,23 @@ export default function Routes() {
                 const url = await Linking.getInitialURL();
 
                 if (url != null) {
-                  return url;
+                    return url;
                 }
-      
+
                 // Handle URL from expo push notifications
                 const response = await Notifications.getLastNotificationResponseAsync();
 
                 return response?.notification.request.content.data.url;
-              },
+            },
             subscribe(listener) {
-                const onReceiveURL = ({url}) => listener(url);
+                const onReceiveURL = ({ url }) => listener(url);
 
                 // Listen to incoming links from deep linking
                 const eventListenerSubscription = Linking.addEventListener('url', onReceiveURL);
 
                 // Listen to expo push notifications
                 const subscription = Notifications.addNotificationResponseReceivedListener(response => {
-                const url = response.notification.request.content.data.url;
+                    const url = response.notification.request.content.data.url;
                     listener(url);
                 });
 
@@ -147,14 +146,14 @@ export default function Routes() {
             },
         }}>
             <Stack.Navigator>
-                <Stack.Screen options={{ headerShown: false }} name="BottomTab" component={TabRoutes}/>
+                <Stack.Screen options={{ headerShown: false }} name="BottomTab" component={TabRoutes} />
                 <Stack.Screen
                     options={{ headerShown: false }}
                     name='Confirmacao' component={Confirmacao}
-                    initialParams={{ medicineName: medicineName, medicineQuantity: medicineQuantity}}
+                    initialParams={{ medicineName: medicineName, medicineQuantity: medicineQuantity }}
                 />
             </Stack.Navigator>
-            <TouchableOpacity style={styles.button} onPress={async () => {await schedulePushNotification();}}>
+            <TouchableOpacity style={styles.button} onPress={async () => { await schedulePushNotification(); }}>
                 <Text>Enviar notificação</Text>
             </TouchableOpacity>
         </NavigationContainer>
