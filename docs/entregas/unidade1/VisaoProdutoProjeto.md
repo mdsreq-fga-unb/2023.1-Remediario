@@ -1,12 +1,5 @@
 # VISÃO DO PRODUTO E PROJETO
 
-## Historico de revisão
-
-| Data     | Versão | Descrição          | Autor                 |
-| -------- | ------ | ------------------ | --------------------- |
-| 24/04/23 | 1.0    | Criação do arquivo | Júlio, Luan e Rodrigo |
-| 25/04/23 | 1.1    | Correção unidade 1 |                       |
-
 ## 1. VISÃO GERAL DO PRODUTO
 
 ### 1.1. Problema
@@ -52,7 +45,7 @@ O objetivo principal do produto será fornecer um meio para as pessoas que preci
 
 - React Native
 - NodeJS
-- Docker
+- AsyncStorage
 
 ## 2. VISÃO GERAL DO PROJETO
 
@@ -188,3 +181,10 @@ Na Unidade 1 tivemos contato com o que é realmente a Engenharia de Requisitos. 
 ## 6 REFERÊNCIAS BIBLIOGRÁFICAS
 
 Uso de medicamentos de forma incorreta: <a href="http://www.conselho.saude.gov.br/ultimas_noticias/2005/medicamentos.htm">http://www.conselho.saude.gov.br/ultimas_noticias/2005/medicamentos.htm</a>
+
+## Historico de revisão
+
+| Data     | Versão | Descrição          | Autor                 |
+| -------- | ------ | ------------------ | --------------------- |
+| 24/04/23 | 1.0    | Criação do arquivo | Júlio, Luan e Rodrigo |
+| 25/04/23 | 1.1    | Correção unidade 1 |                       |

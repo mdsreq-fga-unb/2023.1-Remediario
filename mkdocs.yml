@@ -47,6 +47,12 @@ nav:
           - Backlog do Produto: "entregas/unidade2/Backlog.md"
           - Mural de requisitos: "entregas/unidade2/Mural.md"
           - Apresentação da Unidade 2: "entregas/unidade2/Apresentacao.md"
+      - Unidade 3:
+          - Apresentação da Unidade 3: "entregas/unidade3/Apresentacao.md"
+          - PBB: "entregas/unidade3/PBB.md"
+          - BDD: "entregas/unidade3/BDD.md"
+          - SaFE: "entregas/unidade3/SaFE.md"
+          
 
 extra:
   social:

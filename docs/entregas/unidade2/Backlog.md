@@ -114,4 +114,5 @@ Para uma US ser considerada concluída, é necessário que ela cumpra alguns req
 | 17/05/23 | 1.0    | Criação do arquivo | Rodrigo               |
 | 25/05/23 | 1.1    | Alteração Requisitos| Rodrigo              |
 | 18/06/23 | 1.2    | Inclusão critérios | Rodrigo               |
+| 18/06/23 | 1.2.1  | inclusão DoD e DoR | Rodrigo               |
 
