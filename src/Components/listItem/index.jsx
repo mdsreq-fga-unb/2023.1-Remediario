@@ -1,11 +1,10 @@
 import React from 'react'
-import { View, Text, TouchableOpacity, Button } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import { styles } from './styles';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {RemoverMedicamento} from '../../Services/medicamento';
+import { RemoverMedicamento } from '../../Services/medicamento';
 
-
-export default function listItem(remedio) {
+export default function listItem(remedio, key) {
   let today = new Date(remedio.ultimoAlarme);
   let minutos = today.getMinutes();
   let horas = today.getHours();
@@ -15,22 +14,20 @@ export default function listItem(remedio) {
     minutos = "0" + minutos;
   }
 
-//   console.log(remedio);
-
   async function remover() {
     try {
-        console.log(nome);
+      console.log(nome);
       let value = await RemoverMedicamento(nome);
       console.log(value);
     } catch (e) {
       console.log(e);
       console.log("I carai");
     }
-    console.log("oi")
+    console.log("oi");
   }
-  return (
-    <View style={styles.container}>
 
+  return (
+    <View key={key} style={styles.container}>
       <View style={styles.name}>
         <Text style={styles.text}>{nome}:</Text>
       </View>
@@ -39,6 +36,7 @@ export default function listItem(remedio) {
         <Icon name='clock' color={'white'} style={styles.miniIcon} />
         <Text style={styles.text}>{horas}:{minutos}</Text>
       </View>
+
       <TouchableOpacity style={styles.botao} onPress={remover}>
         <Icon name='trash-can' color={'white'} style={styles.icon} />
       </TouchableOpacity>
