@@ -1,4 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { entregaDados } from './notification';
 
 var SalvarMedicamento = async (prop) => {
     //Pega oque já está salvo no armazenamento interno.
@@ -35,17 +36,18 @@ var SalvarMedicamento = async (prop) => {
     prop.ultimoAlarme = day;
     //Pega o objeto e salva ele no data.        
     storage.data.push(prop)
-    prop = JSON.stringify(storage);   
+    let prop2 = JSON.stringify(storage);  
     //Salva o novo storage no armazenamento local.
     try {
         await AsyncStorage.setItem(
             '@Remediario:Medicamentos',
-            prop
+            prop2
         );        
     } catch (e) {
         console.log(e);
         return e;
     };
+    await entregaDados(prop);
     return prop;  
 }; 
 

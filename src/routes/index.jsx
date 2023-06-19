@@ -16,6 +16,7 @@ import * as Notifications from 'expo-notifications';
 import { styles } from './styles';
 import Header from '../Components/Header';
 import { ListarMedicamento } from '../Services/medicamento';
+import { schedulePushNotification } from '../Services/notification';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -110,25 +111,11 @@ function TabRoutes() {
     );
 }
 
-async function schedulePushNotification() {
-    const { status } = await Notifications.getPermissionsAsync();
-
-    if (status !== 'granted') {
-      Alert.alert('Você não deixou as notificações ativas');
-      return;
-    }else {
-        await Notifications.scheduleNotificationAsync({
-            content: {
-              title: medicineName,
-              body: 'Está na hora de tomar o remédio',
-              data: {
-                url: 'exp://192.168.42.152:19000/--/remediario/Confirmacao/${medicineName}'
-              }
-            },
-            trigger: {
-              seconds: medicineTimer,
-            },
-        });
+async function notification() {
+    try {
+        await schedulePushNotification(medicineName,medicineTimer);
+    } catch (error) {
+        console.log(error);
     }
 }
 
@@ -185,7 +172,7 @@ export default function Routes() {
                     initialParams={{ medicineName: medicineName, medicineQuantity: medicineQuantity}}
                 />
             </Stack.Navigator>
-            <TouchableOpacity style={styles.button} onPress={async () => {await schedulePushNotification();}}>
+            <TouchableOpacity style={styles.button} onPress={async () => {await notification()}}>
                 <Text>Enviar notificação</Text>
             </TouchableOpacity>
         </NavigationContainer>
