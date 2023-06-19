@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, Button } from "react-native";
+import { View } from "react-native";
 import { styles } from './styles';
 import { medicamentosDia } from '../../Services/medicamento';
-import listItem from "../../Components/listItem";
+import ListItem from "../../Components/listItem";
 
 export default function DailyMedicine() {
     const [medicamentos, setMedicamentos] = useState(null);
 
     useEffect(() => {
         recarregar();
-    }, []);
+    }, [medicamentos]);
 
     async function recarregar() {
         let data;
@@ -24,7 +24,7 @@ export default function DailyMedicine() {
     return (
         <View style={styles.container}>
             {medicamentos && medicamentos.data.map((remedio, index) => {
-                return listItem(remedio, index);
+                return <ListItem remedio={remedio} key={index} atualizarLista={recarregar} />;
             })}
         </View>
     );

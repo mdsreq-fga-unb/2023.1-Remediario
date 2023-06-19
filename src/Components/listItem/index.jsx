@@ -4,7 +4,7 @@ import { styles } from './styles';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { RemoverMedicamento } from '../../Services/medicamento';
 
-export default function listItem(remedio, key) {
+export default function ListItem({ remedio, key, atualizarLista }) {
   let today = new Date(remedio.ultimoAlarme);
   let minutos = today.getMinutes();
   let horas = today.getHours();
@@ -19,6 +19,7 @@ export default function listItem(remedio, key) {
       console.log(nome);
       let value = await RemoverMedicamento(nome);
       console.log(value);
+      atualizarLista(); // Chama a função para atualizar a lista de medicamentos
     } catch (e) {
       console.log(e);
       console.log("I carai");
