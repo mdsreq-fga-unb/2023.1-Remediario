@@ -20,6 +20,8 @@ import { ListarMedicamento } from '../Services/medicamento';
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
+await ListarMedicamento
+
 const medicineName = 'Remedio';
 const medicineTimer = 2;
 const medicineQuantity = 5;
