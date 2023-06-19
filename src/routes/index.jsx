@@ -3,6 +3,7 @@ import { NavigationContainer, useIsFocused } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet, TouchableOpacity, Linking, Text } from 'react-native';
 import Home from '../pages/Home';
+import TesteBackEnd from '../pages/TesteBackEnd';
 import History from '../pages/History';
 import Medicine from '../pages/Medicine';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -25,7 +26,7 @@ const medicineQuantity = 5;
 Notifications.setNotificationHandler({
     handleNotification: async () => ({
       shouldShowAlert: true,
-      shouldPlaySound: false,
+      shouldPlaySound: true,
       shouldSetBadge: false,
     }),
 })
@@ -48,6 +49,8 @@ function TabRoutes() {
                     } else if (route.name === 'Histórico') {
                         iconName = 'history';
                     } else if (route.name === 'Editar Remedios' && isMedicineFocused) {
+                        iconName = 'pencil';
+                    } else if (route.name === 'Teste BackEnd') {
                         iconName = 'pencil';
                     }
 

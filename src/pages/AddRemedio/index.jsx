@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, Button} from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { styles } from './styles';
 import { TextInput } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import BotaoSalvar from '../../Components/Salvar';
+import { SalvarMedicamento} from '../../Services/medicamento';
 
 export default function AddRemedio() {
   const [remedio, setRemedio] = useState('');
@@ -23,6 +24,25 @@ export default function AddRemedio() {
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+
+  async function Save (){
+    remedioOBJ = {
+      nomeRemedio: remedio,
+      dosagem: quantidade,
+      estoque: quantidade2,
+      unidadeEstoque: unidade,
+      frequencia: intervalo,
+      unidadeFrequencia: unidadeIntervalo,
+      obs: observacoes,
+      ultimoAlarme: Horario
+    }
+    try {
+      await SalvarMedicamento(remedioOBJ);
+      console.log("Medicamento Salvo");
+    } catch (e) {
+      console.log(e)
+    }
+  }
 
   return (
   <KeyboardAwareScrollView contentContainerStyle={styles.scrollContainer}>
@@ -207,7 +227,10 @@ export default function AddRemedio() {
           </View>
         </View>
       </View>
-      <BotaoSalvar/>
+
+        <BotaoSalvar onPress={Save}/>
+        {/* <Button onPress={Save} title='Salvar'/> */}
+      
     </View>
   </KeyboardAwareScrollView>
   );
