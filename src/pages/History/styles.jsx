@@ -5,12 +5,13 @@ export const styles = StyleSheet.create({
         backgrounColor: '#161B1B',
     },
     container: {
+        flex: 1,
         paddingVertical: 20,
         paddingHorizontal: 10,
-        alignItems: 'center',
+        alignItems: 'flex-start',
         justifyContent: "center",
-        gap: 8,
-        backgrounColor: '#161B1B',
+        gap: 20,
+        backgroundColor: '#161B1B',
     },
     titleLarge: {
         color: 'white',
@@ -25,5 +26,8 @@ export const styles = StyleSheet.create({
         alignItems: "center",
         
         gap: 20,
+    },
+    medicineContainer: {
+        gap: 8,
     }
 });

@@ -6,12 +6,13 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 
 export default function History() {
     return (
-            <ScrollView style={styles.scrollView}>
-                <View style={styles.container}>
-                    <TouchableOpacity style={styles.downloadContainer}>
-                        <Text style={styles.titleLarge}>Baixar relatório de uso</Text>
-                        <FontAwesome5Icon name="download" color='#006B65' size={16} />
-                    </TouchableOpacity>
+        <ScrollView style={styles.scrollView}>
+            <View style={styles.container}>
+                <TouchableOpacity style={styles.downloadContainer}>
+                    <Text style={styles.titleLarge}>Baixar relatório de uso</Text>
+                    <FontAwesome5Icon name="download" color='#006B65' size={16} />
+                </TouchableOpacity>
+                <View style={styles.medicineContainer}>
                     <RemedioDropdown nomeRemedio="Nome do Remedio" />
                     <RemedioDropdown nomeRemedio="Nome do Remedio" />
                     <RemedioDropdown nomeRemedio="Nome do Remedio" />
@@ -23,6 +24,7 @@ export default function History() {
                     <RemedioDropdown nomeRemedio="Nome do Remedio" />
                     <RemedioDropdown nomeRemedio="Nome do Remedio" />
                 </View>
-            </ScrollView>
+            </View>
+        </ScrollView>
     )
 }
