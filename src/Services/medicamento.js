@@ -71,7 +71,7 @@ var DeletarMedicamento = async() => {
     return true;
 }
 
-var RemoverMedicamento = async (prop) => {
+var RemoverMedicamento = async (nomeRemedio) => {
     //Pega oque já está salvo no armazenamento interno.
     let storage;  
     try {
@@ -83,7 +83,7 @@ var RemoverMedicamento = async (prop) => {
     if (storage == null) throw new Error('Lista de medicamentos vazia');
     else storage = JSON.parse(storage);
     //Verifica a posição do objeto
-    let index = storage.data.findIndex(remedio => remedio.nomeRemedio == prop.nomeRemedio);
+    let index = storage.data.findIndex(remedio => remedio.nomeRemedio == nomeRemedio);
     //Destaca o objeto presente naquela posição
     let value
     if (index != -1){
