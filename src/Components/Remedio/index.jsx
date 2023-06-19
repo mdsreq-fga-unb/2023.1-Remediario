@@ -11,14 +11,15 @@ const RemedioDropdown = ({ nomeRemedio }) => {
 
   const screenWidth = Dimensions.get('window').width;
   const boxWidth = screenWidth - 20; // Subtrai 20 para criar um espaço de margem horizontal
+  let medicineUseDate = '01/01';
 
   const renderOptions = () => {
     const options = [];
     for (let i = 1; i <= 8; i++) {
       options.push(
         <View key={i} style={styles.optionBox}>
-          <Text style={styles.optionText}>{i < 10 ? `0${i}` : i}/06</Text>
-          <Icon name={i % 2 === 0 ? 'check' : 'close'} style={styles.optionIcon} />
+          <Text style={styles.optionText}>{medicineUseDate}</Text>
+          <Icon name={'check'} style={styles.optionIcon} />
         </View>
       );
     }
