@@ -19,7 +19,7 @@ export default function Home() {
         frequencia: 5,
         unidadeFrequencia: "horas",
         obs: "observacoes teste 1",
-        ultimoAlarme: "2:00"
+        ultimoAlarme: "22:42"
     };
     objectTeste2 = {
         nomeRemedio: "dipironga",
