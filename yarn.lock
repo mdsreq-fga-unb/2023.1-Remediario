@@ -7584,7 +7584,7 @@ react-native-keyboard-aware-scroll-view@^0.9.5:
 
 react-native-paper@^5.8.0:
   version "5.8.0"
-  resolved "https://registry.npmjs.org/react-native-paper/-/react-native-paper-5.8.0.tgz"
+  resolved "https://registry.yarnpkg.com/react-native-paper/-/react-native-paper-5.8.0.tgz#ac6b98a9d8fe96d959d2a6a92454e10626177970"
   integrity sha512-Mde8KkWt+9VD+KMqGK5VyTskJLZCsF/gAQQxoLgRlC2C8RmVPgyG0xhgu1sD3ED7T7FewE8cKrQm+soB9FAD1Q==
   dependencies:
     "@callstack/react-theme-provider" "^3.0.8"

@@ -2,43 +2,88 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#656565',
-        display: 'flex',
+        flex: 1,
+        flexDirection: 'column',
+        backgroundColor: '#1B2020',
+        marginLeft: 12,
+        marginRight: 12,
+        width: 350,
+        marginBottom: 12,
+        padding: 10,
+        borderRadius: 10,
+    },
+    container2: {
         flexDirection: 'row',
-        justifyContent: 'flex-start',
-        width: 315,
-        height: 78,
-        paddingLeft: 12,
-        paddingRight: 12,
-        paddingTop: 8.5,
-        paddingBottom: 8.5,
+        width: '100%',
+        borderRadius: 10,
+        alignItems: 'center',
     },
     text: {
         color: '#FFF',
         fontSize: 22,
         fontWeight: 'bold',
     },
+    text2: {
+        color: '#FFF',
+        fontSize: 22,
+        fontWeight: 'bold',
+        marginRight: 10,
+    },
     botao: {
-        backgroundColor: '#FF0000',
-
+        borderRadius: 10,
+        padding: 5,
     },
     icon: {
-        fontSize: 30,
+        fontSize: 28,
+        backgroundColor: 'red',
+        borderRadius: 10,
+        padding: 3,
     },
     miniIcon: {
-        fontSize: 15,
+        fontSize: 25,
+        alignContent: 'center',
+        alignItems: 'center',
+        paddingBottom: 2,
+        paddingTop: 2,
+        marginEnd: 3,
+
     },
     name: {
-        alignContent: 'flex-start',
-        backgroundColor: '#454545',
         alignItems: 'flex-start',
-        marginRight: 12,
     },
     contentHours: {
-        display: 'flex',
+        backgroundColor: '#006B65',
+        flexDirection: 'row',
+        padding: 3,
+        borderRadius: 10,
+        justifyContent: 'flex-end',
+    },
+    alignEnd: {
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: '#454545',
-        marginRight: 12,
+        justifyContent: 'flex-end',
+        width: '70%',
+        marginLeft: 'auto',
+
     },
-});
+
+    progressBarContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'flex-end',
+        width: '70%',
+        marginLeft: 'auto',
+    },
+    progressBar: {
+        width: '80%',
+        height: 10,
+        borderRadius: 5,
+        backgroundColor: '#FFF',
+    },
+    progressBarText: {
+        width: '20%',
+        marginTop: 5,
+        color: '#FFF',
+        fontSize: 16,
+    },
+}); 

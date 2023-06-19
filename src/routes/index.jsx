@@ -51,7 +51,6 @@ function TabRoutes() {
                     } else if (route.name === 'Editar Remedios' && isMedicineFocused) {
                         iconName = 'pencil';
                     }
-
                     if (route.name === 'Meus Remédios') {
                         return (
                             <FontAwesome5Icon name={iconName} color={color} size={sizeIcons - 5} />
@@ -67,13 +66,14 @@ function TabRoutes() {
                 tabBarStyle: [styles.tabBarStyle, styles.alignLeft],
                 tabBarShowLabel: false,
                 tabBarActiveTintColor: 'yellow', // Define a cor do ícone selecionado como amarelo
+                tabBarVisible: false, // Não mostrar a aba na barra de navegação
             })}
         >
             <Tab.Screen options={{ headerShown: false }} name="Home" component={Home} />
             <Tab.Screen options={{ headerShown: false }} name="Meus Remédios" component={Medicine} />
             <Tab.Screen options={{ headerShown: false }} name="Histórico" component={History} />
-            <Tab.Screen options={{ headerShown: false }} name="Adicionar remédio" component={AddMedicine} />
             <Tab.Screen options={{ headerShown: false }} name="Teste BackEnd" component={TesteBackEnd} />
+            <Tab.Screen options={{ headerShown: false }} name="AddMedicine" component={AddMedicine} />
         </Tab.Navigator>
     );
 }

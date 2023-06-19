@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { View } from "react-native";
+import { View, Text } from "react-native";
 import { styles } from './styles';
 import { medicamentosDia } from '../../Services/medicamento';
 import ListItem from "../../Components/listItem";
+import ButtonAddMedicine from "../../Components/ButtonAddMedicine";
+import { ScrollView } from "react-native-gesture-handler";
 
-export default function DailyMedicine() {
+export default function DailyMedicine({ navigation }) {
     const [medicamentos, setMedicamentos] = useState(null);
 
     useEffect(() => {
         recarregar();
-    }, [medicamentos]);
+    }, []);
 
     async function recarregar() {
         let data;
@@ -23,9 +25,13 @@ export default function DailyMedicine() {
 
     return (
         <View style={styles.container}>
-            {medicamentos && medicamentos.data.map((remedio, index) => {
-                return <ListItem remedio={remedio} key={index} atualizarLista={recarregar} />;
-            })}
+            <Text style={styles.text}>Medicamentos do dia</Text>
+            <ScrollView>
+                {medicamentos && medicamentos.data.map((remedio, index) => {
+                    return <ListItem remedio={remedio} atualizarLista={recarregar} key={index.toString()} />;
+                })}
+            </ScrollView>
+            <ButtonAddMedicine navigation={navigation} />
         </View>
     );
 }
