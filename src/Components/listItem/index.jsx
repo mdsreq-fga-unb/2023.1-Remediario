@@ -12,7 +12,8 @@ export default function ListItem({ remedio, atualizarLista }) {
   let nome = remedio.nomeRemedio;
   let estoque = remedio.estoque;
   let frequencia = remedio.frequencia;
-  let conta = estoque / frequencia;
+  let dosagem = remedio.dosagem;
+  let conta = estoque / dosagem;
   /*   console.log(conta, estoque, frequencia); */
 
 
@@ -28,9 +29,7 @@ export default function ListItem({ remedio, atualizarLista }) {
       atualizarLista(); // Chama a função para atualizar a lista de medicamentos
     } catch (e) {
       console.log(e);
-      console.log("I carai");
     }
-    console.log("oi");
   }
 
   return (
@@ -57,7 +56,7 @@ export default function ListItem({ remedio, atualizarLista }) {
         style={styles.progressBar}
       />
       <Text style={styles.progressBarText}>
-        {estoque}/{frequencia}
+        {Math.trunc(conta)}/{dosagem}
       </Text>
     </View>
   )

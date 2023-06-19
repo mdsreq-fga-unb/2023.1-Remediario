@@ -3,10 +3,10 @@ import { TouchableOpacity, View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { styles } from './styles';
 
-export default function ButtonAddMedicine({ navigation }) {
+export default function ButtonAddMedicine({ navigation, route }) {
 
     const addMedicine = () => {
-        navigation.navigate('AddMedicine');
+        navigation.navigate(route);
     };
 
     return (

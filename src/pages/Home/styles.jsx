@@ -13,5 +13,19 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 20,
     },
-
+    reload : {
+        backgroundColor: '#006B65',
+        width: 40,
+        height: 40,
+        borderRadius: 200,
+        top: 20,
+        left: 20,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'absolute',
+    },
+    reload_Icon : {
+        fontSize: 30,
+    },
 });
