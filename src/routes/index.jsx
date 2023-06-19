@@ -41,7 +41,7 @@ function TabRoutes() {
                     let iconName;
                     if (color !== 'yellow') color = 'white'; // Define a cor dos ícones não selecionados como branco (padrão)
 
-                    if (route.name === 'Home') {
+                    if (route.name === "Remédios do dia") {
                         iconName = 'white-balance-sunny';
                     } else if (route.name === 'Meus Remédios') {
                         iconName = 'prescription-bottle'; // Nome do ícone correspondente em FontAwesome5
@@ -71,9 +71,9 @@ function TabRoutes() {
             <Tab.Screen
                 options={{
                     headerStyle: styles.header,
-                    headerTitle: () => <Header nomeTela="Home"/>,
+                    headerTitle: () => <Header nomeTela="Remédios do dia"/>,
                 }}
-                name="Home"
+                name="Remédios do dia"
                 component={Home}
             />
              <Tab.Screen
