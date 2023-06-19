@@ -3,67 +3,43 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { View, Text, TouchableOpacity } from "react-native";
 import { styles } from './styles';
 import MedicineUse from "../../Components/MedicineUse";
-import { useRoute } from '@react-navigation/native';
 
-export default function ConfirmationMedicine({ navigation }) {
-    const route = useRoute();
+export default function ConfirmationMedicine({ route, navigation }) {
+    const hours = new Date().getHours();
+    const min = new Date().getMinutes();
+
+    const {medicineName} = route.params;
+    const medicineTotalDailyUse = 5;
+    const [medicinesUsed, setMedicinesUsed] = useState(3);
+
+    const [medicineComponents, setMedicineComponents] = useState([]);
+
     useEffect(() => {
-    // Acessar os parâmetros do deep link
-        const { params } = route;
-
-    // Fazer o que for necessário com os parâmetros do deep link
-        console.log('Parâmetros do deep link:', params);
-    }, []);
-
-    const { medicineName } = route.params.nome; //props.match.params.id;
-    const { medicineTotalDailyUse } = route.params.quantidade;
-
-    let hours = new Date().getHours(); //To get the Current Hours
-    let min = new Date().getMinutes(); //To get the Current Minutes
-
-    const [componentes, setComponentes] = useState();
-    const [indiceAtual, setIndiceAtual] = useState(0);
-
-    const quantidadeUso = 2;
-
-    for (let i = 0; i < quantidadeUso; i++) {
-        if (componentes[i].variante === "medicineUsed") {
-        }
-    }
-
-    setComponentes(
-        Array.from({ length: medicineTotalDailyUse }, (_, index) => ({
-            key: index,
-            usos
-        }))
-    )
-
-    const mudarVariante = () => {       
-        setComponentes((prevState) => {
-            const updatedComponentes = [...prevState];
-            const componenteAtual = updatedComponentes[indiceAtual];
-            componenteAtual.variante = componenteAtual.variante === 'medicineNotUsed' ? "medicineUsed" : 'medicineUsed';
-            
-            if (indiceAtual === medicineTotalDailyUse - 1) {
-                updatedComponentes.forEach((componente) => {
-                    componente.variante = "medicineNotUsed";
-                });
+        const components = [];
+        
+        for (let i = 0; i < medicineTotalDailyUse; i++) {
+            if (i < medicinesUsed) {
+                components.push(<MedicineUse key={i} variante="medicineUsed"/>);
+            } else {
+                components.push(<MedicineUse key={i} variante="medicineNotUsed"/>);
             }
-            
-            return updatedComponentes;
-        });
-
-    setIndiceAtual((prevIndice) => (prevIndice + 1) % medicineTotalDailyUse);
-
-    //SE ABERTO NA TELA PELA PRIMEIRA VEZ NAO NAVEGA PARA HOME (usar deeplink?)
-    setTimeout(() => {
-        navigation.navigate("Remédios do dia");
-      }, 1000);
-  };
+        }
+        
+        setMedicineComponents(components);
+    }, [medicinesUsed]);
 
     //<TouchableOpacity style={styles.delayButton}>
     //  <Text style={styles.textDelayButton}>Adiar 5 minutos</Text>
     //</TouchableOpacity>
+
+    const usoMedicamento = () => {
+        setMedicinesUsed(prevUsed => prevUsed + 1);
+
+        setTimeout(() => {
+            navigation.navigate("Remédios do dia");
+        }, 1000);
+    };
+    
     return (
         <View style={styles.container}>
             <View>
@@ -72,18 +48,12 @@ export default function ConfirmationMedicine({ navigation }) {
                     <Text style={styles.remedio}>{medicineName}</Text>
                 </View>
                 <View style={styles.buttons}>
-                    <TouchableOpacity style={styles.confirmButton} onPress={mudarVariante}>
+                    <TouchableOpacity style={styles.confirmButton} onPress={usoMedicamento}>
                         <Icon name="check" color="#FFF" size={40}/>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.medicineUseContainer}>
-                    {componentes.map((componente, index) => (
-                        <MedicineUse
-                        key={componente.key}
-                        variante={componente.variante}
-                        onPress={() => mudarVariante(index)}
-                        />
-                    ))}
+                    {medicineComponents}
                 </View>
             </View>
         </View>

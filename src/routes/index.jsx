@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import { NavigationContainer, useIsFocused } from '@react-navigation/native';
+import React, { useState, useEffect } from 'react';
+import { NavigationContainer, useIsFocused, useLinking } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { TouchableOpacity, Linking, Text } from 'react-native';
 import Home from '../pages/Home';
@@ -15,7 +15,8 @@ import AddMedicine from '../pages/AddMedicine/index';
 import * as Notifications from 'expo-notifications';
 import { styles } from './styles';
 import Header from '../Components/Header';
-import { schedulePushNotification } from '../Services/notification';
+import {schedulePushNotification} from '../Services/notification'
+import { useURL } from 'expo-linking';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -104,31 +105,35 @@ function TabRoutes() {
     );
 }
 
-export default function Routes() {
-    const [medicineName, setName] = useState('');
-    const [medicineTotalDailyUse, setMedicineTotalDailyUse] = useState();
+const medicineTimer = 2;
+const nome = 'teste2';
 
-    async function notification() {
-        try {
-            let medicineData = await schedulePushNotification();
-
-            setName(medicineData[0]);
-            console.log(medicineData[0]);
-
-            setMedicineTotalDailyUse(medicineData[1]);
-            console.log(medicineData[1]);
-        } catch (error) {
-            console.log(error);
-        }
+async function notification() {
+    try {
+        await schedulePushNotification(nome,medicineTimer);
+    } catch (error) {
+        console.log(error);
     }
+}
 
+export default function Routes() {
+    const redirectURL = useURL();
     return (
-        <NavigationContainer linking={{
+        <NavigationContainer 
+        linking={{
             prefixes: ['exp://192.168.42.152:19000/--/remediario', 'remediario://', 'com.remediario://'],
             config: {
                 screens: {
                     Confirmacao: {
                         path: 'Confirmacao',
+                        parse: {
+                            medicineName: (medicineName) => decodeURIComponent(medicineName),
+                            medicineTotalDailyUse: (medicineTotalDailyUse) => decodeURIComponent(medicineTotalDailyUse),
+                          },
+                            stringify: {
+                                medicineName: (medicineName) => encodeURIComponent(medicineName),
+                                medicineTotalDailyUse: (medicineTotalDailyUse) => encodeURIComponent(medicineTotalDailyUse),
+                          },
                     }
                 }
             },
@@ -171,7 +176,7 @@ export default function Routes() {
                 <Stack.Screen options={{ headerShown: false }} name='Confirmacao' component={Confirmacao}/>
             </Stack.Navigator>
             <TouchableOpacity style={styles.button} onPress={async () => {await notification()}}>
-                <Text>Enviar notificação</Text>
+                <Text>Enviar notificação {redirectURL}</Text>
             </TouchableOpacity>
         </NavigationContainer>
     );
