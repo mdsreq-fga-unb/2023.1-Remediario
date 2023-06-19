@@ -11,10 +11,11 @@ import Confirmacao from '../pages/ConfirmationMedicine';
 import About from '../pages/About';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
-import AddMedicine from '../pages/AddRemedio/index';
+import AddMedicine from '../pages/AddMedicine/index';
 import * as Notifications from 'expo-notifications';
 import { styles } from './styles';
 import Header from '../Components/Header';
+import { ListarMedicamento } from '../Services/medicamento';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();

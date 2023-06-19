@@ -13,6 +13,11 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  pageContainer:{
+    paddingVertical: 20,
+    gap: 8,
+    backgrounColor: '#161B1B',
+  },
   container2:{
     backgroundColor: '#1B2020',
     borderRadius: 8,

@@ -23,6 +23,7 @@
     "react-native": "0.71.8",
     "react-native-dropdown-picker": "^5.4.6",
     "react-native-gesture-handler": "~2.9.0",
+    "react-native-ionicons": "^4.x",
     "react-native-keyboard-aware-scroll-view": "^0.9.5",
     "react-native-paper": "^5.8.0",
     "react-native-push-notification": "^8.1.1",

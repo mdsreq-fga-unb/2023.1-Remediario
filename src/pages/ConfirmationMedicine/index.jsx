@@ -8,6 +8,8 @@ export default function ConfirmationMedicine({ route, navigation }) {
     const { medicineName } = route.params;
     const { medicineQuantity } = route.params;
 
+    
+
     let hours = new Date().getHours(); //To get the Current Hours
     let min = new Date().getMinutes(); //To get the Current Minutes
 
@@ -39,12 +41,12 @@ export default function ConfirmationMedicine({ route, navigation }) {
     
     //SE ABERTO NA TELA PELA PRIMEIRA VEZ NAO NAVEGA PARA HOME (usar deeplink?)
     setTimeout(() => {
-        navigation.navigate('Home');
+        navigation.navigate("Remédios do dia");
       }, 1000);
   };
 
     //<TouchableOpacity style={styles.delayButton}>
-    //                    <Text style={styles.textDelayButton}>Adiar 5 minutos</Text>
+    //  <Text style={styles.textDelayButton}>Adiar 5 minutos</Text>
     //</TouchableOpacity>
     return (
         <View style={styles.container}>
