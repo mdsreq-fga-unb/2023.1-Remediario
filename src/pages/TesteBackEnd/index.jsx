@@ -12,14 +12,14 @@ import {
 
 export default function Home() {
     objectTeste1 = {
-        nomeRemedio: "remedio",
+        nomeRemedio: "remedioteste",
         dosagem: 3,
         estoque: 6,
         unidadeEstoque: "g",
         frequencia: 5,
         unidadeFrequencia: "horas",
         obs: "observacoes teste 1",
-        ultimoAlarme: "22:42"
+        ultimoAlarme: "14:39"
     };
     objectTeste2 = {
         nomeRemedio: "dipironga",

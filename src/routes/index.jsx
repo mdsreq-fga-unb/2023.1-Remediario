@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { NavigationContainer, useIsFocused } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { StyleSheet, TouchableOpacity, Linking, Text } from 'react-native';
+import { TouchableOpacity, Linking, Text } from 'react-native';
 import Home from '../pages/Home';
 import TesteBackEnd from '../pages/TesteBackEnd';
 import History from '../pages/History';
@@ -15,17 +15,10 @@ import AddMedicine from '../pages/AddMedicine/index';
 import * as Notifications from 'expo-notifications';
 import { styles } from './styles';
 import Header from '../Components/Header';
-import { ListarMedicamento } from '../Services/medicamento';
 import { schedulePushNotification } from '../Services/notification';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
-
-await ListarMedicamento
-
-const medicineName = 'Remedio';
-const medicineTimer = 2;
-const medicineQuantity = 5;
 
 Notifications.setNotificationHandler({
     handleNotification: async () => ({
@@ -102,31 +95,40 @@ function TabRoutes() {
              <Tab.Screen
                 options={{
                     headerStyle: styles.header,
-                    headerTitle: () => <Header nomeTela="Adicionar remédio"/>,
+                    headerTitle: () => <Header nomeTela='Teste BackEnd'/>,
                 }}
-                name="Adicionar remédio"
-                component={AddMedicine}
+                name='Teste BackEnd'
+                component={TesteBackEnd}
             />
         </Tab.Navigator>
     );
 }
 
-async function notification() {
-    try {
-        await schedulePushNotification(medicineName,medicineTimer);
-    } catch (error) {
-        console.log(error);
-    }
-}
-
 export default function Routes() {
+    const [medicineName, setName] = useState('');
+    const [medicineTotalDailyUse, setMedicineTotalDailyUse] = useState();
+
+    async function notification() {
+        try {
+            let medicineData = await schedulePushNotification();
+
+            setName(medicineData[0]);
+            console.log(medicineData[0]);
+
+            setMedicineTotalDailyUse(medicineData[1]);
+            console.log(medicineData[1]);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return (
         <NavigationContainer linking={{
             prefixes: ['exp://192.168.42.152:19000/--/remediario', 'remediario://', 'com.remediario://'],
             config: {
                 screens: {
                     Confirmacao: {
-                        path: 'Confirmacao/:id'
+                        path: 'Confirmacao',
                     }
                 }
             },
@@ -166,11 +168,7 @@ export default function Routes() {
         }}>
             <Stack.Navigator>
                 <Stack.Screen options={{ headerShown: false }} name="BottomTab" component={TabRoutes}/>
-                <Stack.Screen
-                    options={{ headerShown: false }}
-                    name='Confirmacao' component={Confirmacao}
-                    initialParams={{ medicineName: medicineName, medicineQuantity: medicineQuantity}}
-                />
+                <Stack.Screen options={{ headerShown: false }} name='Confirmacao' component={Confirmacao}/>
             </Stack.Navigator>
             <TouchableOpacity style={styles.button} onPress={async () => {await notification()}}>
                 <Text>Enviar notificação</Text>
