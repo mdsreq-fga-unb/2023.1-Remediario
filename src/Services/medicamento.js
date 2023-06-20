@@ -1,5 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { entregaDados } from "./notification";
+import { List } from "react-native-paper";
 
 var SalvarMedicamento = async (prop) => {
   let storage;
@@ -80,7 +81,7 @@ var ListarMedicamento = async () => {
 };
 
 var getMedicamento = async (nomeRemedio) => {
-  var storage;
+  let storage;
 
   try {
     storage = await medicamentosDia();
@@ -88,7 +89,13 @@ var getMedicamento = async (nomeRemedio) => {
     throw new Error("Falha ao pegar medicamentos do dia");
   }
 
-  const result = storage.data.find((nome) => nomeRemedio === nome.nomeRemedio);
+  let result = storage.data.find((nome) => nomeRemedio === nome.nomeRemedio);
+  if (!result) {
+    storage = await ListarMedicamento();
+    result = storage.data.find((nome) => nomeRemedio === nome.nomeRemedio);
+    result = {...result, qtd: 0};
+  }
+
   return result;
 };
 
@@ -214,13 +221,14 @@ var medicamentosDia = async () => {
     let today = new Date(remedio.ultimoAlarme);
     let tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
-
+    console.log(today, tomorrow);
     while (today.getDate() < tomorrow.getDate()) {
       let index = result.data.findIndex(
         (nome) => nome.nomeRemedio === remedio.nomeRemedio
       );
 
       if (index === -1) {
+        console.log("oi");
         result.data.push({ ...remedio, qtd: 1 });
       } else {
         result.data[index].qtd++;

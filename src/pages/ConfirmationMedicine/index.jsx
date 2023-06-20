@@ -6,11 +6,14 @@ import MedicineUse from "../../Components/MedicineUse";
 import { getMedicamento, usoMedicamento } from '../../Services/medicamento'
 
 export default function ConfirmationMedicine({ route, navigation }) {
-    const hours = new Date().getHours();
-    const min = new Date().getMinutes();
+    let hours = new Date().getHours();
+    let min = new Date().getMinutes();
 
     if (min < 10){
-        min = "0" + diaDeUso.getMinutes
+        min = "0" + min;
+    }
+    if (hours < 10){
+        hours = "0" + hours;
     }
 
     let {medicineName} = route.params;
@@ -49,9 +52,8 @@ export default function ConfirmationMedicine({ route, navigation }) {
 
     const usoDeMedicamento = () => {
         setMedicinesUsed(prevUsed => prevUsed + 1);
-        //usoMedicamento(medicineName);
-
         setTimeout(() => {
+            usoMedicamento(medicineName);
             navigation.navigate("Remédios do dia");
         }, 1000);
     };
@@ -79,5 +81,3 @@ export default function ConfirmationMedicine({ route, navigation }) {
 //<TouchableOpacity style={styles.delayButton}>
 //  <Text style={styles.textDelayButton}>Adiar 5 minutos</Text>
 //</TouchableOpacity>
-
-

@@ -30,9 +30,9 @@ export default function Home() {
         estoque: 10,
         unidadeEstoque: "ml",
         frequencia: 1,
-        unidadeFrequencia: "minutos",
+        unidadeFrequencia: "horas",
         obs: "observacoes teste 2",
-        ultimoAlarme: "23:55",
+        ultimoAlarme: "23:59",
         uso: [],
     };
     objectTeste3 = {
@@ -72,6 +72,8 @@ export default function Home() {
     async function testeListar(){
         try {
             let valor = await ListarMedicamento();
+            // valor = valor.data.find(nome => nome.nomeRemedio == "dipironga");
+            // let date = new Date(valor.ultimoAlarme);
             console.log("Lista: " + JSON.stringify(valor));
         } catch (e) {
             console.log(e);
