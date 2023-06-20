@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { RemoverMedicamento } from '../../Services/medicamento';
 import { ProgressBar } from 'react-native-paper';
 
-export default function ListItem({ remedio, atualizarLista }) {
+export default function ListItem({ remedio, atualizarLista, navigation }) {
   let today = new Date(remedio.ultimoAlarme);
   let minutos = today.getMinutes();
   let horas = today.getHours();
@@ -28,10 +28,16 @@ export default function ListItem({ remedio, atualizarLista }) {
       console.log(e);
     }
   }
+  function redirect () {
+    navigation.navigate('Confirmacao', {
+        medicineName: nome,
+      });
+}
 
   return (
-    <View style={styles.container}>
-      <View style={styles.container2}>
+    <View style={styles.container} >
+      <TouchableOpacity onPress={redirect}>
+        <View style={styles.container2}>
 
         <Text style={styles.text}>{nome}: </Text>
 
@@ -55,6 +61,8 @@ export default function ListItem({ remedio, atualizarLista }) {
       <Text style={styles.progressBarText}>
         {estoque}/{frequencia}
       </Text>
+      </TouchableOpacity>
+      
     </View>
   )
 }
