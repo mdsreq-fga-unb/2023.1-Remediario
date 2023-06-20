@@ -34,7 +34,8 @@ export default function AddRemedio() {
       frequencia: intervalo,
       unidadeFrequencia: unidadeIntervalo,
       obs: observacoes,
-      ultimoAlarme: Horario
+      ultimoAlarme: Horario,
+      uso: [],
     }
     try {
       await SalvarMedicamento(remedioOBJ);

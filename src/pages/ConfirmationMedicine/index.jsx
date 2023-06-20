@@ -3,16 +3,23 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { View, Text, TouchableOpacity } from "react-native";
 import { styles } from './styles';
 import MedicineUse from "../../Components/MedicineUse";
+import { getMedicamento, usoMedicamento } from '../../Services/medicamento'
 
 export default function ConfirmationMedicine({ route, navigation }) {
     const hours = new Date().getHours();
     const min = new Date().getMinutes();
 
-    const {medicineName} = route.params;
-    const medicineTotalDailyUse = 5;
-    const [medicinesUsed, setMedicinesUsed] = useState(3);
+    if (min < 10){
+        min = "0" + diaDeUso.getMinutes
+    }
 
+    let {medicineName} = route.params;
+
+    const [medicinesUsed, setMedicinesUsed] = useState(0);
     const [medicineComponents, setMedicineComponents] = useState([]);
+    const [medicine, setMedicine] = useState({qtd: 0});
+    const [medicineTotalDailyUse, setMedicineTotalDailyUse] = useState(0);
+    const [medicineQuantidade, setMedicineQuantidade] = useState(0);
 
     useEffect(() => {
         const components = [];
@@ -24,22 +31,31 @@ export default function ConfirmationMedicine({ route, navigation }) {
                 components.push(<MedicineUse key={i} variante="medicineNotUsed"/>);
             }
         }
-        
         setMedicineComponents(components);
-    }, [medicinesUsed]);
+        integracaoBackend();
+    
+        setMedicineQuantidade(medicine.qtd);
+        setMedicineTotalDailyUse((medicinesUsed + medicineQuantidade));
+    }, [medicinesUsed, medicineQuantidade, medicine]);
 
-    //<TouchableOpacity style={styles.delayButton}>
-    //  <Text style={styles.textDelayButton}>Adiar 5 minutos</Text>
-    //</TouchableOpacity>
+    async function integracaoBackend(){
+        try{
+            let medicine2 = await getMedicamento(medicineName);
+            setMedicine(medicine2);
+        }catch(e){
+            console.log(e);
+        }
+    }
 
-    const usoMedicamento = () => {
+    const usoDeMedicamento = () => {
         setMedicinesUsed(prevUsed => prevUsed + 1);
+        //usoMedicamento(medicineName);
 
         setTimeout(() => {
             navigation.navigate("Remédios do dia");
         }, 1000);
     };
-    
+
     return (
         <View style={styles.container}>
             <View>
@@ -48,7 +64,7 @@ export default function ConfirmationMedicine({ route, navigation }) {
                     <Text style={styles.remedio}>{medicineName}</Text>
                 </View>
                 <View style={styles.buttons}>
-                    <TouchableOpacity style={styles.confirmButton} onPress={usoMedicamento}>
+                    <TouchableOpacity style={styles.confirmButton} onPress={usoDeMedicamento}>
                         <Icon name="check" color="#FFF" size={40}/>
                     </TouchableOpacity>
                 </View>
@@ -59,5 +75,9 @@ export default function ConfirmationMedicine({ route, navigation }) {
         </View>
     );
 };
+
+//<TouchableOpacity style={styles.delayButton}>
+//  <Text style={styles.textDelayButton}>Adiar 5 minutos</Text>
+//</TouchableOpacity>
 
 

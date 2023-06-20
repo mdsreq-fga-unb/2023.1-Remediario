@@ -6,7 +6,9 @@ import {
     ListarMedicamento, 
     DeletarMedicamento, 
     RemoverMedicamento,
-    medicamentosDia } from '../../Services/medicamento';
+    medicamentosDia,
+    getMedicamento,
+    usoMedicamento } from '../../Services/medicamento';
 
     // "meses""dias""horas""minutos"
 
@@ -19,7 +21,8 @@ export default function Home() {
         frequencia: 5,
         unidadeFrequencia: "horas",
         obs: "observacoes teste 1",
-        ultimoAlarme: "16:48"
+        ultimoAlarme: "18:14",
+        uso: [],
     };
     objectTeste2 = {
         nomeRemedio: "dipironga",
@@ -27,9 +30,10 @@ export default function Home() {
         estoque: 10,
         unidadeEstoque: "ml",
         frequencia: 1,
-        unidadeFrequencia: "dias",
+        unidadeFrequencia: "minutos",
         obs: "observacoes teste 2",
-        ultimoAlarme: "16:53"
+        ultimoAlarme: "23:55",
+        uso: [],
     };
     objectTeste3 = {
         nomeRemedio: "misibulida",
@@ -39,35 +43,27 @@ export default function Home() {
         frequencia: 12,
         unidadeFrequencia: "horas",
         obs: "observacoes teste 3",
-        ultimoAlarme: "10:00"
+        ultimoAlarme: "23:59",
+        uso: [],
     };
-    objectTeste4 = {
-        nomeRemedio: "Falha Diaria",
-        dosagem: 5,
-        estoque: 200,
-        unidadeEstoque: "comprimidos",
-        frequencia: 12,
-        unidadeFrequencia: "qualquer coisa",
-        obs: "observacoes teste 3",
-        ultimoAlarme: "23:00"
-    };
-    objectTeste4 = {
-        nomeRemedio: "Falha Diaria",
-        dosagem: 5,
-        estoque: 200,
-        unidadeEstoque: "comprimidos",
-        frequencia: 12,
-        unidadeFrequencia: "qualquer coisa",
-        obs: "observacoes teste 3",
-        ultimoAlarme: "23:00"
-    };
+    // objectTeste4 = {
+    //     nomeRemedio: "Falha Diaria",
+    //     dosagem: 5,
+    //     estoque: 200,
+    //     unidadeEstoque: "comprimidos",
+    //     frequencia: 12,
+    //     unidadeFrequencia: "qualquer coisa",
+    //     obs: "observacoes teste 3",
+    //     ultimoAlarme: "23:00",
+    //     uso: [],
+    // };
     async function testeSalvar(){
         
         try {
             await SalvarMedicamento(objectTeste1);
             await SalvarMedicamento(objectTeste2);
             await SalvarMedicamento(objectTeste3);
-            await SalvarMedicamento(objectTeste4);
+            // await SalvarMedicamento(objectTeste4);
             console.log("Ambiente De Teste setado")
         } catch (e) {
             console.log(e);
@@ -101,7 +97,16 @@ export default function Home() {
         
         try {
             let response = await medicamentosDia();
-            console.log(JSON.stringify(response));
+            console.log("Resposta" + JSON.stringify(response));
+
+        } catch (e) {
+            console.log(e);
+        }
+    }
+    async function testeGet(){
+        try {
+            let response = await getMedicamento("dipironga");
+            console.log("Resposta" + JSON.stringify(response));
         } catch (e) {
             console.log(e);
         }
@@ -114,6 +119,7 @@ export default function Home() {
             <Button style={styles.buttons} title="Deletar" onPress={testeDeletar} />
             <Button style={styles.buttons} title="Remover" onPress={testeRemover} />
             <Button style={styles.buttons} title="Listar Dia Atual" onPress={testeListarDiaAtual} />
+            <Button style={styles.buttons} title="get" onPress={testeGet} />
         </View>
     );
 }

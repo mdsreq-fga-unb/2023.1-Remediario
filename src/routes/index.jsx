@@ -15,8 +15,7 @@ import AddMedicine from '../pages/AddMedicine/index';
 import * as Notifications from 'expo-notifications';
 import { styles } from './styles';
 import Header from '../Components/Header';
-import {schedulePushNotification} from '../Services/notification'
-import { useURL } from 'expo-linking';
+import { schedulePushNotification } from '../../src/Services/notification'
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -105,19 +104,15 @@ function TabRoutes() {
     );
 }
 
-const medicineTimer = 2;
-const nome = 'teste2';
-
 async function notification() {
     try {
-        await schedulePushNotification(nome,medicineTimer);
+        await schedulePushNotification({nomeRemedio: "dipironga", estoque: 10}, 2);
     } catch (error) {
         console.log(error);
     }
 }
 
 export default function Routes() {
-    const redirectURL = useURL();
     return (
         <NavigationContainer 
         linking={{
@@ -128,11 +123,9 @@ export default function Routes() {
                         path: 'Confirmacao',
                         parse: {
                             medicineName: (medicineName) => decodeURIComponent(medicineName),
-                            medicineTotalDailyUse: (medicineTotalDailyUse) => decodeURIComponent(medicineTotalDailyUse),
                           },
                             stringify: {
-                                medicineName: (medicineName) => encodeURIComponent(medicineName),
-                                medicineTotalDailyUse: (medicineTotalDailyUse) => encodeURIComponent(medicineTotalDailyUse),
+                            medicineName: (medicineName) => encodeURIComponent(medicineName),
                           },
                     }
                 }
@@ -176,7 +169,7 @@ export default function Routes() {
                 <Stack.Screen options={{ headerShown: false }} name='Confirmacao' component={Confirmacao}/>
             </Stack.Navigator>
             <TouchableOpacity style={styles.button} onPress={async () => {await notification()}}>
-                <Text>Enviar notificação {redirectURL}</Text>
+                <Text>Enviar notificação</Text>
             </TouchableOpacity>
         </NavigationContainer>
     );

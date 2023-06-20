@@ -23,14 +23,23 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   optionBox: {
-    flexDirection: 'row',
+    flexDirection: 'column',
+    justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#006B65',
+    height: 50,
     padding: 8,
     borderRadius: 4,
     marginRight: 5,
+    gap: 4,
   },
-  optionText: {
+  dateHour: {
+    color: 'white',
+    marginRight: 5,
+    fontSize: 14,
+    fontWeight: 'bold',
+  },
+  dateDay: {
     color: 'white',
     marginRight: 5,
     fontSize: 10,
@@ -39,6 +48,14 @@ const styles = StyleSheet.create({
     fontSize: 10,
     color: 'white',
   },
+  dateContainer: {
+    flex: 1,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    flexDirection: 'row',
+    width: '100%',
+    gap: 2,
+  }
 });
 
 export { styles };

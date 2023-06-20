@@ -2,15 +2,16 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     scrollView: {
-        backgrounColor: '#161B1B',
+        flexGrow: 1,
     },
     container: {
         flex: 1,
+        height: 600,
         paddingVertical: 20,
         paddingHorizontal: 10,
-        alignItems: 'flex-start',
-        justifyContent: "center",
-        gap: 20,
+        alignItems: 'center',
+        justifyContent: "flex-start",
+        gap: 10,
         backgroundColor: '#161B1B',
     },
     titleLarge: {
