@@ -29,7 +29,6 @@ export default function Medicine({ navigation }) {
     }
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>Todos os Medicamentos</Text>
             <ScrollView>
                 {medicamentos && medicamentos.data.map((remedio, index) => {
                     return <ListItem remedio={remedio} atualizarLista={recarregar} key={index.toString()} />;

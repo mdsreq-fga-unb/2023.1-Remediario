@@ -44,8 +44,6 @@ function TabRoutes() {
                         iconName = 'prescription-bottle'; // Nome do ícone correspondente em FontAwesome5
                     } else if (route.name === 'Histórico') {
                         iconName = 'history';
-                    } else if (route.name === 'Teste BackEnd') {
-                        iconName = 'pencil';
                     } else if (route.name === 'Editar Remedios' && isMedicineFocused) {
                         iconName = 'pencil';
                     }
@@ -98,6 +96,14 @@ function TabRoutes() {
                 }}
                 name='Teste BackEnd'
                 component={TesteBackEnd}
+            />
+            <Tab.Screen
+                options={{
+                    headerStyle: styles.header,
+                    headerTitle: () => <Header nomeTela='AddMedicine'/>,
+                }}
+                name='AddMedicine'
+                component={AddMedicine}
             />
         </Tab.Navigator>
     );

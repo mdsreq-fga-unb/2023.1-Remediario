@@ -22,9 +22,7 @@ export default function ListItem({ remedio, atualizarLista }) {
 
   async function remover() {
     try {
-      console.log(nome);
-      let value = await RemoverMedicamento(nome);
-      console.log(value);
+      await RemoverMedicamento(nome);
       atualizarLista(); // Chama a função para atualizar a lista de medicamentos
     } catch (e) {
       console.log(e);
