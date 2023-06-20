@@ -28,9 +28,7 @@ export default function ListItem({ remedio, atualizarLista }) {
       atualizarLista(); // Chama a função para atualizar a lista de medicamentos
     } catch (e) {
       console.log(e);
-      console.log("I carai");
     }
-    console.log("oi");
   }
 
   return (

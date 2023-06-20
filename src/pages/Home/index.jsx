@@ -5,13 +5,17 @@ import { medicamentosDia } from '../../Services/medicamento';
 import ListItem from "../../Components/listItem";
 import ButtonAddMedicine from "../../Components/ButtonAddMedicine";
 import { ScrollView } from "react-native-gesture-handler";
+import { useIsFocused } from "@react-navigation/native";
 
 export default function DailyMedicine({ navigation }) {
+    const isFocused = useIsFocused();
     const [medicamentos, setMedicamentos] = useState(null);
 
     useEffect(() => {
-        recarregar();
-    }, []);
+        if (isFocused) {
+            recarregar();
+        }
+    }, [isFocused]);
 
     async function recarregar() {
         let data;
