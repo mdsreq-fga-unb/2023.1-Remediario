@@ -6,20 +6,23 @@ import {
     ListarMedicamento, 
     DeletarMedicamento, 
     RemoverMedicamento,
-    medicamentosDia } from '../../Services/medicamento';
+    medicamentosDia,
+    getMedicamento,
+    usoMedicamento } from '../../Services/medicamento';
 
     // "meses""dias""horas""minutos"
 
 export default function Home() {
     objectTeste1 = {
-        nomeRemedio: "remedio",
+        nomeRemedio: "remedioteste",
         dosagem: 3,
         estoque: 6,
         unidadeEstoque: "g",
-        frequencia: 5,
+        frequencia: 1,
         unidadeFrequencia: "horas",
         obs: "observacoes teste 1",
-        ultimoAlarme: "2:00"
+        ultimoAlarme: "02:32",
+        uso: [],
     };
     objectTeste2 = {
         nomeRemedio: "dipironga",
@@ -27,9 +30,10 @@ export default function Home() {
         estoque: 10,
         unidadeEstoque: "ml",
         frequencia: 1,
-        unidadeFrequencia: "dias",
+        unidadeFrequencia: "horas",
         obs: "observacoes teste 2",
-        ultimoAlarme: "20:30"
+        ultimoAlarme: "23:59",
+        uso: [],
     };
     objectTeste3 = {
         nomeRemedio: "misibulida",
@@ -39,17 +43,8 @@ export default function Home() {
         frequencia: 12,
         unidadeFrequencia: "horas",
         obs: "observacoes teste 3",
-        ultimoAlarme: "23:00"
-    };
-    objectTeste4 = {
-        nomeRemedio: "Falha Diaria",
-        dosagem: 5,
-        estoque: 200,
-        unidadeEstoque: "comprimidos",
-        frequencia: 12,
-        unidadeFrequencia: "qualquer coisa",
-        obs: "observacoes teste 3",
-        ultimoAlarme: "23:00"
+        ultimoAlarme: "23:59",
+        uso: [],
     };
     // objectTeste4 = {
     //     nomeRemedio: "Falha Diaria",
@@ -59,7 +54,8 @@ export default function Home() {
     //     frequencia: 12,
     //     unidadeFrequencia: "qualquer coisa",
     //     obs: "observacoes teste 3",
-    //     ultimoAlarme: "23:00"
+    //     ultimoAlarme: "23:00",
+    //     uso: [],
     // };
     async function testeSalvar(){
         
@@ -76,6 +72,8 @@ export default function Home() {
     async function testeListar(){
         try {
             let valor = await ListarMedicamento();
+            // valor = valor.data.find(nome => nome.nomeRemedio == "dipironga");
+            // let date = new Date(valor.ultimoAlarme);
             console.log("Lista: " + JSON.stringify(valor));
         } catch (e) {
             console.log(e);
@@ -101,7 +99,23 @@ export default function Home() {
         
         try {
             let response = await medicamentosDia();
-            console.log(JSON.stringify(response));
+            console.log("Resposta" + JSON.stringify(response));
+        } catch (e) {
+            console.log(e);
+        }
+    }
+    async function testeGet(){
+        try {
+            let response = await getMedicamento("misibulida");
+            console.log("Resposta" + JSON.stringify(response));
+        } catch (e) {
+            console.log(e);
+        }
+    }
+    async function testeUso(){
+        try {
+            let response = await usoMedicamento("misibulida");
+            console.log("Resposta" + JSON.stringify(response));
         } catch (e) {
             console.log(e);
         }
@@ -114,6 +128,8 @@ export default function Home() {
             <Button style={styles.buttons} title="Deletar" onPress={testeDeletar} />
             <Button style={styles.buttons} title="Remover" onPress={testeRemover} />
             <Button style={styles.buttons} title="Listar Dia Atual" onPress={testeListarDiaAtual} />
+            <Button style={styles.buttons} title="getMisibulida" onPress={testeGet} />
+            <Button style={styles.buttons} title="usoMisibulida" onPress={testeUso} />
         </View>
     );
 }

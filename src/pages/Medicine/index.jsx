@@ -5,16 +5,21 @@ import { ListarMedicamento } from '../../Services/medicamento';
 import ListItem from "../../Components/listItem";
 import ButtonAddMedicine from "../../Components/ButtonAddMedicine";
 import { ScrollView } from "react-native-gesture-handler";
+import { useIsFocused } from "@react-navigation/native";
 
 
 export default function Medicine({ navigation }) {
+    const isFocused = useIsFocused();
     const [medicamentos, setMedicamentos] = useState(null);
 
     useEffect(() => {
-        recarregar();
-    }, []);
+        if (isFocused) {
+            recarregar();
+        }
+    }, [isFocused]);
 
     async function recarregar() {
+        console.log("oi");
         let data;
         try {
             data = await ListarMedicamento();
@@ -25,10 +30,14 @@ export default function Medicine({ navigation }) {
     }
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>Todos os Medicamentos</Text>
             <ScrollView>
                 {medicamentos && medicamentos.data.map((remedio, index) => {
-                    return <ListItem remedio={remedio} atualizarLista={recarregar} key={index.toString()} />;
+                    return <ListItem 
+                        remedio={remedio} 
+                        navigation={navigation}
+                        atualizarLista={recarregar} 
+                        key={index.toString()} 
+                    />;
                 })}
             </ScrollView>
             <ButtonAddMedicine navigation={navigation} />

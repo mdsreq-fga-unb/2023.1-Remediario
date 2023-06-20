@@ -16,7 +16,8 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         width: '100%',
         borderRadius: 10,
-        alignItems: 'center',
+        alignContent: 'center',
+        justifyContent: 'space-between',
     },
     text: {
         color: '#FFF',
@@ -25,28 +26,23 @@ export const styles = StyleSheet.create({
     },
     text2: {
         color: '#FFF',
-        fontSize: 22,
+        fontSize: 18,
         fontWeight: 'bold',
-        marginRight: 10,
     },
     botao: {
-        borderRadius: 10,
-        padding: 5,
+        height: 40,
     },
     icon: {
         fontSize: 28,
         backgroundColor: 'red',
-        borderRadius: 10,
-        padding: 3,
+        height: 30,
+        paddingVertical: 2,
+        paddingHorizontal: 2,
+        borderRadius: 4,
+        height: 30,
     },
     miniIcon: {
-        fontSize: 25,
-        alignContent: 'center',
-        alignItems: 'center',
-        paddingBottom: 2,
-        paddingTop: 2,
-        marginEnd: 3,
-
+        fontSize: 20,
     },
     name: {
         alignItems: 'flex-start',
@@ -54,17 +50,17 @@ export const styles = StyleSheet.create({
     contentHours: {
         backgroundColor: '#006B65',
         flexDirection: 'row',
-        padding: 3,
-        borderRadius: 10,
-        justifyContent: 'flex-end',
+        paddingVertical: 2,
+        paddingHorizontal: 6,
+        borderRadius: 4,
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: 2,
+        height: 30,
     },
     alignEnd: {
         flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'flex-end',
-        width: '70%',
-        marginLeft: 'auto',
-
+        gap: 8,
     },
 
     progressBarContainer: {
@@ -75,15 +71,15 @@ export const styles = StyleSheet.create({
         marginLeft: 'auto',
     },
     progressBar: {
-        width: '80%',
-        height: 10,
+        width: '100%',
+        height: 8,
         borderRadius: 5,
-        backgroundColor: '#FFF',
+        backgroundColor: '#006B65',
     },
     progressBarText: {
-        width: '20%',
         marginTop: 5,
         color: '#FFF',
         fontSize: 16,
+        height: 20,
     },
 }); 

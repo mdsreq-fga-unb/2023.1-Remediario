@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { RemoverMedicamento } from '../../Services/medicamento';
 import { ProgressBar } from 'react-native-paper';
 
-export default function ListItem({ remedio, atualizarLista }) {
+export default function ListItem({ remedio, atualizarLista, navigation }) {
   let today = new Date(remedio.ultimoAlarme);
   let minutos = today.getMinutes();
   let horas = today.getHours();
@@ -16,28 +16,32 @@ export default function ListItem({ remedio, atualizarLista }) {
   let conta = estoque / dosagem;
   /*   console.log(conta, estoque, frequencia); */
 
-
   if (minutos < 10) {
     minutos = "0" + minutos;
   }
 
   async function remover() {
     try {
-      console.log(nome);
-      let value = await RemoverMedicamento(nome);
-      console.log(value);
+      await RemoverMedicamento(nome);
       atualizarLista(); // Chama a função para atualizar a lista de medicamentos
     } catch (e) {
       console.log(e);
     }
   }
+  
+  function redirect () {
+    navigation.navigate('Confirmacao', {
+        medicineName: nome,
+      });
+  }
+
+  function editMedicine() {
+  }
 
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={editMedicine}>
       <View style={styles.container2}>
-
-        <Text style={styles.text}>{nome}: </Text>
-
+        <Text style={styles.text}>{nome}</Text>
         <View style={styles.alignEnd}>
           <View style={styles.contentHours}>
             <Icon name='clock' color={'white'} style={styles.miniIcon} />
@@ -47,7 +51,6 @@ export default function ListItem({ remedio, atualizarLista }) {
             <Icon name='trash-can' color={'white'} style={styles.icon} />
           </TouchableOpacity>
         </View>
-
       </View>
 
       <ProgressBar
@@ -56,8 +59,8 @@ export default function ListItem({ remedio, atualizarLista }) {
         style={styles.progressBar}
       />
       <Text style={styles.progressBarText}>
-        {Math.trunc(conta)}/{dosagem}
+        {frequencia}/{estoque}
       </Text>
-    </View>
+    </TouchableOpacity>
   )
 }
