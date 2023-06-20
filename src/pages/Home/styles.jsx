@@ -5,14 +5,13 @@ export const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#161B1B',
         alignItems: 'center',
-        justifyContent: "center",
+        paddingTop: 80,
     },
-
     text: {
         color: '#FFF',
-        fontSize: 30,
+        fontSize: 26,
         fontWeight: 'bold',
-
-    }
+        marginBottom: 20,
+    },
 
 });

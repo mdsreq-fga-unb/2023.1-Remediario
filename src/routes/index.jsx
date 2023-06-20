@@ -8,7 +8,6 @@ import History from '../pages/History';
 import Medicine from '../pages/Medicine';
 import { createStackNavigator } from '@react-navigation/stack';
 import Confirmacao from '../pages/ConfirmationMedicine';
-import About from '../pages/About';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
 import AddMedicine from '../pages/AddMedicine/index';
@@ -22,9 +21,9 @@ const Stack = createStackNavigator();
 
 Notifications.setNotificationHandler({
     handleNotification: async () => ({
-      shouldShowAlert: true,
-      shouldPlaySound: true,
-      shouldSetBadge: false,
+        shouldShowAlert: true,
+        shouldPlaySound: true,
+        shouldSetBadge: false,
     }),
 })
 
@@ -45,12 +44,11 @@ function TabRoutes() {
                         iconName = 'prescription-bottle'; // Nome do ícone correspondente em FontAwesome5
                     } else if (route.name === 'Histórico') {
                         iconName = 'history';
-                    } else if (route.name === 'Editar Remedios' && isMedicineFocused) {
-                        iconName = 'pencil';
                     } else if (route.name === 'Teste BackEnd') {
                         iconName = 'pencil';
+                    } else if (route.name === 'Editar Remedios' && isMedicineFocused) {
+                        iconName = 'pencil';
                     }
-
                     if (route.name === 'Meus Remédios') {
                         return (
                             <FontAwesome5Icon name={iconName} color={color} size={sizeIcons - 5} />
@@ -66,6 +64,7 @@ function TabRoutes() {
                 tabBarStyle: [styles.tabBarStyle, styles.alignLeft],
                 tabBarShowLabel: false,
                 tabBarActiveTintColor: 'yellow', // Define a cor do ícone selecionado como amarelo
+                tabBarVisible: false, // Não mostrar a aba na barra de navegação
             })}
         >
             <Tab.Screen
@@ -137,23 +136,23 @@ export default function Routes() {
                 const url = await Linking.getInitialURL();
 
                 if (url != null) {
-                  return url;
+                    return url;
                 }
-      
+
                 // Handle URL from expo push notifications
                 const response = await Notifications.getLastNotificationResponseAsync();
 
                 return response?.notification.request.content.data.url;
-              },
+            },
             subscribe(listener) {
-                const onReceiveURL = ({url}) => listener(url);
+                const onReceiveURL = ({ url }) => listener(url);
 
                 // Listen to incoming links from deep linking
                 const eventListenerSubscription = Linking.addEventListener('url', onReceiveURL);
 
                 // Listen to expo push notifications
                 const subscription = Notifications.addNotificationResponseReceivedListener(response => {
-                const url = response.notification.request.content.data.url;
+                    const url = response.notification.request.content.data.url;
                     listener(url);
                 });
 

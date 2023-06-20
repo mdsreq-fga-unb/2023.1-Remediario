@@ -89,7 +89,7 @@ export default function Home() {
     }
     async function testeRemover(){
         try {
-            let value = await RemoverMedicamento(objectTeste1);
+            let value = await RemoverMedicamento(objectTeste1.nomeRemedio);
             console.log("Objeto: " + JSON.stringify(value) + " removido com sucesso");
         } catch (e) {
             console.log(e);
