@@ -74,7 +74,6 @@ export const styles = StyleSheet.create({
         width: '100%',
         height: 8,
         borderRadius: 5,
-        backgroundColor: '#006B65',
     },
     progressBarText: {
         marginTop: 5,

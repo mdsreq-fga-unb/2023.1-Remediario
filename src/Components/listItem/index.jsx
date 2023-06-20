@@ -11,8 +11,7 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
   let horas = today.getHours();
   let nome = remedio.nomeRemedio;
   let estoque = remedio.estoque;
-  let frequencia = remedio.frequencia;
-  let conta = estoque / estoque;
+  let progress = estoque / 10;
   /*   console.log(conta, estoque, frequencia); */
 
   if (minutos < 10) {
@@ -53,8 +52,8 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
       </View>
 
       <ProgressBar
-        progress={estoque}
-        color="#FF"
+        progress={progress}
+        color='#006B65'
         style={styles.progressBar}
       />
       <Text style={styles.progressBarText}>
