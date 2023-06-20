@@ -1,7 +1,7 @@
-import React from 'react';
-import { NavigationContainer, useIsFocused } from '@react-navigation/native';
+import React, { useState, useEffect } from 'react';
+import { NavigationContainer, useIsFocused, useLinking } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { StyleSheet, TouchableOpacity, Linking, Text } from 'react-native';
+import { TouchableOpacity, Linking, Text } from 'react-native';
 import Home from '../pages/Home';
 import TesteBackEnd from '../pages/TesteBackEnd';
 import History from '../pages/History';
@@ -11,18 +11,14 @@ import Confirmacao from '../pages/ConfirmationMedicine';
 import About from '../pages/About';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
-import AddMedicine from '../pages/AddRemedio/index';
+import AddMedicine from '../pages/AddMedicine/index';
 import * as Notifications from 'expo-notifications';
 import { styles } from './styles';
-import { schedulePushNotification } from '../Services/notification';
-import ConfirmationScreen from '../Components/ConfirmationScreen';
+import Header from '../Components/Header';
+import { schedulePushNotification } from '../../src/Services/notification'
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
-
-const medicineName = 'Remedio';
-const medicineTimer = 2;
-const medicineQuantity = 5;
 
 Notifications.setNotificationHandler({
     handleNotification: async () => ({
@@ -30,7 +26,7 @@ Notifications.setNotificationHandler({
       shouldPlaySound: true,
       shouldSetBadge: false,
     }),
-});
+})
 
 function TabRoutes() {
     const sizeIcons = 24; // Define o tamanho dos ícones como 24px
@@ -43,7 +39,7 @@ function TabRoutes() {
                     let iconName;
                     if (color !== 'yellow') color = 'white'; // Define a cor dos ícones não selecionados como branco (padrão)
 
-                    if (route.name === 'Home') {
+                    if (route.name === "Remédios do dia") {
                         iconName = 'white-balance-sunny';
                     } else if (route.name === 'Meus Remédios') {
                         iconName = 'prescription-bottle'; // Nome do ícone correspondente em FontAwesome5
@@ -72,31 +68,65 @@ function TabRoutes() {
                 tabBarActiveTintColor: 'yellow', // Define a cor do ícone selecionado como amarelo
             })}
         >
-            <Tab.Screen options={{ headerShown: false }} name="Home" component={Home} />
-            <Tab.Screen options={{ headerShown: false }} name="Meus Remédios" component={Medicine} />
-            <Tab.Screen options={{ headerShown: false }} name="Histórico" component={History} />
-            <Tab.Screen options={{ headerShown: false }} name="Adicionar remédio" component={AddMedicine} />
-            <Tab.Screen options={{ headerShown: false }} name="Teste BackEnd" component={TesteBackEnd} />
+            <Tab.Screen
+                options={{
+                    headerStyle: styles.header,
+                    headerTitle: () => <Header nomeTela="Remédios do dia"/>,
+                }}
+                name="Remédios do dia"
+                component={Home}
+            />
+             <Tab.Screen
+                options={{
+                    headerStyle: styles.header,
+                    headerTitle: () => <Header nomeTela="Meus Remédios"/>,
+                }}
+                name="Meus Remédios"
+                component={Medicine}
+            />
+             <Tab.Screen
+                options={{
+                    headerStyle: styles.header,
+                    headerTitle: () => <Header nomeTela="Histórico"/>,
+                }}
+                name="Histórico"
+                component={History}
+            />
+             <Tab.Screen
+                options={{
+                    headerStyle: styles.header,
+                    headerTitle: () => <Header nomeTela='Teste BackEnd'/>,
+                }}
+                name='Teste BackEnd'
+                component={TesteBackEnd}
+            />
         </Tab.Navigator>
     );
 }
 
 async function notification() {
     try {
-        await schedulePushNotification(medicineName,medicineTimer);
+        await schedulePushNotification({nomeRemedio: "dipironga", estoque: 10}, 2);
     } catch (error) {
         console.log(error);
     }
-};
+}
 
 export default function Routes() {
     return (
-        <NavigationContainer linking={{
+        <NavigationContainer 
+        linking={{
             prefixes: ['exp://192.168.42.152:19000/--/remediario', 'remediario://', 'com.remediario://'],
             config: {
                 screens: {
                     Confirmacao: {
-                        path: 'Confirmacao/:id'
+                        path: 'Confirmacao',
+                        parse: {
+                            medicineName: (medicineName) => decodeURIComponent(medicineName),
+                          },
+                            stringify: {
+                            medicineName: (medicineName) => encodeURIComponent(medicineName),
+                          },
                     }
                 }
             },
@@ -136,12 +166,7 @@ export default function Routes() {
         }}>
             <Stack.Navigator>
                 <Stack.Screen options={{ headerShown: false }} name="BottomTab" component={TabRoutes}/>
-                {/* <ConfirmationScreen/> */}
-                <Stack.Screen
-                    options={{ headerShown: false }}
-                    name='Confirmacao' component={Confirmacao}
-                    initialParams={{ medicineName: medicineName, medicineQuantity: medicineQuantity}}
-                />
+                <Stack.Screen options={{ headerShown: false }} name='Confirmacao' component={Confirmacao}/>
             </Stack.Navigator>
             <TouchableOpacity style={styles.button} onPress={async () => {await notification()}}>
                 <Text>Enviar notificação</Text>
