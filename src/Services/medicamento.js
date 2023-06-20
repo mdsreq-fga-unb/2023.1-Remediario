@@ -143,7 +143,7 @@ var usoMedicamento = async (nomeRemedio) => {
     console.log(e);
     return e;
   }
-
+  entregaDados(remedio);
   return remedio;
 };
 
