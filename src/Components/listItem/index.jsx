@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { RemoverMedicamento } from '../../Services/medicamento';
 import { ProgressBar } from 'react-native-paper';
 
-export default function ListItem({ remedio, atualizarLista }) {
+export default function ListItem({ remedio, atualizarLista, navigation }) {
   let today = new Date(remedio.ultimoAlarme);
   let minutos = today.getMinutes();
   let horas = today.getHours();
@@ -27,9 +27,13 @@ export default function ListItem({ remedio, atualizarLista }) {
       console.log(e);
     }
   }
+  function redirect () {
+    navigation.navigate('Confirmacao', {
+        medicineName: nome,
+      });
+}
 
   function editMedicine() {
-
   }
 
   return (

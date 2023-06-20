@@ -31,7 +31,7 @@ export default function DailyMedicine({ navigation }) {
         <View style={styles.container}>
             <ScrollView>
                 {medicamentos && medicamentos.data.map((remedio, index) => {
-                    return <ListItem remedio={remedio} atualizarLista={recarregar} key={index.toString()} />;
+                    return <ListItem remedio={remedio} navigation={navigation} atualizarLista={recarregar} key={index.toString()} />;
                 })}
             </ScrollView>
             <ButtonAddMedicine navigation={navigation} />
