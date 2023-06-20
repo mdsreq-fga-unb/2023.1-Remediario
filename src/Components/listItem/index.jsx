@@ -12,8 +12,7 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
   let nome = remedio.nomeRemedio;
   let estoque = remedio.estoque;
   let frequencia = remedio.frequencia;
-  let dosagem = remedio.dosagem;
-  let conta = estoque / dosagem;
+  let conta = frequencia / estoque;
   /*   console.log(conta, estoque, frequencia); */
 
   if (minutos < 10) {
@@ -28,7 +27,7 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
       console.log(e);
     }
   }
-  
+
   function redirect () {
     navigation.navigate('Confirmacao', {
         medicineName: nome,
