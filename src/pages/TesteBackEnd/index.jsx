@@ -98,14 +98,21 @@ export default function Home() {
         try {
             let response = await medicamentosDia();
             console.log("Resposta" + JSON.stringify(response));
-
         } catch (e) {
             console.log(e);
         }
     }
     async function testeGet(){
         try {
-            let response = await getMedicamento("dipironga");
+            let response = await getMedicamento("misibulida");
+            console.log("Resposta" + JSON.stringify(response));
+        } catch (e) {
+            console.log(e);
+        }
+    }
+    async function testeUso(){
+        try {
+            let response = await usoMedicamento("misibulida");
             console.log("Resposta" + JSON.stringify(response));
         } catch (e) {
             console.log(e);
@@ -119,7 +126,8 @@ export default function Home() {
             <Button style={styles.buttons} title="Deletar" onPress={testeDeletar} />
             <Button style={styles.buttons} title="Remover" onPress={testeRemover} />
             <Button style={styles.buttons} title="Listar Dia Atual" onPress={testeListarDiaAtual} />
-            <Button style={styles.buttons} title="get" onPress={testeGet} />
+            <Button style={styles.buttons} title="getMisibulida" onPress={testeGet} />
+            <Button style={styles.buttons} title="usoMisibulida" onPress={testeUso} />
         </View>
     );
 }

@@ -1,5 +1,6 @@
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import * as Notifications from "expo-notifications";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as Notifications from 'expo-notifications';
+
 
 //passa os dados do remedio
 export const entregaDados = async (prop) => {
@@ -9,7 +10,7 @@ export const entregaDados = async (prop) => {
     } catch (e) {
         console.log(e);
     }*/
-
+    
   let today = new Date();
   let nextDate = new Date(prop.ultimoAlarme);
 
