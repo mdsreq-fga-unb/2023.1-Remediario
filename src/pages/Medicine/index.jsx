@@ -40,7 +40,7 @@ export default function Medicine({ navigation }) {
                     />;
                 })}
             </ScrollView>
-            <ButtonAddMedicine navigation={navigation} />
+            <ButtonAddMedicine navigation={navigation} route={'AddMedicine'} />
         </View>
     )
 }

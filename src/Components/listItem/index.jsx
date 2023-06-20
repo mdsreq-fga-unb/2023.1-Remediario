@@ -12,7 +12,7 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
   let nome = remedio.nomeRemedio;
   let estoque = remedio.estoque;
   let frequencia = remedio.frequencia;
-  let conta = frequencia / estoque;
+  let conta = estoque / estoque;
   /*   console.log(conta, estoque, frequencia); */
 
   if (minutos < 10) {
@@ -53,12 +53,12 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
       </View>
 
       <ProgressBar
-        progress={conta}
+        progress={estoque}
         color="#FF"
         style={styles.progressBar}
       />
       <Text style={styles.progressBarText}>
-        {frequencia}/{estoque}
+        Comprimidos restantes: {estoque}
       </Text>
     </TouchableOpacity>
   )

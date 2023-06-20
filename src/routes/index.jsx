@@ -89,32 +89,8 @@ function TabRoutes() {
                 name="Histórico"
                 component={History}
             />
-             <Tab.Screen
-                options={{
-                    headerStyle: styles.header,
-                    headerTitle: () => <Header nomeTela='Teste BackEnd'/>,
-                }}
-                name='Teste BackEnd'
-                component={TesteBackEnd}
-            />
-            <Tab.Screen
-                options={{
-                    headerStyle: styles.header,
-                    headerTitle: () => <Header nomeTela='AddMedicine'/>,
-                }}
-                name='AddMedicine'
-                component={AddMedicine}
-            />
         </Tab.Navigator>
     );
-}
-
-async function notification() {
-    try {
-        await schedulePushNotification({nomeRemedio: "dipironga", estoque: 10}, 2);
-    } catch (error) {
-        console.log(error);
-    }
 }
 
 export default function Routes() {
@@ -172,10 +148,14 @@ export default function Routes() {
             <Stack.Navigator>
                 <Stack.Screen options={{ headerShown: false }} name="BottomTab" component={TabRoutes}/>
                 <Stack.Screen options={{ headerShown: false }} name='Confirmacao' component={Confirmacao}/>
+                <Stack.Screen
+                    options={{
+                        headerStyle: styles.header,
+                        headerTitle: () => <Header nomeTela='AddMedicine'/>,
+                    }}
+                    name='AddMedicine' component={AddMedicine}
+                />
             </Stack.Navigator>
-            <TouchableOpacity style={styles.button} onPress={async () => {await notification()}}>
-                <Text>Enviar notificação</Text>
-            </TouchableOpacity>
         </NavigationContainer>
     );
 }

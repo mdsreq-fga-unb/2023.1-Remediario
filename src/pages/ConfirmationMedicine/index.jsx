@@ -70,13 +70,14 @@ export default function ConfirmationMedicine({ route, navigation }) {
                         <Icon name="check" color="#FFF" size={40}/>
                     </TouchableOpacity>
                 </View>
-                <View style={styles.medicineUseContainer}>
-                    {medicineComponents}
-                </View>
             </View>
         </View>
     );
 };
+
+/*<View style={styles.medicineUseContainer}>
+    {medicineComponents}
+</View>*/
 
 //<TouchableOpacity style={styles.delayButton}>
 //  <Text style={styles.textDelayButton}>Adiar 5 minutos</Text>

@@ -37,16 +37,17 @@ export default function AddRemedio({navigation}) {
       ultimoAlarme: Horario,
       uso: [],
     }
+    
     try {
       await SalvarMedicamento(remedioOBJ);
       console.log("Medicamento Salvo");
+
+      setTimeout(() => {
+        navigation.navigate("Remédios do dia");
+      }, 1000);
     } catch (e) {
       console.log(e)
     }
-
-    setTimeout(() => {
-      navigation.navigate("Remédios do dia");
-    }, 1000);
   }
 
   return (
@@ -163,6 +164,7 @@ export default function AddRemedio({navigation}) {
                   style={styles.icon}
                 />
               </View>
+
               <View style={styles.dropdown2}>
                 <Picker
                   style={styles.dropdownPicker}

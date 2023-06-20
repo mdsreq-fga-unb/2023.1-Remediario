@@ -14,7 +14,6 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   pageContainer:{
-    paddingVertical: 20,
     gap: 8,
     backgrounColor: '#161B1B',
   },
@@ -29,13 +28,14 @@ export const styles = StyleSheet.create({
     color: 'white',
     marginBottom: 10,
     marginTop: 10,
-    marginLeft: 10,
+    paddingLeft: 10,
+    width: '100%',
     alignSelf: 'flex-start',
   },
   secondarylabel: {
     color: 'white',
-    marginLeft: 5,
-    marginRight: 5,
+    paddingLeft: 10,
+    paddingRight: 10,
     fontSize: 15,
   },
   input: {

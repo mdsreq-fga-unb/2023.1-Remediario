@@ -57,7 +57,7 @@ export default function Home() {
     //     ultimoAlarme: "23:00",
     //     uso: [],
     // };
-    async function testeSalvar(){
+    /*async function testeSalvar(){
         
         try {
             await SalvarMedicamento(objectTeste1);
@@ -68,7 +68,7 @@ export default function Home() {
         } catch (e) {
             console.log(e);
         }
-    }
+    }*/
     async function testeListar(){
         try {
             let valor = await ListarMedicamento();
