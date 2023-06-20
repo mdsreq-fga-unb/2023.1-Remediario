@@ -80,5 +80,6 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         flexWrap: 'wrap',
         gap: 8,
+        paddingHorizontal: 20,
     }
 });

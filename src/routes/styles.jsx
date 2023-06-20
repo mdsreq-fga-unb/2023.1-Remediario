@@ -11,4 +11,8 @@ export const styles = StyleSheet.create({
         alignItems: 'flex-start', // Alinha os ícones à esquerda
         justifyContent: 'flex-start', // Alinha os ícones ao topo
     },
+    header: {
+        backgroundColor: '#006B65',
+        height: 150,
+    }
 });

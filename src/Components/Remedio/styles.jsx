@@ -2,12 +2,10 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#1E1E1E',
+    backgroundColor: '#1B2020',
     padding: 10,
-    borderRadius: 8,
+    borderRadius: 4,
     marginBottom: 10,
-    marginLeft: 10,
-    marginRight: 10,
   },
   header: {
     flexDirection: 'row',
@@ -25,14 +23,23 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   optionBox: {
-    flexDirection: 'row',
+    flexDirection: 'column',
+    justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#006B65',
+    height: 50,
     padding: 8,
-    borderRadius: 999999999999,
+    borderRadius: 4,
     marginRight: 5,
+    gap: 4,
   },
-  optionText: {
+  dateHour: {
+    color: 'white',
+    marginRight: 5,
+    fontSize: 14,
+    fontWeight: 'bold',
+  },
+  dateDay: {
     color: 'white',
     marginRight: 5,
     fontSize: 10,
@@ -41,6 +48,14 @@ const styles = StyleSheet.create({
     fontSize: 10,
     color: 'white',
   },
+  dateContainer: {
+    flex: 1,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    flexDirection: 'row',
+    width: '100%',
+    gap: 2,
+  }
 });
 
 export { styles };
