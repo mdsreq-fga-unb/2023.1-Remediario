@@ -1,7 +1,7 @@
-site_name: MedicaCerto
+site_name: Remediário
 
-repo_name: "2023.1-MedicaCerto"
-repo_url: "https://github.com/mdsreq-fga-unb/2023.1-MedicaCerto"
+repo_name: "2023.1-Remediário"
+repo_url: "https://github.com/mdsreq-fga-unb/2023.1-Remediario"
 
 theme:
   name: material
@@ -56,7 +56,7 @@ nav:
 extra:
   social:
     - icon: fontawesome/brands/github-alt
-      link: https://github.com/mdsreq-fga-unb/2023.1-MedicaCerto
+      link: https://github.com/mdsreq-fga-unb/2023.1-Remediario
   footer: false
 
 markdown_extensions:
