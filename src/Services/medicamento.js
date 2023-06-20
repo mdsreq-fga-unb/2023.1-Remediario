@@ -102,15 +102,12 @@ var getMedicamento = async (nomeRemedio) => {
 var usoMedicamento = async (nomeRemedio) => {
   let remedio = await RemoverMedicamento(nomeRemedio);
   remedio = remedio[0];
-  console.log("Remedio" + JSON.stringify(remedio));
   let storage = await ListarMedicamento();
-  console.log(JSON.stringify(storage));
   let diaAtual = new Date();
 
   if (!remedio.uso) {
     remedio.uso = [];
   }
-  console.log(remedio[0]);
   remedio.uso.push(diaAtual);
   remedio.estoque -= remedio.dosagem;
 
@@ -146,7 +143,7 @@ var usoMedicamento = async (nomeRemedio) => {
     console.log(e);
     return e;
   }
-
+  entregaDados(remedio);
   return remedio;
 };
 
@@ -221,14 +218,12 @@ var medicamentosDia = async () => {
     let today = new Date(remedio.ultimoAlarme);
     let tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
-    console.log(today, tomorrow);
     while (today.getDate() < tomorrow.getDate()) {
       let index = result.data.findIndex(
         (nome) => nome.nomeRemedio === remedio.nomeRemedio
       );
 
       if (index === -1) {
-        console.log("oi");
         result.data.push({ ...remedio, qtd: 1 });
       } else {
         result.data[index].qtd++;

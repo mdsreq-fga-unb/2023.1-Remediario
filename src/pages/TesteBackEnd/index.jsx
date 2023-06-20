@@ -18,10 +18,10 @@ export default function Home() {
         dosagem: 3,
         estoque: 6,
         unidadeEstoque: "g",
-        frequencia: 5,
+        frequencia: 1,
         unidadeFrequencia: "horas",
         obs: "observacoes teste 1",
-        ultimoAlarme: "18:14",
+        ultimoAlarme: "02:32",
         uso: [],
     };
     objectTeste2 = {
