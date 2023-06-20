@@ -37,7 +37,7 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
   }
 
   return (
-    <TouchableOpacity style={styles.container} onPress={editMedicine}>
+    <TouchableOpacity style={styles.container} onPress={redirect}>
       <View style={styles.container2}>
         <Text style={styles.text}>{nome}</Text>
         <View style={styles.alignEnd}>

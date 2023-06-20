@@ -19,7 +19,6 @@ export default function Medicine({ navigation }) {
     }, [isFocused]);
 
     async function recarregar() {
-        console.log("oi");
         let data;
         try {
             data = await ListarMedicamento();

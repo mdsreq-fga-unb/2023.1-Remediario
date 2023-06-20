@@ -31,8 +31,9 @@
     "scheme": "remediario",
     "extra": {
       "eas": {
-        "projectId": "02afd25a-ab41-4bc3-9b68-57b2c04c16cf"
+        "projectId": "e3cf904d-6311-49d8-8cb6-8246698de005"
       }
-    }
+    },
+    "owner": "luanmqqqq"
   }
 }
