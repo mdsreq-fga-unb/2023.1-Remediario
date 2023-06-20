@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { styles } from './styles';
 import { medicamentosDia } from '../../Services/medicamento';
 import ListItem from "../../Components/listItem";
@@ -34,7 +34,7 @@ export default function DailyMedicine({ navigation }) {
                     return <ListItem remedio={remedio} navigation={navigation} atualizarLista={recarregar} key={index.toString()} />;
                 })}
             </ScrollView>
-            <ButtonAddMedicine navigation={navigation} />
+            <ButtonAddMedicine navigation={navigation} route={'AddMedicine'} />
         </View>
     );
 }
