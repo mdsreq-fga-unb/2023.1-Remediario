@@ -19,7 +19,7 @@ export default function AddRemedio({ navigation }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [observacoes, setObservacoes] = useState('');
   const [Horario, setHorario] = useState('');
-  const hours = Array.from({ length: 23 }, (_, index) => index + 1);
+  const hours = Array.from({ length: 23 }, (_, index) => index + 0);
   const minutes = ['00', '15', '30', '45'];
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
