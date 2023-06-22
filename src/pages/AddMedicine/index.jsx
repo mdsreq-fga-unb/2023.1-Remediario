@@ -198,22 +198,28 @@ export default function AddRemedio({ navigation }) {
             <Text style={styles.label}>Início do Alarme</Text>
             <View style={styles.ContainerDropdown}>
               <View style={styles.dropdown}>
-                <Picker
-                  style={styles.dropdownPicker}
-                  selectedValue={Horario}
-                  onValueChange={(itemValue) => setHorario(itemValue)}
-                  mode="dialog"
-                >
-                  {hours.map((hour) =>
-                    minutes.map((minute) => (
-                      <Picker.Item
-                        key={`${hour}:${minute}`}
-                        label={`${hour}:${minute}`}
-                        value={`${hour}:${minute}`}
-                      />
-                    ))
-                  )}
-                </Picker>
+              <Picker
+  style={styles.dropdownPicker}
+  selectedValue={Horario}
+  onValueChange={(itemValue) => setHorario(itemValue)}
+  mode="dialog"
+>
+  {hours.map((hour) =>
+    minutes.map((minute) => {
+      const formattedHour = hour === 0 ? '00' : hour < 10 ? `0${hour}` : hour;
+      const formattedMinute = minute;
+
+      return (
+        <Picker.Item
+          key={`${formattedHour}:${formattedMinute}`}
+          label={`${formattedHour}:${formattedMinute}`}
+          value={`${formattedHour}:${formattedMinute}`}
+        />
+      );
+    })
+  )}
+</Picker>
+
                 <Icon name={isDropdownOpen ? 'angle-up' : 'angle-down'} style={styles.icon} />
               </View>
             </View>
