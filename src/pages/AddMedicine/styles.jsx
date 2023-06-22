@@ -48,9 +48,22 @@ export const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     width: width - 20,
     color: 'white',
+    
   },
   textInput: {
     color: 'white'
+  },
+  textInput2: {
+    flex: 1,
+    backgroundColor: '#1B2020',
+    borderRadius: 8,
+    borderColor: 'white',
+    borderWidth: 1,
+    marginLeft: 5,
+    marginRight: 5,
+    maxWidth: 90,
+    borderTopStartRadius: 8,
+    borderTopEndRadius: 8,
   },
   ContainerDropdown: {
     flexDirection: 'row',

@@ -1,32 +1,46 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, Button} from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { styles } from './styles';
 import { TextInput } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import BotaoSalvar from '../../Components/Salvar';
-import { SalvarMedicamento} from '../../Services/medicamento';
+import { SalvarMedicamento } from '../../Services/medicamento';
 
-export default function AddRemedio({navigation}) {
+export default function AddRemedio({ navigation }) {
   const [remedio, setRemedio] = useState('');
   const [dosagem, setDosagem] = useState('');
-  const [quantidade, setQuantidade] = useState(1);
-  const [quantidade2, setQuantidade2] = useState(1);
+  const [quantidade, setQuantidade] = useState('');
+  const [quantidade2, setQuantidade2] = useState('');
   const [unidade, setUnidade] = useState('comprimidos');
-  const [intervalo, setIntervalo] = useState(1);
+  const [intervalo, setIntervalo] = useState('1');
   const [unidadeIntervalo, setUnidadeIntervalo] = useState('horas');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [observacoes, setObservacoes] = useState('');
-  const [Horario, setHorario]= useState('');
+  const [Horario, setHorario] = useState('');
   const hours = Array.from({ length: 23 }, (_, index) => index + 1);
-  const minutes = ["00", "15", "30", "45"];
+  const minutes = ['00', '15', '30', '45'];
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  async function Save (){
-    remedioOBJ = {
+  const handleQuantidadeChange = (text) => {
+    // Verificar se o valor inserido é numérico
+    if (/^\d*$/.test(text)) {
+      setQuantidade(text);
+    }
+  };
+
+  const handleQuantidade2Change = (text) => {
+    // Verificar se o valor inserido é numérico
+    if (/^\d*$/.test(text)) {
+      setQuantidade2(text);
+    }
+  };
+
+  async function Save() {
+    const remedioOBJ = {
       nomeRemedio: remedio,
       dosagem: quantidade,
       estoque: quantidade2,
@@ -36,17 +50,17 @@ export default function AddRemedio({navigation}) {
       obs: observacoes,
       ultimoAlarme: Horario,
       uso: [],
-    }
-    
+    };
+
     try {
       await SalvarMedicamento(remedioOBJ);
-      console.log("Medicamento Salvo");
+      console.log('Medicamento Salvo');
 
       setTimeout(() => {
-        navigation.navigate("Remédios do dia");
+        navigation.navigate('Remédios do dia');
       }, 1000);
     } catch (e) {
-      console.log(e)
+      console.log(e);
     }
   }
 
@@ -56,37 +70,31 @@ export default function AddRemedio({navigation}) {
         <View style={styles.container}>
           <View style={styles.container2}>
             <Text style={styles.label}>Nome do Remédio</Text>
-            <TextInput style={[styles.input, styles.textInput]}
+            <TextInput
+              style={[styles.input, styles.textInput]}
               value={remedio}
               onChangeText={setRemedio}
               placeholder="Digite o nome do remédio"
-              placeholderTextColor="white" 
-              textColor='white'
+              placeholderTextColor="white"
+              textColor="white"
               theme={{
                 roundness: 0,
               }}
             />
           </View>
-            
-        <View style={styles.container2}>
-        <Text style={styles.label}>Dosagem</Text>
-          <View style={styles.ContainerDropdown}>
-            <View style={styles.dropdown}>
-              <Picker
-                style={styles.dropdownPicker}
-                selectedValue={quantidade}
-                onValueChange={(itemValue) => setQuantidade(itemValue)}
-                mode="dialog"
-              >
-                  {Array.from({ length: 1000 }, (_, index) => (
-                    <Picker.Item key={index} label={`${index + 1}`} value={index + 1} />
-                  ))}
-                </Picker>
-                <Icon
-                  name={isDropdownOpen ? 'angle-up' : 'angle-down'}
-                  style={styles.icon}
+
+          <View style={styles.container2}>
+            <Text style={styles.label}>Dosagem</Text>
+            <View style={styles.ContainerDropdown}>
+      
+                <TextInput
+                  style={styles.textInput2}
+                  value={quantidade}
+                  onChangeText={handleQuantidadeChange}
+                  keyboardType="numeric"
+                  textColor="white"
                 />
-              </View>
+        
               <View style={styles.dropdown2}>
                 <Picker
                   style={styles.dropdownPicker}
@@ -99,10 +107,7 @@ export default function AddRemedio({navigation}) {
                   <Picker.Item label="ml" value="ml" />
                   <Picker.Item label="mg" value="mg" />
                 </Picker>
-                <Icon
-                  name={isDropdownOpen ? 'angle-up' : 'angle-down'}
-                  style={styles.icon}
-                />
+                <Icon name={isDropdownOpen ? 'angle-up' : 'angle-down'} style={styles.icon} />
               </View>
 
               <Text style={styles.secondarylabel}>por dosagem</Text>
@@ -120,10 +125,7 @@ export default function AddRemedio({navigation}) {
                     <Picker.Item key={index} label={`${index + 1}`} value={index + 1} />
                   ))}
                 </Picker>
-                <Icon
-                  name={isDropdownOpen ? 'angle-up' : 'angle-down'}
-                  style={styles.icon}
-                />
+                <Icon name={isDropdownOpen ? 'angle-up' : 'angle-down'} style={styles.icon} />
               </View>
               <View style={styles.dropdown2}>
                 <Picker
@@ -136,34 +138,23 @@ export default function AddRemedio({navigation}) {
                   <Picker.Item label="horas" value="horas" />
                   <Picker.Item label="minutos" value="minutos" />
                 </Picker>
-                <Icon
-                  name={isDropdownOpen ? 'angle-up' : 'angle-down'}
-                  style={styles.icon}
-                />
+                <Icon name={isDropdownOpen ? 'angle-up' : 'angle-down'} style={styles.icon} />
               </View>
             </View>
           </View>
-            
-          
+
           <View style={styles.container2}>
-          <Text style={styles.label}>Quantidade Total</Text>
+            <Text style={styles.label}>Quantidade Total</Text>
             <View style={styles.ContainerDropdown}>
-              <View style={styles.dropdown}>
-                <Picker
-                  style={styles.dropdownPicker}
-                  selectedValue={quantidade2}
-                  onValueChange={(itemValue) => setQuantidade2(itemValue)}
-                  mode="dialog"
-                >
-                  {Array.from({ length: 1000 }, (_, index) => (
-                    <Picker.Item key={index} label={`${index + 1}`} value={index + 1} />
-                  ))}
-                </Picker>
-                <Icon
-                  name={isDropdownOpen ? 'angle-up' : 'angle-down'}
-                  style={styles.icon}
+             
+                <TextInput
+                  style={styles.textInput2}
+                  value={quantidade2}
+                  onChangeText={handleQuantidade2Change}
+                  keyboardType="numeric"
+                  textColor="white"
                 />
-              </View>
+         
 
               <View style={styles.dropdown2}>
                 <Picker
@@ -176,21 +167,16 @@ export default function AddRemedio({navigation}) {
                   <Picker.Item label="g" value="g" />
                   <Picker.Item label="ml" value="ml" />
                   <Picker.Item label="mg" value="mg" />
-                </Picker>  
-                <Icon
-                  name={isDropdownOpen ? 'angle-up' : 'angle-down'}
-                  style={styles.icon}
-                />
+                </Picker>
+                <Icon name={isDropdownOpen ? 'angle-up' : 'angle-down'} style={styles.icon} />
               </View>
 
               <Text style={styles.secondarylabel}>no total</Text>
             </View>
           </View>
-          
-          
-            
+
           <View style={styles.container2}>
-          <Text style={styles.label}>Observações</Text>
+            <Text style={styles.label}>Observações</Text>
             <TextInput
               style={styles.input}
               value={observacoes}
@@ -199,7 +185,7 @@ export default function AddRemedio({navigation}) {
               multiline
               placeholderTextColor="white"
               underlineColorAndroid="transparent"
-              textColor='white'
+              textColor="white"
               shadowColor="transparent"
               autoCompleteType="off"
               theme={{
@@ -207,40 +193,37 @@ export default function AddRemedio({navigation}) {
               }}
             />
           </View>
-          
+
           <View style={styles.container2}>
             <Text style={styles.label}>Início do Alarme</Text>
             <View style={styles.ContainerDropdown}>
               <View style={styles.dropdown}>
-              <Picker
-                style={styles.dropdownPicker}
-                selectedValue={Horario}
-                onValueChange={(itemValue) => setHorario(itemValue)}
-                mode="dialog"
-              >
-                {hours.map((hour) =>
-                  minutes.map((minute) => (
-                    <Picker.Item
-                      key={`${hour}:${minute}`}
-                      label={`${hour}:${minute}`}
-                      value={`${hour}:${minute}`}
-                    />
-                  ))
-                )}
-              </Picker>
-                <Icon
-                  name={isDropdownOpen ? 'angle-up' : 'angle-down'}
-                  style={styles.icon}
-                />
+                <Picker
+                  style={styles.dropdownPicker}
+                  selectedValue={Horario}
+                  onValueChange={(itemValue) => setHorario(itemValue)}
+                  mode="dialog"
+                >
+                  {hours.map((hour) =>
+                    minutes.map((minute) => (
+                      <Picker.Item
+                        key={`${hour}:${minute}`}
+                        label={`${hour}:${minute}`}
+                        value={`${hour}:${minute}`}
+                      />
+                    ))
+                  )}
+                </Picker>
+                <Icon name={isDropdownOpen ? 'angle-up' : 'angle-down'} style={styles.icon} />
               </View>
             </View>
           </View>
 
-            <BotaoSalvar onPress={Save}/>
-            {/* <Button onPress={Save} title='Salvar'/> */}
-          
+          <BotaoSalvar onPress={Save} />
+          {/* <Button onPress={Save} title='Salvar'/> */}
         </View>
       </View>
     </KeyboardAwareScrollView>
   );
 }
+
