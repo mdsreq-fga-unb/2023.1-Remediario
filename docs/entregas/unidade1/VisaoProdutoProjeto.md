@@ -176,7 +176,22 @@ Levando em conta que o processo de desenvolvimento escolhido foi ágil, também 
 
 ### 5.1. Unidade 1
 
-Na Unidade 1 tivemos contato com o que é realmente a Engenharia de Requisitos. Tivemos um maior entendimento do papel dos requisitos no projeto e como eles devem ser trabalhados durante todo o processo, com todas as suas atividades fixas e as suas diferentes abordagens, dependendo do contexto do projeto.
+Na Unidade 1 tivemos contato com o que é realmente a Engenharia de Requisitos. Então, tivemos um maior entendimento do papel dos requisitos no projeto e como eles devem ser trabalhados durante todo o processo, com todas as suas atividades fixas, as suas diferentes abordagens, seus valores, seus princípios que podem variar de acordo com o contexto do projeto. 
+
+Ademais, tivemos um maior entendimento em relação as abordagens de desenvolvimento de software, os tipos de ciclos de vida  e os processos de desenvolvimento existentes. Logo após, utilizamos esse conhecimento adquirido para escolher um processo para o desenvolvimento do nosso produto juntamente com alguns critérios apresentados em sala.
+
+### 5.2. Unidade 2
+
+Nesta unidade foram apresentados questões sócio-técnicas e tipos de regras de negócio que são fatores que devem ser levados em consideração quando estamos tratando de requisitos.
+Além disso, foi discutido mais a fundo o que de fato é um requisito, quais são os tipos de requisitos e suas características, afunilando então em como deve ser feita as suas declarações.
+
+Também foram apresentadas as atividades de engenharia de requisitos, com todas as suas particularidades como: técnicas associadas e seus devidos resultados. Tais atividades nos guiaram a produzir diversos documentos e soluções que nos auxiliam no desenvolvimento do projeto.
+
+### 5.3. Unidade 3
+
+Em relação a unidade 3 estamos o SAFe entendendo alguns pontos importantes do framework e também seu meta-modelo de requisitos. Ademais, desenvolvemos alguns artefatos como o PBB e o BDD que nos ajudaram na construção e refinamento do product backlog.
+
+Comparando-se essa unidade com as demais, conseguimos perceber que foi uma unidade que tivemos a oportunidade de colocar em prática todas os métodos e modelos estudados anteriormente, fixando ainda mais o conhecimento. Tal fato nos ajudou a desenvolver o MVP1 e a oferecer ao nosso cliente um aplicativo que possua valor de mercado.
 
 ## 6 REFERÊNCIAS BIBLIOGRÁFICAS
 
