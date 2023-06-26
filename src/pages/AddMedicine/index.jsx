@@ -21,6 +21,8 @@ export default function AddRemedio({ navigation }) {
   const [Horario, setHorario] = useState('');
   const hours = Array.from({ length: 23 }, (_, index) => index + 0);
   const minutes = ['00', '15', '30', '45'];
+  const [error, setError] = useState('');
+
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
@@ -40,6 +42,23 @@ export default function AddRemedio({ navigation }) {
   };
 
   async function Save() {
+    if (!remedio || !quantidade || !quantidade2) {
+      let errorMessage = 'Preencha os seguintes campos obrigatórios:';
+      if (!remedio) {
+        errorMessage += ' Nome do Remédio,';
+      }
+      if (!quantidade) {
+        errorMessage += ' Dosagem,';
+      }
+      if (!quantidade2) {
+        errorMessage += ' Quantidade Total,';
+      }
+      errorMessage = errorMessage.slice(0, -1); // Remove a última vírgula
+
+      setError(errorMessage);
+      return;
+    }
+
     const remedioOBJ = {
       nomeRemedio: remedio,
       dosagem: quantidade,
@@ -224,7 +243,7 @@ export default function AddRemedio({ navigation }) {
               </View>
             </View>
           </View>
-
+          {error ? <Text style={styles.errorText}>{error}</Text> : null}
           <BotaoSalvar onPress={Save} />
           {/* <Button onPress={Save} title='Salvar'/> */}
         </View>
