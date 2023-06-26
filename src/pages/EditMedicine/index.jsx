@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text } from "react-native";
 import { styles } from './styles';
 import { TextInput } from "react-native-paper";
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 export default function EditMedicine({remedio}) {
     let today = new Date(remedio.ultimoAlarme);
@@ -13,6 +14,7 @@ export default function EditMedicine({remedio}) {
     let conta = estoque / frequencia;
     let dosagem = remedio.dosagem;
     let unidade = remedio.unidade;
+    
 
     return (
         <KeyboardAwareScrollView contentContainerStyle={styles.scrollContainer}>

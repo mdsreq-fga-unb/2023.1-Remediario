@@ -6,6 +6,7 @@ import Home from '../pages/Home';
 import TesteBackEnd from '../pages/TesteBackEnd';
 import History from '../pages/History';
 import Medicine from '../pages/Medicine';
+import EditMedicine from '../pages/EditMedicine';
 import { createStackNavigator } from '@react-navigation/stack';
 import Confirmacao from '../pages/ConfirmationMedicine';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -88,6 +89,14 @@ function TabRoutes() {
                 }}
                 name="Histórico"
                 component={History}
+            />
+            <Tab.Screen
+                options={{
+                    headerStyle: styles.header,
+                    headerTitle: () => <Header nomeTela="Editar Remedios"/>,
+                }}
+                name="Editar Remedios"
+                component={EditMedicine}
             />
         </Tab.Navigator>
     );
