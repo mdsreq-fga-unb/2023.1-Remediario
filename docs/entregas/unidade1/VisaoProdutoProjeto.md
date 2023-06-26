@@ -111,6 +111,7 @@ A equipe deverá ter uma comunicação periódica como evidenciado na tabela:
 | Alteração do escopo                 | Definição de um escopo muito grande se tornando a sua execução inviável                   | Não subestimar a quantidade de funcionalidades que podem ser entregues em um ciclo     | Revisão do backlog e do planejamento dos ciclos                       |
 | Baixo comprometimento da equipe     | Baixo rendimento dos membros nas entregas ao longo do projeto                             | Manter um alinhamento de todos os membros com as demandas das atividades realizadas    | Reatribuição das atividades entre os demais membros                   |
 | Planejamento ruim                   | Planejamento com definição de datas não condizentes com o contexto da equipe e do projeto | Alinhamento da equipe com os prazos estabelecidos durante todo o contexto do projeto   | Revisão do backlog e do planejamento dos ciclos                       |
+| Falta de comunicação da equipe      | Falta de conversa entre os membros da equipe sobre determinados tópicos                   | Reforçar a importância da comunicação durante o andamento do projeto, e pontuar as falhas para não acontecerem mais | Encorajar a comunicação e estabelecer uma cultura de comunicação |
 
 ### 2.5. Critérios de Replanejamento
 
@@ -203,3 +204,4 @@ Uso de medicamentos de forma incorreta: <a href="http://www.conselho.saude.gov.b
 | -------- | ------ | ------------------ | --------------------- |
 | 24/04/23 | 1.0    | Criação do arquivo | Júlio, Luan e Rodrigo |
 | 25/04/23 | 1.1    | Correção unidade 1 |                       |
+| 26/06/23 | 1.2    |                    | Mateus de Almeida     |
