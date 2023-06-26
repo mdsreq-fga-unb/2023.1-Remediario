@@ -1,5 +1,5 @@
-import React from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+import React, { useState } from 'react';
+import { View, Text, TouchableOpacity, Alert } from 'react-native';
 import { styles } from './styles';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { RemoverMedicamento } from '../../Services/medicamento';
@@ -12,16 +12,33 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
   let nome = remedio.nomeRemedio;
   let estoque = remedio.estoque;
   let progress = estoque / 10;
-  /*   console.log(conta, estoque, frequencia); */
 
   if (minutos < 10) {
     minutos = "0" + minutos;
   }
 
+  const confirmarRemocao = () => {
+    Alert.alert(
+      'Confirmar Remoção',
+      `Tem certeza que deseja remover o medicamento ${nome}?`,
+      [
+        {
+          text: 'Cancelar',
+          style: 'cancel',
+        },
+        {
+          text: 'Confirmar',
+          onPress: remover,
+        },
+      ],
+      { cancelable: false }
+    );
+  };
+
   async function remover() {
     try {
       await RemoverMedicamento(nome);
-      atualizarLista(); // Chama a função para atualizar a lista de medicamentos
+      atualizarLista();
     } catch (e) {
       console.log(e);
     }
@@ -29,11 +46,12 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
 
   function redirect () {
     navigation.navigate('Confirmacao', {
-        medicineName: nome,
-      });
+      medicineName: nome,
+    });
   }
 
   function editMedicine() {
+    // Função para editar o medicamento
   }
 
   return (
@@ -45,7 +63,7 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
             <Icon name='clock' color={'white'} style={styles.miniIcon} />
             <Text style={styles.text2}>{horas}:{minutos}</Text>
           </View>
-          <TouchableOpacity style={styles.botao} onPress={remover}>
+          <TouchableOpacity style={styles.botao} onPress={confirmarRemocao}>
             <Icon name='trash-can' color={'white'} style={styles.icon} />
           </TouchableOpacity>
         </View>
@@ -60,5 +78,5 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
         Comprimidos restantes: {estoque}
       </Text>
     </TouchableOpacity>
-  )
+  );
 }
