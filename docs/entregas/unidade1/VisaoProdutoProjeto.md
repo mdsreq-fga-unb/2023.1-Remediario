@@ -200,8 +200,8 @@ Uso de medicamentos de forma incorreta: <a href="http://www.conselho.saude.gov.b
 
 ## Historico de revisão
 
-| Data     | Versão | Descrição          | Autor                 |
-| -------- | ------ | ------------------ | --------------------- |
-| 24/04/23 | 1.0    | Criação do arquivo | Júlio, Luan e Rodrigo |
-| 25/04/23 | 1.1    | Correção unidade 1 |                       |
-| 26/06/23 | 1.2    |                    | Mateus de Almeida     |
+| Data     | Versão | Descrição             | Autor                 |
+| -------- | ------ | --------------------- | --------------------- |
+| 24/04/23 | 1.0    | Criação do arquivo    | Júlio, Luan e Rodrigo |
+| 25/04/23 | 1.1    | Correção unidade 1    |                       |
+| 26/06/23 | 1.2    | Unidade 2, 3 e riscos | Mateus de Almeida     |
