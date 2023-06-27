@@ -183,7 +183,7 @@ CASO VÁLIDO:
         2. Quando o relógio marca 00:00
         3. Então o sistema atualiza a lista de medicamentos para o dia atual
 
-#### 1.8.1. Critério de Aceitação: Essa lista deve conter o nome e o horário que eu tenho que tomar cada medicamento no dia.
+#### 1.8.2. Critério de Aceitação: Essa lista deve conter o nome e o horário que eu tenho que tomar cada medicamento no dia.
 
 CASO VÁLIDO:
 
@@ -529,7 +529,7 @@ CASO VÁLIDO:
         3. Então o sistema deve exibir as informações relevantes de cada remédio tomado, incluindo o nome do medicamento e a data em que foi tomado
  
 
-#### 1.14.4. Critério de Aceitação: O sistema deve manter a integridade do registro, garantindo que as informações registradas não sejam perdidas ou corrompidas.
+#### 1.14.5. Critério de Aceitação: O sistema deve manter a integridade do registro, garantindo que as informações registradas não sejam perdidas ou corrompidas.
 
 CASO VÁLIDO:
 
