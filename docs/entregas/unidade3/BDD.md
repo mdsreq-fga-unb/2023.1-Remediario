@@ -303,3 +303,247 @@ CASO VÁLIDO:
         1. Dado que o usuário possui um medicamento cadastrado com uma certa quantidade de dosagens
         2. Quando o sistema calcular a quantidade restante de dosagens
         3. Então o sistema deve exibir o valor correto de dosagens restantes
+
+### 1.11. **User Story: Eu como usuário quero visualizar um temporizador em contagem regressiva após confirmar na tela de confirmação para saber quando devo tomar minha próxima dose**
+
+#### 1.11.1. Critério de Aceitação: Após confirmar na tela de confirmação para tomar a dose do medicamento, o usuário na tela de meus remédios e remédio dos dia deve ver uma tela que exibe um temporizador em contagem regressiva.
+
+CASO VÁLIDO:
+
+    Cenário - Exibição do temporizador após confirmação para tomar a dose
+        1. Dado que o usuário confirmou a tomada da dose na tela de confirmação
+        2. Quando o usuário estiver na tela "Meus Remédios" ou "Remédios do Dia"
+        3. Então o sistema deve exibir um temporizador em contagem regressiva para a próxima dose do medicamento
+
+
+#### 1.11.2. Critério de Aceitação: O temporizador deve ser claramente visível para o usuário e exibido de forma intuitiva.
+
+CASO VÁLIDO:
+
+    Cenário - Visibilidade e exibição intuitiva do temporizador
+        1 .Dado que o usuário está visualizando o temporizador em contagem regressiva
+        2. Quando o usuário olhar para a tela
+        3. Então o temporizador deve ser claramente visível e exibido de forma intuitiva, sem confundir ou obstruir a informação
+
+
+#### 1.11.3. Critério de Aceitação: O tempo exibido no temporizador deve corresponder ao intervalo de tempo restante até a próxima dose.
+
+CASO VÁLIDO:
+
+    Cenário - Tempo correspondente ao intervalo de tempo restante no temporizador
+        1. Dado que o usuário tem uma próxima dose programada para daqui a 2 horas
+        2. Quando o usuário visualizar o temporizador
+        3. Então o tempo exibido no temporizador deve ser de 2 horas, contando regressivamente até a próxima dose
+
+
+#### 1.11.4. Critério de Aceitação: O temporizador deve ser atualizado em tempo real, mostrando a contagem regressiva de forma precisa e consistente.
+
+CASO VÁLIDO:
+
+    Cenário - Atualização em tempo real do temporizador
+        1. Dado que o usuário está visualizando o temporizador em contagem regressiva
+        2. Quando o tempo decorrido desde a visualização do temporizador aumentar
+        3. Então o temporizador deve ser atualizado em tempo real, mostrando a contagem regressiva de forma precisa e consistente
+ 
+
+#### 1.11.5. Critério de Aceitação: O sistema deve considerar eventuais atrasos ou adiantamentos na administração da dose e ajustar o temporizador de acordo.
+
+CASO VÁLIDO:
+
+    Cenário - Ajuste do temporizador para acomodar atrasos ou adiantamentos na administração da dose
+        1. Dado que o usuário possui uma próxima dose programada para daqui a 4 horas
+        2. E o usuário adianta a administração da dose em 30 minutos
+        Quando o usuário visualizar o temporizador
+        3. Então o tempo exibido no temporizador deve ser de 3 horas e 30 minutos, considerando o adiantamento na administração da dose
+
+
+### 1.12. **User Story: Eu como usuário quero buscar os medicamentos por nome para saber quando devo tomá-los.**
+
+#### 1.12.1. Critério de Aceitação:  O usuário deve ter a opção de realizar uma busca por nome de medicamento.
+
+CASO VÁLIDO:
+
+    Cenário - Opção de busca por nome de medicamento
+        1. Dado que o usuário está na tela de busca
+        2. Quando o usuário selecionar a opção de busca por nome de medicamento
+        3. Então o sistema deve disponibilizar um campo de busca para o usuário inserir o nome do medicamento desejado
+
+
+#### 1.12.2. Critério de Aceitação: A funcionalidade de busca por nome deve ser facilmente acessível e visível para o usuário.
+
+CASO VÁLIDO:
+
+    Cenário - Acessibilidade e visibilidade da funcionalidade de busca por nome
+        1. Dado que o usuário está na tela principal do aplicativo
+        2. Quando o usuário procurar pela funcionalidade de busca por nome
+        3. Então a funcionalidade de busca por nome deve ser facilmente acessível e visível, seja por um ícone de busca ou outro elemento claramente identificável
+
+
+#### 1.12.3. Critério de Aceitação: O usuário deve ser capaz de inserir o nome do medicamento na barra de busca.
+
+CASO VÁLIDO:
+
+    Cenário - Inserção do nome do medicamento na barra de busca
+        1. Dado que o usuário está na tela de busca por nome de medicamento
+        2. Quando o usuário digitar o nome do medicamento desejado na barra de busca
+        3. Então o sistema deve permitir a inserção do nome do medicamento na barra de busca
+
+
+#### 1.12.4. Critério de Aceitação: O sistema deve retornar os resultados da busca de forma precisa e relevante, exibindo os medicamentos que correspondem ao nome pesquisado.
+
+CASO VÁLIDO:
+
+    Cenário - Resultados precisos e relevantes da busca por nome de medicamento
+        1. Dado que o usuário inseriu o nome de um medicamento na barra de busca
+        2. Quando o usuário iniciar a busca
+        3. Então o sistema deve retornar os resultados da busca de forma precisa e relevante, exibindo os medicamentos que correspondem ao nome pesquisado
+
+
+#### 1.12.5. Critério de Aceitação: Os resultados da busca devem incluir informações relevantes sobre os medicamentos, como nome, dosagem e etc.
+
+CASO VÁLIDO:
+
+    Cenário - Informações relevantes nos resultados da busca por nome de medicamento
+        1. Dado que o usuário realizou uma busca por nome de medicamento
+        2. Quando o sistema retornar os resultados da busca
+        3. Então os resultados da busca devem incluir informações relevantes sobre os medicamentos, como nome, dosagem, etc.
+
+
+#### 1.12.6. Critério de Aceitação: O sistema deve permitir que o usuário clique em um medicamento nos resultados da busca para visualizar mais detalhes sobre ele.
+CASO VÁLIDO:
+
+    Cenário - Visualização de detalhes de um medicamento nos resultados da busca
+        1. Dado que o usuário realizou uma busca por nome de medicamento
+        2. Quando o sistema retornar os resultados da busca e o usuário selecionar um medicamento nos resultados
+        3. Então o sistema deve permitir que o usuário clique em um medicamento nos resultados da busca para visualizar mais detalhes sobre ele
+
+
+#### 1.12.7. Critério de Aceitação:  Caso nenhum medicamento corresponda ao nome pesquisado, o sistema deve fornecer um feedback claro ao usuário, informando que nenhum resultado foi encontrado.
+
+CASO VÁLIDO:
+
+    Cenário - Feedback de nenhum resultado encontrado na busca por nome de medicamento
+        1. Dado que o usuário realizou uma busca por nome de medicamento e nenhum medicamento corresponde ao nome pesquisado
+        2. Quando o sistema retornar os resultados da busca
+        3. Então o sistema deve fornecer um feedback claro ao usuário, informando que nenhum resultado foi encontrado
+
+### 1.13. **User Story: Eu como usuário quero enviar uma mensagem programada para uma pessoa quando tiver poucas dosagens disponíveis para solicitar novos medicamentos antes de acabar.**
+
+#### 1.13.1. Critério de Aceitação: O usuário deve ter a opção de programar o envio de uma mensagem para uma pessoa específica quando tiver poucas dosagens de um medicamento disponíveis
+
+CASO VÁLIDO:
+
+    Cenário - Opção de programar o envio de mensagem com poucas dosagens
+        1. Dado que o usuário está com poucas dosagens de um medicamento disponíveis
+        2. Quando o usuário selecionar a opção de programar o envio de uma mensagem
+        3. Então o sistema deve fornecer a opção para programar o envio de uma mensagem para uma pessoa específica
+
+
+#### 1.13.2. Critério de Aceitação: O usuário deve poder selecionar a pessoa para quem a mensagem será enviada  
+
+CASO VÁLIDO:
+
+    Cenário - Seleção da pessoa para quem a mensagem será enviada
+        1. Dado que o usuário está programando o envio de uma mensagem
+        2. Quando o usuário selecionar a pessoa para quem a mensagem será enviada
+        3. Então o sistema deve permitir que o usuário selecione a pessoa desejada
+
+
+#### 1.13.3. Critério de Aceitação: O sistema deve fornecer uma opção para personalizar o conteúdo da mensagem, incluindo informações relevantes, como o nome do medicamento, a quantidade restante e a solicitação para obter uma nova receita
+
+CASO VÁLIDO:
+
+    Cenário - Personalização do conteúdo da mensagem com informações relevantes
+        1. Dado que o usuário está programando o envio de uma mensagem
+        2. Quando o usuário selecionar a opção de personalizar o conteúdo da mensagem
+        3. Então o sistema deve fornecer uma opção para personalizar o conteúdo da mensagem, incluindo informações relevantes, como o nome do medicamento, a quantidade restante e a solicitação para obter uma nova receita
+
+
+#### 1.13.4. Critério de Aceitação: O usuário deve ter a opção de revisar a mensagem antes do envio
+
+CASO VÁLIDO:
+
+    Cenário - Opção de revisar a mensagem antes do envio
+        1. Dado que o usuário personalizou o conteúdo da mensagem
+        2. Quando o usuário revisar a mensagem antes do envio
+        3. Então o sistema deve permitir que o usuário revise a mensagem antes de confirmar o envio
+
+
+#### 1.13.5. Critério de Aceitação: O sistema deve enviar a mensagem por meio do método de comunicação especificado (por exemplo, SMS, e-mail, aplicativo de mensagens) para a pessoa selecionada
+
+CASO VÁLIDO:
+
+    Cenário - Envio da mensagem para a pessoa selecionada
+        1. Dado que o usuário revisou a mensagem e confirmou o envio
+        2. Quando o sistema enviar a mensagem por meio do método de comunicação especificado
+        3. Então o sistema deve enviar a mensagem para a pessoa selecionada
+
+
+#### 1.13.6. Critério de Aceitação: O sistema deve fornecer um feedback claro em caso de erros ou problemas durante o processo de programação ou envio da mensagem
+
+CASO VÁLIDO:
+
+    Cenário - Feedback claro em caso de erros ou problemas no envio da mensagem
+        1. Dado que ocorreu um erro ou problema durante o processo de programação ou envio da mensagem
+        2. Quando o sistema identificar o erro ou problema
+        3. Então o sistema deve fornecer um feedback claro ao usuário, informando o ocorrido
+
+### 1.14. **User Story: Eu como usuário quero um registro com nome e data de todos os remédios que tomei desde que baixei o APP para poder ter acesso a essas informações futuramente.**
+
+#### 1.14.1. Critério de Aceitação: 
+
+CASO VÁLIDO:
+
+    Cenário - 
+        1. Dado 
+        2. Quando 
+        3. Então 
+
+#### 1.14.1. Critério de Aceitação: 
+
+CASO VÁLIDO:
+
+    Cenário - 
+        1. Dado 
+        2. Quando 
+        3. Então 
+
+#### 1.14.1. Critério de Aceitação: 
+
+CASO VÁLIDO:
+
+    Cenário - 
+        1. Dado 
+        2. Quando 
+        3. Então 
+
+#### 1.14.1. Critério de Aceitação: 
+
+CASO VÁLIDO:
+
+    Cenário - 
+        1. Dado 
+        2. Quando 
+        3. Então 
+
+#### 1.14.1. Critério de Aceitação: 
+
+CASO VÁLIDO:
+
+    Cenário - 
+        1. Dado 
+        2. Quando 
+        3. Então 
+
+#### 1.14.1. Critério de Aceitação: 
+
+CASO VÁLIDO:
+
+    Cenário - 
+        1. Dado 
+        2. Quando 
+        3. Então 
+
+
+
+
