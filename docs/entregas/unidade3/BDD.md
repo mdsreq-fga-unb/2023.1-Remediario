@@ -490,60 +490,183 @@ CASO VÁLIDO:
 
 ### 1.14. **User Story: Eu como usuário quero um registro com nome e data de todos os remédios que tomei desde que baixei o APP para poder ter acesso a essas informações futuramente.**
 
-#### 1.14.1. Critério de Aceitação: 
+#### 1.14.1. Critério de Aceitação: O sistema deve registrar automaticamente o nome e a data de cada remédio tomado pelo usuário desde o momento em que o aplicativo foi baixado.
 
 CASO VÁLIDO:
 
-    Cenário - 
-        1. Dado 
-        2. Quando 
-        3. Então 
+    Cenário - Registro automático de remédios tomados
+        1. Dado que o usuário tomou um remédio
+        2. Quando o sistema registrar automaticamente o nome e a data do remédio tomado
+        3. Então o sistema deve armazenar essas informações de forma segura e persistente 
 
-#### 1.14.1. Critério de Aceitação: 
-
-CASO VÁLIDO:
-
-    Cenário - 
-        1. Dado 
-        2. Quando 
-        3. Então 
-
-#### 1.14.1. Critério de Aceitação: 
+#### 1.14.2. Critério de Aceitação: O registro dos remédios tomados deve ser armazenado de forma segura e persistente no sistema, permitindo o acesso futuro às informações.
 
 CASO VÁLIDO:
 
-    Cenário - 
-        1. Dado 
-        2. Quando 
-        3. Então 
+    Cenário - Acesso futuro ao registro dos remédios tomados
+        1. Dado que o usuário deseja acessar o registro dos remédios tomados
+        2. Quando o usuário solicitar o acesso ao registro
+        3. Então o sistema deve fornecer o registro completo dos remédios tomados desde que o aplicativo foi baixado
 
-#### 1.14.1. Critério de Aceitação: 
 
-CASO VÁLIDO:
-
-    Cenário - 
-        1. Dado 
-        2. Quando 
-        3. Então 
-
-#### 1.14.1. Critério de Aceitação: 
+#### 1.14.3. Critério de Aceitação: O usuário deve ter a opção de visualizar o registro completo dos remédios tomados.
 
 CASO VÁLIDO:
 
-    Cenário - 
-        1. Dado 
-        2. Quando 
-        3. Então 
+    Cenário - Opção de visualizar o registro completo dos remédios tomados
+        1. Dado que o usuário deseja visualizar o registro completo dos remédios tomados
+        2. Quando o usuário selecionar a opção de visualizar o registro
+        3 .Então o sistema deve exibir o registro completo dos remédios tomados
+ 
 
-#### 1.14.1. Critério de Aceitação: 
+#### 1.14.4. Critério de Aceitação: O registro deve exibir as informações relevantes de cada remédio tomado, incluindo o nome do medicamento e a data em que foi tomado.
 
 CASO VÁLIDO:
 
-    Cenário - 
-        1. Dado 
-        2. Quando 
-        3. Então 
+    Cenário - Exibição das informações relevantes no registro de remédios tomados
+        1. Dado que o usuário está visualizando o registro dos remédios tomados
+        2. Quando o usuário acessar o registro
+        3. Então o sistema deve exibir as informações relevantes de cada remédio tomado, incluindo o nome do medicamento e a data em que foi tomado
+ 
+
+#### 1.14.4. Critério de Aceitação: O sistema deve manter a integridade do registro, garantindo que as informações registradas não sejam perdidas ou corrompidas.
+
+CASO VÁLIDO:
+
+    Cenário - Manter a integridade do registro de remédios tomados
+        1. Dado que o sistema registrou os remédios tomados
+        2. Quando o sistema armazenar as informações
+        3. Então o sistema deve garantir a integridade do registro, evitando perda ou corrupção das informações registradas
 
 
+#### 1.14.6. Critério de Aceitação: O sistema deve separar os remédios tomados em relação a cada mês de cada ano.
+
+CASO VÁLIDO:
+
+    Cenário - Separação dos remédios tomados por mês e ano
+        1. Dado que o usuário deseja visualizar o registro dos remédios tomados
+        2. Quando o sistema exibir o registro
+        3. Então o sistema deve separar os remédios tomados em relação a cada mês de cada ano
+ 
+### 1.15. **User Story: Eu como usuário quero gerar um arquivo com o registro de nome e data de todos os remédios que tomei desde que baixei o APP para poder baixar esse relatório.**
+
+#### 1.15.1. Critério de Aceitação: O usuário deve ter a opção de gerar um arquivo de relatório com o registro completo dos remédios tomados desde o momento em que o aplicativo foi baixado.
+
+CASO VÁLIDO:
+
+    Cenário - Opção para gerar arquivo de relatório de remédios tomados
+        1. Dado que o usuário deseja gerar um relatório dos remédios tomados
+        2. Quando o usuário selecionar a opção de gerar o relatório
+        3. Então o sistema deve gerar um arquivo de relatório com o registro completo dos remédios tomados desde o momento em que o aplicativo foi baixado
+
+
+#### 1.15.2. Critério de Aceitação: O formato do arquivo de relatório deve ser compatível e adequado para download.
+
+CASO VÁLIDO:
+
+    Cenário - Formato adequado para download do arquivo de relatório
+        1. Dado que o sistema gerou o arquivo de relatório
+        2. Quando o usuário solicitar o download do arquivo
+        3. Então o sistema deve fornecer o arquivo de relatório em um formato compatível e adequado para download
+ 
+
+#### 1.15.3. Critério de Aceitação: O relatório gerado deve incluir o nome e a data de cada remédio tomado, organizados de forma clara e legível.
+
+CASO VÁLIDO:
+
+    Cenário - Conteúdo claro e legível no arquivo de relatório
+        1. Dado que o sistema gerou o arquivo de relatório
+        2. Quando o usuário abrir o arquivo de relatório
+        3. Então o relatório deve incluir o nome e a data de cada remédio tomado, organizados de forma clara e legível
+ 
+
+#### 1.15.4. Critério de Aceitação: O relatório gerado deve refletir as informações mais atualizadas do registro de remédios tomados no momento em que o relatório é gerado.
+
+CASO VÁLIDO:
+
+    Cenário - Informações atualizadas no arquivo de relatório
+        1. Dado que o sistema gerou o arquivo de relatório
+        2. Quando o usuário abrir o arquivo de relatório
+        3. Então o relatório deve refletir as informações mais atualizadas do registro de remédios tomados no momento em que o relatório é gerado
+
+
+#### 1.15.5. Critério de Aceitação:  O arquivo de relatório gerado deve ser disponibilizado para download imediato e estar acessível ao usuário de forma conveniente.
+
+CASO VÁLIDO:
+
+    Cenário - Download imediato do arquivo de relatório
+        1. Dado que o sistema gerou o arquivo de relatório
+        2. Quando o usuário solicitar o download do arquivo
+        3. Então o arquivo de relatório deve estar disponível para download imediato e ser acessível ao usuário de forma conveniente
+
+### 1.16. **User Story: Eu como usuário quero editar medicamentos, para altera-los ao meu gosto.**
+
+#### 1.16.1. Critério de Aceitação: O usuário deve ter a opção de editar medicamentos existentes.
+
+CASO VÁLIDO:
+
+    Cenário - Opção para editar medicamentos existentes
+        1. Dado que o usuário deseja editar um medicamento existente
+        2. Quando o usuário selecionar a opção de edição do medicamento
+        3. Então o sistema deve permitir que o usuário faça as alterações necessárias no medicamento
+
+
+#### 1.16.2. Critério de Aceitação: A funcionalidade de edição deve estar facilmente acessível e visível para o usuário.
+
+CASO VÁLIDO:
+
+    Cenário - Acessibilidade da funcionalidade de edição de medicamento
+        1. Dado que o usuário está visualizando um medicamento
+        2. Quando o usuário procurar pela opção de edição do medicamento
+        3. Então a funcionalidade de edição deve estar facilmente acessível e visível para o usuário
+
+#### 1.16.3. Critério de Aceitação: O usuário deve ser capaz de editar informações básicas do medicamento, como nome, dosagem e horários de administração.
+
+CASO VÁLIDO:
+
+    Cenário - Edição de informações básicas do medicamento
+        1. Dado que o usuário está editando um medicamento
+        2. Quando o usuário fizer alterações nas informações básicas do medicamento, como nome, dosagem e horários de administração
+        3. Então o sistema deve permitir que o usuário salve as alterações feitas
+ 
+
+#### 1.16.4. Critério de Aceitação: O sistema deve permitir ao usuário adicionar informações adicionais relevantes, como notas, instruções especiais ou restrições.
+
+CASO VÁLIDO:
+
+    Cenário - Adição de informações adicionais ao medicamento
+        1. Dado que o usuário está editando um medicamento
+        2. Quando o usuário adicionar informações adicionais relevantes, como notas, instruções especiais ou restrições
+        3. Então o sistema deve permitir que o usuário salve as alterações feitas
+
+
+#### 1.16.5. Critério de Aceitação: O usuário deve ser capaz de salvar as alterações feitas no medicamento.
+
+CASO VÁLIDO:
+
+    Cenário - Salvamento das alterações feitas no medicamento
+        1. Dado que o usuário fez alterações em um medicamento
+        2. Quando o usuário selecionar a opção de salvar as alterações
+        3. Então o sistema deve atualizar as informações do medicamento com as alterações feitas
+ 
+
+#### 1.16.6. Critério de Aceitação: As alterações feitas nos medicamentos devem ser refletidas imediatamente em todas as partes do aplicativo onde os medicamentos são exibidos.
+
+CASO VÁLIDO:
+
+    Cenário - Refletindo alterações nos medicamentos em todas as partes do aplicativo
+        1. Dado que o usuário fez alterações em um medicamento
+        2. Quando o usuário salvar as alterações feitas
+        3. Então as alterações devem ser refletidas imediatamente em todas as partes do aplicativo onde os medicamentos são exibidos
+
+
+#### 1.16.7. Critério de Aceitação: O sistema deve garantir a consistência e validade dos dados inseridos pelo usuário ao editar os medicamentos.
+
+CASO VÁLIDO:
+
+    Cenário - Garantia de consistência e validade dos dados ao editar medicamentos
+        1. Dado que o usuário está editando um medicamento
+        2. Quando o usuário fizer alterações nos dados do medicamento
+        3. Então o sistema deve validar e garantir a consistência dos dados inseridos pelo usuário
 
 
