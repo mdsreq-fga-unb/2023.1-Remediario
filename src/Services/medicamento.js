@@ -130,6 +130,7 @@ var usoMedicamento = async (nomeRemedio) => {
         "Tipo de frequência mal definido em: " + remedio.nomeRemedio
       );
   }
+  if (remedio.estoque < 0) remedio.estoque = 0;
   if (remedio.estoque/remedio.dosagem <= 3){
     schedulePushNotification(
       remedio, 
