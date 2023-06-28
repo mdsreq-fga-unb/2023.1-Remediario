@@ -75,7 +75,7 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
         style={styles.progressBar}
       />
       <Text style={styles.progressBarText}>
-        {remedio.unidadeEstoque} restantes: {estoque}
+        Comprimidos restantes: {estoque}
       </Text>
     </TouchableOpacity>
   );
