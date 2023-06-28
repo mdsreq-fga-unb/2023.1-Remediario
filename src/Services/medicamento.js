@@ -1,5 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { entregaDados } from "./notification";
+import { entregaDados, schedulePushNotification } from "./notification";
 
 var SalvarMedicamento = async (prop) => {
   let storage;
@@ -61,7 +61,7 @@ var SalvarMedicamento = async (prop) => {
     return e;
   }
 
-  await entregaDados(prop);
+  await entregaDados(prop, "Está na hora de tomar o remédio!");
   return prop;
 };
 
@@ -110,28 +110,35 @@ var usoMedicamento = async (nomeRemedio) => {
   remedio.uso.push(diaAtual);
   remedio.estoque -= remedio.dosagem;
 
-  const proxAlarme = new Date(remedio.ultimoAlarme);
+
 
   switch (remedio.unidadeFrequencia) {
     case "meses":
-      proxAlarme.setMonth(proxAlarme.getMonth() + remedio.frequencia);
+      diaAtual.setMonth(diaAtual.getMonth() + remedio.frequencia);
       break;
     case "dias":
-      proxAlarme.setDate(proxAlarme.getDate() + remedio.frequencia);
+      diaAtual.setDate(diaAtual.getDate() + remedio.frequencia);
       break;
     case "horas":
-      proxAlarme.setHours(proxAlarme.getHours() + remedio.frequencia);
+      diaAtual.setHours(diaAtual.getHours() + remedio.frequencia);
       break;
     case "minutos":
-      proxAlarme.setMinutes(proxAlarme.getMinutes() + remedio.frequencia);
+      diaAtual.setMinutes(diaAtual.getMinutes() + remedio.frequencia);
       break;
     default:
       throw new Error(
         "Tipo de frequência mal definido em: " + remedio.nomeRemedio
       );
   }
-
-  remedio.ultimoAlarme = proxAlarme;
+  if (remedio.estoque < 0) remedio.estoque = 0;
+  if (remedio.estoque/remedio.dosagem <= 3){
+    schedulePushNotification(
+      remedio, 
+      2, 
+      `Existem apenas ${remedio.estoque} ${remedio.unidadeEstoque} restantes!`
+      );
+  }
+  remedio.ultimoAlarme = diaAtual;
 
   storage.data.push(remedio);
   storage = JSON.stringify(storage);
@@ -142,7 +149,7 @@ var usoMedicamento = async (nomeRemedio) => {
     console.log(e);
     return e;
   }
-  entregaDados(remedio);
+  entregaDados(remedio, "Está na hora de tomar o remédio!");
   return remedio;
 };
 
