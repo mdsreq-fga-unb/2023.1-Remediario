@@ -259,6 +259,70 @@ var medicamentosDia = async () => {
   return result;
 };
 
+var EditarMedicamento = async (prop, nomeRemedio) => {
+  let storage;
+
+  try {
+    storage = await AsyncStorage.getItem("@Remediario:Medicamentos");
+  } catch (e) {
+    console.log(e);
+  }
+
+  if (storage == null) {
+    throw new Error("Lista de medicamentos vazia");
+  } else {
+    storage = JSON.parse(storage);
+  }
+
+  //Redefine horário
+  let hora, minutos;
+
+  if (typeof prop.ultimoAlarme === "string") {
+    hora = parseInt(prop.ultimoAlarme.substr(0, 2));
+    minutos = parseInt(prop.ultimoAlarme.substr(3, 2));
+  } else {
+    const date = new Date(prop.ultimoAlarme);
+    hora = date.getHours();
+    minutos = date.getMinutes();
+  }
+
+  let today = new Date();
+
+  if (
+    hora < today.getHours() ||
+    (hora === today.getHours() && minutos < today.getMinutes())
+  ) {
+    today.setDate(today.getDate() + 1);
+  }
+
+  today.setHours(hora, minutos);
+  prop.ultimoAlarme = today;
+
+  //Fim redefinição de horário.
+
+  let index = storage.data.findIndex(
+    (remedio) => remedio.nomeRemedio === nomeRemedio
+  );
+
+  if (index !== -1) {
+    storage.data[index] = prop;
+
+    try {
+      await AsyncStorage.setItem(
+        "@Remediario:Medicamentos",
+        JSON.stringify(storage)
+      );
+
+      return;
+    } catch (e) {
+      console.log(e);
+      return e;
+    }
+  } else {
+    throw new Error("Valor não encontrado");
+  }
+}
+
 export {
   SalvarMedicamento,
   ListarMedicamento,
@@ -267,4 +331,5 @@ export {
   medicamentosDia,
   getMedicamento,
   usoMedicamento,
+  EditarMedicamento,
 };
