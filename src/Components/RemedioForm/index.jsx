@@ -25,7 +25,7 @@ export default function AddRemedio({remedio, navigation }) {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [observacoes, setObservacoes] = useState(remedio?.obs ||'');
     const [Horario, setHorario] = useState(remedio?.ultimoAlarme ||'');
-    const hours = Array.from({ length: 23 }, (_, index) => index + 0);
+    const hours = Array.from({ length: 24 }, (_, index) => index + 0);
     const minutes = ['00', '15', '30', '45'];
     const [error, setError] = useState('');
 
