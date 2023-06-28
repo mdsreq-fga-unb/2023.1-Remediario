@@ -11,7 +11,7 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
   let horas = today.getHours();
   let nome = remedio.nomeRemedio;
   let estoque = remedio.estoque;
-  let progress = estoque / 10;
+  let progress = (estoque/remedio.dosagem) / 10;
 
   const confirmarRemocao = () => {
     Alert.alert(
