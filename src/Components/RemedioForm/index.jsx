@@ -14,17 +14,17 @@ import BotaoSalvar from '../Salvar/index';
 import { styles } from './styles';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
-export default function AddRemedio({ navigation }) {
+export default function AddRemedio({remedio, navigation }) {
     // Variáveis
-    const [remedio, setRemedio] = useState('');
-    const [quantidade, setQuantidade] = useState('');
-    const [quantidade2, setQuantidade2] = useState('');
-    const [unidade, setUnidade] = useState('comprimidos');
-    const [intervalo, setIntervalo] = useState('1');
-    const [unidadeIntervalo, setUnidadeIntervalo] = useState('horas');
+    const [NomeRemedio, setRemedio] = useState(remedio?.nomeRemedio || '');
+    const [quantidade, setQuantidade] = useState(remedio?.dosagem?.toString() || '');
+    const [quantidade2, setQuantidade2] = useState(remedio?.estoque?.toString() || '');
+    const [unidade, setUnidade] = useState(remedio?.unidadeEstoque || 'comprimidos');
+    const [intervalo, setIntervalo] = useState(remedio?.frequencia || '1');
+    const [unidadeIntervalo, setUnidadeIntervalo] = useState(remedio?.unidadeFrequencia || 'horas');
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const [observacoes, setObservacoes] = useState('');
-    const [Horario, setHorario] = useState('');
+    const [observacoes, setObservacoes] = useState(remedio?.obs ||'');
+    const [Horario, setHorario] = useState(remedio?.ultimoAlarme ||'');
     const hours = Array.from({ length: 23 }, (_, index) => index + 0);
     const minutes = ['00', '15', '30', '45'];
     const [error, setError] = useState('');
@@ -51,9 +51,9 @@ export default function AddRemedio({ navigation }) {
 
     // Funções
     const save = async () => {
-        if (!remedio || !quantidade || !quantidade2) {
+        if (!NomeRemedio || !quantidade || !quantidade2) {
             let errorMessage = 'Preencha os seguintes campos obrigatórios:';
-            if (!remedio) {
+            if (!NomeRemedio) {
                 errorMessage += ' Nome do Remédio,';
             }
             if (!quantidade) {
@@ -69,7 +69,7 @@ export default function AddRemedio({ navigation }) {
         }
 
         const remedioOBJ = {
-            nomeRemedio: remedio,
+            nomeRemedio: NomeRemedio,
             dosagem: quantidade,
             estoque: quantidade2,
             unidadeEstoque: unidade,
@@ -82,8 +82,6 @@ export default function AddRemedio({ navigation }) {
 
         try {
             await SalvarMedicamento(remedioOBJ);
-            console.log('Medicamento Salvo');
-
             setTimeout(() => {
                 navigation.navigate('Remédios do dia');
             }, 1000);
@@ -101,7 +99,7 @@ export default function AddRemedio({ navigation }) {
                         <Text style={styles.label}>Nome do Remédio</Text>
                         <TextInput
                             style={[styles.input, styles.textInput]}
-                            value={remedio}
+                            value={NomeRemedio}
                             onChangeText={setRemedio}
                             placeholder="Digite o nome do remédio"
                             placeholderTextColor="white"

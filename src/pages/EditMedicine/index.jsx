@@ -9,7 +9,7 @@ export default function EditMedicine({ navigation }) {
   useEffect(() => {
     const fetchRemedioData = async () => {
       try {
-        const nomeRemedio = 'Dipirona'; // Substitua pelo nome do remédio desejado
+        const nomeRemedio = 'Teste1'; // Substitua pelo nome do remédio desejado
         const remedio = await getMedicamento(nomeRemedio);
         setRemedioData(remedio);
       } catch (e) {
@@ -35,7 +35,12 @@ export default function EditMedicine({ navigation }) {
   return (
     <View>
       {remedioData ? (
-        <RemedioForm remedio={remedioData} onSave={handleSave} navigation={navigation} />
+        <RemedioForm
+          remedio={remedioData}
+          onSave={handleSave}
+          navigation={navigation}
+        />
+        
       ) : (
         <Text>Carregando dados do remédio...</Text>
       )}
