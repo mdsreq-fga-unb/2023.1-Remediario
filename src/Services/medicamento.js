@@ -267,6 +267,32 @@ var EditarMedicamento = async (prop, nomeRemedio) => {
     storage = JSON.parse(storage);
   }
 
+  //Redefine horário
+  let hora, minutos;
+
+  if (typeof prop.ultimoAlarme === "string") {
+    hora = parseInt(prop.ultimoAlarme.substr(0, 2));
+    minutos = parseInt(prop.ultimoAlarme.substr(3, 2));
+  } else {
+    const date = new Date(prop.ultimoAlarme);
+    hora = date.getHours();
+    minutos = date.getMinutes();
+  }
+
+  let today = new Date();
+
+  if (
+    hora < today.getHours() ||
+    (hora === today.getHours() && minutos < today.getMinutes())
+  ) {
+    today.setDate(today.getDate() + 1);
+  }
+
+  today.setHours(hora, minutos);
+  prop.ultimoAlarme = today;
+
+  //Fim redefinição de horário.
+
   let index = storage.data.findIndex(
     (remedio) => remedio.nomeRemedio === nomeRemedio
   );
@@ -280,7 +306,7 @@ var EditarMedicamento = async (prop, nomeRemedio) => {
         JSON.stringify(storage)
       );
 
-      return value;
+      return;
     } catch (e) {
       console.log(e);
       return e;
