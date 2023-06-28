@@ -13,12 +13,6 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
   let estoque = remedio.estoque;
   let progress = estoque / 10;
 
-  if (estoque <= 0) {
-    estoque = 0;
-  }
-
-
-
   const confirmarRemocao = () => {
     Alert.alert(
       'Confirmar Remoção',
