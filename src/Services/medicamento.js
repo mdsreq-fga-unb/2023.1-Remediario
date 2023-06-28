@@ -1,6 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { entregaDados } from "./notification";
-import { List } from "react-native-paper";
 
 var SalvarMedicamento = async (prop) => {
   let storage;
@@ -253,6 +252,44 @@ var medicamentosDia = async () => {
   return result;
 };
 
+var EditarMedicamento = async (prop, nomeRemedio) => {
+  let storage;
+
+  try {
+    storage = await AsyncStorage.getItem("@Remediario:Medicamentos");
+  } catch (e) {
+    console.log(e);
+  }
+
+  if (storage == null) {
+    throw new Error("Lista de medicamentos vazia");
+  } else {
+    storage = JSON.parse(storage);
+  }
+
+  let index = storage.data.findIndex(
+    (remedio) => remedio.nomeRemedio === nomeRemedio
+  );
+
+  if (index !== -1) {
+    storage.data[index] = prop;
+
+    try {
+      await AsyncStorage.setItem(
+        "@Remediario:Medicamentos",
+        JSON.stringify(storage)
+      );
+
+      return value;
+    } catch (e) {
+      console.log(e);
+      return e;
+    }
+  } else {
+    throw new Error("Valor não encontrado");
+  }
+}
+
 export {
   SalvarMedicamento,
   ListarMedicamento,
@@ -261,4 +298,5 @@ export {
   medicamentosDia,
   getMedicamento,
   usoMedicamento,
+  EditarMedicamento,
 };
