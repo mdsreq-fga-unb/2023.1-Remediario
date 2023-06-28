@@ -14,7 +14,7 @@ import BotaoSalvar from '../Salvar/index';
 import { styles } from './styles';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
-export default function AddRemedio({remedio, navigation }) {
+export default function AddRemedio({remedio, navigation, execute }) {
     // Variáveis
     const [NomeRemedio, setRemedio] = useState(remedio?.nomeRemedio || '');
     const [quantidade, setQuantidade] = useState(remedio?.dosagem?.toString() || '');
@@ -67,6 +67,8 @@ export default function AddRemedio({remedio, navigation }) {
             setError(errorMessage);
             return;
         }
+        let uso = [];
+        if (remedio) uso = remedio.uso;
 
         const remedioOBJ = {
             nomeRemedio: NomeRemedio,
@@ -77,11 +79,11 @@ export default function AddRemedio({remedio, navigation }) {
             unidadeFrequencia: unidadeIntervalo,
             obs: observacoes,
             ultimoAlarme: Horario,
-            uso: [],
+            uso: uso,
         };
 
         try {
-            await SalvarMedicamento(remedioOBJ);
+            await execute(remedioOBJ, remedio?.nomeRemedio);
             setTimeout(() => {
                 navigation.navigate('Remédios do dia');
             }, 1000);

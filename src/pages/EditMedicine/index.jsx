@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text } from 'react-native';
 import RemedioForm from '../../Components/RemedioForm/index';
-import { getMedicamento } from '../../Services/medicamento';
+import { getMedicamento, EditarMedicamento } from '../../Services/medicamento';
 
 export default function EditMedicine({ route, navigation }) {
   const [remedioData, setRemedioData] = useState(null);
@@ -27,6 +27,7 @@ let {medicineName} = route.params;
         <RemedioForm
           remedio={remedioData}
           navigation={navigation}
+          execute={EditarMedicamento}
         />
         
       ) : (
