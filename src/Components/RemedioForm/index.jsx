@@ -15,8 +15,8 @@ import { styles } from './styles';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 export default function AddRemedio({ navigation }) {
+    // Variáveis
     const [remedio, setRemedio] = useState('');
-    const [dosagem, setDosagem] = useState('');
     const [quantidade, setQuantidade] = useState('');
     const [quantidade2, setQuantidade2] = useState('');
     const [unidade, setUnidade] = useState('comprimidos');
@@ -33,6 +33,7 @@ export default function AddRemedio({ navigation }) {
         setIsDropdownOpen(!isDropdownOpen);
     };
 
+    // Funções
     const handleQuantidadeChange = (text) => {
         // Verificar se o valor inserido é numérico
         if (/^\d*$/.test(text)) {
@@ -40,6 +41,7 @@ export default function AddRemedio({ navigation }) {
         }
     };
 
+    // Funções
     const handleQuantidade2Change = (text) => {
         // Verificar se o valor inserido é numérico
         if (/^\d*$/.test(text)) {
@@ -47,6 +49,7 @@ export default function AddRemedio({ navigation }) {
         }
     };
 
+    // Funções
     const save = async () => {
         if (!remedio || !quantidade || !quantidade2) {
             let errorMessage = 'Preencha os seguintes campos obrigatórios:';
@@ -89,6 +92,7 @@ export default function AddRemedio({ navigation }) {
         }
     };
 
+    //Código da tela 
     return (
         <KeyboardAwareScrollView>
             <View style={styles.pageContainer}>
@@ -124,7 +128,6 @@ export default function AddRemedio({ navigation }) {
                                     style={styles.dropdownPicker}
                                     selectedValue={unidade}
                                     onValueChange={(itemValue) => setUnidade(itemValue)}
-                                    mode="dialog"
                                 >
                                     <Picker.Item label="comprimidos" value="comprimidos" />
                                     <Picker.Item label="g" value="g" />
@@ -183,7 +186,6 @@ export default function AddRemedio({ navigation }) {
                                     style={styles.dropdownPicker}
                                     selectedValue={unidade}
                                     onValueChange={(itemValue) => setUnidade(itemValue)}
-                                    mode="dialog"
                                 >
                                     <Picker.Item label="comprimidos" value="comprimidos" />
                                     <Picker.Item label="g" value="g" />
@@ -204,12 +206,9 @@ export default function AddRemedio({ navigation }) {
                             value={observacoes}
                             onChangeText={setObservacoes}
                             placeholder="Digite suas observações..."
-                            multiline
                             placeholderTextColor="white"
-                            underlineColorAndroid="transparent"
                             textColor="white"
                             shadowColor="transparent"
-                            autoCompleteType="off"
                             theme={{
                                 roundness: 0,
                             }}
@@ -224,7 +223,6 @@ export default function AddRemedio({ navigation }) {
                                     style={styles.dropdownPicker}
                                     selectedValue={Horario}
                                     onValueChange={(itemValue) => setHorario(itemValue)}
-                                    mode="dialog"
                                 >
                                     {hours.map((hour) =>
                                         minutes.map((minute) => {
