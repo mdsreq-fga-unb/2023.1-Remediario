@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+
 import { View, Text, TouchableOpacity, Alert } from 'react-native';
 import { styles } from './styles';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -13,8 +13,12 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
   let estoque = remedio.estoque;
   let progress = estoque / 10;
 
-  if (minutos < 10) {
-    minutos = "0" + minutos;
+  if (estoque <= 0) {
+    estoque = 0;
+  }
+
+  if (estoque == 0) {
+    return null;
   }
 
   const confirmarRemocao = () => {
@@ -44,7 +48,7 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
     }
   }
 
-  function redirect () {
+  function redirect() {
     navigation.navigate('Confirmacao', {
       medicineName: nome,
     });
@@ -52,10 +56,18 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
 
   function editMedicine() {
     // Função para editar o medicamento
+    navigation.navigate('EditMedicine', {
+      medicineName: nome,
+    });
+  };
+
+  if (minutos < 10) {
+    minutos = "0" + minutos;
   }
 
   return (
     <TouchableOpacity style={styles.container} onPress={redirect}>
+
       <View style={styles.container2}>
         <Text style={styles.text}>{nome}</Text>
         <View style={styles.alignEnd}>
@@ -63,9 +75,15 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
             <Icon name='clock' color={'white'} style={styles.miniIcon} />
             <Text style={styles.text2}>{horas}:{minutos}</Text>
           </View>
+          <TouchableOpacity style={styles.botao} onPress={editMedicine}>
+            <Icon name='pencil' color={'white'} style={styles.icon} />
+          </TouchableOpacity>
+
+
           <TouchableOpacity style={styles.botao} onPress={confirmarRemocao}>
             <Icon name='trash-can' color={'white'} style={styles.icon} />
           </TouchableOpacity>
+
         </View>
       </View>
 

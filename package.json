@@ -15,6 +15,7 @@
     "@react-navigation/native": "^6.1.6",
     "@react-navigation/stack": "^6.3.16",
     "expo": "~48.0.18",
+    "expo-cli": "^6.3.9",
     "expo-linking": "~4.0.1",
     "expo-notifications": "~0.18.1",
     "expo-splash-screen": "~0.18.2",

@@ -13,5 +13,6 @@ export const styles = StyleSheet.create({
     header: {
         backgroundColor: '#006B65',
         height: 150,
+        borderTopWidth: 0,
     }
 });

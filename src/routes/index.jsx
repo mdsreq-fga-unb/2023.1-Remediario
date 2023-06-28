@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { NavigationContainer, useIsFocused, useLinking } from '@react-navigation/native';
+import { NavigationContainer, useIsFocused } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { TouchableOpacity, Linking, Text } from 'react-native';
+import { Linking } from 'react-native';
 import Home from '../pages/Home';
-import TesteBackEnd from '../pages/TesteBackEnd';
 import History from '../pages/History';
 import Medicine from '../pages/Medicine';
 import EditMedicine from '../pages/EditMedicine';
@@ -15,7 +13,6 @@ import AddMedicine from '../pages/AddMedicine/index';
 import * as Notifications from 'expo-notifications';
 import { styles } from './styles';
 import Header from '../Components/Header';
-import { schedulePushNotification } from '../../src/Services/notification'
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -69,34 +66,26 @@ function TabRoutes() {
             <Tab.Screen
                 options={{
                     headerStyle: styles.header,
-                    headerTitle: () => <Header nomeTela="Remédios do dia"/>,
+                    headerTitle: () => <Header nomeTela="Remédios do dia" />,
                 }}
                 name="Remédios do dia"
                 component={Home}
             />
-             <Tab.Screen
+            <Tab.Screen
                 options={{
                     headerStyle: styles.header,
-                    headerTitle: () => <Header nomeTela="Meus Remédios"/>,
+                    headerTitle: () => <Header nomeTela="Meus Remédios" />,
                 }}
                 name="Meus Remédios"
                 component={Medicine}
             />
-             <Tab.Screen
-                options={{
-                    headerStyle: styles.header,
-                    headerTitle: () => <Header nomeTela="Histórico"/>,
-                }}
-                name="Histórico"
-                component={History}
-            />
             <Tab.Screen
                 options={{
                     headerStyle: styles.header,
-                    headerTitle: () => <Header nomeTela="Editar Remedios"/>,
+                    headerTitle: () => <Header nomeTela="Histórico" />,
                 }}
-                name="Editar Remedios"
-                component={EditMedicine}
+                name="Histórico"
+                component={History}
             />
         </Tab.Navigator>
     );
@@ -104,66 +93,70 @@ function TabRoutes() {
 
 export default function Routes() {
     return (
-        <NavigationContainer 
-        linking={{
-            prefixes: ['exp://192.168.42.152:19000/--/remediario', 'remediario://', 'com.remediario://'],
-            config: {
-                screens: {
-                    Confirmacao: {
-                        path: 'Confirmacao',
-                        parse: {
-                            medicineName: (medicineName) => decodeURIComponent(medicineName),
-                          },
+        <NavigationContainer
+            linking={{
+                prefixes: ['exp://192.168.42.152:19000/--/remediario', 'remediario://', 'com.remediario://'],
+                config: {
+                    screens: {
+                        Confirmacao: {
+                            path: 'Confirmacao',
+                            parse: {
+                                medicineName: (medicineName) => decodeURIComponent(medicineName),
+                            },
                             stringify: {
-                            medicineName: (medicineName) => encodeURIComponent(medicineName),
-                          },
+                                medicineName: (medicineName) => encodeURIComponent(medicineName),
+                            },
+                        }
                     }
-                }
-            },
+                },
 
-            async getInitialURL() {
-                // First, you may want to do the default deep link handling
-                // Check if app was opened from a deep link
-                const url = await Linking.getInitialURL();
+                async getInitialURL() {
+                    // First, you may want to do the default deep link handling
+                    // Check if app was opened from a deep link
+                    const url = await Linking.getInitialURL();
 
-                if (url != null) {
-                    return url;
-                }
+                    if (url != null) {
+                        return url;
+                    }
 
-                // Handle URL from expo push notifications
-                const response = await Notifications.getLastNotificationResponseAsync();
+                    // Handle URL from expo push notifications
+                    const response = await Notifications.getLastNotificationResponseAsync();
 
-                return response?.notification.request.content.data.url;
-            },
-            subscribe(listener) {
-                const onReceiveURL = ({ url }) => listener(url);
+                    return response?.notification.request.content.data.url;
+                },
+                subscribe(listener) {
+                    const onReceiveURL = ({ url }) => listener(url);
 
-                // Listen to incoming links from deep linking
-                const eventListenerSubscription = Linking.addEventListener('url', onReceiveURL);
+                    // Listen to incoming links from deep linking
+                    const eventListenerSubscription = Linking.addEventListener('url', onReceiveURL);
 
-                // Listen to expo push notifications
-                const subscription = Notifications.addNotificationResponseReceivedListener(response => {
-                    const url = response.notification.request.content.data.url;
-                    listener(url);
-                });
+                    // Listen to expo push notifications
+                    const subscription = Notifications.addNotificationResponseReceivedListener(response => {
+                        const url = response.notification.request.content.data.url;
+                        listener(url);
+                    });
 
-                return () => {
-                    // Clean up the event listeners
-                    eventListenerSubscription.remove();
-                    subscription.remove();
-                };
-            },
-        }}>
+                    return () => {
+                        // Clean up the event listeners
+                        eventListenerSubscription.remove();
+                        subscription.remove();
+                    };
+                },
+            }}>
             <Stack.Navigator>
-                <Stack.Screen options={{ headerShown: false }} name="BottomTab" component={TabRoutes}/>
-                <Stack.Screen options={{ headerShown: false }} name='Confirmacao' component={Confirmacao}/>
+                <Stack.Screen options={{ headerShown: false }} name="BottomTab" component={TabRoutes} />
+                <Stack.Screen options={{ headerShown: false }} name='Confirmacao' component={Confirmacao} />
                 <Stack.Screen
                     options={{
                         headerStyle: styles.header,
-                        headerTitle: () => <Header nomeTela='AddMedicine'/>,
+                        headerTitle: () => <Header nomeTela='Novo Remédio' />,
                     }}
                     name='AddMedicine' component={AddMedicine}
                 />
+                <Stack.Screen options={{
+                    headerStyle: styles.header,
+                    headerTitle: () => <Header nomeTela='Editar Remédio' />,
+                }} name='EditMedicine' component={EditMedicine} />
             </Stack.Navigator>
         </NavigationContainer>
     );
