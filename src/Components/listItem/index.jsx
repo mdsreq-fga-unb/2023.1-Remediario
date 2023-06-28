@@ -17,9 +17,7 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
     estoque = 0;
   }
 
-  if (estoque == 0) {
-    return null;
-  }
+
 
   const confirmarRemocao = () => {
     Alert.alert(
