@@ -6,69 +6,7 @@
 - Carlos
 - Luan
 
- 
-## Sprint Review
-#### Carlos Eduardo
-**O que fiz:**
-
-- Estudei AsyncStorage.
-- Acompanhei a criação do PBB.
-
-
-#### Júlio Dourado
-**O que fiz:**
-
-- Editei a documentação.
-- Ajudei a criar o PBB.
-
-
-#### Luan Melo
-**O que fiz:**
-
-
-- Ajudei no PBB no dia 07.
-- Iniciei a parte de notificação.
-- Fiz a tela de confirmação de remédio, falta pouca coisa.
-
-
-#### Mateus de Almeida
-**O que fiz:**
-
-- Fiz o componente de remédio. 
-- Fiz a página Add remédio.
-- Ajudei um pouco no PBB.
-- Estudei o conteúdo do módulo 3.
-
-
-#### Mateus de Almeida
-**O que fiz:**
-
-- Fiz o componente de remédio.
-- Fiz a página Add remédio. 
-- Ajudei um pouco no PBB.
-- Estudei o conteúdo do módulo 3.
-
-#### Rodrigo Edmar
-**O que fiz:**
-
-- Terminei o cadastramento de medicamentos no back-end.
-- Ajudei no PBB.
-- Organizei algumas Issues.
-
-
-## Demandas entregues nessa Sprint
-
-- PBB.
-- Tela de confirmação de medicamentos.
-
-
-## Sprint Retrospective 
-**Resumo:**
-
-- Falta de comunicação. Para resolver esse problema devemos nos comunicar frequentemente com nossos pair-programming.
-
-
-## Sprint Planning
+## Sprint Planning 6
 
 #### Duração: 07/06/2023 até 13/06/2023.
 #### Objetivo da Sprint: Entregar as US16, US13, US10.
@@ -77,3 +15,56 @@
 - US13 Rodrigo e Mateus. [Issue #46](https://github.com/mdsreq-fga-unb/2023.1-Remediario/issues/46)
 - US10 Julio e Rodrigo. [Issue #45](https://github.com/mdsreq-fga-unb/2023.1-Remediario/issues/45)
 - Revisão do PBB e recolhimento dos feedbacks da monitora e professor. [Issue #48](https://github.com/mdsreq-fga-unb/2023.1-Remediario/issues/48)
+
+## Sprint Review
+
+#### Carlos Eduardo
+
+**O que fiz:**
+
+- Estudei alguns videos.
+- Comecei a produzir o back da minha parte.
+
+#### Júlio Dourado
+
+**O que fiz:**
+
+- Edições na documentação do mkdocs.
+- Ajudei com as telas de notificação.
+
+#### Luan Melo
+
+**O que fiz:**
+
+- Dei continuidade na US de notificações.
+- Criei a geração de notificação.
+- Criei Acesso a tela de confirmação por meio da notificação.
+
+#### Mateus de Almeida
+
+**O que fiz:**
+
+- Estudei como fazer a pagina de deletar remédio;
+- Estudei uma refatoração para a pagina de Criação de remedios.
+
+#### Rodrigo Edmar
+
+**O que fiz:**
+
+- Iniciei desenvolvimento do back de listar medicamentos (tenho que pensar como inserir e listar os dados).
+- Tive problemas com meus node modules que me atrasou 1 dia (concertado).
+- UML (mais ou menos).
+- Inseri as sprints na Visão de Produto e projeto.
+- Reconfigurei meu ambiente.
+
+## Demandas entregues nessa Sprint
+
+- Front-end parcial da notificação.
+- Back-end de listar e de salvar remedio.
+
+## Sprint Retrospective
+
+**Resumo:**
+
+- Fluxo baixissimo de entregas.
+- Falta de comunicação de integração do Front-end com o back-end.

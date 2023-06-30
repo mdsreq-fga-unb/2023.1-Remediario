@@ -9,64 +9,68 @@
 - Mateus
 - Bruna (Monitora)
 
-## Sprint Review
-
-#### Carlos Eduardo
-
-**O que fiz:**
-
-- Estudei alguns videos.
-- Comecei a produzir o back da minha parte.
-
-#### Júlio Dourado
-
-**O que fiz:**
-
-- Edições na documentação do mkdocs.
-- Ajudei com as telas de notificação.
-
-#### Luan Melo
-
-**O que fiz:**
-
-- Dei continuidade na US de notificações.
-- Criei a geração de notificação.
-- Criei Acesso a tela de confirmação por meio da notificação.
-
-#### Mateus de Almeida
-
-**O que fiz:**
-
-- Estudei como fazer a pagina de deletar remédio;
-- Estudei uma refatoração para a pagina de Criação de remedios.
-
-#### Rodrigo Edmar
-
-**O que fiz:**
-
-- Iniciei desenvolvimento do back de listar medicamentos (tenho que pensar como inserir e listar os dados).
-- Tive problemas com meus node modules que me atrasou 1 dia (concertado).
-- UML (mais ou menos).
-- Inseri as sprints na Visão de Produto e projeto.
-- Reconfigurei meu ambiente.
-
-## Demandas entregues nessa Sprint
-
-- Front-end parcial da notificação.
-- Back-end de listar e de salvar remedio.
-
-## Sprint Retrospective
-
-**Resumo:**
-
-- Fluxo baixissimo de entregas.
-- Falta de comunicação de integração do Front-end com o back-end.
-
-## Sprint Planning
+## Sprint Planning 7
 
 #### Duração: 14/06/2023 até 20/06/2023.
 
-#### Objetivo da Sprint: Entregar as US16, US13, US10.
+#### Objetivo da Sprint: Entregar as US05, US21.
 
 - US05. [Issue #51](https://github.com/mdsreq-fga-unb/2023.1-Remediario/issues/51)
 - US21. [Issue #52](https://github.com/mdsreq-fga-unb/2023.1-Remediario/issues/52)
+
+## Sprint Review
+#### Carlos Eduardo
+**O que fiz:**
+
+- Tentei fazer demandas das US's atribuidas a mim.
+
+#### Júlio Dourado
+**O que fiz:**
+
+- Mexi no PBB.
+- Fiz minhas US's. 
+- Fiz pair-programming com Rodrigo e Luan.
+
+
+#### Luan Melo
+**O que fiz:**
+
+- Fiz minhas US's.
+- Fiz pair-programming com Julio e ROdrigo.
+- COrrigi alguns erros das US's programadas.
+- Fiz o build do apk.
+
+
+#### Mateus de Almeida
+**O que fiz:**
+
+- Mexi na página de Add Remedio.
+- Fiz o SafeScrum.
+- Editei o mkdocs.
+- Fiz minhas US's.
+
+#### Rodrigo Edmar
+**O que fiz:**
+
+- Fiz pair-programming com Julio e Luan.
+- Ajudei o Carlos a fazer as US's dele.
+- Fiz minhas US's.
+- Atualizei o backlog.
+
+
+## Demandas entregues nessa Sprint
+
+- MVP 1.
+- PBB.
+- SAFe.
+- Entrega do MVP 1 para a cliente.
+
+## Sprint Retrospective 
+**Resumo:**
+
+- Falta de comunicação entre os membros.
+- Revisão de pull request ao mexer na tela de outros membros.
+- Criação de branches com o nome das Issues.
+- Realização de dailies (reuniões diárias).
+- Importância de seguir estritamente o conteúdo das US e os critérios de aceitação.
+- Entrar no Discord ao mexer no projeto.
