@@ -14,6 +14,9 @@ const styles = StyleSheet.create({
   },
   nomeRemedio: {
     color: 'white',
+    color: '#FFF',
+    fontSize: 22,
+    fontWeight: 'bold',
   },
   arrow: {
     fontSize: 18,
@@ -22,7 +25,7 @@ const styles = StyleSheet.create({
   dropdown: {
     marginTop: 10,
   },
-  optionBox: {
+  usedBox: {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
@@ -32,6 +35,25 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     marginRight: 5,
     gap: 4,
+    width: 60,
+  },
+
+  notUsedBox: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#003936',
+    height: 50,
+    padding: 8,
+    borderRadius: 4,
+    marginRight: 5,
+    gap: 4,
+    width: 60,
+  },
+  notUsedDateDay: {
+    color: 'white',
+    fontSize: 14,
+    fontWeight: 'bold',
   },
   dateHour: {
     color: 'white',
@@ -45,7 +67,7 @@ const styles = StyleSheet.create({
     fontSize: 10,
   },
   optionIcon: {
-    fontSize: 10,
+    fontSize: 12,
     color: 'white',
   },
   dateContainer: {
