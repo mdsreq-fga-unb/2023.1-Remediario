@@ -41,24 +41,12 @@ export default function ConfirmationMedicine({ route }) {
 
         setMedicineQuantidade(medicine.qtd + 1);
         setMedicineTotalDailyUse((medicinesUsed + medicineQuantidade));
-        //console.log("total: " + medicinesUsed + "+" + medicineQuantidade)
     }, [medicinesUsed, medicineQuantidade, medicine]);
 
     async function integracaoBackend(){
         try{
             let medicine2 = await getMedicamento(medicineName);
             setMedicine(medicine2);
-
-            console.log("2: " + medicine.uso)
-
-            /*let diaAtual = new Date();
-            let tamanho = medicine.estoque;
-            for (let i = 0; i < tamanho; i++) {
-                if (medicine.uso[i].getDate() === diaAtual) {
-                    setMedicinesUsed(prevUsed => prevUsed + 1);
-                }
-            }*/
-
         }catch(e){
             console.log(e);
         }
@@ -66,7 +54,6 @@ export default function ConfirmationMedicine({ route }) {
 
     const usoDeMedicamento = () => {
         usoMedicamento(medicineName);
-        console.log("used: " + medicinesUsed)
         setTimeout(() => {
             navigation.navigate("Remédios do dia");
         }, 1000);
