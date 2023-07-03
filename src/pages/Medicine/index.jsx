@@ -6,7 +6,7 @@ import ListItem from "../../Components/listItem";
 import ButtonAddMedicine from "../../Components/ButtonAddMedicine";
 import { ScrollView } from "react-native-gesture-handler";
 import { useIsFocused } from "@react-navigation/native";
-
+import MedicamentoSearch from "../../Components/MedicineSearch/index";
 
 export default function Medicine({ navigation }) {
     const isFocused = useIsFocused();
@@ -30,6 +30,7 @@ export default function Medicine({ navigation }) {
     return (
         <View style={styles.container}>
             <ScrollView>
+            <MedicamentoSearch/>
                 {medicamentos && medicamentos.data.map((remedio, index) => {
                     return <ListItem 
                         remedio={remedio} 
