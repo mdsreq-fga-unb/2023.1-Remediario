@@ -110,20 +110,20 @@ var usoMedicamento = async (nomeRemedio) => {
   remedio.uso.push(diaAtual);
   remedio.estoque -= remedio.dosagem;
 
-
+  let proxDia = new Date(diaAtual);
 
   switch (remedio.unidadeFrequencia) {
     case "meses":
-      diaAtual.setMonth(diaAtual.getMonth() + remedio.frequencia);
+      proxDia.setMonth(diaAtual.getMonth() + remedio.frequencia);
       break;
     case "dias":
-      diaAtual.setDate(diaAtual.getDate() + remedio.frequencia);
+      proxDia.setDate(diaAtual.getDate() + remedio.frequencia);
       break;
     case "horas":
-      diaAtual.setHours(diaAtual.getHours() + remedio.frequencia);
+      proxDia.setHours(diaAtual.getHours() + remedio.frequencia);
       break;
     case "minutos":
-      diaAtual.setMinutes(diaAtual.getMinutes() + remedio.frequencia);
+      proxDia.setMinutes(diaAtual.getMinutes() + remedio.frequencia);
       break;
     default:
       throw new Error(
