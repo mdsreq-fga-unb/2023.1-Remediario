@@ -96,6 +96,10 @@ export const styles = StyleSheet.create({
     mode: 'dropdown',
     width: width * width,
   },
+  errorText: {
+    color: 'red',
+    marginTop: 10,
+  },  
   icon: {
     position: 'absolute',
     right: 10,

@@ -1,6 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { entregaDados } from "./notification";
-import { List } from "react-native-paper";
+import { entregaDados, schedulePushNotification } from "./notification";
 
 var SalvarMedicamento = async (prop) => {
   let storage;
@@ -62,7 +61,7 @@ var SalvarMedicamento = async (prop) => {
     return e;
   }
 
-  await entregaDados(prop);
+  await entregaDados(prop, "Está na hora de tomar o remédio!");
   return prop;
 };
 
@@ -111,28 +110,35 @@ var usoMedicamento = async (nomeRemedio) => {
   remedio.uso.push(diaAtual);
   remedio.estoque -= remedio.dosagem;
 
-  const proxAlarme = new Date(remedio.ultimoAlarme);
+
 
   switch (remedio.unidadeFrequencia) {
     case "meses":
-      proxAlarme.setMonth(proxAlarme.getMonth() + remedio.frequencia);
+      diaAtual.setMonth(diaAtual.getMonth() + remedio.frequencia);
       break;
     case "dias":
-      proxAlarme.setDate(proxAlarme.getDate() + remedio.frequencia);
+      diaAtual.setDate(diaAtual.getDate() + remedio.frequencia);
       break;
     case "horas":
-      proxAlarme.setHours(proxAlarme.getHours() + remedio.frequencia);
+      diaAtual.setHours(diaAtual.getHours() + remedio.frequencia);
       break;
     case "minutos":
-      proxAlarme.setMinutes(proxAlarme.getMinutes() + remedio.frequencia);
+      diaAtual.setMinutes(diaAtual.getMinutes() + remedio.frequencia);
       break;
     default:
       throw new Error(
         "Tipo de frequência mal definido em: " + remedio.nomeRemedio
       );
   }
-
-  remedio.ultimoAlarme = proxAlarme;
+  if (remedio.estoque < 0) remedio.estoque = 0;
+  if (remedio.estoque/remedio.dosagem <= 3){
+    schedulePushNotification(
+      remedio, 
+      2, 
+      `Existem apenas ${remedio.estoque} ${remedio.unidadeEstoque} restantes!`
+      );
+  }
+  remedio.ultimoAlarme = diaAtual;
 
   storage.data.push(remedio);
   storage = JSON.stringify(storage);
@@ -143,7 +149,7 @@ var usoMedicamento = async (nomeRemedio) => {
     console.log(e);
     return e;
   }
-  entregaDados(remedio);
+  entregaDados(remedio, "Está na hora de tomar o remédio!");
   return remedio;
 };
 
@@ -253,6 +259,70 @@ var medicamentosDia = async () => {
   return result;
 };
 
+var EditarMedicamento = async (prop, nomeRemedio) => {
+  let storage;
+
+  try {
+    storage = await AsyncStorage.getItem("@Remediario:Medicamentos");
+  } catch (e) {
+    console.log(e);
+  }
+
+  if (storage == null) {
+    throw new Error("Lista de medicamentos vazia");
+  } else {
+    storage = JSON.parse(storage);
+  }
+
+  //Redefine horário
+  let hora, minutos;
+
+  if (typeof prop.ultimoAlarme === "string") {
+    hora = parseInt(prop.ultimoAlarme.substr(0, 2));
+    minutos = parseInt(prop.ultimoAlarme.substr(3, 2));
+  } else {
+    const date = new Date(prop.ultimoAlarme);
+    hora = date.getHours();
+    minutos = date.getMinutes();
+  }
+
+  let today = new Date();
+
+  if (
+    hora < today.getHours() ||
+    (hora === today.getHours() && minutos < today.getMinutes())
+  ) {
+    today.setDate(today.getDate() + 1);
+  }
+
+  today.setHours(hora, minutos);
+  prop.ultimoAlarme = today;
+
+  //Fim redefinição de horário.
+
+  let index = storage.data.findIndex(
+    (remedio) => remedio.nomeRemedio === nomeRemedio
+  );
+
+  if (index !== -1) {
+    storage.data[index] = prop;
+
+    try {
+      await AsyncStorage.setItem(
+        "@Remediario:Medicamentos",
+        JSON.stringify(storage)
+      );
+
+      return;
+    } catch (e) {
+      console.log(e);
+      return e;
+    }
+  } else {
+    throw new Error("Valor não encontrado");
+  }
+}
+
 export {
   SalvarMedicamento,
   ListarMedicamento,
@@ -261,4 +331,5 @@ export {
   medicamentosDia,
   getMedicamento,
   usoMedicamento,
+  EditarMedicamento,
 };

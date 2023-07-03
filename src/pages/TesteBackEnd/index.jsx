@@ -8,7 +8,8 @@ import {
     RemoverMedicamento,
     medicamentosDia,
     getMedicamento,
-    usoMedicamento } from '../../Services/medicamento';
+    usoMedicamento,
+    EditarMedicamento } from '../../Services/medicamento';
 
     // "meses""dias""horas""minutos"
 
@@ -46,29 +47,29 @@ export default function Home() {
         ultimoAlarme: "23:59",
         uso: [],
     };
-    // objectTeste4 = {
-    //     nomeRemedio: "Falha Diaria",
-    //     dosagem: 5,
-    //     estoque: 200,
-    //     unidadeEstoque: "comprimidos",
-    //     frequencia: 12,
-    //     unidadeFrequencia: "qualquer coisa",
-    //     obs: "observacoes teste 3",
-    //     ultimoAlarme: "23:00",
-    //     uso: [],
-    // };
-    /*async function testeSalvar(){
+    objectTeste4 = {
+        nomeRemedio: "Para C tamal",
+        dosagem: 3,
+        estoque: 6,
+        unidadeEstoque: "comprimidos",
+        frequencia: 12,
+        unidadeFrequencia: "minutos",
+        obs: "observacoes teste 3",
+        ultimoAlarme: "23:00",
+        uso: [],
+    };
+    async function testeSalvar(){
         
         try {
             await SalvarMedicamento(objectTeste1);
             await SalvarMedicamento(objectTeste2);
             await SalvarMedicamento(objectTeste3);
-            // await SalvarMedicamento(objectTeste4);
+            await SalvarMedicamento(objectTeste4);
             console.log("Ambiente De Teste setado")
         } catch (e) {
             console.log(e);
         }
-    }*/
+    }
     async function testeListar(){
         try {
             let valor = await ListarMedicamento();
@@ -120,6 +121,26 @@ export default function Home() {
             console.log(e);
         }
     }
+    async function testeEdit(){
+        objectTeste5 = {
+            nomeRemedio: "misibulida",
+            dosagem: 50,
+            estoque: 100,
+            unidadeEstoque: "comprimidos",
+            frequencia: 10,
+            unidadeFrequencia: "horas",
+            obs: "Alterado",
+            ultimoAlarme: new Date(),
+            uso: [],
+        };
+        try {
+            await EditarMedicamento(objectTeste5, "misibulida");
+            console.log("Editado!");
+        } catch (e) {
+            console.log(e)
+        }
+
+    }
     return (
         <View style={styles.container}>
             <Text style={styles.text}>Teste BackEnd</Text>
@@ -130,6 +151,7 @@ export default function Home() {
             <Button style={styles.buttons} title="Listar Dia Atual" onPress={testeListarDiaAtual} />
             <Button style={styles.buttons} title="getMisibulida" onPress={testeGet} />
             <Button style={styles.buttons} title="usoMisibulida" onPress={testeUso} />
+            <Button style={styles.buttons} title="Edit Misibulida" onPress={testeEdit} />
         </View>
     );
 }
