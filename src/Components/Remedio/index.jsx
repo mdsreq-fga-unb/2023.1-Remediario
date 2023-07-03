@@ -9,8 +9,9 @@ import {
 import Icon from "react-native-vector-icons/FontAwesome";
 import { styles } from "./styles";
 
-const RemedioDropdown = ({ datas, nomeRemedio }) => {
+const RemedioDropdown = ({ datas, remedio }) => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
+  const objetoRemedio = remedio;
 
   const handleDropdownToggle = () => {
     setDropdownVisible(!dropdownVisible);
@@ -47,8 +48,8 @@ const RemedioDropdown = ({ datas, nomeRemedio }) => {
     return (
       datas &&
       datas.map((uso, index) => {
+        console.log(uso)
         const datas2 = new Date(uso);
-        const hour = datas2.getHours();
         let minutes = datas2.getMinutes();
         let day = datas2.getDate();
         let month = datas2.getMonth() + 1;
@@ -63,8 +64,22 @@ const RemedioDropdown = ({ datas, nomeRemedio }) => {
           month = "0" + month;
         }
 
-        const quantidadeDiaria = 3;
-        const dia = day + "/" + month;
+        let quantidadeDiaria;
+        switch (objetoRemedio.unidadeFrequencia) {
+          case "meses":
+            quantidadeDiaria = 1
+            break;
+          case "dias":
+            quantidadeDiaria = 1
+            break;
+          case "horas":
+            quantidadeDiaria =  24 / objetoRemedio.frequencia
+            break;
+          case "minutos":
+            quantidadeDiaria = 1440 / objetoRemedio.frequencia 
+            break;
+        }
+        quantidadeDiaria = Math.trunc(quantidadeDiaria)
         const vezesRepetido = contagemDias[day] || 0;
 
         if (!diasRenderizados[day]) {
@@ -78,7 +93,7 @@ const RemedioDropdown = ({ datas, nomeRemedio }) => {
           if (used) {
             return (
               <View key={index} style={styles.usedBox}>
-                <Text style={styles.dateHour}>{dia}</Text>
+                <Text style={styles.dateHour}>{day + "/" + month}</Text>
                 <View style={styles.dateContainer}>
                 <Text style={styles.dateDay}>{vezesRepetido + "/" + quantidadeDiaria}</Text>
                   <Icon name="check" style={styles.optionIcon} />
@@ -88,7 +103,7 @@ const RemedioDropdown = ({ datas, nomeRemedio }) => {
           } else {
             return (
               <View key={index} style={styles.notUsedBox}>
-                <Text style={styles.dateHour}>{dia}</Text>
+                <Text style={styles.dateHour}>{day + "/" + month}</Text>
                 <View style={styles.dateContainer}>
                   <Text style={styles.dateDay}>{vezesRepetido + "/" + quantidadeDiaria}</Text>
                   <Icon name="times" style={styles.optionIcon} />
@@ -106,7 +121,7 @@ const RemedioDropdown = ({ datas, nomeRemedio }) => {
   return (
     <View style={[styles.container, { width: boxWidth }]}>
       <TouchableOpacity onPress={handleDropdownToggle} style={styles.header}>
-        <Text style={styles.nomeRemedio}>{nomeRemedio}</Text>
+        <Text style={styles.nomeRemedio}>{objetoRemedio.nomeRemedio}</Text>
         <Icon
           name={dropdownVisible ? "angle-up" : "angle-down"}
           style={styles.arrow}
