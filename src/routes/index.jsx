@@ -64,8 +64,6 @@ function TabRoutes() {
                 options={{
                     headerStyle: styles.header,
                     headerTitle: () => <Header nomeTela="Remédios do dia" />,
-                    headerRight: () => <Icon name='white-balance-sunny' color='#003936' size={sizeIcons} />,
-                    headerRightContainerStyle: styles.headerRightContainerStyle,
                 }}
                 name="Remédios do dia"
                 component={Home}
@@ -74,8 +72,6 @@ function TabRoutes() {
                 options={{
                     headerStyle: styles.header,
                     headerTitle: () => <Header nomeTela="Meus Remédios" />,
-                    headerRight: () => <FontAwesome5Icon name='prescription-bottle' color='#003936' size={sizeIcons - 5} />,
-                    headerRightContainerStyle: styles.headerRightContainerStyle,
                 }}
                 name="Meus Remédios"
                 component={Medicine}
@@ -84,8 +80,6 @@ function TabRoutes() {
                 options={{
                     headerStyle: styles.header,
                     headerTitle: () => <Header nomeTela="Histórico" />,
-                    headerRight: () => <Icon name='history' color='#003936' size={sizeIcons} />,
-                    headerRightContainerStyle: styles.headerRightContainerStyle,
                 }}
                 name="Histórico"
                 component={History}
