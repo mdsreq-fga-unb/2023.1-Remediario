@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Linking } from 'react-native';
 import Home from '../pages/Home';
 import History from '../pages/History';
+// import TesteBackEnd from '../pages/TesteBackEnd';
 import Medicine from '../pages/Medicine';
 import EditMedicine from '../pages/EditMedicine';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -42,7 +43,11 @@ function TabRoutes() {
                         iconName = 'prescription-bottle'; // Nome do ícone correspondente em FontAwesome5
                     } else if (route.name === 'Histórico') {
                         iconName = 'history';
-                    } else if (route.name === 'Editar Remedios' && isMedicineFocused) {
+                    } 
+                    // else if (route.name === 'teste') {
+                    //     iconName = 'pencil';
+                    // } 
+                    else if (route.name === 'Editar Remedios' && isMedicineFocused) {
                         iconName = 'pencil';
                     }
                     if (route.name === 'Meus Remédios') {
@@ -86,7 +91,15 @@ function TabRoutes() {
                 }}
                 name="Histórico"
                 component={History}
-            />
+            /> 
+            {/* <Tab.Screen
+                options={{
+                    headerStyle: styles.header,
+                    headerTitle: () => <Header nomeTela="teste" />,
+                }}
+                name="teste"
+                component={TesteBackEnd}
+            /> */}
         </Tab.Navigator>
     );
 }

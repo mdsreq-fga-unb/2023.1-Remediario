@@ -111,19 +111,20 @@ var usoMedicamento = async (nomeRemedio) => {
   remedio.estoque -= remedio.dosagem;
 
   let proxDia = new Date(diaAtual);
+  const frequencia = parseInt(remedio.frequencia);
 
   switch (remedio.unidadeFrequencia) {
     case "meses":
-      proxDia.setMonth(diaAtual.getMonth() + remedio.frequencia);
+      proxDia.setMonth(parseInt(diaAtual.getMonth()) + frequencia);
       break;
     case "dias":
-      proxDia.setDate(diaAtual.getDate() + remedio.frequencia);
+      proxDia.setDate(diaAtual.getDate() + frequencia);
       break;
     case "horas":
-      proxDia.setHours(diaAtual.getHours() + remedio.frequencia);
+      proxDia.setHours(diaAtual.getHours() + frequencia);
       break;
     case "minutos":
-      proxDia.setMinutes(diaAtual.getMinutes() + remedio.frequencia);
+      proxDia.setMinutes(diaAtual.getMinutes() + frequencia);
       break;
     default:
       throw new Error(
@@ -138,8 +139,7 @@ var usoMedicamento = async (nomeRemedio) => {
       `Existem apenas ${remedio.estoque} ${remedio.unidadeEstoque} restantes!`
       );
   }
-  remedio.ultimoAlarme = diaAtual;
-
+  remedio.ultimoAlarme = proxDia;
   storage.data.push(remedio);
   storage = JSON.stringify(storage);
 
