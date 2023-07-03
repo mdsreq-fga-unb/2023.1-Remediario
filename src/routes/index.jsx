@@ -34,7 +34,7 @@ function TabRoutes() {
             screenOptions={({ route }) => ({
                 tabBarIcon: ({ color }) => {
                     let iconName;
-                    if (color !== 'yellow') color = 'white'; // Define a cor dos ícones não selecionados como branco (padrão)
+                    if (color !== '#006B65') color = 'white'; // Define a cor dos ícones não selecionados como branco (padrão)
 
                     if (route.name === "Remédios do dia") {
                         iconName = 'white-balance-sunny';
@@ -53,13 +53,10 @@ function TabRoutes() {
                         return <Icon name={iconName} color={color} size={sizeIcons} />;
                     }
                 },
-                tabBarLabelStyle: {
-                    fontSize: 12,
-                    marginBottom: -4,
-                },
-                tabBarStyle: [styles.tabBarStyle, styles.alignLeft],
+                tabBarStyle: styles.tabBarStyle,
                 tabBarShowLabel: false,
-                tabBarActiveTintColor: 'yellow', // Define a cor do ícone selecionado como amarelo
+                tabBarItemStyle: styles.tabBarItemStyle,
+                tabBarActiveBackgroundColor:  '#006B65', // Define a cor do ícone selecionado como amarelo
                 tabBarVisible: false, // Não mostrar a aba na barra de navegação
             })}
         >
@@ -67,6 +64,8 @@ function TabRoutes() {
                 options={{
                     headerStyle: styles.header,
                     headerTitle: () => <Header nomeTela="Remédios do dia" />,
+                    headerRight: () => <Icon name='white-balance-sunny' color='#003936' size={sizeIcons} />,
+                    headerRightContainerStyle: styles.headerRightContainerStyle,
                 }}
                 name="Remédios do dia"
                 component={Home}
@@ -75,6 +74,8 @@ function TabRoutes() {
                 options={{
                     headerStyle: styles.header,
                     headerTitle: () => <Header nomeTela="Meus Remédios" />,
+                    headerRight: () => <FontAwesome5Icon name='prescription-bottle' color='#003936' size={sizeIcons - 5} />,
+                    headerRightContainerStyle: styles.headerRightContainerStyle,
                 }}
                 name="Meus Remédios"
                 component={Medicine}
@@ -83,6 +84,8 @@ function TabRoutes() {
                 options={{
                     headerStyle: styles.header,
                     headerTitle: () => <Header nomeTela="Histórico" />,
+                    headerRight: () => <Icon name='history' color='#003936' size={sizeIcons} />,
+                    headerRightContainerStyle: styles.headerRightContainerStyle,
                 }}
                 name="Histórico"
                 component={History}
@@ -150,6 +153,8 @@ export default function Routes() {
                     options={{
                         headerStyle: styles.header,
                         headerTitle: () => <Header nomeTela='Novo Remédio' />,
+                        headerLeftContainerStyle: styles.headerLeftContainerStyle,
+                        headerTintColor: 'white',
                     }}
                     name='AddMedicine' component={AddMedicine}
                 />
