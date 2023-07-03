@@ -31,5 +31,7 @@ export const styles = StyleSheet.create({
   },
   errorMessage:{
     color: 'red',
+    marginLeft: 15,
+    marginBottom: 10,
   },
 });

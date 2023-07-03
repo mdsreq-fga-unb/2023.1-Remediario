@@ -11,14 +11,22 @@ const MedicamentoSearch = () => {
   const navigation = useNavigation();
   const [nomeRemedio, setNomeRemedio] = useState('');
   const [resultado, setResultado] = useState(null);
+  const [erro, setErro] = useState(false);
 
   const buscarMedicamento = async () => {
     try {
       const medicamento = await getMedicamento(nomeRemedio);
-      setResultado(medicamento);
+      if (medicamento) {
+        setResultado(medicamento);
+        setErro(false);
+      } else {
+        setResultado(null);
+        setErro(true);
+      }
       setNomeRemedio('');
     } catch (e) {
       console.log(e);
+      setResultado(null);
     }
   };
 
@@ -37,11 +45,15 @@ const MedicamentoSearch = () => {
         </View>
       </View>
       <View>
-        {resultado ? (
-          <View style={styles.resultContainer}>
-            <ListItem remedio={resultado} navigation={navigation} atualizarLista={buscarMedicamento} />
-          </View>
-        ) : null}
+      {erro ? (
+          <Text style={styles.errorMessage}>Remédio não encontrado</Text>
+        ) : (
+          resultado && (
+            <View style={styles.resultContainer}>
+              <ListItem remedio={resultado} navigation={navigation} atualizarLista={buscarMedicamento} />
+            </View>
+          )
+        )}
       </View>
     </ScrollView>
   );

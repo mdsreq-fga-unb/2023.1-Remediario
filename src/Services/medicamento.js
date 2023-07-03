@@ -94,7 +94,9 @@ var getMedicamento = async (nomeRemedio) => {
     result = storage.data.find((nome) => nomeRemedio === nome.nomeRemedio);
     result = {...result, qtd: 0};
   }
-
+  if (!result.nomeRemedio) {
+    return null;
+  }
   return result;
 };
 
