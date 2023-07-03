@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, Text } from 'react-native';
+import { View, TextInput, Text } from 'react-native';
 import { getMedicamento } from '../../Services/medicamento';
 import { styles } from './styles';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -11,23 +11,14 @@ const MedicamentoSearch = () => {
   const navigation = useNavigation();
   const [nomeRemedio, setNomeRemedio] = useState('');
   const [resultado, setResultado] = useState(null);
-  const [erro, setErro] = useState(false);
 
   const buscarMedicamento = async () => {
     try {
       const medicamento = await getMedicamento(nomeRemedio);
-      if (medicamento) {
-        setResultado(medicamento);
-        setErro(false);
-        setNomeRemedio('');
-      } else {
-        setResultado(null);
-        setErro(true);
-      }
-    } catch (error) {
-      console.error(error);
-      setResultado(null);
-      setErro(true);
+      setResultado(medicamento);
+      setNomeRemedio('');
+    } catch (e) {
+      console.log(e);
     }
   };
 
@@ -46,9 +37,7 @@ const MedicamentoSearch = () => {
         </View>
       </View>
       <View>
-        {erro ? (
-          <Text style={styles.errorMessage}>Remédio não encontrado</Text>
-        ) : resultado ? (
+        {resultado ? (
           <View style={styles.resultContainer}>
             <ListItem remedio={resultado} navigation={navigation} atualizarLista={buscarMedicamento} />
           </View>
