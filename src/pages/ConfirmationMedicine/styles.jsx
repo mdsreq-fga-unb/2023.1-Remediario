@@ -1,14 +1,16 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-    container: {
+    outContainer: {
+        flex: 1,
+        backgroundColor: '#006B65',
+        paddingVertical: 40,
+    },
+    inContainer: {
         flex: 1,
         flexDirection: 'column',
-        backgroundColor: '#006B65',
         alignItems: 'center',
-        justifyContent: 'center',
-        paddingVertical: 50,
-        gap: 40,
+        justifyContent: 'space-between',
     },
 
     header: {

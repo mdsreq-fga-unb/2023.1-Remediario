@@ -25,7 +25,7 @@ var SalvarMedicamento = async (prop) => {
 
   if (nomeRemedio) {
     throw new Error(
-      'Já existe um remédio com esse nome: ' + nomeRemedio.nomeRemedio
+      "Já existe um remédio com esse nome: " + nomeRemedio.nomeRemedio
     );
   }
 
@@ -93,7 +93,7 @@ var getMedicamento = async (nomeRemedio) => {
   if (!result) {
     storage = await ListarMedicamento();
     result = storage.data.find((nome) => nomeRemedio === nome.nomeRemedio);
-    result = {...result, qtd: 0};
+    result = { ...result, qtd: 0 };
   }
 
   return result;
