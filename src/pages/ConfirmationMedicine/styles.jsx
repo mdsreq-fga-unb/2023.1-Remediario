@@ -4,28 +4,26 @@ export const styles = StyleSheet.create({
     outContainer: {
         flex: 1,
         backgroundColor: '#006B65',
-        paddingVertical: 40,
     },
     inContainer: {
         flex: 1,
         flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'space-between',
+        alignContent: 'center',
+        justifyContent: 'center',
+        gap: 100,
+        marginTop: 50,
     },
 
     header: {
-        flex: 1.5,
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 50,
     },
 
     remedio: {
         color: '#FFF',
-        fontSize: 24,
+        fontSize: 32,
         fontWeight: 'regular',
-
     },
 
     horario:{
@@ -35,12 +33,10 @@ export const styles = StyleSheet.create({
     },
 
     buttons:{
-        flex: 7,
         flexDirection: 'column',
         gap: 40,
         justifyContent: 'center',
         alignItems: 'center',
-
     },
 
     confirmButton:{
@@ -58,6 +54,7 @@ export const styles = StyleSheet.create({
     },
 
     delayButton:{
+        flexDirection: 'row',
         height: 60,
         width: 220,
         alignItems: 'center',
@@ -76,12 +73,14 @@ export const styles = StyleSheet.create({
     },
 
     medicineUseContainer:{
-        flex: 1.5,
+        flex: 1,
         flexDirection: 'row',
         justifyContent: 'center',
-        alignItems: 'center',
+        alignContent: 'center',
         flexWrap: 'wrap',
         gap: 8,
+        backgroundColor: '#003936',
         paddingHorizontal: 20,
+        paddingVertical: 20,
     }
 });
