@@ -18,10 +18,6 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: 'bold',
   },
-  arrow: {
-    fontSize: 18,
-    color: 'white',
-  },
   dropdown: {
     marginTop: 10,
   },
@@ -30,7 +26,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#006B65',
-    height: 50,
+    height: 60,
     padding: 8,
     borderRadius: 4,
     marginRight: 5,
@@ -43,7 +39,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#003936',
-    height: 50,
+    height: 60,
     padding: 8,
     borderRadius: 4,
     marginRight: 5,
@@ -63,20 +59,18 @@ const styles = StyleSheet.create({
   },
   dateDay: {
     color: 'white',
-    marginRight: 5,
     fontSize: 10,
   },
   optionIcon: {
-    fontSize: 12,
+    fontSize: 16,
     color: 'white',
   },
   dateContainer: {
-    flex: 1,
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
     width: '100%',
-    gap: 2,
+    gap: 4,
   }
 });
 

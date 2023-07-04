@@ -13,7 +13,7 @@ export default function MedicineUse({variante}) {
             }
             {variante == 'medicineNotUsed' &&
                 <View style={styles.medicineNotUsed}>
-                    <Icon name="check" color="#2E2E2E" size={24}/>
+                    <Icon name="close" color="#2E2E2E" size={24}/>
                 </View>
             }
         </View>

@@ -6,7 +6,7 @@ import {
   Dimensions,
   ScrollView,
 } from "react-native";
-import Icon from "react-native-vector-icons/FontAwesome";
+import Icon from "react-native-vector-icons/MaterialIcons";
 import { styles } from "./styles";
 
 const RemedioDropdown = ({ datas, remedio }) => {
@@ -94,7 +94,7 @@ const RemedioDropdown = ({ datas, remedio }) => {
               <View key={index} style={styles.usedBox}>
                 <Text style={styles.dateHour}>{day + "/" + month}</Text>
                 <View style={styles.dateContainer}>
-                <Text style={styles.dateDay}>{vezesRepetido + "/" + quantidadeDiaria}</Text>
+                  <Text style={styles.dateDay}>{vezesRepetido + "/" + quantidadeDiaria}</Text>
                   <Icon name="check" style={styles.optionIcon} />
                 </View>
               </View>
@@ -105,7 +105,7 @@ const RemedioDropdown = ({ datas, remedio }) => {
                 <Text style={styles.dateHour}>{day + "/" + month}</Text>
                 <View style={styles.dateContainer}>
                   <Text style={styles.dateDay}>{vezesRepetido + "/" + quantidadeDiaria}</Text>
-                  <Icon name="times" style={styles.optionIcon} />
+                  <Icon name="close" style={styles.optionIcon} />
                 </View>
               </View>
             );
@@ -122,8 +122,10 @@ const RemedioDropdown = ({ datas, remedio }) => {
       <TouchableOpacity onPress={handleDropdownToggle} style={styles.header}>
         <Text style={styles.nomeRemedio}>{objetoRemedio.nomeRemedio}</Text>
         <Icon
-          name={dropdownVisible ? "angle-up" : "angle-down"}
+          name={dropdownVisible ? "keyboard-arrow-up" : "keyboard-arrow-down"}
           style={styles.arrow}
+          color='white'
+          size={24}
         />
       </TouchableOpacity>
       {dropdownVisible && (

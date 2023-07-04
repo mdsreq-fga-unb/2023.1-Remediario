@@ -8,7 +8,7 @@ import Medicine from '../pages/Medicine';
 import EditMedicine from '../pages/EditMedicine';
 import { createStackNavigator } from '@react-navigation/stack';
 import Confirmacao from '../pages/ConfirmationMedicine';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon from "react-native-vector-icons/MaterialIcons";
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
 import AddMedicine from '../pages/AddMedicine/index';
 import * as Notifications from 'expo-notifications';
@@ -38,7 +38,7 @@ function TabRoutes() {
                     if (color !== '#006B65') color = 'white'; // Define a cor dos ícones não selecionados como branco (padrão)
 
                     if (route.name === "Remédios do dia") {
-                        iconName = 'white-balance-sunny';
+                        iconName = 'wb-sunny';
                     } else if (route.name === 'Meus Remédios') {
                         iconName = 'prescription-bottle'; // Nome do ícone correspondente em FontAwesome5
                     } else if (route.name === 'Histórico') {
@@ -165,10 +165,13 @@ export default function Routes() {
                     }}
                     name='AddMedicine' component={AddMedicine}
                 />
-                <Stack.Screen options={{
-                    headerStyle: styles.header,
-                    headerTitle: () => <Header nomeTela='Editar Remédio' />,
-                }} name='EditMedicine' component={EditMedicine} />
+                <Stack.Screen
+                    options={{
+                        headerStyle: styles.header,
+                        headerTitle: () => <Header nomeTela='Editar Remédio' />,
+                    }}
+                    name='EditMedicine' component={EditMedicine}
+                />
             </Stack.Navigator>
         </NavigationContainer>
     );
