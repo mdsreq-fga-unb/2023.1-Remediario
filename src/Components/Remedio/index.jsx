@@ -48,21 +48,10 @@ const RemedioDropdown = ({ datas, remedio }) => {
     return (
       datas &&
       datas.map((uso, index) => {
-        console.log(uso)
         const datas2 = new Date(uso);
         let minutes = datas2.getMinutes();
         let day = datas2.getDate();
         let month = datas2.getMonth() + 1;
-
-        if (minutes < 10) {
-          minutes = "0" + minutes;
-        }
-        if (day < 10) {
-          day = "0" + day;
-        }
-        if (month < 10) {
-          month = "0" + month;
-        }
 
         let quantidadeDiaria;
         switch (objetoRemedio.unidadeFrequencia) {
@@ -90,6 +79,16 @@ const RemedioDropdown = ({ datas, remedio }) => {
             used = true;
           }
   
+          if (minutes < 10) {
+            minutes = "0" + minutes;
+          }
+          if (day < 10) {
+            day = "0" + day;
+          }
+          if (month < 10) {
+            month = "0" + month;
+          }
+
           if (used) {
             return (
               <View key={index} style={styles.usedBox}>
