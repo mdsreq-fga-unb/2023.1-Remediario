@@ -11,29 +11,29 @@ export default function ConfirmationMedicine({ route }) {
     let min = new Date().getMinutes();
     const navigation = useNavigation();
 
-    if (min < 10){
+    if (min < 10) {
         min = "0" + min;
     }
-    if (hours < 10){
+    if (hours < 10) {
         hours = "0" + hours;
     }
 
-    let {medicineName} = route.params;
+    let { medicineName } = route.params;
 
     const [medicinesUsed, setMedicinesUsed] = useState(0);
     const [medicineComponents, setMedicineComponents] = useState([]);
-    const [medicine, setMedicine] = useState({qtd: 0});
+    const [medicine, setMedicine] = useState({ qtd: 0 });
     const [medicineTotalDailyUse, setMedicineTotalDailyUse] = useState(0);
     const [medicineQuantidade, setMedicineQuantidade] = useState(0);
 
     useEffect(() => {
         const components = [];
-        
+
         for (let i = 0; i < medicineTotalDailyUse; i++) {
             if (i < medicinesUsed) {
-                components.push(<MedicineUse key={i} variante="medicineUsed"/>);
+                components.push(<MedicineUse key={i} variante="medicineUsed" />);
             } else {
-                components.push(<MedicineUse key={i} variante="medicineNotUsed"/>);
+                components.push(<MedicineUse key={i} variante="medicineNotUsed" />);
             }
         }
         setMedicineComponents(components);
@@ -44,12 +44,12 @@ export default function ConfirmationMedicine({ route }) {
         //console.log("total: " + medicinesUsed + "+" + medicineQuantidade)
     }, [medicinesUsed, medicineQuantidade, medicine]);
 
-    async function integracaoBackend(){
-        try{
+    async function integracaoBackend() {
+        try {
             let medicine2 = await getMedicamento(medicineName);
             setMedicine(medicine2);
 
-            console.log("2: " + medicine.uso)
+            /* console.log("2: " + medicine.uso) */
 
             /*let diaAtual = new Date();
             let tamanho = medicine.estoque;
@@ -59,14 +59,14 @@ export default function ConfirmationMedicine({ route }) {
                 }
             }*/
 
-        }catch(e){
+        } catch (e) {
             console.log(e);
         }
     }
 
     const usoDeMedicamento = () => {
         usoMedicamento(medicineName);
-        console.log("used: " + medicinesUsed)
+        /* console.log("used: " + medicinesUsed) */
         setTimeout(() => {
             navigation.navigate("Remédios do dia");
         }, 1000);
@@ -81,7 +81,7 @@ export default function ConfirmationMedicine({ route }) {
                 </View>
                 <View style={styles.buttons}>
                     <TouchableOpacity style={styles.confirmButton} onPress={usoDeMedicamento}>
-                        <Icon name="check" color="#FFF" size={40}/>
+                        <Icon name="check" color="#FFF" size={40} />
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.delayButton}>
                         <Text style={styles.textDelayButton}>Adiar 5 minutos</Text>

@@ -26,20 +26,21 @@ export const styles = StyleSheet.create({
     },
     text2: {
         color: '#FFF',
-        fontSize: 18,
+        fontSize: 14,
         fontWeight: 'bold',
     },
     botao: {
         height: 40,
     },
     icon: {
-        fontSize: 28,
+        fontSize: 20,
         backgroundColor: 'red',
         height: 30,
         paddingVertical: 2,
         paddingHorizontal: 2,
         borderRadius: 4,
         height: 30,
+        paddingTop: 5
     },
     miniIcon: {
         fontSize: 20,
