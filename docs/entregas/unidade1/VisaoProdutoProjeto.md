@@ -78,18 +78,18 @@ _Tabela de Organização da Equipe_
 | Sprint   | Produto (Entrega)                                  | Data Início | Data Fim |
 | -------- | -------------------------------------------------- | ----------- | -------- |
 | sprint 4 | Organização das Sprints e Confuguração de ambiente | 24/05/23    | 31/05/23 |
-| sprint 5 | Desenvolvimento: US07, US09 & US11                 | 31/05/23    | 07/06/23 |
-| sprint 6 | Desenvolvimento: US13, US05 & US10                 | 07/06/23    | 14/06/23 |
-| sprint 7 | Desenvolvimento: US16 & US21; Integrações finais   | 14/06/23    | 20/06/23 |
+| sprint 5 | US07, US09 & US11                 | 31/05/23    | 07/06/23 |
+| sprint 6 | US13, US05 & US10                 | 07/06/23    | 14/06/23 |
+| sprint 7 | US16 & US21; Integrações finais   | 14/06/23    | 20/06/23 |
 
 **UNIDADE 4:** MVP 2:
 
 | Sprint    | Produto (Entrega)           | Data Início | Data Fim |
 | --------- | --------------------------- | ----------- | -------- |
-| sprint 8  | Desenvolvimento: US12, US17 | 24/05/23    | 31/05/23 |
-| sprint 9  | Desenvolvimento: US15, US20 | 31/05/23    | 07/06/23 |
-| sprint 10 | Desenvolvimento: US08, US06 | 07/06/23    | 14/06/23 |
-| sprint 11 | Desenvolvimento: US18, US19 | 14/06/23    | 20/06/23 |
+| sprint 8  | US12, US17 | 21/06/23    | 28/06/23 |
+| sprint 9  | US15, US20 | 28/06/23    | 05/07/23 |
+| sprint 10 | US08, US06 | 05/07/23    | 12/07/23 |
+| sprint 11 | US18, US19 | 12/07/23    | 18/07/23 |
 
 ### 2.3. Matriz de Comunicação
 
