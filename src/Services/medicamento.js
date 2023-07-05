@@ -132,12 +132,12 @@ var usoMedicamento = async (nomeRemedio) => {
       );
   }
   if (remedio.estoque < 0) remedio.estoque = 0;
-  if (remedio.estoque/remedio.dosagem <= 3){
+  if (remedio.estoque / remedio.dosagem <= 3) {
     schedulePushNotification(
-      remedio, 
-      2, 
+      remedio,
+      2,
       `Existem apenas ${remedio.estoque} ${remedio.unidadeEstoque} restantes!`
-      );
+    );
   }
   remedio.ultimoAlarme = proxDia;
   storage.data.push(remedio);
@@ -286,6 +286,7 @@ var EditarMedicamento = async (prop, nomeRemedio) => {
     minutos = date.getMinutes();
   }
 
+  console.log(prop.ultimoAlarme);
   let today = new Date();
 
   if (
@@ -297,6 +298,7 @@ var EditarMedicamento = async (prop, nomeRemedio) => {
 
   today.setHours(hora, minutos);
   prop.ultimoAlarme = today;
+  console.log(prop.ultimoAlarme);
 
   //Fim redefinição de horário.
 
@@ -321,7 +323,49 @@ var EditarMedicamento = async (prop, nomeRemedio) => {
   } else {
     throw new Error("Valor não encontrado");
   }
-}
+};
+
+var adiarAlarme = async (prop, nomeRemedio, minutos) => {
+  let storage;
+
+  try {
+    storage = await AsyncStorage.getItem("@Remediario:Medicamentos");
+  } catch (e) {
+    console.log(e);
+  }
+
+  if (storage == null) {
+    throw new Error("Lista de medicamentos vazia");
+  } else {
+    storage = JSON.parse(storage);
+  }
+
+  const dataAtual = new Date();
+  const dataDaquiCincoMinutos = new Date(dataAtual.getTime() + minutos * 60000);
+  prop.ultimoAlarme = dataDaquiCincoMinutos;
+
+  let index = storage.data.findIndex(
+    (remedio) => remedio.nomeRemedio === nomeRemedio
+  );
+
+  if (index !== -1) {
+    storage.data[index] = prop;
+
+    try {
+      await AsyncStorage.setItem(
+        "@Remediario:Medicamentos",
+        JSON.stringify(storage)
+      );
+
+      return;
+    } catch (e) {
+      console.log(e);
+      return e;
+    }
+  } else {
+    throw new Error("Valor não encontrado");
+  }
+};
 
 export {
   SalvarMedicamento,
@@ -332,4 +376,5 @@ export {
   getMedicamento,
   usoMedicamento,
   EditarMedicamento,
+  adiarAlarme,
 };
