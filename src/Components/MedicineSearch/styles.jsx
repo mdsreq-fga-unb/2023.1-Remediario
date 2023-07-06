@@ -17,11 +17,12 @@ export const styles = StyleSheet.create({
     borderColor: 'white', 
     borderRadius: 8, 
     paddingHorizontal: 10,
-    width: width - 45,
+    width: width - 62,
   },
   textInput: {
     flex: 1,
     color: 'white',
+    fontSize: 20,
   },
   searchIcon: {
     marginRight: 10,
@@ -33,5 +34,6 @@ export const styles = StyleSheet.create({
     color: 'red',
     marginLeft: 15,
     marginBottom: 10,
+    fontSize: 16,
   },
 });
