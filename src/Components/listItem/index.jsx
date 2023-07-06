@@ -41,9 +41,13 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
   }
 
   function redirect() {
-    navigation.navigate('Confirmacao', {
-      medicineName: nome,
-    });
+    if(estoque == 0) {
+      Alert.alert("É preciso repor o estoque para usar o medicamento")
+    } else {
+      navigation.navigate('Confirmacao', {
+        medicineName: nome,
+      });
+    }
   }
 
   function editMedicine() {
@@ -59,7 +63,6 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
 
   return (
     <TouchableOpacity style={styles.container} onPress={redirect}>
-
       <View style={styles.container2}>
         <Text style={styles.text}>{nome}</Text>
         <View style={styles.alignEnd}>
