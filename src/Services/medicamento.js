@@ -286,7 +286,6 @@ var EditarMedicamento = async (prop, nomeRemedio) => {
     minutos = date.getMinutes();
   }
 
-  console.log(prop.ultimoAlarme);
   let today = new Date();
 
   if (
@@ -298,7 +297,6 @@ var EditarMedicamento = async (prop, nomeRemedio) => {
 
   today.setHours(hora, minutos);
   prop.ultimoAlarme = today;
-  console.log(prop.ultimoAlarme);
 
   //Fim redefinição de horário.
 
@@ -347,6 +345,7 @@ var adiarAlarme = async (prop, nomeRemedio, minutos) => {
   let index = storage.data.findIndex(
     (remedio) => remedio.nomeRemedio === nomeRemedio
   );
+  entregaDados(prop, "Está na hora de tomar o remédio!");
 
   if (index !== -1) {
     storage.data[index] = prop;
