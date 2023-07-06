@@ -113,6 +113,7 @@ A equipe deverá ter uma comunicação periódica como evidenciado na tabela:
 | Planejamento ruim                   | Planejamento com definição de datas não condizentes com o contexto da equipe e do projeto | Alinhamento da equipe com os prazos estabelecidos durante todo o contexto do projeto   | Revisão do backlog e do planejamento dos ciclos                       |
 | Falta de comunicação da equipe      | Falta de conversa entre os membros da equipe sobre determinados tópicos                   | Reforçar a importância da comunicação durante o andamento do projeto, e pontuar as falhas para não acontecerem mais | Encorajar a comunicação e estabelecer uma cultura de comunicação |
 | Problemas de saúde pessoal ou familiar | Membro da equipe fica menos ativo por ter que acompanhar algum familiar ou ele prórpio para tratamento médico | O membro deve comunicar a equipe caso algo do tipo aconteça para que a equipe possa estabelecer os devidos planos de mitigação de riscos |Menos atribuições de responsabilidade a esse membro, reatribuição de atividades entre a equipe e diminuição do escopo da sprint se possível (alteração no cronograma) |
+| Critérios mal definidos | Critérios de US mal definidos ou pouco definidos, ocasionando em comportamentos indesejados das funcionalidades | Revisar os critérios minuciosamente antes de aprová-los | Incluir novos critérios para evitar os comportamentos indesejados.
 
 ### 2.5. Critérios de Replanejamento
 
@@ -206,3 +207,4 @@ Uso de medicamentos de forma incorreta: <a href="http://www.conselho.saude.gov.b
 | 24/04/23 | 1.0    | Criação do arquivo    | Júlio, Luan e Rodrigo |
 | 25/04/23 | 1.1    | Correção unidade 1    |                       |
 | 26/06/23 | 1.2    | Unidade 2, 3 e riscos | Mateus de Almeida     |
+| 05/07/23 | 1.3    | ATT Riscos            | Rodrigo Wright        |
