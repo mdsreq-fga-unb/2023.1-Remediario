@@ -49,8 +49,6 @@ export default function ConfirmationMedicine({ route }) {
             let medicine2 = await getMedicamento(medicineName);
             setMedicine(medicine2);
 
-            console.log("2: " + medicine.uso)
-
             /*let diaAtual = new Date();
             let tamanho = medicine.estoque;
             for (let i = 0; i < tamanho; i++) {

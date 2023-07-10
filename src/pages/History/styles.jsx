@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
         flex: 1,
         paddingVertical: 20,
         paddingHorizontal: 10,
-        alignItems: 'center',
+        alignItems: 'flex-start',
         justifyContent: "flex-start",
         gap: 10,
         backgroundColor: '#161B1B',
@@ -29,5 +29,8 @@ export const styles = StyleSheet.create({
     },
     medicineContainer: {
         gap: 8,
+    },
+    title: {
+
     }
 });
