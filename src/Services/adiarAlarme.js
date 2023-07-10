@@ -1,22 +1,13 @@
-const { AsyncStorage } = require("@react-native-async-storage/async-storage");
-
-async function adiarAlarme() {
-  let storage;
-  try {
-    storage = AsyncStorage.getItem("@Remediario:Medicamentos");
-  } catch (e) {
-    console.log(e);
+function adiarAlarme(prop, minutos) {
+  if (!minutos) {
+    minutos = 5;
   }
 
-  if (storage == null) {
-    storage = {
-      data: [],
-    };
-  } else {
-    storage = JSON.parse(storage);
-  }
+  const dataAtual = new Date();
+  const dataDaquiCincoMinutos = new Date(dataAtual.getTime() + minutos * 60000);
+  prop.ultimoAlarme = dataDaquiCincoMinutos;
 
-  return storage;
+  return prop;
 }
 
 module.exports = { adiarAlarme };

@@ -341,11 +341,11 @@ var adiarAlarme = async (prop, nomeRemedio, minutos) => {
   const dataAtual = new Date();
   const dataDaquiCincoMinutos = new Date(dataAtual.getTime() + minutos * 60000);
   prop.ultimoAlarme = dataDaquiCincoMinutos;
+  entregaDados(prop, "Está na hora de tomar o remédio!");
 
   let index = storage.data.findIndex(
     (remedio) => remedio.nomeRemedio === nomeRemedio
   );
-  entregaDados(prop, "Está na hora de tomar o remédio!");
 
   if (index !== -1) {
     storage.data[index] = prop;
