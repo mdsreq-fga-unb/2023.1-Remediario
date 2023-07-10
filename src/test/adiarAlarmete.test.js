@@ -1,4 +1,4 @@
-const { adiarAlarme } = require("../../src/Services/adiarAlarme");
+const { adiarAlarme } = require("./adiarAlarme");
 
 const objectTeste1 = {
   nomeRemedio: "dipirona",
