@@ -89,6 +89,7 @@ var ListarMedicamentosRemovidos = async () => {
     return e;
   }
   storage = JSON.parse(storage);
+
   return storage;
 };
 
@@ -195,7 +196,7 @@ var SalvarMedicamentoRemovido = async (prop) => {
     storageRemovidos = JSON.parse(storageRemovidos);
   }
   storageRemovidos.data.push(prop);
-  let prop2 = JSON.stringify(storage);
+  let prop2 = JSON.stringify(storageRemovidos);
 
   //Pega o remedio para adicionar em Medicamentos removidos
   try {
@@ -215,9 +216,7 @@ var RemoverMedicamento = async (nomeRemedio) => {
   } catch (e) {
     console.log(e);
   }
-  console.log("1: " + storage);
-  remedio = getMedicamento(nomeRemedio);
-  console.log("2: " + remedio);
+  remedio = await getMedicamento(nomeRemedio);
   SalvarMedicamentoRemovido(remedio);
 
   if (storage == null) {
