@@ -3,11 +3,12 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Linking } from 'react-native';
 import Home from '../pages/Home';
 import History from '../pages/History';
+// import TesteBackEnd from '../pages/TesteBackEnd';
 import Medicine from '../pages/Medicine';
 import EditMedicine from '../pages/EditMedicine';
 import { createStackNavigator } from '@react-navigation/stack';
 import Confirmacao from '../pages/ConfirmationMedicine';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon from "react-native-vector-icons/MaterialIcons";
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
 import AddMedicine from '../pages/AddMedicine/index';
 import * as Notifications from 'expo-notifications';
@@ -34,15 +35,19 @@ function TabRoutes() {
             screenOptions={({ route }) => ({
                 tabBarIcon: ({ color }) => {
                     let iconName;
-                    if (color !== 'yellow') color = 'white'; // Define a cor dos ícones não selecionados como branco (padrão)
+                    if (color !== '#006B65') color = 'white'; // Define a cor dos ícones não selecionados como branco (padrão)
 
                     if (route.name === "Remédios do dia") {
-                        iconName = 'white-balance-sunny';
+                        iconName = 'wb-sunny';
                     } else if (route.name === 'Meus Remédios') {
                         iconName = 'prescription-bottle'; // Nome do ícone correspondente em FontAwesome5
                     } else if (route.name === 'Histórico') {
                         iconName = 'history';
-                    } else if (route.name === 'Editar Remedios' && isMedicineFocused) {
+                    } 
+                    // else if (route.name === 'teste') {
+                    //     iconName = 'pencil';
+                    // } 
+                    else if (route.name === 'Editar Remedios' && isMedicineFocused) {
                         iconName = 'pencil';
                     }
                     if (route.name === 'Meus Remédios') {
@@ -53,13 +58,10 @@ function TabRoutes() {
                         return <Icon name={iconName} color={color} size={sizeIcons} />;
                     }
                 },
-                tabBarLabelStyle: {
-                    fontSize: 12,
-                    marginBottom: -4,
-                },
-                tabBarStyle: [styles.tabBarStyle, styles.alignLeft],
+                tabBarStyle: styles.tabBarStyle,
                 tabBarShowLabel: false,
-                tabBarActiveTintColor: 'yellow', // Define a cor do ícone selecionado como amarelo
+                tabBarItemStyle: styles.tabBarItemStyle,
+                tabBarActiveBackgroundColor:  '#006B65', // Define a cor do ícone selecionado como amarelo
                 tabBarVisible: false, // Não mostrar a aba na barra de navegação
             })}
         >
@@ -86,7 +88,15 @@ function TabRoutes() {
                 }}
                 name="Histórico"
                 component={History}
-            />
+            /> 
+            {/* <Tab.Screen
+                options={{
+                    headerStyle: styles.header,
+                    headerTitle: () => <Header nomeTela="teste" />,
+                }}
+                name="teste"
+                component={TesteBackEnd}
+            /> */}
         </Tab.Navigator>
     );
 }
@@ -150,13 +160,18 @@ export default function Routes() {
                     options={{
                         headerStyle: styles.header,
                         headerTitle: () => <Header nomeTela='Novo Remédio' />,
+                        headerLeftContainerStyle: styles.headerLeftContainerStyle,
+                        headerTintColor: 'white',
                     }}
                     name='AddMedicine' component={AddMedicine}
                 />
-                <Stack.Screen options={{
-                    headerStyle: styles.header,
-                    headerTitle: () => <Header nomeTela='Editar Remédio' />,
-                }} name='EditMedicine' component={EditMedicine} />
+                <Stack.Screen
+                    options={{
+                        headerStyle: styles.header,
+                        headerTitle: () => <Header nomeTela='Editar Remédio' />,
+                    }}
+                    name='EditMedicine' component={EditMedicine}
+                />
             </Stack.Navigator>
         </NavigationContainer>
     );
