@@ -167,6 +167,7 @@ var usoMedicamento = async (nomeRemedio) => {
 var DeletarMedicamento = async () => {
   try {
     await AsyncStorage.removeItem("@Remediario:Medicamentos");
+    await AsyncStorage.removeItem("@Remediario:MedicamentosRemovidos");
   } catch (e) {
     console.log(e);
     return false;
@@ -214,8 +215,9 @@ var RemoverMedicamento = async (nomeRemedio) => {
   } catch (e) {
     console.log(e);
   }
-  console.log(storage);
+  console.log("1: " + storage);
   remedio = getMedicamento(nomeRemedio);
+  console.log("2: " + remedio);
   SalvarMedicamentoRemovido(remedio);
 
   if (storage == null) {
