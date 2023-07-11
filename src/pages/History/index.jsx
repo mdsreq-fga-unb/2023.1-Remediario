@@ -41,7 +41,7 @@ export default function History() {
             <View style={styles.container}>
                 <Text style={styles.titleLarge}>Remédios ativos</Text>
                 {list && list.data.map((remedio, index) => {
-                    return <RemedioDropdown datas={remedio.uso} nomeRemedio={remedio.nomeRemedio} key={index}/>
+                    return <RemedioDropdown datas={remedio.uso} remedio={remedio} key={index}/>
                 })}
                 <Text style={styles.titleLarge}>Remédios removidos</Text>
                 {listRemovidos && listRemovidos.data.map((remedio, index) => {

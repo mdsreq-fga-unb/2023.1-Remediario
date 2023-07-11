@@ -124,18 +124,21 @@ var usoMedicamento = async (nomeRemedio) => {
   remedio.uso.push(diaAtual);
   remedio.estoque -= remedio.dosagem;
 
+  let proxDia = new Date(diaAtual);
+  const frequencia = parseInt(remedio.frequencia);
+
   switch (remedio.unidadeFrequencia) {
     case "meses":
-      diaAtual.setMonth(diaAtual.getMonth() + remedio.frequencia);
+      proxDia.setMonth(parseInt(diaAtual.getMonth()) + frequencia);
       break;
     case "dias":
-      diaAtual.setDate(diaAtual.getDate() + remedio.frequencia);
+      proxDia.setDate(diaAtual.getDate() + frequencia);
       break;
     case "horas":
-      diaAtual.setHours(diaAtual.getHours() + remedio.frequencia);
+      proxDia.setHours(diaAtual.getHours() + frequencia);
       break;
     case "minutos":
-      diaAtual.setMinutes(diaAtual.getMinutes() + remedio.frequencia);
+      proxDia.setMinutes(diaAtual.getMinutes() + frequencia);
       break;
     default:
       throw new Error(
@@ -150,8 +153,7 @@ var usoMedicamento = async (nomeRemedio) => {
       `Existem apenas ${remedio.estoque} ${remedio.unidadeEstoque} restantes!`
     );
   }
-  remedio.ultimoAlarme = diaAtual;
-
+  remedio.ultimoAlarme = proxDia;
   storage.data.push(remedio);
   storage = JSON.stringify(storage);
 
@@ -369,6 +371,49 @@ var EditarMedicamento = async (prop, nomeRemedio) => {
   }
 };
 
+var adiarAlarme = async (prop, nomeRemedio, minutos) => {
+  let storage;
+
+  try {
+    storage = await AsyncStorage.getItem("@Remediario:Medicamentos");
+  } catch (e) {
+    console.log(e);
+  }
+
+  if (storage == null) {
+    throw new Error("Lista de medicamentos vazia");
+  } else {
+    storage = JSON.parse(storage);
+  }
+
+  const dataAtual = new Date();
+  const dataDaquiCincoMinutos = new Date(dataAtual.getTime() + minutos * 60000);
+  prop.ultimoAlarme = dataDaquiCincoMinutos;
+
+  let index = storage.data.findIndex(
+    (remedio) => remedio.nomeRemedio === nomeRemedio
+  );
+  entregaDados(prop, "Está na hora de tomar o remédio!");
+
+  if (index !== -1) {
+    storage.data[index] = prop;
+
+    try {
+      await AsyncStorage.setItem(
+        "@Remediario:Medicamentos",
+        JSON.stringify(storage)
+      );
+
+      return;
+    } catch (e) {
+      console.log(e);
+      return e;
+    }
+  } else {
+    throw new Error("Valor não encontrado");
+  }
+};
+
 export {
   SalvarMedicamento,
   ListarMedicamento,
@@ -379,4 +424,5 @@ export {
   getMedicamento,
   usoMedicamento,
   EditarMedicamento,
+  adiarAlarme,
 };

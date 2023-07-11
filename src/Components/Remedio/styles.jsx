@@ -14,24 +14,42 @@ const styles = StyleSheet.create({
   },
   nomeRemedio: {
     color: 'white',
-  },
-  arrow: {
-    fontSize: 18,
-    color: 'white',
+    color: '#FFF',
+    fontSize: 22,
+    fontWeight: 'bold',
   },
   dropdown: {
     marginTop: 10,
   },
-  optionBox: {
+  usedBox: {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#006B65',
-    height: 50,
+    height: 60,
     padding: 8,
     borderRadius: 4,
     marginRight: 5,
     gap: 4,
+    width: 60,
+  },
+
+  notUsedBox: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#003936',
+    height: 60,
+    padding: 8,
+    borderRadius: 4,
+    marginRight: 5,
+    gap: 4,
+    width: 60,
+  },
+  notUsedDateDay: {
+    color: 'white',
+    fontSize: 14,
+    fontWeight: 'bold',
   },
   dateHour: {
     color: 'white',
@@ -41,20 +59,18 @@ const styles = StyleSheet.create({
   },
   dateDay: {
     color: 'white',
-    marginRight: 5,
     fontSize: 10,
   },
   optionIcon: {
-    fontSize: 10,
+    fontSize: 16,
     color: 'white',
   },
   dateContainer: {
-    flex: 1,
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
     width: '100%',
-    gap: 2,
+    gap: 4,
   }
 });
 
