@@ -19,7 +19,7 @@ export default function ConfirmationMedicine({ route }) {
         fetchRemedioData();
         contarDiasRepetidos();
         contarUsos();
-    }, [medicine,]);
+    }, [medicine]);
 
     const fetchRemedioData = async () => {
         try {
@@ -36,22 +36,27 @@ export default function ConfirmationMedicine({ route }) {
         }else{
             const contagemDias = {};
             const usos = medicine.uso;
-            // Itera sobre o array de datas e conta a repetição dos dias
-            usos.forEach((uso) => {
-              const datas2 = new Date(uso);
-              let dia = datas2.getDate();
-        
-              // Verifica se o dia já existe no objeto de contagem
-              if (contagemDias[dia]) {
-                // Se existir, incrementa a contagem
-                contagemDias[dia]++;
-              } else {
-                // Caso contrário, inicializa a contagem com 1
-                contagemDias[dia] = 1;
-              }
-            });
 
-            return contagemDias;
+            if(usos){
+                // Itera sobre o array de datas e conta a repetição dos dias
+                usos.forEach((uso) => {
+                    const datas2 = new Date(uso);
+                    let dia = datas2.getDate();
+
+                    // Verifica se o dia já existe no objeto de contagem
+                    if (contagemDias[dia]) {
+                    // Se existir, incrementa a contagem
+                    contagemDias[dia]++;
+                    } else {
+                    // Caso contrário, inicializa a contagem com 1
+                    contagemDias[dia] = 1;
+                    }
+                });
+
+                return contagemDias;
+            }else{
+                return 0;
+            }
         }
     };
 
@@ -61,50 +66,63 @@ export default function ConfirmationMedicine({ route }) {
         }else{
             const contagemDias = contarDiasRepetidos();
             let usos = medicine.uso;
-            return (
+
+            let quantidadeDiaria;
+            switch (medicine.unidadeFrequencia) {
+            case "meses":
+                quantidadeDiaria = 1
+                break;
+            case "dias":
+                quantidadeDiaria = 1
+                break;
+            case "horas":
+                quantidadeDiaria =  24 / medicine.frequencia
+                break;
+            case "minutos":
+                quantidadeDiaria = 1440 / medicine.frequencia 
+                break;
+            }
+            quantidadeDiaria = Math.trunc(quantidadeDiaria)
+            setMedicineTotalDailyUse(quantidadeDiaria)
+
+            if(usos){
                 usos.map((uso) => {
                     const datas2 = new Date(uso);
                     let day = datas2.getDate();
-
-                    let quantidadeDiaria;
-                    switch (medicine.unidadeFrequencia) {
-                    case "meses":
-                        quantidadeDiaria = 1
-                        break;
-                    case "dias":
-                        quantidadeDiaria = 1
-                        break;
-                    case "horas":
-                        quantidadeDiaria =  24 / medicine.frequencia
-                        break;
-                    case "minutos":
-                        quantidadeDiaria = 1440 / medicine.frequencia 
-                        break;
-                    }
-                    quantidadeDiaria = Math.trunc(quantidadeDiaria)
-                    setMedicineTotalDailyUse(quantidadeDiaria)
                     setMedicinesUsed(contagemDias[day])
-                    renderComponents();
                 })
-            );
+                renderComponents();
+            }else{
+                
+                setMedicinesUsed(0)
+                renderComponents();
+            }
+            
         }
     };
 
     const renderComponents = () => {
         const components = [];
-        for (let i = 0; i < medicineTotalDailyUse; i++) {
-            if (i < medicinesUsed) {
-                components.push(<MedicineUse key={i} variante="medicineUsed"/>);
-            } else {
+        if(medicinesUsed == 0){
+            for (let i = 0; i < medicineTotalDailyUse; i++) {
                 components.push(<MedicineUse key={i} variante="medicineNotUsed"/>);
             }
+        }else{
+            for (let i = 0; i < medicineTotalDailyUse; i++) {
+                if (i < medicinesUsed) {
+                    components.push(<MedicineUse key={i} variante="medicineUsed"/>);
+                } else {
+                    components.push(<MedicineUse key={i} variante="medicineNotUsed"/>);
+                }
+            }
         }
+        
         setMedicineComponents(components);
     }
 
     const navigation = useNavigation();
-    const usoDeMedicamento = () => {
-        usoMedicamento(medicineName);
+    const usoDeMedicamento = async () => {
+        await usoMedicamento(medicineName);
         setTimeout(() => {
             navigation.navigate("Remédios do dia");
         }, 1000);
