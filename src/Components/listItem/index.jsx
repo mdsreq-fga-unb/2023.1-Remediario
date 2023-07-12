@@ -16,8 +16,13 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
   let minutos = today.getMinutes();
   let secunds = today.getSeconds();
   let nome = remedio.nomeRemedio;
+  let uso = today.getHours();
   let estoque = remedio.estoque;
   let progress = (estoque / remedio.dosagem) / 10;
+
+
+  console.log(today);
+  console.log('____________________')
 
   //informações do celular
   let date = new Date();

@@ -3,10 +3,25 @@ import { View, Text } from 'react-native';
 import { styles } from './styles';
 
 const Timer = ({ horaTimer, minutoTimer, segundosTimer }) => {
+
+
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            setTime({
+                hours: horaTimer || 0,
+                minutes: minutoTimer || 0,
+                seconds: segundosTimer || 10
+            });
+        }, 1000);
+
+        return () => clearTimeout(timeout);
+    }, [horaTimer, minutoTimer, segundosTimer]);
+
+
     const [time, setTime] = useState({
         hours: horaTimer || 0,
         minutes: minutoTimer || 0,
-        seconds: segundosTimer || 10
+        seconds: segundosTimer || 0
     });
 
     useEffect(() => {
@@ -28,7 +43,7 @@ const Timer = ({ horaTimer, minutoTimer, segundosTimer }) => {
         }, 1000);
 
         return () => clearInterval(timer);
-    }, []);
+    }, [time]);
 
     const formatTime = (time) => {
         const { hours, minutes, seconds } = time;
@@ -40,13 +55,14 @@ const Timer = ({ horaTimer, minutoTimer, segundosTimer }) => {
         return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
     };
 
-    // Verifica se o tempo é menor que zero e retorna uma string vazia em vez de exibir valores negativos
     const displayTime = (time) => {
         if (time.hours < 0 || time.minutes < 0 || time.seconds < 0) {
             return '';
         }
         return formatTime(time);
     };
+
+    console.log(time);
 
     return (
         <View>
