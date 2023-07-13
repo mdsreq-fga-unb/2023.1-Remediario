@@ -7,6 +7,7 @@ import { getMedicamento, usoMedicamento, adiarAlarme } from '../../Services/medi
 import { useNavigation } from '@react-navigation/native';
 
 export default function ConfirmationMedicine({ route }) {
+
     const [medicineComponents, setMedicineComponents] = useState([]);
     const [medicinesUsed, setMedicinesUsed] = useState(0);
     const [medicineTotalDailyUse, setMedicineTotalDailyUse] = useState(0);
@@ -66,7 +67,6 @@ export default function ConfirmationMedicine({ route }) {
         }else{
             const contagemDias = contarDiasRepetidos();
             let usos = medicine.uso;
-
             let quantidadeDiaria;
             switch (medicine.unidadeFrequencia) {
             case "meses":
@@ -92,8 +92,7 @@ export default function ConfirmationMedicine({ route }) {
                     setMedicinesUsed(contagemDias[day])
                 })
                 renderComponents();
-            }else{
-                
+            }else{      
                 setMedicinesUsed(0)
                 renderComponents();
             }
@@ -119,7 +118,6 @@ export default function ConfirmationMedicine({ route }) {
         
         setMedicineComponents(components);
     }
-
     const navigation = useNavigation();
     const usoDeMedicamento = async () => {
         await usoMedicamento(medicineName);
@@ -162,7 +160,7 @@ export default function ConfirmationMedicine({ route }) {
                 </View>
                 <View style={styles.buttons}>
                     <TouchableOpacity style={styles.confirmButton} onPress={usoDeMedicamento}>
-                        <Icon name="check" color="#FFF" size={40}/>
+                        <Icon name="check" color="#FFF" size={40} />
                     </TouchableOpacity>
                     <View style={styles.delayButtonContainer}>
                         <TouchableOpacity onPress={removeMinutos}>

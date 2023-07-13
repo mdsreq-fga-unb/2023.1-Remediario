@@ -28,6 +28,7 @@ export const styles = StyleSheet.create({
     },
     text2: {
         color: '#FFF',
+
         fontSize: 16,
         fontWeight: 'bold',
         height: '100%',
