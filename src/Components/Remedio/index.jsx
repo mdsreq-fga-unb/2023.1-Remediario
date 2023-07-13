@@ -52,6 +52,7 @@ const RemedioDropdown = ({ datas, remedio }) => {
         let minutes = datas2.getMinutes();
         let day = datas2.getDate();
         let month = datas2.getMonth() + 1;
+        let year = datas2.getFullYear();
 
         let quantidadeDiaria;
         switch (objetoRemedio.unidadeFrequencia) {
@@ -92,9 +93,9 @@ const RemedioDropdown = ({ datas, remedio }) => {
           if (used) {
             return (
               <View key={index} style={styles.usedBox}>
-                <Text style={styles.dateHour}>{day + "/" + month}</Text>
+                <Text style={styles.dateHour}>{day + "/" + month + "/" + year}</Text>
                 <View style={styles.dateContainer}>
-                  <Text style={styles.dateDay}>{vezesRepetido + "/" + quantidadeDiaria}</Text>
+                <Text style={styles.dateDay}>{"Usos: " + vezesRepetido + "/" + quantidadeDiaria}</Text>
                   <Icon name="check" style={styles.optionIcon} />
                 </View>
               </View>
@@ -102,9 +103,9 @@ const RemedioDropdown = ({ datas, remedio }) => {
           } else {
             return (
               <View key={index} style={styles.notUsedBox}>
-                <Text style={styles.dateHour}>{day + "/" + month}</Text>
+                <Text style={styles.dateHour}>{day + "/" + month + "/" + year}</Text>
                 <View style={styles.dateContainer}>
-                  <Text style={styles.dateDay}>{vezesRepetido + "/" + quantidadeDiaria}</Text>
+                  <Text style={styles.dateDay}>{"Usos: " + vezesRepetido + "/" + quantidadeDiaria}</Text>
                   <Icon name="close" style={styles.optionIcon} />
                 </View>
               </View>
