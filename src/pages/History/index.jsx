@@ -31,7 +31,7 @@ export default function History() {
         <KeyboardAwareScrollView contentContainerStyle={styles.scrollView}>
             <View style={styles.container}>
                 {list && list.data.map((remedio, index) => {
-                    return <RemedioDropdown datas={remedio.uso} nomeRemedio={remedio.nomeRemedio} key={index}/>
+                    return <RemedioDropdown datas={remedio.uso} remedio={remedio} key={index}/>
                 })}
             </View>
         </KeyboardAwareScrollView>

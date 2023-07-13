@@ -11,6 +11,8 @@ export const styles = StyleSheet.create({
         marginBottom: 12,
         padding: 10,
         borderRadius: 10,
+        alignContent: 'center',
+        justifyContent: 'center',
     },
     container2: {
         flexDirection: 'row',
@@ -26,21 +28,21 @@ export const styles = StyleSheet.create({
     },
     text2: {
         color: '#FFF',
-        fontSize: 14,
+
+        fontSize: 16,
         fontWeight: 'bold',
+        height: '100%',
     },
     botao: {
         height: 40,
     },
     icon: {
-        fontSize: 20,
-        backgroundColor: 'red',
-        height: 30,
+        fontSize: 24,
+        height: 28,
+        backgroundColor: '#003936',
         paddingVertical: 2,
         paddingHorizontal: 2,
         borderRadius: 4,
-        height: 30,
-        paddingTop: 5
     },
     miniIcon: {
         fontSize: 20,
@@ -56,8 +58,8 @@ export const styles = StyleSheet.create({
         borderRadius: 4,
         justifyContent: 'center',
         alignItems: 'center',
-        gap: 2,
-        height: 30,
+        gap: 4,
+        height: 28,
     },
     alignEnd: {
         flexDirection: 'row',
@@ -75,6 +77,7 @@ export const styles = StyleSheet.create({
         width: '100%',
         height: 8,
         borderRadius: 5,
+        backgroundColor: '#003936',
     },
     progressBarText: {
         marginTop: 5,
