@@ -79,6 +79,20 @@ var ListarMedicamento = async () => {
   return storage;
 };
 
+var ListarMedicamentosRemovidos = async () => {
+  var storage;
+
+  try {
+    storage = await AsyncStorage.getItem("@Remediario:MedicamentosRemovidos");
+  } catch (e) {
+    console.log(e);
+    return e;
+  }
+  storage = JSON.parse(storage);
+
+  return storage;
+};
+
 var getMedicamento = async (nomeRemedio) => {
   let storage;
 
@@ -99,7 +113,7 @@ var getMedicamento = async (nomeRemedio) => {
 };
 
 var usoMedicamento = async (nomeRemedio) => {
-  let remedio = await RemoverMedicamento(nomeRemedio);
+  let remedio = await RenovarMedicamento(nomeRemedio);
   remedio = remedio[0];
   let storage = await ListarMedicamento();
   let diaAtual = new Date();
@@ -156,6 +170,7 @@ var usoMedicamento = async (nomeRemedio) => {
 var DeletarMedicamento = async () => {
   try {
     await AsyncStorage.removeItem("@Remediario:Medicamentos");
+    await AsyncStorage.removeItem("@Remediario:MedicamentosRemovidos");
   } catch (e) {
     console.log(e);
     return false;
@@ -164,7 +179,37 @@ var DeletarMedicamento = async () => {
   return true;
 };
 
-var RemoverMedicamento = async (nomeRemedio) => {
+var SalvarMedicamentoRemovido = async (prop) => {
+  //Cria array de Medicamentos removidos
+  let storageRemovidos;
+  try {
+    storageRemovidos = await AsyncStorage.getItem(
+      "@Remediario:MedicamentosRemovidos"
+    );
+  } catch (e) {
+    console.log(e);
+  }
+
+  if (storageRemovidos == null) {
+    storageRemovidos = {
+      data: [],
+    };
+  } else {
+    storageRemovidos = JSON.parse(storageRemovidos);
+  }
+  storageRemovidos.data.push(prop);
+  let prop2 = JSON.stringify(storageRemovidos);
+
+  //Pega o remedio para adicionar em Medicamentos removidos
+  try {
+    await AsyncStorage.setItem("@Remediario:MedicamentosRemovidos", prop2);
+  } catch (e) {
+    console.log(e);
+    return e;
+  }
+};
+
+var RenovarMedicamento = async (nomeRemedio) => {
   let storage;
 
   try {
@@ -177,6 +222,47 @@ var RemoverMedicamento = async (nomeRemedio) => {
     throw new Error("Lista de medicamentos vazia");
   } else {
     storage = JSON.parse(storage);
+  }
+
+  let index = storage.data.findIndex(
+    (remedio) => remedio.nomeRemedio === nomeRemedio
+  );
+
+  if (index !== -1) {
+    let value = storage.data.splice(index, 1);
+
+    try {
+      await AsyncStorage.setItem(
+        "@Remediario:Medicamentos",
+        JSON.stringify(storage)
+      );
+
+      return value;
+    } catch (e) {
+      console.log(e);
+      return e;
+    }
+  } else {
+    throw new Error("Valor não encontrado");
+  }
+};
+
+var RemoverMedicamento = async (nomeRemedio) => {
+  //Recebe o medicamento
+  let storage;
+
+  try {
+    storage = await AsyncStorage.getItem("@Remediario:Medicamentos");
+  } catch (e) {
+    console.log(e);
+  }
+
+  if (storage == null) {
+    throw new Error("Lista de medicamentos vazia");
+  } else {
+    storage = JSON.parse(storage);
+    remedio = await getMedicamento(nomeRemedio);
+    SalvarMedicamentoRemovido(remedio);
   }
 
   let index = storage.data.findIndex(
@@ -369,6 +455,7 @@ var adiarAlarme = async (prop, nomeRemedio, minutos) => {
 export {
   SalvarMedicamento,
   ListarMedicamento,
+  ListarMedicamentosRemovidos,
   DeletarMedicamento,
   RemoverMedicamento,
   medicamentosDia,

@@ -24,52 +24,40 @@ const styles = StyleSheet.create({
   usedBox: {
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#006B65',
     height: 60,
     padding: 8,
     borderRadius: 4,
     marginRight: 5,
     gap: 4,
-    width: 60,
   },
-
   notUsedBox: {
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#003936',
-    height: 60,
     padding: 8,
     borderRadius: 4,
     marginRight: 5,
     gap: 4,
-    width: 60,
-  },
-  notUsedDateDay: {
-    color: 'white',
-    fontSize: 14,
-    fontWeight: 'bold',
   },
   dateHour: {
     color: 'white',
     marginRight: 5,
-    fontSize: 14,
+    fontSize: 16,
     fontWeight: 'bold',
   },
   dateDay: {
     color: 'white',
-    fontSize: 10,
+    fontSize: 12,
   },
   optionIcon: {
-    fontSize: 16,
+    fontSize: 20,
     color: 'white',
   },
   dateContainer: {
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'row',
-    width: '100%',
     gap: 4,
   }
 });

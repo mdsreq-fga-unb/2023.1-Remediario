@@ -14,6 +14,7 @@ import AddMedicine from '../pages/AddMedicine/index';
 import * as Notifications from 'expo-notifications';
 import { styles } from './styles';
 import Header from '../Components/Header';
+import TesteBackEnd from '../pages/TesteBackEnd';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -88,18 +89,21 @@ function TabRoutes() {
                 }}
                 name="Histórico"
                 component={History}
-            /> 
-            {/* <Tab.Screen
-                options={{
-                    headerStyle: styles.header,
-                    headerTitle: () => <Header nomeTela="teste" />,
-                }}
-                name="teste"
-                component={TesteBackEnd}
-            /> */}
+            />
         </Tab.Navigator>
     );
 }
+
+/*
+<Tab.Screen
+    options={{
+        headerStyle: styles.header,
+        headerTitle: () => <Header nomeTela="Teste" />,
+    }}
+    name="Teste"
+    component={TesteBackEnd}
+/>
+*/
 
 export default function Routes() {
     return (

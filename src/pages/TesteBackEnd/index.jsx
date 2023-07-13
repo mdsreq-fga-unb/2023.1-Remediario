@@ -13,7 +13,7 @@ import {
 
     // "meses""dias""horas""minutos"
 
-export default function Home() {
+export default function TesteBackend() {
     objectTeste1 = {
         nomeRemedio: "remedioteste",
         dosagem: 3,
@@ -58,8 +58,8 @@ export default function Home() {
         ultimoAlarme: "23:00",
         uso: [],
     };
+
     async function testeSalvar(){
-        
         try {
             await SalvarMedicamento(objectTeste1);
             await SalvarMedicamento(objectTeste2);
