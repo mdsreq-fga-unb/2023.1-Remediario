@@ -90,17 +90,20 @@ function TabRoutes() {
                 name="Histórico"
                 component={History}
             />
-            <Tab.Screen
-                options={{
-                    headerStyle: styles.header,
-                    headerTitle: () => <Header nomeTela="Teste" />,
-                }}
-                name="Teste"
-                component={TesteBackEnd}
-            />
         </Tab.Navigator>
     );
 }
+
+/*
+<Tab.Screen
+    options={{
+        headerStyle: styles.header,
+        headerTitle: () => <Header nomeTela="Teste" />,
+    }}
+    name="Teste"
+    component={TesteBackEnd}
+/>
+*/
 
 export default function Routes() {
     return (

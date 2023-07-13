@@ -14,9 +14,7 @@ export default function History() {
     const isFocused = useIsFocused();
 
     useEffect(() => {
-        if (isFocused) {
-            recarregar();
-        }
+        recarregar();
     }, [isFocused]);
 
     async function recarregar() {
@@ -45,7 +43,7 @@ export default function History() {
                 })}
                 <Text style={styles.titleLarge}>Remédios removidos</Text>
                 {listRemovidos && listRemovidos.data.map((remedio, index) => {
-                    return <RemedioDropdown datas={remedio.uso} nomeRemedio={remedio.nomeRemedio} key={index}/>
+                    return <RemedioDropdown datas={remedio.uso} remedio={remedio} key={index}/>
                 })}
             </View>
         </KeyboardAwareScrollView>

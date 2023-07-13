@@ -113,7 +113,7 @@ var getMedicamento = async (nomeRemedio) => {
 };
 
 var usoMedicamento = async (nomeRemedio) => {
-  let remedio = await RemoverMedicamento(nomeRemedio);
+  let remedio = await RenovarMedicamento(nomeRemedio);
   remedio = remedio[0];
   let storage = await ListarMedicamento();
   let diaAtual = new Date();
@@ -209,6 +209,44 @@ var SalvarMedicamentoRemovido = async (prop) => {
   }
 };
 
+var RenovarMedicamento = async (nomeRemedio) => {
+  let storage;
+
+  try {
+    storage = await AsyncStorage.getItem("@Remediario:Medicamentos");
+  } catch (e) {
+    console.log(e);
+  }
+
+  if (storage == null) {
+    throw new Error("Lista de medicamentos vazia");
+  } else {
+    storage = JSON.parse(storage);
+  }
+
+  let index = storage.data.findIndex(
+    (remedio) => remedio.nomeRemedio === nomeRemedio
+  );
+
+  if (index !== -1) {
+    let value = storage.data.splice(index, 1);
+
+    try {
+      await AsyncStorage.setItem(
+        "@Remediario:Medicamentos",
+        JSON.stringify(storage)
+      );
+
+      return value;
+    } catch (e) {
+      console.log(e);
+      return e;
+    }
+  } else {
+    throw new Error("Valor não encontrado");
+  }
+};
+
 var RemoverMedicamento = async (nomeRemedio) => {
   //Recebe o medicamento
   let storage;
@@ -218,13 +256,13 @@ var RemoverMedicamento = async (nomeRemedio) => {
   } catch (e) {
     console.log(e);
   }
-  remedio = await getMedicamento(nomeRemedio);
-  SalvarMedicamentoRemovido(remedio);
 
   if (storage == null) {
     throw new Error("Lista de medicamentos vazia");
   } else {
     storage = JSON.parse(storage);
+    remedio = await getMedicamento(nomeRemedio);
+    SalvarMedicamentoRemovido(remedio);
   }
 
   let index = storage.data.findIndex(
