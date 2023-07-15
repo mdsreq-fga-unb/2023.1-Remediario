@@ -2,12 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { View, Text } from 'react-native';
 import { styles } from './styles';
 
-const Timer = ({ horaTimer, minutoTimer, segundosTimer }) => {
+const Timer = ({ horaTimer, minutoTimer, segundoTimer }) => {
     const [time, setTime] = useState({
-        hours: horaTimer || 0,
-        minutes: minutoTimer || 0,
-        seconds: segundosTimer || 10
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
     });
+
+    useEffect(() => {
+        const hours = Number(horaTimer);
+        const minutes = Number(minutoTimer);
+        const seconds = Number(segundoTimer);
+
+        if (!isNaN(hours) && !isNaN(minutes) && !isNaN(seconds)) {
+            setTime({ hours, minutes, seconds });
+        }
+    }, [horaTimer, minutoTimer, segundoTimer]);
 
     useEffect(() => {
         let totalSeconds = (time.hours * 3600) + (time.minutes * 60) + time.seconds;
@@ -28,7 +38,7 @@ const Timer = ({ horaTimer, minutoTimer, segundosTimer }) => {
         }, 1000);
 
         return () => clearInterval(timer);
-    }, []);
+    }, [time]);
 
     const formatTime = (time) => {
         const { hours, minutes, seconds } = time;
