@@ -11,12 +11,12 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
   const [minutoTimer, setMinutoTimer] = useState(0);
   const [segundoTimer, setSegundoTimer] = useState(0);
 
-  const dados = new Date(remedio.ultimoAlarme);
-  const horasAlarme = dados.getHours();
-  const minutosAlarme = dados.getMinutes();
-  const nome = remedio.nomeRemedio;
-  const estoque = remedio.estoque;
-  const progresso = (estoque / remedio.dosagem) / 10;
+  var dados = new Date(remedio.ultimoAlarme);
+  var horasAlarme = dados.getHours();
+  var minutosAlarme = dados.getMinutes();
+  var nome = remedio.nomeRemedio;
+  var estoque = remedio.estoque;
+  var progresso = (estoque / remedio.dosagem) / 10;
 
   useEffect(() => {
     const atualizarTimer = () => {
@@ -93,6 +93,10 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
       medicineName: nome,
     });
   };
+
+  if (minutosAlarme < 10) {
+    minutosAlarme = `0${minutosAlarme}`;
+  }
 
   return (
     <TouchableOpacity style={styles.container} onPress={redirect}>
