@@ -15,6 +15,7 @@ import * as Notifications from 'expo-notifications';
 import { styles } from './styles';
 import Header from '../Components/Header';
 import TesteBackEnd from '../pages/TesteBackEnd';
+import SendMessage from '../pages/SendMessage';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -44,7 +45,7 @@ function TabRoutes() {
                         iconName = 'prescription-bottle'; // Nome do ícone correspondente em FontAwesome5
                     } else if (route.name === 'Histórico') {
                         iconName = 'history';
-                    } 
+                    }
                     // else if (route.name === 'teste') {
                     //     iconName = 'pencil';
                     // } 
@@ -62,7 +63,7 @@ function TabRoutes() {
                 tabBarStyle: styles.tabBarStyle,
                 tabBarShowLabel: false,
                 tabBarItemStyle: styles.tabBarItemStyle,
-                tabBarActiveBackgroundColor:  '#006B65', // Define a cor do ícone selecionado como amarelo
+                tabBarActiveBackgroundColor: '#006B65', // Define a cor do ícone selecionado como amarelo
                 tabBarVisible: false, // Não mostrar a aba na barra de navegação
             })}
         >
@@ -160,6 +161,7 @@ export default function Routes() {
             <Stack.Navigator>
                 <Stack.Screen options={{ headerShown: false }} name="BottomTab" component={TabRoutes} />
                 <Stack.Screen options={{ headerShown: false }} name='Confirmacao' component={Confirmacao} />
+                <Stack.Screen options={{ headerShown: false }} name='SendMessage' component={SendMessage} />
                 <Stack.Screen
                     options={{
                         headerStyle: styles.header,

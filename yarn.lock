@@ -6035,6 +6035,11 @@ expo-pwa@0.0.125:
     commander "2.20.0"
     update-check "1.5.3"
 
+expo-sharing@~11.2.2:
+  version "11.2.2"
+  resolved "https://registry.yarnpkg.com/expo-sharing/-/expo-sharing-11.2.2.tgz#7d9e387f1a902e6dd6838c22d9599dae9e7432cf"
+  integrity sha512-4Lhm1eS/CFIzX+JPuxMUTWBt9rv/WdvJvpQ9y+71bL/9w9dhvsdt9tv0SsNZATz4hk0tbrYD8ZEUsgiHiT1KkQ==
+
 expo-splash-screen@~0.18.2:
   version "0.18.2"
   resolved "https://registry.yarnpkg.com/expo-splash-screen/-/expo-splash-screen-0.18.2.tgz#dde246204da875785ba40c7143a70013cdefdbb6"
@@ -10104,6 +10109,11 @@ react-native-screens@^3.20.0:
   dependencies:
     react-freeze "^1.0.0"
     warn-once "^0.1.0"
+
+react-native-share@^9.2.3:
+  version "9.2.3"
+  resolved "https://registry.yarnpkg.com/react-native-share/-/react-native-share-9.2.3.tgz#14eb07cb1ee503421df0e9a80fdbf3fb0180223b"
+  integrity sha512-y6ju4HS6ydJoPVoacZ/Hp3i47AfI9W4e76Jv00r01dVbr6SCCcuqk37kIbn+kYivdTxOW77UGEbhtBHHtXnhzg==
 
 react-native-svg@13.4.0:
   version "13.4.0"

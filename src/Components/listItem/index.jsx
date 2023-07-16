@@ -98,6 +98,14 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
     minutosAlarme = `0${minutosAlarme}`;
   }
 
+  const envioMensagem = () => {
+    navigation.navigate('SendMessage', {
+      medicineName: nome,
+    });
+  };
+
+
+
   return (
     <TouchableOpacity style={styles.container} onPress={redirect}>
       <View style={styles.container2}>
@@ -130,6 +138,12 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
       <Text style={styles.progressBarText}>
         Comprimidos restantes: {estoque}
       </Text>
+
+      <TouchableOpacity style={styles.botao} onPress={envioMensagem}>
+        <Icon name='edit' color={'white'} style={styles.icon} />
+      </TouchableOpacity>
+
+
     </TouchableOpacity>
   );
 }
