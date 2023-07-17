@@ -38,7 +38,9 @@
 
 #### Mateus de Almeida
 **O que fiz:**
-- 
+- Resolvi o bug da US15
+- Mexi na US12 para resolver o bug de horário
+- Fiz algumas documentações
 
 #### Rodrigo Edmar
 **O que fiz:**
