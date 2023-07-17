@@ -121,6 +121,16 @@ export default function Routes() {
                             stringify: {
                                 medicineName: (medicineName) => encodeURIComponent(medicineName),
                             },
+
+                        },
+                        SendMessage: {
+                            path: 'SendMessage',
+                            parse: {
+                                medicineName: (medicineName) => decodeURIComponent(medicineName),
+                            },
+                            stringify: {
+                                medicineName: (medicineName) => encodeURIComponent(medicineName),
+                            },
                         }
                     }
                 },
@@ -161,7 +171,6 @@ export default function Routes() {
             <Stack.Navigator>
                 <Stack.Screen options={{ headerShown: false }} name="BottomTab" component={TabRoutes} />
                 <Stack.Screen options={{ headerShown: false }} name='Confirmacao' component={Confirmacao} />
-                <Stack.Screen options={{ headerShown: false }} name='SendMessage' component={SendMessage} />
                 <Stack.Screen
                     options={{
                         headerStyle: styles.header,
@@ -177,6 +186,14 @@ export default function Routes() {
                         headerTitle: () => <Header nomeTela='Editar Remédio' />,
                     }}
                     name='EditMedicine' component={EditMedicine}
+                />
+
+                <Stack.Screen
+                    options={{
+                        headerStyle: styles.header,
+                        headerTitle: () => <Header nomeTela='Enviar Mensagem' />,
+                    }}
+                    name='SendMessage' component={SendMessage}
                 />
             </Stack.Navigator>
         </NavigationContainer>

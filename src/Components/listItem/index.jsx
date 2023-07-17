@@ -16,6 +16,7 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
   var minutosAlarme = dados.getMinutes();
   var nome = remedio.nomeRemedio;
   var estoque = remedio.estoque;
+  var dosagem = remedio.dosagem;
   var progresso = (estoque / remedio.dosagem) / 10;
 
   useEffect(() => {
@@ -98,11 +99,22 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
     minutosAlarme = `0${minutosAlarme}`;
   }
 
-  const envioMensagem = () => {
+  envioMensagem = () => {
     navigation.navigate('SendMessage', {
       medicineName: nome,
     });
   };
+
+  const messageOpen = function messageIconOpen(remedio) {
+    let newDosagem = remedio.dosagem * 3;
+    let newEstoque = remedio.estoque;
+
+    if (newEstoque <= newDosagem) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
 
 
@@ -111,16 +123,12 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
       <View style={styles.container2}>
         <Text style={styles.text}>{nome}</Text>
         <View style={styles.alignEnd}>
-          <View style={styles.contentHours}>
-            <Text style={styles.text2}>
-              <Timer horaTimer={horaTimer} minutoTimer={minutoTimer} segundoTimer={segundoTimer} />
-            </Text>
-          </View>
 
-          <View style={styles.contentHours}>
-            <Icon name='alarm' color={'white'} style={styles.miniIcon} />
-            <Text style={styles.text2}>{horasAlarme}:{minutosAlarme}</Text>
-          </View>
+          {messageOpen(remedio) && (
+            <TouchableOpacity style={styles.botao} onPress={envioMensagem}>
+              <Icon name='message' color={'white'} style={styles.icon} />
+            </TouchableOpacity>
+          )}
           <TouchableOpacity style={styles.botao} onPress={editarMedicamento}>
             <Icon name='edit' color={'white'} style={styles.icon} />
           </TouchableOpacity>
@@ -135,13 +143,26 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
         color='#006B65'
         style={styles.progressBar}
       />
-      <Text style={styles.progressBarText}>
-        Comprimidos restantes: {estoque}
-      </Text>
 
-      <TouchableOpacity style={styles.botao} onPress={envioMensagem}>
-        <Icon name='edit' color={'white'} style={styles.icon} />
-      </TouchableOpacity>
+
+      <View style={styles.alignEnd2}>
+        <Text style={styles.progressBarText}>
+          Doses restantes: {Math.trunc(estoque / dosagem)}
+        </Text>
+        <View style={styles.alignEnd3}>
+          <View style={styles.contentHours}>
+            <Icon name='timer' color={'white'} style={styles.miniIcon} />
+            <Timer horaTimer={horaTimer} minutoTimer={minutoTimer} segundoTimer={segundoTimer} />
+          </View>
+
+          <View style={styles.contentHours}>
+            <Icon name='alarm' color={'white'} style={styles.miniIcon} />
+            <Text style={styles.text2}>{horasAlarme}:{minutosAlarme}</Text>
+          </View>
+        </View>
+      </View>
+
+
 
 
     </TouchableOpacity>
