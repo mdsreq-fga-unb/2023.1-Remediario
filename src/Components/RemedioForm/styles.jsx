@@ -80,6 +80,7 @@ export const styles = StyleSheet.create({
         marginLeft: 5,
         marginRight: 5,
         maxWidth: 90,
+        height: 60,
     },
     dropdown2: {
         flex: 1,

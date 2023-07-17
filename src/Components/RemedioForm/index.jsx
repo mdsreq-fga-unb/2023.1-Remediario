@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { TextInput, Button } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 // Funções
 import { SalvarMedicamento } from '../../Services/medicamento';
@@ -29,6 +30,10 @@ export default function AddRemedio({remedio, navigation, execute }) {
     const minutes = ['00', '15', '30', '45'];
     const [error, setError] = useState('');
 
+    const [date, setDate] = useState(new Date());
+    const [mode, setMode] = useState('time');
+    const [show, setShow] = useState(false);
+
     useEffect(() => {
         if (remedio?.ultimoAlarme) {
           const hora = new Date(remedio.ultimoAlarme);
@@ -40,21 +45,7 @@ export default function AddRemedio({remedio, navigation, execute }) {
             setHorario(`${horasFormatadas}:${minutosFormatados}`)
           }
         }
-      }, [remedio?.ultimoAlarme]);
-      
-      const formattedHours = hours.map((hour) => {
-        const formattedHour = hour < 10 ? `0${hour}` : hour;
-        return formattedHour;
-      });
-      
-      const formattedMinutes = minutes.map((minute) => {
-        return minute;
-      });
-      
-    useEffect(() => {
-        console.log(Horario);
-    }, [Horario]);
-      
+    }, [remedio?.ultimoAlarme]);      
 
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
@@ -118,6 +109,21 @@ export default function AddRemedio({remedio, navigation, execute }) {
             console.log(e);
         }
     };
+
+    const onChange = (event, selectedDate) => {
+        if (selectedDate) {
+            const selectedTime = selectedDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            setHorario(selectedTime);
+        }
+        setShow(false);
+        setDate(selectedDate);
+        console.log(selectedDate)
+    };
+
+    const showMode = (currentMode) => {
+        setShow(true);
+        setMode(currentMode);
+      };
 
     //Código da tela 
     return (
@@ -190,7 +196,6 @@ export default function AddRemedio({remedio, navigation, execute }) {
                                     <Picker.Item label="meses" value="meses" />
                                     <Picker.Item label="dias" value="dias" />
                                     <Picker.Item label="horas" value="horas" />
-                                    <Picker.Item label="minutos" value="minutos" />
                                 </Picker>
                                 <Icon name={isDropdownOpen ? 'angle-up' : 'angle-down'} style={styles.icon} />
                             </View>
@@ -243,37 +248,48 @@ export default function AddRemedio({remedio, navigation, execute }) {
                     </View>
 
                     <View style={styles.container2}>
-                    <Text style={styles.label}>Início do Alarme</Text>
-                    <View style={styles.ContainerDropdown}>
-                        <View style={styles.dropdown}>
-                        <Picker
-                            style={styles.dropdownPicker}
-                            selectedValue={Horario}
-                            onValueChange={(itemValue) => setHorario(itemValue)}
-                        >
-                            {formattedHours.map((hour) =>
-                                formattedMinutes.map((minute) => {
-                                    const formattedHorario = `${hour}:${minute}`;
-                                    return (
-                                        <Picker.Item
-                                            key={formattedHorario}
-                                            label={formattedHorario}
-                                            value={formattedHorario}
-                                          />
-                                    );
-                                })
-                            )}
-                        </Picker>
-                        <Icon name={isDropdownOpen ? 'angle-up' : 'angle-down'} style={styles.icon} />
+                        <Text style={styles.label}>Início do Alarme</Text>
+                        <View style={styles.ContainerDropdown}>
+                            <TouchableOpacity style={styles.dropdown} onPress={() => showMode('time')}>
+                                {show && (
+                                    <DateTimePicker
+                                        testID="dateTimePicker"
+                                        value={date}
+                                        mode={mode}
+                                        is24Hour={true}
+                                        display="default"
+                                        onChange={onChange}
+                                    />
+                                )}
+                                <Icon name={isDropdownOpen ? 'angle-up' : 'angle-down'} style={styles.icon} />
+                            </TouchableOpacity>
                         </View>
-                    </View>
                     </View>
 
                     {error ? <Text style={styles.errorText}>{error}</Text> : null}
                     <BotaoSalvar onPress={save} />
-                    {/* <Button onPress={Save} title='Salvar'/> */}
                 </View>
             </View>
         </KeyboardAwareScrollView>
     );
 }
+/*
+<Picker
+    style={styles.dropdownPicker}
+    selectedValue={Horario}
+    onValueChange={(itemValue) => setHorario(itemValue)}
+>
+    {formattedHours.map((hour) =>
+        formattedMinutes.map((minute) => {
+            const formattedHorario = `${hour}:${minute}`;
+            return (
+                <Picker.Item
+                    key={formattedHorario}
+                    label={formattedHorario}
+                    value={formattedHorario}
+                    />
+            );
+        })
+    )}
+                        </Picker>
+                        */
