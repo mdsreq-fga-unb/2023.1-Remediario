@@ -43,8 +43,8 @@
 **O que fiz:**
 
 - Criei os critérios de aceitação do MVP2.
-- Adicionei o critério de aceitação da US13 (Pendência).
-- Adicionei o critério de aceitação da US09 (Pendência).
+- Adicionei o critério de aceitação da US13 do MVP 1 não implementada (Pendência).
+- Adicionei o critério de aceitação da US09 do MVP 1 não implementada (Pendência).
 - Fiz a tela de Editar Remédio (Falta 1 critério de aceitação) US12.
 - Atualizei lições aprendidas no mkdocs.
 - Atualizei gerenciamento de riscos mkdocs.
