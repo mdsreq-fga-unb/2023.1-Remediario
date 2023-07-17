@@ -214,4 +214,4 @@ Uso de medicamentos de forma incorreta: <a href="http://www.conselho.saude.gov.b
 | 25/04/23 | 1.1    | Correção unidade 1    |                       |
 | 26/06/23 | 1.2    | Unidade 2, 3 e riscos | Mateus de Almeida     |
 | 05/07/23 | 1.3    | ATT Riscos            | Rodrigo Wright        |
-| 17/07/23 | 1.4    | ATT lições aprenidas  | Mateus de Almeida     |
+| 17/07/23 | 1.4    | ATT lições aprendidas | Mateus de Almeida     |
