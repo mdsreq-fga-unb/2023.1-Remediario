@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { TextInput, Button } from 'react-native-paper';
@@ -28,6 +28,33 @@ export default function AddRemedio({remedio, navigation, execute }) {
     const hours = Array.from({ length: 24 }, (_, index) => index + 0);
     const minutes = ['00', '15', '30', '45'];
     const [error, setError] = useState('');
+
+    useEffect(() => {
+        if (remedio?.ultimoAlarme) {
+          const hora = new Date(remedio.ultimoAlarme);
+          const horas = hora.getHours();
+          const minutos = hora.getMinutes();
+          if (horas !== null && minutos !== null) {
+            const horasFormatadas = horas < 10 ? `0${horas}` : horas;
+            const minutosFormatados = minutos < 10 ? '0' + minutos : minutos;
+            setHorario(`${horasFormatadas}:${minutosFormatados}`)
+          }
+        }
+      }, [remedio?.ultimoAlarme]);
+      
+      const formattedHours = hours.map((hour) => {
+        const formattedHour = hour < 10 ? `0${hour}` : hour;
+        return formattedHour;
+      });
+      
+      const formattedMinutes = minutes.map((minute) => {
+        return minute;
+      });
+      
+    useEffect(() => {
+        console.log(Horario);
+    }, [Horario]);
+      
 
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
@@ -216,33 +243,32 @@ export default function AddRemedio({remedio, navigation, execute }) {
                     </View>
 
                     <View style={styles.container2}>
-                        <Text style={styles.label}>Início do Alarme</Text>
-                        <View style={styles.ContainerDropdown}>
-                            <View style={styles.dropdown}>
-                                <Picker
-                                    style={styles.dropdownPicker}
-                                    selectedValue={Horario}
-                                    onValueChange={(itemValue) => setHorario(itemValue)}
-                                >
-                                    {hours.map((hour) =>
-                                        minutes.map((minute) => {
-                                            const formattedHour = hour === 0 ? '00' : hour < 10 ? `0${hour}` : hour;
-                                            const formattedMinute = minute;
-
-                                            return (
-                                                <Picker.Item
-                                                    key={`${formattedHour}:${formattedMinute}`}
-                                                    label={`${formattedHour}:${formattedMinute}`}
-                                                    value={`${formattedHour}:${formattedMinute}`}
-                                                />
-                                            );
-                                        })
-                                    )}
-                                </Picker>
-                                <Icon name={isDropdownOpen ? 'angle-up' : 'angle-down'} style={styles.icon} />
-                            </View>
+                    <Text style={styles.label}>Início do Alarme</Text>
+                    <View style={styles.ContainerDropdown}>
+                        <View style={styles.dropdown}>
+                        <Picker
+                            style={styles.dropdownPicker}
+                            selectedValue={Horario}
+                            onValueChange={(itemValue) => setHorario(itemValue)}
+                        >
+                            {formattedHours.map((hour) =>
+                                formattedMinutes.map((minute) => {
+                                    const formattedHorario = `${hour}:${minute}`;
+                                    return (
+                                        <Picker.Item
+                                            key={formattedHorario}
+                                            label={formattedHorario}
+                                            value={formattedHorario}
+                                          />
+                                    );
+                                })
+                            )}
+                        </Picker>
+                        <Icon name={isDropdownOpen ? 'angle-up' : 'angle-down'} style={styles.icon} />
                         </View>
                     </View>
+                    </View>
+
                     {error ? <Text style={styles.errorText}>{error}</Text> : null}
                     <BotaoSalvar onPress={save} />
                     {/* <Button onPress={Save} title='Salvar'/> */}
