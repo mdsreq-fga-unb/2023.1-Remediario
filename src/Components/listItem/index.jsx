@@ -10,7 +10,7 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
   const [horaTimer, setHoraTimer] = useState(0);
   const [minutoTimer, setMinutoTimer] = useState(0);
   const [segundoTimer, setSegundoTimer] = useState(0);
-
+  
   var dados = new Date(remedio.ultimoAlarme);
   var horasAlarme = dados.getHours();
   var minutosAlarme = dados.getMinutes();
@@ -18,6 +18,7 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
   var estoque = remedio.estoque;
   var dosagem = remedio.dosagem;
   var progresso = (estoque / remedio.dosagem) / 10;
+  const formatMinute = (minute) => (minute < 10 ? `0${minute}` : minute);
 
   useEffect(() => {
     const atualizarTimer = () => {
@@ -123,7 +124,6 @@ export default function ListItem({ remedio, atualizarLista, navigation }) {
       <View style={styles.container2}>
         <Text style={styles.text}>{nome}</Text>
         <View style={styles.alignEnd}>
-
           {messageOpen(remedio) && (
             <TouchableOpacity style={styles.botao} onPress={envioMensagem}>
               <Icon name='message' color={'white'} style={styles.icon} />
