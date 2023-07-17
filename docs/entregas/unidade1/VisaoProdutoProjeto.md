@@ -196,6 +196,12 @@ Em relação a unidade 3 estamos o SAFe entendendo alguns pontos importantes do 
 
 Comparando-se essa unidade com as demais, conseguimos perceber que foi uma unidade que tivemos a oportunidade de colocar em prática todas os métodos e modelos estudados anteriormente, fixando ainda mais o conhecimento. Tal fato nos ajudou a desenvolver o MVP1 e a oferecer ao nosso cliente um aplicativo que possua valor de mercado.
 
+### 5.4. Unidade 4
+
+Por ultimo vimos o User Story Mapping que oferece uma abordagem para entender e priorizar os requisitos de um software. Além disso, o User Story Mapping facilita a identificação de funcionalidades essenciais e permite que a equipe se concentre nas necessidades reais dos usuários, priorizando o desenvolvimento de recursos de maior valor.
+
+Ademais, estudamos os Casos de Uso que desempenham um papel crucial na especificação dos requisitos funcionais do sistema. Descrevendo as interações entre atores e o sistema em cenários específicos, fornecendo uma ideia de como o sistema deve se comportar em diferentes situações. 
+
 ## 6 REFERÊNCIAS BIBLIOGRÁFICAS
 
 Uso de medicamentos de forma incorreta: <a href="http://www.conselho.saude.gov.br/ultimas_noticias/2005/medicamentos.htm">http://www.conselho.saude.gov.br/ultimas_noticias/2005/medicamentos.htm</a>
