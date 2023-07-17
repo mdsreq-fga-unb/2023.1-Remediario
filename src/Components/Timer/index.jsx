@@ -53,7 +53,7 @@ const Timer = ({ horaTimer, minutoTimer, segundoTimer }) => {
     // Verifica se o tempo é menor que zero e retorna uma string vazia em vez de exibir valores negativos
     const displayTime = (time) => {
         if (time.hours < 0 || time.minutes < 0 || time.seconds < 0) {
-            return '';
+            return '00:00:00';
         }
         return formatTime(time);
     };

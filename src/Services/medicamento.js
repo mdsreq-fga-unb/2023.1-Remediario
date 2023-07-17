@@ -1,5 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { entregaDados, schedulePushNotification } from "./notification";
+import { entregaDados, schedulePushNotification, schedulePushNotificationSendMessage } from "./notification";
 
 var SalvarMedicamento = async (prop) => {
   let storage;
@@ -149,10 +149,10 @@ var usoMedicamento = async (nomeRemedio) => {
   }
   if (remedio.estoque < 0) remedio.estoque = 0;
   if (remedio.estoque / remedio.dosagem <= 3) {
-    schedulePushNotification(
+    schedulePushNotificationSendMessage(
       remedio,
       2,
-      `Existem apenas ${remedio.estoque} ${remedio.unidadeEstoque} restantes!`
+      `Existem apenas ${remedio.estoque} ${remedio.unidadeEstoque} restantes! Envie uma mensagem para o seu médico!`
     );
   }
   remedio.ultimoAlarme = proxDia;

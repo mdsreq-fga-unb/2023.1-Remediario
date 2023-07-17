@@ -4,9 +4,9 @@ import RemedioForm from '../../Components/RemedioForm/index';
 import { getMedicamento, EditarMedicamento } from '../../Services/medicamento';
 
 export default function EditMedicine({ route, navigation }) {
-  const [remedioData, setRemedioData] = useState(null);
+  const [remedioData, setRemedioData] = useState('');
 
-let {medicineName} = route.params;
+  let { medicineName } = route.params;
 
   useEffect(() => {
     const fetchRemedioData = async () => {
@@ -29,7 +29,7 @@ let {medicineName} = route.params;
           navigation={navigation}
           execute={EditarMedicamento}
         />
-        
+
       ) : (
         <Text>Carregando dados do remédio...</Text>
       )}

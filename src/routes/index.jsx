@@ -15,6 +15,7 @@ import * as Notifications from 'expo-notifications';
 import { styles } from './styles';
 import Header from '../Components/Header';
 import TesteBackEnd from '../pages/TesteBackEnd';
+import SendMessage from '../pages/SendMessage';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -44,7 +45,7 @@ function TabRoutes() {
                         iconName = 'prescription-bottle'; // Nome do ícone correspondente em FontAwesome5
                     } else if (route.name === 'Histórico') {
                         iconName = 'history';
-                    } 
+                    }
                     // else if (route.name === 'teste') {
                     //     iconName = 'pencil';
                     // } 
@@ -62,7 +63,7 @@ function TabRoutes() {
                 tabBarStyle: styles.tabBarStyle,
                 tabBarShowLabel: false,
                 tabBarItemStyle: styles.tabBarItemStyle,
-                tabBarActiveBackgroundColor:  '#006B65', // Define a cor do ícone selecionado como amarelo
+                tabBarActiveBackgroundColor: '#006B65', // Define a cor do ícone selecionado como amarelo
                 tabBarVisible: false, // Não mostrar a aba na barra de navegação
             })}
         >
@@ -114,6 +115,16 @@ export default function Routes() {
                     screens: {
                         Confirmacao: {
                             path: 'Confirmacao',
+                            parse: {
+                                medicineName: (medicineName) => decodeURIComponent(medicineName),
+                            },
+                            stringify: {
+                                medicineName: (medicineName) => encodeURIComponent(medicineName),
+                            },
+
+                        },
+                        SendMessage: {
+                            path: 'SendMessage',
                             parse: {
                                 medicineName: (medicineName) => decodeURIComponent(medicineName),
                             },
@@ -175,6 +186,14 @@ export default function Routes() {
                         headerTitle: () => <Header nomeTela='Editar Remédio' />,
                     }}
                     name='EditMedicine' component={EditMedicine}
+                />
+
+                <Stack.Screen
+                    options={{
+                        headerStyle: styles.header,
+                        headerTitle: () => <Header nomeTela='Enviar Mensagem' />,
+                    }}
+                    name='SendMessage' component={SendMessage}
                 />
             </Stack.Navigator>
         </NavigationContainer>
