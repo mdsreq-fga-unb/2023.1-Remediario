@@ -8,9 +8,9 @@
 - Mateus de Almeida
 - Bruna (Monitora)
 
-## Sprint Planning
+## Sprint Planning 5
 
-#### Duração: 17/05/2023 até 24/05/2023.
+#### Duração: 01/06/2023 até 07/06/2023.
 #### Objetivo da Sprint: Entregar as US11, US07, US09.
 
 | US  | Descrição                                                                                                                                                         |

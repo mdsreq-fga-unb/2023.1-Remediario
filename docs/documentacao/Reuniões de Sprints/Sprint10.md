@@ -1,4 +1,4 @@
-#### Data: 28/06/2023 21:00
+#### Data: 05/06/2023 21:00
 #### Presentes na reunião:
 
 - Julio
@@ -10,7 +10,7 @@
 
 ## Sprint Planning 10
 
-#### Duração: 05/07/2023 até 12/07/2023.
+#### Duração: 05/07/2023 até 11/07/2023.
 #### Objetivo da Sprint:
 
 - Gravar video da unidade 3
