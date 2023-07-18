@@ -57,6 +57,10 @@ nav:
           - PBB: "entregas/unidade3/PBB.md"
           - SaFE: "entregas/unidade3/SaFE.md"
           - BDD: "entregas/unidade3/BDD.md"
+      - Unidade 4:
+          - Apresentação da Unidade 4: "entregas/unidade4/Apresentacao.md"
+          - Casos de Uso: "entregas/unidade4/CasosdeUso.md"
+          - USM: "entregas/unidade4/USM.md"
 
 extra:
   social:
