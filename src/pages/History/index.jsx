@@ -7,32 +7,36 @@ import { ListarMedicamento, ListarMedicamentosRemovidos } from "../../Services/m
 import { styles } from "./styles";
 import { printToFileAsync } from 'expo-print';
 import { shareAsync } from 'expo-sharing';
+import { useIsFocused } from "@react-navigation/native";
 
 export default function History() {
+  const isFocused = useIsFocused();
   const [list, setlist] = useState(null);
   const [listRemovidos, setlistRemovidos] = useState(null);
 
-    useEffect(() => {
-        recarregar();
-    }, []);
-
-    async function recarregar() {
-        let data;
-        try {
-        data = await ListarMedicamento();
-        } catch (e) {
-        console.log(e);
-        }
-        setlist(data);
-
-        let dataRemovidos;
-        try {
-        dataRemovidos = await ListarMedicamentosRemovidos();
-        } catch (e) {
-        console.log(e);
-        }
-        setlistRemovidos(dataRemovidos);
+  useEffect(() => {
+    if (isFocused) {
+      recarregar();
     }
+  }, [isFocused]);
+
+  async function recarregar() {
+      let data;
+      try {
+      data = await ListarMedicamento();
+      } catch (e) {
+      console.log(e);
+      }
+      setlist(data);
+
+      let dataRemovidos;
+      try {
+      dataRemovidos = await ListarMedicamentosRemovidos();
+      } catch (e) {
+      console.log(e);
+      }
+      setlistRemovidos(dataRemovidos);
+  }
 
     const baixarRelatorio = async () => {
         const htmlContent = `
