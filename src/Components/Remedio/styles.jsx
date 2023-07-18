@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
   dateDay: {
     color: 'white',
     fontSize: 12,
+    width: '70%',
   },
   optionIcon: {
     fontSize: 20,

@@ -1,4 +1,6 @@
-import { StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
+
+const { width } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
     container: {
@@ -7,7 +9,7 @@ export const styles = StyleSheet.create({
         backgroundColor: '#1B2020',
         marginLeft: 12,
         marginRight: 12,
-        width: 350,
+        width: width - 20,
         marginBottom: 12,
         padding: 10,
         borderRadius: 10,
@@ -63,6 +65,16 @@ export const styles = StyleSheet.create({
     },
     alignEnd: {
         flexDirection: 'row',
+        gap: 8,
+    },
+    alignEnd2: {
+        marginTop: 8,
+        flexDirection: 'row',
+        gap: 8,
+    },
+    alignEnd3: {
+        flexDirection: 'row',
+        marginLeft: 'auto',
         gap: 8,
     },
 

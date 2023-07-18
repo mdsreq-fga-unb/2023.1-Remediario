@@ -1,5 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { entregaDados, schedulePushNotification } from "./notification";
+import { entregaDados, schedulePushNotification, schedulePushNotificationSendMessage } from "./notification";
 
 var SalvarMedicamento = async (prop) => {
   let storage;
@@ -149,10 +149,10 @@ var usoMedicamento = async (nomeRemedio) => {
   }
   if (remedio.estoque < 0) remedio.estoque = 0;
   if (remedio.estoque / remedio.dosagem <= 3) {
-    schedulePushNotification(
+    schedulePushNotificationSendMessage(
       remedio,
       2,
-      `Existem apenas ${remedio.estoque} ${remedio.unidadeEstoque} restantes!`
+      `Existem apenas ${remedio.estoque} ${remedio.unidadeEstoque} restantes! Envie uma mensagem para o seu médico!`
     );
   }
   remedio.ultimoAlarme = proxDia;
@@ -429,11 +429,11 @@ var adiarAlarme = async (prop, nomeRemedio, minutos) => {
   const dataAtual = new Date();
   const dataDaquiCincoMinutos = new Date(dataAtual.getTime() + minutos * 60000);
   prop.ultimoAlarme = dataDaquiCincoMinutos;
+  entregaDados(prop, "Está na hora de tomar o remédio!");
 
   let index = storage.data.findIndex(
     (remedio) => remedio.nomeRemedio === nomeRemedio
   );
-  entregaDados(prop, "Está na hora de tomar o remédio!");
 
   if (index !== -1) {
     storage.data[index] = prop;
