@@ -94,10 +94,6 @@ export default function AddRemedio({remedio, navigation, execute }) {
             setError('A dosagem deve ser maior que 0.');
             return;
         }
-        if (quantidade2 < 1) {
-            setError('A quantidade total deve ser maior que 0.');
-            return;
-        }
 
         let uso = [];
         if (remedio) uso = remedio.uso;
