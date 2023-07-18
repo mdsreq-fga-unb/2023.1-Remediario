@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
         borderColor: 'white', 
         borderRadius: 8, 
         paddingHorizontal: 10,
-        width: width - 45,
+        width: width - 20,
       },
       textInput: {
         flex: 1,
