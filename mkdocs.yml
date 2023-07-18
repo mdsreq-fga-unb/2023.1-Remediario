@@ -29,9 +29,9 @@ nav:
   - Home: index.md
   - Documentação de Atividades:
       - Apresentações:
-          - 1ª apresentação: "documentacao/Apresentacao/Apresentacao1.md"
-          - 2ª apresentação: "documentacao/Apresentacao/Apresentacao2.md"
-          - 3ª apresentação: "documentacao/Apresentacao/Apresentacao3.md"
+          - 1ª apresentação: "documentacao/Seminarios/Apresentacao1.md"
+          - 2ª apresentação: "documentacao/Seminarios/Apresentacao2.md"
+          - 3ª apresentação: "documentacao/Seminarios/Apresentacao3.md"
       - Reuniões de Sprints:
           - Sprint 1: "documentacao/Reuniões de Sprints/Sprint1.md"
           - Sprint 2: "documentacao/Reuniões de Sprints/Sprint2.md"
