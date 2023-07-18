@@ -1,0 +1,2881 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../SaFE/">
+      
+      
+        <link rel="next" href="../../unidade4/Apresentacao/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
+    
+    
+      
+        <title>BDD - Remediário</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#behavior-driven-development" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../.." title="Remediário" class="md-header__button md-logo" aria-label="Remediário" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Remediário
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              BDD
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mdsreq-fga-unb/2023.1-Remediario" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    2023.1-Remediário
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Remediário" class="md-nav__button md-logo" aria-label="Remediário" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Remediário
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mdsreq-fga-unb/2023.1-Remediario" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    2023.1-Remediário
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Documentação de Atividades
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Documentação de Atividades
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          Apresentações
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Apresentações
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Apresentacao/Apresentacao1.md" class="md-nav__link">
+        1ª apresentação
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Apresentacao/Apresentacao2.md" class="md-nav__link">
+        2ª apresentação
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Apresentacao/Apresentacao3.md" class="md-nav__link">
+        3ª apresentação
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          Reuniões de Sprints
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Reuniões de Sprints
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Reuni%C3%B5es%20de%20Sprints/Sprint1/" class="md-nav__link">
+        Sprint 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Reuni%C3%B5es%20de%20Sprints/Sprint2/" class="md-nav__link">
+        Sprint 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Reuni%C3%B5es%20de%20Sprints/Sprint3/" class="md-nav__link">
+        Sprint 3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Reuni%C3%B5es%20de%20Sprints/Sprint4/" class="md-nav__link">
+        Sprint 4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Reuni%C3%B5es%20de%20Sprints/Sprint5/" class="md-nav__link">
+        Sprint 5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Reuni%C3%B5es%20de%20Sprints/Sprint6/" class="md-nav__link">
+        Sprint 6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Reuni%C3%B5es%20de%20Sprints/Sprint7/" class="md-nav__link">
+        Sprint 7
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Reuni%C3%B5es%20de%20Sprints/Sprint8/" class="md-nav__link">
+        Sprint 8
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Reuni%C3%B5es%20de%20Sprints/Sprint9/" class="md-nav__link">
+        Sprint 9
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Reuni%C3%B5es%20de%20Sprints/Sprint10/" class="md-nav__link">
+        Sprint 10
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Reuni%C3%B5es%20de%20Sprints/Sprint11/" class="md-nav__link">
+        Sprint 11
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Entregas
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Entregas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          Unidade 1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Unidade 1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade1/VisaoProdutoProjeto/" class="md-nav__link">
+        Visão Geral do Produto
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          Unidade 2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Unidade 2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade2/Backlog/" class="md-nav__link">
+        Backlog do Produto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade2/Mural/" class="md-nav__link">
+        Mural de requisitos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade2/Apresentacao/" class="md-nav__link">
+        Apresentação da Unidade 2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          Unidade 3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Unidade 3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Apresentacao/" class="md-nav__link">
+        Apresentação da Unidade 3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PBB/" class="md-nav__link">
+        PBB
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SaFE/" class="md-nav__link">
+        SaFE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          BDD
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        BDD
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#historico-de-revisao" class="md-nav__link">
+    Histórico de Revisão
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-bdd" class="md-nav__link">
+    1. BDD
+  </a>
+  
+    <nav class="md-nav" aria-label="1. BDD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-user-story-eu-como-usuario-quero-cadastrar-meus-medicamentos-para-consulta-los-depois" class="md-nav__link">
+    1.1. User Story: Eu como usuário quero cadastrar meus medicamentos para consultá-los depois.
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1. User Story: Eu como usuário quero cadastrar meus medicamentos para consultá-los depois.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-criterio-de-aceitacao-cada-medicamento-deve-ter-nome-quantidade-de-conteudo-por-dosagem-unidade-de-medida-da-dosagem-comprimidos-ml-periodicidade-da-dosagem-quantidade-total-de-conteudo-do-remedio-observacoes-horario-de-comeco-do-alarme" class="md-nav__link">
+    1.1.1. Critério de Aceitação: Cada medicamento deve ter nome, quantidade de conteúdo por dosagem, unidade de medida da dosagem (comprimidos, ml…), periodicidade da dosagem, quantidade total de conteúdo do remédio, observações, horário de começo do alarme.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-criterio-de-aceitacao-eu-quero-que-apos-cadastrar-a-lista-de-medicamentos-seja-atualizada-imediatamente" class="md-nav__link">
+    1.1.2. Critério de Aceitação: Eu quero que após cadastrar, a lista de medicamentos seja atualizada imediatamente.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-user-story-eu-como-usuario-quero-ver-uma-lista-com-todos-os-meus-medicamentos-cadastrados-para-consultar-em-outro-momento" class="md-nav__link">
+    1.2. User Story: Eu como usuário quero ver uma lista com todos os meus medicamentos cadastrados para consultar em outro momento.
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2. User Story: Eu como usuário quero ver uma lista com todos os meus medicamentos cadastrados para consultar em outro momento.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-criterio-de-aceitacao-cada-medicamento-na-lista-deve-ter-nome-quantidade-de-conteudo-por-dosagem-periodicidade-da-dosagem-temporizador-com-contagem-regressiva-para-proximo-alarme" class="md-nav__link">
+    1.2.1. Critério de Aceitação: Cada medicamento na lista deve ter nome, quantidade de conteúdo por dosagem, periodicidade da dosagem, temporizador com contagem regressiva para próximo alarme
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-eu-quero-visualizar-a-barra-de-progresso-com-as-doses-que-ainda-faltam-para-o-remedio-no-dia" class="md-nav__link">
+    1.2.2. Eu quero visualizar a barra de progresso com as doses que ainda faltam para o remédio no dia.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-user-story-eu-como-usuario-quero-deletar-medicamentos-para-manter-somente-os-tratamentos-que-estou-realmente-fazendo" class="md-nav__link">
+    1.3. User Story: Eu como usuário quero deletar medicamentos, para manter somente os tratamentos que estou realmente fazendo.
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3. User Story: Eu como usuário quero deletar medicamentos, para manter somente os tratamentos que estou realmente fazendo.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-criterio-de-aceitacao-eu-quero-ter-a-opcao-de-confirmar-a-delecao" class="md-nav__link">
+    1.3.1. Critério de Aceitação: Eu quero ter a opção de confirmar a deleção.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-criterio-de-aceitacao-eu-quero-que-a-lista-de-medicamentos-seja-atualizada-assim-que-eu-deletar" class="md-nav__link">
+    1.3.2. Critério de Aceitação: Eu quero que a lista de medicamentos seja atualizada assim que eu deletar.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-user-story-eu-como-usuario-quero-poder-confirmar-o-uso-de-um-medicamento-por-uma-tela-de-confirmacao-gerada-pela-notificacao-do-remedio-para-registrar-o-uso-do-meu-medicamento" class="md-nav__link">
+    1.4. User Story: Eu como usuário quero poder confirmar o uso de um medicamento por uma tela de confirmação gerada pela notificação do remédio para registrar o uso do meu medicamento.
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4. User Story: Eu como usuário quero poder confirmar o uso de um medicamento por uma tela de confirmação gerada pela notificação do remédio para registrar o uso do meu medicamento.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-criterio-de-aceitacao-eu-quero-poder-confirmar-o-uso-a-partir-da-tela-de-bloqueio-do-celular" class="md-nav__link">
+    1.4.1. Critério de Aceitação: Eu quero poder confirmar o uso a partir da tela de bloqueio do celular.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-criterio-de-aceitacao-a-notificacao-deve-conter-o-medicamento-que-preciso-tomar-com-nome-dosagem-e-horario-que-deveria-tomar" class="md-nav__link">
+    1.4.2. Critério de Aceitação: A notificação deve conter o medicamento que preciso tomar com nome, dosagem, e horário que deveria tomar.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143-criterio-de-aceitacao-eu-quero-que-seja-subtraido-uma-dosagem-das-dosagens-que-possuo-apos-confirmar-o-uso" class="md-nav__link">
+    1.4.3. Critério de Aceitação: Eu quero que seja subtraído uma dosagem das dosagens que possuo após confirmar o uso.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-user-story-eu-como-usuario-quero-possuir-uma-notificacao-vinculado-ao-horario-correto-de-uso-de-meu-medicamento-para-me-lembrar-de-tomar-o-remedio" class="md-nav__link">
+    1.5. User Story: Eu como usuário quero possuir uma notificação vinculado ao horário correto de uso de meu medicamento para me lembrar de tomar o remédio.
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5. User Story: Eu como usuário quero possuir uma notificação vinculado ao horário correto de uso de meu medicamento para me lembrar de tomar o remédio.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#151-criterio-de-aceitacao-eu-preciso-que-essa-notificacao-apareca-na-tela-de-travamento-do-meu-celular" class="md-nav__link">
+    1.5.1. Critério de Aceitação: Eu preciso que essa notificação apareça na tela de travamento do meu celular.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-user-story-eu-como-usuario-quero-registrar-o-uso-do-meu-medicamento-por-meio-de-uma-tela-de-confirmacao-para-manter-um-registro-dos-remedios-que-tomei" class="md-nav__link">
+    1.6. User Story: Eu como usuário quero registrar o uso do meu medicamento por meio de uma tela de confirmação para manter um registro dos remédios que tomei.
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6. User Story: Eu como usuário quero registrar o uso do meu medicamento por meio de uma tela de confirmação para manter um registro dos remédios que tomei.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#161-criterio-de-aceitacao-eu-quero-que-essa-tela-de-confirmacao-seja-acessada-pelo-app" class="md-nav__link">
+    1.6.1. Critério de Aceitação: Eu quero que essa tela de confirmação seja acessada pelo app.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#162-criterio-de-aceitacao-eu-quero-poder-confirmar-o-uso-do-medicamento-a-qualquer-momento-depois-do-horario-de-tomar" class="md-nav__link">
+    1.6.2. Critério de Aceitação: Eu quero poder confirmar o uso do medicamento a qualquer momento depois do horário de tomar.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#163-criterio-de-aceitacao-a-tela-de-confirmacao-deve-conter-o-medicamento-que-preciso-tomar-com-nome-dosagem-e-horario-que-deveria-tomar" class="md-nav__link">
+    1.6.3. Critério de Aceitação: A tela de confirmação deve conter o medicamento que preciso tomar com nome, dosagem, e horário que deveria tomar.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#164-criterio-de-aceitacao-eu-quero-que-seja-subtraido-uma-dosagem-das-dosagens-que-possuo-apos-confirmar-o-uso" class="md-nav__link">
+    1.6.4. Critério de Aceitação: Eu quero que seja subtraído uma dosagem das dosagens que possuo após confirmar o uso.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-user-story-eu-como-usuario-quero-visualizar-o-registro-de-todos-os-remedios-que-tomei-no-dia-para-poder-ter-o-controle-do-uso-dos-meus-medicamentos" class="md-nav__link">
+    1.7. User Story: Eu como usuário quero visualizar o registro de todos os remédios que tomei no dia para poder ter o controle do uso dos meus medicamentos.
+  </a>
+  
+    <nav class="md-nav" aria-label="1.7. User Story: Eu como usuário quero visualizar o registro de todos os remédios que tomei no dia para poder ter o controle do uso dos meus medicamentos.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#171-criterio-de-aceitacao-eu-quero-poder-diferenciar-visualmente-pela-coloracao-os-remedios-que-eu-tomei-dos-que-eu-nao-tomei" class="md-nav__link">
+    1.7.1. Critério de Aceitação: Eu quero poder diferenciar visualmente (pela coloração) os remédios que eu tomei dos que eu não tomei.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#172-criterio-de-aceitacao-eu-quero-ver-o-horario-que-tomei-o-remedio" class="md-nav__link">
+    1.7.2. Critério de Aceitação: Eu quero ver o horário que tomei o remédio.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18-user-story-eu-como-usuario-quero-ver-uma-lista-de-medicamentos-que-devo-tomar-no-dia-atual-para-me-planejar-antecipadamente" class="md-nav__link">
+    1.8. User Story: Eu como usuário quero ver uma lista de medicamentos que devo tomar no dia atual, para me planejar antecipadamente.
+  </a>
+  
+    <nav class="md-nav" aria-label="1.8. User Story: Eu como usuário quero ver uma lista de medicamentos que devo tomar no dia atual, para me planejar antecipadamente.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#181-criterio-de-aceitacao-eu-quero-que-essa-lista-seja-atualizada-as-0000" class="md-nav__link">
+    1.8.1. Critério de Aceitação: Eu quero que essa lista seja atualizada às 00:00.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#182-criterio-de-aceitacao-essa-lista-deve-conter-o-nome-e-o-horario-que-eu-tenho-que-tomar-cada-medicamento-no-dia" class="md-nav__link">
+    1.8.2. Critério de Aceitação: Essa lista deve conter o nome e o horário que eu tenho que tomar cada medicamento no dia.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19-user-story-eu-como-usuario-quero-programar-a-notificacao-para-tocar-novamente-daqui-5-minutos-para-eu-poder-me-planejar-melhor" class="md-nav__link">
+    1.9. User Story: Eu como usuário quero programar a notificação para tocar novamente daqui 5 minutos para eu poder me planejar melhor.
+  </a>
+  
+    <nav class="md-nav" aria-label="1.9. User Story: Eu como usuário quero programar a notificação para tocar novamente daqui 5 minutos para eu poder me planejar melhor.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#191-criterio-de-aceitacao-o-usuario-deve-ter-a-opcao-de-ativar-a-notificacao-para-tocar-novamente-em-5-minutos" class="md-nav__link">
+    1.9.1. Critério de Aceitação: O usuário deve ter a opção de ativar a notificação para tocar novamente em 5 minutos.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#192-criterio-de-aceitacao-a-tela-de-confirmacao-deve-incluir-um-botao-para-ativar-a-repeticao-da-notificacao-em-5-minutos" class="md-nav__link">
+    1.9.2. Critério de Aceitação: A tela de confirmação deve incluir um botão para ativar a repetição da notificação em 5 minutos.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#193-ao-selecionar-a-opcao-de-repeticao-a-notificacao-deve-ser-programada-para-tocar-novamente-exatamente-apos-5-minutos" class="md-nav__link">
+    1.9.3. Ao selecionar a opção de repetição, a notificação deve ser programada para tocar novamente exatamente após 5 minutos.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#194-a-repeticao-da-notificacao-em-5-minutos-deve-funcionar-corretamente-mesmo-se-o-aplicativo-estiver-em-segundo-plano-ou-o-dispositivo-estiver-bloqueado" class="md-nav__link">
+    1.9.4. A repetição da notificação em 5 minutos deve funcionar corretamente mesmo se o aplicativo estiver em segundo plano ou o dispositivo estiver bloqueado.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#110-user-story-eu-como-usuario-quero-receber-uma-notificacao-e-um-alerta-quando-possuir-apenas-3-dosagens-para-pedir-para-o-medico-uma-nova-receita" class="md-nav__link">
+    1.10. User Story: Eu como usuário quero receber uma notificação e um alerta quando possuir apenas 3 dosagens para pedir para o médico uma nova receita.
+  </a>
+  
+    <nav class="md-nav" aria-label="1.10. User Story: Eu como usuário quero receber uma notificação e um alerta quando possuir apenas 3 dosagens para pedir para o médico uma nova receita.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1101-criterio-de-aceitacao-quando-o-numero-de-dosagens-restantes-atingir-3-o-usuario-deve-receber-uma-notificacao" class="md-nav__link">
+    1.10.1. Critério de Aceitação: Quando o número de dosagens restantes atingir 3, o usuário deve receber uma notificação.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1102-criterio-de-aceitacao-a-notificacao-deve-ser-exibida-de-forma-clara-e-visivel-para-o-usuario" class="md-nav__link">
+    1.10.2. Critério de Aceitação: A notificação deve ser exibida de forma clara e visível para o usuário.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1103-criterio-de-aceitacao-a-notificacao-deve-incluir-informacoes-relevantes-como-o-medicamento-em-questao-e-a-quantidade-restante" class="md-nav__link">
+    1.10.3. Critério de Aceitação:  A notificação deve incluir informações relevantes, como o medicamento em questão e a quantidade restante.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1104-criterio-de-aceitacao-o-usuario-deve-receber-a-notificacao-em-um-momento-adequado-depois-de-tomar-a-4-dose" class="md-nav__link">
+    1.10.4. Critério de Aceitação: O usuário deve receber a notificação em um momento adequado, depois de tomar a 4 dose.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1105-criterio-de-aceitacao-a-notificacao-deve-ser-persistente-ate-que-o-usuario-a-acesse-ou-a-marque-como-lida" class="md-nav__link">
+    1.10.5. Critério de Aceitação: A notificação deve ser persistente até que o usuário a acesse ou a marque como lida.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1106-criterio-de-aceitacao-o-usuario-deve-receber-um-feedback-visual-ou-sonoro-quando-a-notificacao-for-recebida" class="md-nav__link">
+    1.10.6. Critério de Aceitação: O usuário deve receber um feedback visual ou sonoro quando a notificação for recebida.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1107-criterio-de-aceitacao-a-contagem-de-dosagens-deve-ser-precisa-levando-em-consideracao-as-dosagens-corretamente-consumidas-e-excluindo-quaisquer-dosagens-descartadas" class="md-nav__link">
+    1.10.7. Critério de Aceitação: A contagem de dosagens deve ser precisa, levando em consideração as dosagens corretamente consumidas e excluindo quaisquer dosagens descartadas.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#111-user-story-eu-como-usuario-quero-visualizar-um-temporizador-em-contagem-regressiva-apos-confirmar-na-tela-de-confirmacao-para-saber-quando-devo-tomar-minha-proxima-dose" class="md-nav__link">
+    1.11. User Story: Eu como usuário quero visualizar um temporizador em contagem regressiva após confirmar na tela de confirmação para saber quando devo tomar minha próxima dose
+  </a>
+  
+    <nav class="md-nav" aria-label="1.11. User Story: Eu como usuário quero visualizar um temporizador em contagem regressiva após confirmar na tela de confirmação para saber quando devo tomar minha próxima dose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1111-criterio-de-aceitacao-apos-confirmar-na-tela-de-confirmacao-para-tomar-a-dose-do-medicamento-o-usuario-na-tela-de-meus-remedios-e-remedio-dos-dia-deve-ver-uma-tela-que-exibe-um-temporizador-em-contagem-regressiva" class="md-nav__link">
+    1.11.1. Critério de Aceitação: Após confirmar na tela de confirmação para tomar a dose do medicamento, o usuário na tela de meus remédios e remédio dos dia deve ver uma tela que exibe um temporizador em contagem regressiva.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1112-criterio-de-aceitacao-o-temporizador-deve-ser-claramente-visivel-para-o-usuario-e-exibido-de-forma-intuitiva" class="md-nav__link">
+    1.11.2. Critério de Aceitação: O temporizador deve ser claramente visível para o usuário e exibido de forma intuitiva.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1113-criterio-de-aceitacao-o-tempo-exibido-no-temporizador-deve-corresponder-ao-intervalo-de-tempo-restante-ate-a-proxima-dose" class="md-nav__link">
+    1.11.3. Critério de Aceitação: O tempo exibido no temporizador deve corresponder ao intervalo de tempo restante até a próxima dose.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1114-criterio-de-aceitacao-o-temporizador-deve-ser-atualizado-em-tempo-real-mostrando-a-contagem-regressiva-de-forma-precisa-e-consistente" class="md-nav__link">
+    1.11.4. Critério de Aceitação: O temporizador deve ser atualizado em tempo real, mostrando a contagem regressiva de forma precisa e consistente.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1115-criterio-de-aceitacao-o-sistema-deve-considerar-eventuais-atrasos-ou-adiantamentos-na-administracao-da-dose-e-ajustar-o-temporizador-de-acordo" class="md-nav__link">
+    1.11.5. Critério de Aceitação: O sistema deve considerar eventuais atrasos ou adiantamentos na administração da dose e ajustar o temporizador de acordo.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-user-story-eu-como-usuario-quero-buscar-os-medicamentos-por-nome-para-saber-quando-devo-toma-los" class="md-nav__link">
+    1.12. User Story: Eu como usuário quero buscar os medicamentos por nome para saber quando devo tomá-los.
+  </a>
+  
+    <nav class="md-nav" aria-label="1.12. User Story: Eu como usuário quero buscar os medicamentos por nome para saber quando devo tomá-los.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1121-criterio-de-aceitacao-o-usuario-deve-ter-a-opcao-de-realizar-uma-busca-por-nome-de-medicamento" class="md-nav__link">
+    1.12.1. Critério de Aceitação:  O usuário deve ter a opção de realizar uma busca por nome de medicamento.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1122-criterio-de-aceitacao-a-funcionalidade-de-busca-por-nome-deve-ser-facilmente-acessivel-e-visivel-para-o-usuario" class="md-nav__link">
+    1.12.2. Critério de Aceitação: A funcionalidade de busca por nome deve ser facilmente acessível e visível para o usuário.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1123-criterio-de-aceitacao-o-usuario-deve-ser-capaz-de-inserir-o-nome-do-medicamento-na-barra-de-busca" class="md-nav__link">
+    1.12.3. Critério de Aceitação: O usuário deve ser capaz de inserir o nome do medicamento na barra de busca.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1124-criterio-de-aceitacao-o-sistema-deve-retornar-os-resultados-da-busca-de-forma-precisa-e-relevante-exibindo-os-medicamentos-que-correspondem-ao-nome-pesquisado" class="md-nav__link">
+    1.12.4. Critério de Aceitação: O sistema deve retornar os resultados da busca de forma precisa e relevante, exibindo os medicamentos que correspondem ao nome pesquisado.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1125-criterio-de-aceitacao-os-resultados-da-busca-devem-incluir-informacoes-relevantes-sobre-os-medicamentos-como-nome-dosagem-e-etc" class="md-nav__link">
+    1.12.5. Critério de Aceitação: Os resultados da busca devem incluir informações relevantes sobre os medicamentos, como nome, dosagem e etc.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1126-criterio-de-aceitacao-o-sistema-deve-permitir-que-o-usuario-clique-em-um-medicamento-nos-resultados-da-busca-para-visualizar-mais-detalhes-sobre-ele" class="md-nav__link">
+    1.12.6. Critério de Aceitação: O sistema deve permitir que o usuário clique em um medicamento nos resultados da busca para visualizar mais detalhes sobre ele.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1127-criterio-de-aceitacao-caso-nenhum-medicamento-corresponda-ao-nome-pesquisado-o-sistema-deve-fornecer-um-feedback-claro-ao-usuario-informando-que-nenhum-resultado-foi-encontrado" class="md-nav__link">
+    1.12.7. Critério de Aceitação:  Caso nenhum medicamento corresponda ao nome pesquisado, o sistema deve fornecer um feedback claro ao usuário, informando que nenhum resultado foi encontrado.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-user-story-eu-como-usuario-quero-enviar-uma-mensagem-programada-para-uma-pessoa-quando-tiver-poucas-dosagens-disponiveis-para-solicitar-novos-medicamentos-antes-de-acabar" class="md-nav__link">
+    1.13. User Story: Eu como usuário quero enviar uma mensagem programada para uma pessoa quando tiver poucas dosagens disponíveis para solicitar novos medicamentos antes de acabar.
+  </a>
+  
+    <nav class="md-nav" aria-label="1.13. User Story: Eu como usuário quero enviar uma mensagem programada para uma pessoa quando tiver poucas dosagens disponíveis para solicitar novos medicamentos antes de acabar.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1131-criterio-de-aceitacao-o-usuario-deve-ter-a-opcao-de-programar-o-envio-de-uma-mensagem-para-uma-pessoa-especifica-quando-tiver-poucas-dosagens-de-um-medicamento-disponiveis" class="md-nav__link">
+    1.13.1. Critério de Aceitação: O usuário deve ter a opção de programar o envio de uma mensagem para uma pessoa específica quando tiver poucas dosagens de um medicamento disponíveis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1132-criterio-de-aceitacao-o-usuario-deve-poder-selecionar-a-pessoa-para-quem-a-mensagem-sera-enviada" class="md-nav__link">
+    1.13.2. Critério de Aceitação: O usuário deve poder selecionar a pessoa para quem a mensagem será enviada
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1133-criterio-de-aceitacao-o-sistema-deve-fornecer-uma-opcao-para-personalizar-o-conteudo-da-mensagem-incluindo-informacoes-relevantes-como-o-nome-do-medicamento-a-quantidade-restante-e-a-solicitacao-para-obter-uma-nova-receita" class="md-nav__link">
+    1.13.3. Critério de Aceitação: O sistema deve fornecer uma opção para personalizar o conteúdo da mensagem, incluindo informações relevantes, como o nome do medicamento, a quantidade restante e a solicitação para obter uma nova receita
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1134-criterio-de-aceitacao-o-usuario-deve-ter-a-opcao-de-revisar-a-mensagem-antes-do-envio" class="md-nav__link">
+    1.13.4. Critério de Aceitação: O usuário deve ter a opção de revisar a mensagem antes do envio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1135-criterio-de-aceitacao-o-sistema-deve-enviar-a-mensagem-por-meio-do-metodo-de-comunicacao-especificado-por-exemplo-sms-e-mail-aplicativo-de-mensagens-para-a-pessoa-selecionada" class="md-nav__link">
+    1.13.5. Critério de Aceitação: O sistema deve enviar a mensagem por meio do método de comunicação especificado (por exemplo, SMS, e-mail, aplicativo de mensagens) para a pessoa selecionada
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1136-criterio-de-aceitacao-o-sistema-deve-fornecer-um-feedback-claro-em-caso-de-erros-ou-problemas-durante-o-processo-de-programacao-ou-envio-da-mensagem" class="md-nav__link">
+    1.13.6. Critério de Aceitação: O sistema deve fornecer um feedback claro em caso de erros ou problemas durante o processo de programação ou envio da mensagem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114-user-story-eu-como-usuario-quero-um-registro-com-nome-e-data-de-todos-os-remedios-que-tomei-desde-que-baixei-o-app-para-poder-ter-acesso-a-essas-informacoes-futuramente" class="md-nav__link">
+    1.14. User Story: Eu como usuário quero um registro com nome e data de todos os remédios que tomei desde que baixei o APP para poder ter acesso a essas informações futuramente.
+  </a>
+  
+    <nav class="md-nav" aria-label="1.14. User Story: Eu como usuário quero um registro com nome e data de todos os remédios que tomei desde que baixei o APP para poder ter acesso a essas informações futuramente.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1141-criterio-de-aceitacao-o-sistema-deve-registrar-automaticamente-o-nome-e-a-data-de-cada-remedio-tomado-pelo-usuario-desde-o-momento-em-que-o-aplicativo-foi-baixado" class="md-nav__link">
+    1.14.1. Critério de Aceitação: O sistema deve registrar automaticamente o nome e a data de cada remédio tomado pelo usuário desde o momento em que o aplicativo foi baixado.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1142-criterio-de-aceitacao-o-registro-dos-remedios-tomados-deve-ser-armazenado-de-forma-segura-e-persistente-no-sistema-permitindo-o-acesso-futuro-as-informacoes" class="md-nav__link">
+    1.14.2. Critério de Aceitação: O registro dos remédios tomados deve ser armazenado de forma segura e persistente no sistema, permitindo o acesso futuro às informações.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1143-criterio-de-aceitacao-o-usuario-deve-ter-a-opcao-de-visualizar-o-registro-completo-dos-remedios-tomados" class="md-nav__link">
+    1.14.3. Critério de Aceitação: O usuário deve ter a opção de visualizar o registro completo dos remédios tomados.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1144-criterio-de-aceitacao-o-registro-deve-exibir-as-informacoes-relevantes-de-cada-remedio-tomado-incluindo-o-nome-do-medicamento-e-a-data-em-que-foi-tomado" class="md-nav__link">
+    1.14.4. Critério de Aceitação: O registro deve exibir as informações relevantes de cada remédio tomado, incluindo o nome do medicamento e a data em que foi tomado.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1145-criterio-de-aceitacao-o-sistema-deve-manter-a-integridade-do-registro-garantindo-que-as-informacoes-registradas-nao-sejam-perdidas-ou-corrompidas" class="md-nav__link">
+    1.14.5. Critério de Aceitação: O sistema deve manter a integridade do registro, garantindo que as informações registradas não sejam perdidas ou corrompidas.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1146-criterio-de-aceitacao-o-sistema-deve-separar-os-remedios-tomados-em-relacao-a-cada-mes-de-cada-ano" class="md-nav__link">
+    1.14.6. Critério de Aceitação: O sistema deve separar os remédios tomados em relação a cada mês de cada ano.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#115-user-story-eu-como-usuario-quero-gerar-um-arquivo-com-o-registro-de-nome-e-data-de-todos-os-remedios-que-tomei-desde-que-baixei-o-app-para-poder-baixar-esse-relatorio" class="md-nav__link">
+    1.15. User Story: Eu como usuário quero gerar um arquivo com o registro de nome e data de todos os remédios que tomei desde que baixei o APP para poder baixar esse relatório.
+  </a>
+  
+    <nav class="md-nav" aria-label="1.15. User Story: Eu como usuário quero gerar um arquivo com o registro de nome e data de todos os remédios que tomei desde que baixei o APP para poder baixar esse relatório.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1151-criterio-de-aceitacao-o-usuario-deve-ter-a-opcao-de-gerar-um-arquivo-de-relatorio-com-o-registro-completo-dos-remedios-tomados-desde-o-momento-em-que-o-aplicativo-foi-baixado" class="md-nav__link">
+    1.15.1. Critério de Aceitação: O usuário deve ter a opção de gerar um arquivo de relatório com o registro completo dos remédios tomados desde o momento em que o aplicativo foi baixado.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1152-criterio-de-aceitacao-o-formato-do-arquivo-de-relatorio-deve-ser-compativel-e-adequado-para-download" class="md-nav__link">
+    1.15.2. Critério de Aceitação: O formato do arquivo de relatório deve ser compatível e adequado para download.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1153-criterio-de-aceitacao-o-relatorio-gerado-deve-incluir-o-nome-e-a-data-de-cada-remedio-tomado-organizados-de-forma-clara-e-legivel" class="md-nav__link">
+    1.15.3. Critério de Aceitação: O relatório gerado deve incluir o nome e a data de cada remédio tomado, organizados de forma clara e legível.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1154-criterio-de-aceitacao-o-relatorio-gerado-deve-refletir-as-informacoes-mais-atualizadas-do-registro-de-remedios-tomados-no-momento-em-que-o-relatorio-e-gerado" class="md-nav__link">
+    1.15.4. Critério de Aceitação: O relatório gerado deve refletir as informações mais atualizadas do registro de remédios tomados no momento em que o relatório é gerado.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1155-criterio-de-aceitacao-o-arquivo-de-relatorio-gerado-deve-ser-disponibilizado-para-download-imediato-e-estar-acessivel-ao-usuario-de-forma-conveniente" class="md-nav__link">
+    1.15.5. Critério de Aceitação:  O arquivo de relatório gerado deve ser disponibilizado para download imediato e estar acessível ao usuário de forma conveniente.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#116-user-story-eu-como-usuario-quero-editar-medicamentos-para-altera-los-ao-meu-gosto" class="md-nav__link">
+    1.16. User Story: Eu como usuário quero editar medicamentos, para altera-los ao meu gosto.
+  </a>
+  
+    <nav class="md-nav" aria-label="1.16. User Story: Eu como usuário quero editar medicamentos, para altera-los ao meu gosto.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1161-criterio-de-aceitacao-o-usuario-deve-ter-a-opcao-de-editar-medicamentos-existentes" class="md-nav__link">
+    1.16.1. Critério de Aceitação: O usuário deve ter a opção de editar medicamentos existentes.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1162-criterio-de-aceitacao-a-funcionalidade-de-edicao-deve-estar-facilmente-acessivel-e-visivel-para-o-usuario" class="md-nav__link">
+    1.16.2. Critério de Aceitação: A funcionalidade de edição deve estar facilmente acessível e visível para o usuário.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1163-criterio-de-aceitacao-o-usuario-deve-ser-capaz-de-editar-informacoes-basicas-do-medicamento-como-nome-dosagem-e-horarios-de-administracao" class="md-nav__link">
+    1.16.3. Critério de Aceitação: O usuário deve ser capaz de editar informações básicas do medicamento, como nome, dosagem e horários de administração.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1164-criterio-de-aceitacao-o-sistema-deve-permitir-ao-usuario-adicionar-informacoes-adicionais-relevantes-como-notas-instrucoes-especiais-ou-restricoes" class="md-nav__link">
+    1.16.4. Critério de Aceitação: O sistema deve permitir ao usuário adicionar informações adicionais relevantes, como notas, instruções especiais ou restrições.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1165-criterio-de-aceitacao-o-usuario-deve-ser-capaz-de-salvar-as-alteracoes-feitas-no-medicamento" class="md-nav__link">
+    1.16.5. Critério de Aceitação: O usuário deve ser capaz de salvar as alterações feitas no medicamento.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1166-criterio-de-aceitacao-as-alteracoes-feitas-nos-medicamentos-devem-ser-refletidas-imediatamente-em-todas-as-partes-do-aplicativo-onde-os-medicamentos-sao-exibidos" class="md-nav__link">
+    1.16.6. Critério de Aceitação: As alterações feitas nos medicamentos devem ser refletidas imediatamente em todas as partes do aplicativo onde os medicamentos são exibidos.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1167-criterio-de-aceitacao-o-sistema-deve-garantir-a-consistencia-e-validade-dos-dados-inseridos-pelo-usuario-ao-editar-os-medicamentos" class="md-nav__link">
+    1.16.7. Critério de Aceitação: O sistema deve garantir a consistência e validade dos dados inseridos pelo usuário ao editar os medicamentos.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+          Unidade 4
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Unidade 4
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade4/Apresentacao/" class="md-nav__link">
+        Apresentação da Unidade 4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade4/CasosdeUso/" class="md-nav__link">
+        Casos de Uso
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade4/USM/" class="md-nav__link">
+        USM
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#historico-de-revisao" class="md-nav__link">
+    Histórico de Revisão
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-bdd" class="md-nav__link">
+    1. BDD
+  </a>
+  
+    <nav class="md-nav" aria-label="1. BDD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-user-story-eu-como-usuario-quero-cadastrar-meus-medicamentos-para-consulta-los-depois" class="md-nav__link">
+    1.1. User Story: Eu como usuário quero cadastrar meus medicamentos para consultá-los depois.
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1. User Story: Eu como usuário quero cadastrar meus medicamentos para consultá-los depois.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-criterio-de-aceitacao-cada-medicamento-deve-ter-nome-quantidade-de-conteudo-por-dosagem-unidade-de-medida-da-dosagem-comprimidos-ml-periodicidade-da-dosagem-quantidade-total-de-conteudo-do-remedio-observacoes-horario-de-comeco-do-alarme" class="md-nav__link">
+    1.1.1. Critério de Aceitação: Cada medicamento deve ter nome, quantidade de conteúdo por dosagem, unidade de medida da dosagem (comprimidos, ml…), periodicidade da dosagem, quantidade total de conteúdo do remédio, observações, horário de começo do alarme.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-criterio-de-aceitacao-eu-quero-que-apos-cadastrar-a-lista-de-medicamentos-seja-atualizada-imediatamente" class="md-nav__link">
+    1.1.2. Critério de Aceitação: Eu quero que após cadastrar, a lista de medicamentos seja atualizada imediatamente.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-user-story-eu-como-usuario-quero-ver-uma-lista-com-todos-os-meus-medicamentos-cadastrados-para-consultar-em-outro-momento" class="md-nav__link">
+    1.2. User Story: Eu como usuário quero ver uma lista com todos os meus medicamentos cadastrados para consultar em outro momento.
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2. User Story: Eu como usuário quero ver uma lista com todos os meus medicamentos cadastrados para consultar em outro momento.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-criterio-de-aceitacao-cada-medicamento-na-lista-deve-ter-nome-quantidade-de-conteudo-por-dosagem-periodicidade-da-dosagem-temporizador-com-contagem-regressiva-para-proximo-alarme" class="md-nav__link">
+    1.2.1. Critério de Aceitação: Cada medicamento na lista deve ter nome, quantidade de conteúdo por dosagem, periodicidade da dosagem, temporizador com contagem regressiva para próximo alarme
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-eu-quero-visualizar-a-barra-de-progresso-com-as-doses-que-ainda-faltam-para-o-remedio-no-dia" class="md-nav__link">
+    1.2.2. Eu quero visualizar a barra de progresso com as doses que ainda faltam para o remédio no dia.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-user-story-eu-como-usuario-quero-deletar-medicamentos-para-manter-somente-os-tratamentos-que-estou-realmente-fazendo" class="md-nav__link">
+    1.3. User Story: Eu como usuário quero deletar medicamentos, para manter somente os tratamentos que estou realmente fazendo.
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3. User Story: Eu como usuário quero deletar medicamentos, para manter somente os tratamentos que estou realmente fazendo.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-criterio-de-aceitacao-eu-quero-ter-a-opcao-de-confirmar-a-delecao" class="md-nav__link">
+    1.3.1. Critério de Aceitação: Eu quero ter a opção de confirmar a deleção.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-criterio-de-aceitacao-eu-quero-que-a-lista-de-medicamentos-seja-atualizada-assim-que-eu-deletar" class="md-nav__link">
+    1.3.2. Critério de Aceitação: Eu quero que a lista de medicamentos seja atualizada assim que eu deletar.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-user-story-eu-como-usuario-quero-poder-confirmar-o-uso-de-um-medicamento-por-uma-tela-de-confirmacao-gerada-pela-notificacao-do-remedio-para-registrar-o-uso-do-meu-medicamento" class="md-nav__link">
+    1.4. User Story: Eu como usuário quero poder confirmar o uso de um medicamento por uma tela de confirmação gerada pela notificação do remédio para registrar o uso do meu medicamento.
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4. User Story: Eu como usuário quero poder confirmar o uso de um medicamento por uma tela de confirmação gerada pela notificação do remédio para registrar o uso do meu medicamento.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-criterio-de-aceitacao-eu-quero-poder-confirmar-o-uso-a-partir-da-tela-de-bloqueio-do-celular" class="md-nav__link">
+    1.4.1. Critério de Aceitação: Eu quero poder confirmar o uso a partir da tela de bloqueio do celular.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-criterio-de-aceitacao-a-notificacao-deve-conter-o-medicamento-que-preciso-tomar-com-nome-dosagem-e-horario-que-deveria-tomar" class="md-nav__link">
+    1.4.2. Critério de Aceitação: A notificação deve conter o medicamento que preciso tomar com nome, dosagem, e horário que deveria tomar.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143-criterio-de-aceitacao-eu-quero-que-seja-subtraido-uma-dosagem-das-dosagens-que-possuo-apos-confirmar-o-uso" class="md-nav__link">
+    1.4.3. Critério de Aceitação: Eu quero que seja subtraído uma dosagem das dosagens que possuo após confirmar o uso.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-user-story-eu-como-usuario-quero-possuir-uma-notificacao-vinculado-ao-horario-correto-de-uso-de-meu-medicamento-para-me-lembrar-de-tomar-o-remedio" class="md-nav__link">
+    1.5. User Story: Eu como usuário quero possuir uma notificação vinculado ao horário correto de uso de meu medicamento para me lembrar de tomar o remédio.
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5. User Story: Eu como usuário quero possuir uma notificação vinculado ao horário correto de uso de meu medicamento para me lembrar de tomar o remédio.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#151-criterio-de-aceitacao-eu-preciso-que-essa-notificacao-apareca-na-tela-de-travamento-do-meu-celular" class="md-nav__link">
+    1.5.1. Critério de Aceitação: Eu preciso que essa notificação apareça na tela de travamento do meu celular.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-user-story-eu-como-usuario-quero-registrar-o-uso-do-meu-medicamento-por-meio-de-uma-tela-de-confirmacao-para-manter-um-registro-dos-remedios-que-tomei" class="md-nav__link">
+    1.6. User Story: Eu como usuário quero registrar o uso do meu medicamento por meio de uma tela de confirmação para manter um registro dos remédios que tomei.
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6. User Story: Eu como usuário quero registrar o uso do meu medicamento por meio de uma tela de confirmação para manter um registro dos remédios que tomei.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#161-criterio-de-aceitacao-eu-quero-que-essa-tela-de-confirmacao-seja-acessada-pelo-app" class="md-nav__link">
+    1.6.1. Critério de Aceitação: Eu quero que essa tela de confirmação seja acessada pelo app.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#162-criterio-de-aceitacao-eu-quero-poder-confirmar-o-uso-do-medicamento-a-qualquer-momento-depois-do-horario-de-tomar" class="md-nav__link">
+    1.6.2. Critério de Aceitação: Eu quero poder confirmar o uso do medicamento a qualquer momento depois do horário de tomar.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#163-criterio-de-aceitacao-a-tela-de-confirmacao-deve-conter-o-medicamento-que-preciso-tomar-com-nome-dosagem-e-horario-que-deveria-tomar" class="md-nav__link">
+    1.6.3. Critério de Aceitação: A tela de confirmação deve conter o medicamento que preciso tomar com nome, dosagem, e horário que deveria tomar.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#164-criterio-de-aceitacao-eu-quero-que-seja-subtraido-uma-dosagem-das-dosagens-que-possuo-apos-confirmar-o-uso" class="md-nav__link">
+    1.6.4. Critério de Aceitação: Eu quero que seja subtraído uma dosagem das dosagens que possuo após confirmar o uso.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-user-story-eu-como-usuario-quero-visualizar-o-registro-de-todos-os-remedios-que-tomei-no-dia-para-poder-ter-o-controle-do-uso-dos-meus-medicamentos" class="md-nav__link">
+    1.7. User Story: Eu como usuário quero visualizar o registro de todos os remédios que tomei no dia para poder ter o controle do uso dos meus medicamentos.
+  </a>
+  
+    <nav class="md-nav" aria-label="1.7. User Story: Eu como usuário quero visualizar o registro de todos os remédios que tomei no dia para poder ter o controle do uso dos meus medicamentos.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#171-criterio-de-aceitacao-eu-quero-poder-diferenciar-visualmente-pela-coloracao-os-remedios-que-eu-tomei-dos-que-eu-nao-tomei" class="md-nav__link">
+    1.7.1. Critério de Aceitação: Eu quero poder diferenciar visualmente (pela coloração) os remédios que eu tomei dos que eu não tomei.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#172-criterio-de-aceitacao-eu-quero-ver-o-horario-que-tomei-o-remedio" class="md-nav__link">
+    1.7.2. Critério de Aceitação: Eu quero ver o horário que tomei o remédio.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18-user-story-eu-como-usuario-quero-ver-uma-lista-de-medicamentos-que-devo-tomar-no-dia-atual-para-me-planejar-antecipadamente" class="md-nav__link">
+    1.8. User Story: Eu como usuário quero ver uma lista de medicamentos que devo tomar no dia atual, para me planejar antecipadamente.
+  </a>
+  
+    <nav class="md-nav" aria-label="1.8. User Story: Eu como usuário quero ver uma lista de medicamentos que devo tomar no dia atual, para me planejar antecipadamente.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#181-criterio-de-aceitacao-eu-quero-que-essa-lista-seja-atualizada-as-0000" class="md-nav__link">
+    1.8.1. Critério de Aceitação: Eu quero que essa lista seja atualizada às 00:00.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#182-criterio-de-aceitacao-essa-lista-deve-conter-o-nome-e-o-horario-que-eu-tenho-que-tomar-cada-medicamento-no-dia" class="md-nav__link">
+    1.8.2. Critério de Aceitação: Essa lista deve conter o nome e o horário que eu tenho que tomar cada medicamento no dia.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19-user-story-eu-como-usuario-quero-programar-a-notificacao-para-tocar-novamente-daqui-5-minutos-para-eu-poder-me-planejar-melhor" class="md-nav__link">
+    1.9. User Story: Eu como usuário quero programar a notificação para tocar novamente daqui 5 minutos para eu poder me planejar melhor.
+  </a>
+  
+    <nav class="md-nav" aria-label="1.9. User Story: Eu como usuário quero programar a notificação para tocar novamente daqui 5 minutos para eu poder me planejar melhor.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#191-criterio-de-aceitacao-o-usuario-deve-ter-a-opcao-de-ativar-a-notificacao-para-tocar-novamente-em-5-minutos" class="md-nav__link">
+    1.9.1. Critério de Aceitação: O usuário deve ter a opção de ativar a notificação para tocar novamente em 5 minutos.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#192-criterio-de-aceitacao-a-tela-de-confirmacao-deve-incluir-um-botao-para-ativar-a-repeticao-da-notificacao-em-5-minutos" class="md-nav__link">
+    1.9.2. Critério de Aceitação: A tela de confirmação deve incluir um botão para ativar a repetição da notificação em 5 minutos.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#193-ao-selecionar-a-opcao-de-repeticao-a-notificacao-deve-ser-programada-para-tocar-novamente-exatamente-apos-5-minutos" class="md-nav__link">
+    1.9.3. Ao selecionar a opção de repetição, a notificação deve ser programada para tocar novamente exatamente após 5 minutos.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#194-a-repeticao-da-notificacao-em-5-minutos-deve-funcionar-corretamente-mesmo-se-o-aplicativo-estiver-em-segundo-plano-ou-o-dispositivo-estiver-bloqueado" class="md-nav__link">
+    1.9.4. A repetição da notificação em 5 minutos deve funcionar corretamente mesmo se o aplicativo estiver em segundo plano ou o dispositivo estiver bloqueado.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#110-user-story-eu-como-usuario-quero-receber-uma-notificacao-e-um-alerta-quando-possuir-apenas-3-dosagens-para-pedir-para-o-medico-uma-nova-receita" class="md-nav__link">
+    1.10. User Story: Eu como usuário quero receber uma notificação e um alerta quando possuir apenas 3 dosagens para pedir para o médico uma nova receita.
+  </a>
+  
+    <nav class="md-nav" aria-label="1.10. User Story: Eu como usuário quero receber uma notificação e um alerta quando possuir apenas 3 dosagens para pedir para o médico uma nova receita.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1101-criterio-de-aceitacao-quando-o-numero-de-dosagens-restantes-atingir-3-o-usuario-deve-receber-uma-notificacao" class="md-nav__link">
+    1.10.1. Critério de Aceitação: Quando o número de dosagens restantes atingir 3, o usuário deve receber uma notificação.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1102-criterio-de-aceitacao-a-notificacao-deve-ser-exibida-de-forma-clara-e-visivel-para-o-usuario" class="md-nav__link">
+    1.10.2. Critério de Aceitação: A notificação deve ser exibida de forma clara e visível para o usuário.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1103-criterio-de-aceitacao-a-notificacao-deve-incluir-informacoes-relevantes-como-o-medicamento-em-questao-e-a-quantidade-restante" class="md-nav__link">
+    1.10.3. Critério de Aceitação:  A notificação deve incluir informações relevantes, como o medicamento em questão e a quantidade restante.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1104-criterio-de-aceitacao-o-usuario-deve-receber-a-notificacao-em-um-momento-adequado-depois-de-tomar-a-4-dose" class="md-nav__link">
+    1.10.4. Critério de Aceitação: O usuário deve receber a notificação em um momento adequado, depois de tomar a 4 dose.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1105-criterio-de-aceitacao-a-notificacao-deve-ser-persistente-ate-que-o-usuario-a-acesse-ou-a-marque-como-lida" class="md-nav__link">
+    1.10.5. Critério de Aceitação: A notificação deve ser persistente até que o usuário a acesse ou a marque como lida.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1106-criterio-de-aceitacao-o-usuario-deve-receber-um-feedback-visual-ou-sonoro-quando-a-notificacao-for-recebida" class="md-nav__link">
+    1.10.6. Critério de Aceitação: O usuário deve receber um feedback visual ou sonoro quando a notificação for recebida.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1107-criterio-de-aceitacao-a-contagem-de-dosagens-deve-ser-precisa-levando-em-consideracao-as-dosagens-corretamente-consumidas-e-excluindo-quaisquer-dosagens-descartadas" class="md-nav__link">
+    1.10.7. Critério de Aceitação: A contagem de dosagens deve ser precisa, levando em consideração as dosagens corretamente consumidas e excluindo quaisquer dosagens descartadas.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#111-user-story-eu-como-usuario-quero-visualizar-um-temporizador-em-contagem-regressiva-apos-confirmar-na-tela-de-confirmacao-para-saber-quando-devo-tomar-minha-proxima-dose" class="md-nav__link">
+    1.11. User Story: Eu como usuário quero visualizar um temporizador em contagem regressiva após confirmar na tela de confirmação para saber quando devo tomar minha próxima dose
+  </a>
+  
+    <nav class="md-nav" aria-label="1.11. User Story: Eu como usuário quero visualizar um temporizador em contagem regressiva após confirmar na tela de confirmação para saber quando devo tomar minha próxima dose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1111-criterio-de-aceitacao-apos-confirmar-na-tela-de-confirmacao-para-tomar-a-dose-do-medicamento-o-usuario-na-tela-de-meus-remedios-e-remedio-dos-dia-deve-ver-uma-tela-que-exibe-um-temporizador-em-contagem-regressiva" class="md-nav__link">
+    1.11.1. Critério de Aceitação: Após confirmar na tela de confirmação para tomar a dose do medicamento, o usuário na tela de meus remédios e remédio dos dia deve ver uma tela que exibe um temporizador em contagem regressiva.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1112-criterio-de-aceitacao-o-temporizador-deve-ser-claramente-visivel-para-o-usuario-e-exibido-de-forma-intuitiva" class="md-nav__link">
+    1.11.2. Critério de Aceitação: O temporizador deve ser claramente visível para o usuário e exibido de forma intuitiva.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1113-criterio-de-aceitacao-o-tempo-exibido-no-temporizador-deve-corresponder-ao-intervalo-de-tempo-restante-ate-a-proxima-dose" class="md-nav__link">
+    1.11.3. Critério de Aceitação: O tempo exibido no temporizador deve corresponder ao intervalo de tempo restante até a próxima dose.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1114-criterio-de-aceitacao-o-temporizador-deve-ser-atualizado-em-tempo-real-mostrando-a-contagem-regressiva-de-forma-precisa-e-consistente" class="md-nav__link">
+    1.11.4. Critério de Aceitação: O temporizador deve ser atualizado em tempo real, mostrando a contagem regressiva de forma precisa e consistente.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1115-criterio-de-aceitacao-o-sistema-deve-considerar-eventuais-atrasos-ou-adiantamentos-na-administracao-da-dose-e-ajustar-o-temporizador-de-acordo" class="md-nav__link">
+    1.11.5. Critério de Aceitação: O sistema deve considerar eventuais atrasos ou adiantamentos na administração da dose e ajustar o temporizador de acordo.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-user-story-eu-como-usuario-quero-buscar-os-medicamentos-por-nome-para-saber-quando-devo-toma-los" class="md-nav__link">
+    1.12. User Story: Eu como usuário quero buscar os medicamentos por nome para saber quando devo tomá-los.
+  </a>
+  
+    <nav class="md-nav" aria-label="1.12. User Story: Eu como usuário quero buscar os medicamentos por nome para saber quando devo tomá-los.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1121-criterio-de-aceitacao-o-usuario-deve-ter-a-opcao-de-realizar-uma-busca-por-nome-de-medicamento" class="md-nav__link">
+    1.12.1. Critério de Aceitação:  O usuário deve ter a opção de realizar uma busca por nome de medicamento.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1122-criterio-de-aceitacao-a-funcionalidade-de-busca-por-nome-deve-ser-facilmente-acessivel-e-visivel-para-o-usuario" class="md-nav__link">
+    1.12.2. Critério de Aceitação: A funcionalidade de busca por nome deve ser facilmente acessível e visível para o usuário.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1123-criterio-de-aceitacao-o-usuario-deve-ser-capaz-de-inserir-o-nome-do-medicamento-na-barra-de-busca" class="md-nav__link">
+    1.12.3. Critério de Aceitação: O usuário deve ser capaz de inserir o nome do medicamento na barra de busca.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1124-criterio-de-aceitacao-o-sistema-deve-retornar-os-resultados-da-busca-de-forma-precisa-e-relevante-exibindo-os-medicamentos-que-correspondem-ao-nome-pesquisado" class="md-nav__link">
+    1.12.4. Critério de Aceitação: O sistema deve retornar os resultados da busca de forma precisa e relevante, exibindo os medicamentos que correspondem ao nome pesquisado.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1125-criterio-de-aceitacao-os-resultados-da-busca-devem-incluir-informacoes-relevantes-sobre-os-medicamentos-como-nome-dosagem-e-etc" class="md-nav__link">
+    1.12.5. Critério de Aceitação: Os resultados da busca devem incluir informações relevantes sobre os medicamentos, como nome, dosagem e etc.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1126-criterio-de-aceitacao-o-sistema-deve-permitir-que-o-usuario-clique-em-um-medicamento-nos-resultados-da-busca-para-visualizar-mais-detalhes-sobre-ele" class="md-nav__link">
+    1.12.6. Critério de Aceitação: O sistema deve permitir que o usuário clique em um medicamento nos resultados da busca para visualizar mais detalhes sobre ele.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1127-criterio-de-aceitacao-caso-nenhum-medicamento-corresponda-ao-nome-pesquisado-o-sistema-deve-fornecer-um-feedback-claro-ao-usuario-informando-que-nenhum-resultado-foi-encontrado" class="md-nav__link">
+    1.12.7. Critério de Aceitação:  Caso nenhum medicamento corresponda ao nome pesquisado, o sistema deve fornecer um feedback claro ao usuário, informando que nenhum resultado foi encontrado.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-user-story-eu-como-usuario-quero-enviar-uma-mensagem-programada-para-uma-pessoa-quando-tiver-poucas-dosagens-disponiveis-para-solicitar-novos-medicamentos-antes-de-acabar" class="md-nav__link">
+    1.13. User Story: Eu como usuário quero enviar uma mensagem programada para uma pessoa quando tiver poucas dosagens disponíveis para solicitar novos medicamentos antes de acabar.
+  </a>
+  
+    <nav class="md-nav" aria-label="1.13. User Story: Eu como usuário quero enviar uma mensagem programada para uma pessoa quando tiver poucas dosagens disponíveis para solicitar novos medicamentos antes de acabar.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1131-criterio-de-aceitacao-o-usuario-deve-ter-a-opcao-de-programar-o-envio-de-uma-mensagem-para-uma-pessoa-especifica-quando-tiver-poucas-dosagens-de-um-medicamento-disponiveis" class="md-nav__link">
+    1.13.1. Critério de Aceitação: O usuário deve ter a opção de programar o envio de uma mensagem para uma pessoa específica quando tiver poucas dosagens de um medicamento disponíveis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1132-criterio-de-aceitacao-o-usuario-deve-poder-selecionar-a-pessoa-para-quem-a-mensagem-sera-enviada" class="md-nav__link">
+    1.13.2. Critério de Aceitação: O usuário deve poder selecionar a pessoa para quem a mensagem será enviada
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1133-criterio-de-aceitacao-o-sistema-deve-fornecer-uma-opcao-para-personalizar-o-conteudo-da-mensagem-incluindo-informacoes-relevantes-como-o-nome-do-medicamento-a-quantidade-restante-e-a-solicitacao-para-obter-uma-nova-receita" class="md-nav__link">
+    1.13.3. Critério de Aceitação: O sistema deve fornecer uma opção para personalizar o conteúdo da mensagem, incluindo informações relevantes, como o nome do medicamento, a quantidade restante e a solicitação para obter uma nova receita
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1134-criterio-de-aceitacao-o-usuario-deve-ter-a-opcao-de-revisar-a-mensagem-antes-do-envio" class="md-nav__link">
+    1.13.4. Critério de Aceitação: O usuário deve ter a opção de revisar a mensagem antes do envio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1135-criterio-de-aceitacao-o-sistema-deve-enviar-a-mensagem-por-meio-do-metodo-de-comunicacao-especificado-por-exemplo-sms-e-mail-aplicativo-de-mensagens-para-a-pessoa-selecionada" class="md-nav__link">
+    1.13.5. Critério de Aceitação: O sistema deve enviar a mensagem por meio do método de comunicação especificado (por exemplo, SMS, e-mail, aplicativo de mensagens) para a pessoa selecionada
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1136-criterio-de-aceitacao-o-sistema-deve-fornecer-um-feedback-claro-em-caso-de-erros-ou-problemas-durante-o-processo-de-programacao-ou-envio-da-mensagem" class="md-nav__link">
+    1.13.6. Critério de Aceitação: O sistema deve fornecer um feedback claro em caso de erros ou problemas durante o processo de programação ou envio da mensagem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114-user-story-eu-como-usuario-quero-um-registro-com-nome-e-data-de-todos-os-remedios-que-tomei-desde-que-baixei-o-app-para-poder-ter-acesso-a-essas-informacoes-futuramente" class="md-nav__link">
+    1.14. User Story: Eu como usuário quero um registro com nome e data de todos os remédios que tomei desde que baixei o APP para poder ter acesso a essas informações futuramente.
+  </a>
+  
+    <nav class="md-nav" aria-label="1.14. User Story: Eu como usuário quero um registro com nome e data de todos os remédios que tomei desde que baixei o APP para poder ter acesso a essas informações futuramente.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1141-criterio-de-aceitacao-o-sistema-deve-registrar-automaticamente-o-nome-e-a-data-de-cada-remedio-tomado-pelo-usuario-desde-o-momento-em-que-o-aplicativo-foi-baixado" class="md-nav__link">
+    1.14.1. Critério de Aceitação: O sistema deve registrar automaticamente o nome e a data de cada remédio tomado pelo usuário desde o momento em que o aplicativo foi baixado.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1142-criterio-de-aceitacao-o-registro-dos-remedios-tomados-deve-ser-armazenado-de-forma-segura-e-persistente-no-sistema-permitindo-o-acesso-futuro-as-informacoes" class="md-nav__link">
+    1.14.2. Critério de Aceitação: O registro dos remédios tomados deve ser armazenado de forma segura e persistente no sistema, permitindo o acesso futuro às informações.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1143-criterio-de-aceitacao-o-usuario-deve-ter-a-opcao-de-visualizar-o-registro-completo-dos-remedios-tomados" class="md-nav__link">
+    1.14.3. Critério de Aceitação: O usuário deve ter a opção de visualizar o registro completo dos remédios tomados.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1144-criterio-de-aceitacao-o-registro-deve-exibir-as-informacoes-relevantes-de-cada-remedio-tomado-incluindo-o-nome-do-medicamento-e-a-data-em-que-foi-tomado" class="md-nav__link">
+    1.14.4. Critério de Aceitação: O registro deve exibir as informações relevantes de cada remédio tomado, incluindo o nome do medicamento e a data em que foi tomado.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1145-criterio-de-aceitacao-o-sistema-deve-manter-a-integridade-do-registro-garantindo-que-as-informacoes-registradas-nao-sejam-perdidas-ou-corrompidas" class="md-nav__link">
+    1.14.5. Critério de Aceitação: O sistema deve manter a integridade do registro, garantindo que as informações registradas não sejam perdidas ou corrompidas.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1146-criterio-de-aceitacao-o-sistema-deve-separar-os-remedios-tomados-em-relacao-a-cada-mes-de-cada-ano" class="md-nav__link">
+    1.14.6. Critério de Aceitação: O sistema deve separar os remédios tomados em relação a cada mês de cada ano.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#115-user-story-eu-como-usuario-quero-gerar-um-arquivo-com-o-registro-de-nome-e-data-de-todos-os-remedios-que-tomei-desde-que-baixei-o-app-para-poder-baixar-esse-relatorio" class="md-nav__link">
+    1.15. User Story: Eu como usuário quero gerar um arquivo com o registro de nome e data de todos os remédios que tomei desde que baixei o APP para poder baixar esse relatório.
+  </a>
+  
+    <nav class="md-nav" aria-label="1.15. User Story: Eu como usuário quero gerar um arquivo com o registro de nome e data de todos os remédios que tomei desde que baixei o APP para poder baixar esse relatório.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1151-criterio-de-aceitacao-o-usuario-deve-ter-a-opcao-de-gerar-um-arquivo-de-relatorio-com-o-registro-completo-dos-remedios-tomados-desde-o-momento-em-que-o-aplicativo-foi-baixado" class="md-nav__link">
+    1.15.1. Critério de Aceitação: O usuário deve ter a opção de gerar um arquivo de relatório com o registro completo dos remédios tomados desde o momento em que o aplicativo foi baixado.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1152-criterio-de-aceitacao-o-formato-do-arquivo-de-relatorio-deve-ser-compativel-e-adequado-para-download" class="md-nav__link">
+    1.15.2. Critério de Aceitação: O formato do arquivo de relatório deve ser compatível e adequado para download.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1153-criterio-de-aceitacao-o-relatorio-gerado-deve-incluir-o-nome-e-a-data-de-cada-remedio-tomado-organizados-de-forma-clara-e-legivel" class="md-nav__link">
+    1.15.3. Critério de Aceitação: O relatório gerado deve incluir o nome e a data de cada remédio tomado, organizados de forma clara e legível.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1154-criterio-de-aceitacao-o-relatorio-gerado-deve-refletir-as-informacoes-mais-atualizadas-do-registro-de-remedios-tomados-no-momento-em-que-o-relatorio-e-gerado" class="md-nav__link">
+    1.15.4. Critério de Aceitação: O relatório gerado deve refletir as informações mais atualizadas do registro de remédios tomados no momento em que o relatório é gerado.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1155-criterio-de-aceitacao-o-arquivo-de-relatorio-gerado-deve-ser-disponibilizado-para-download-imediato-e-estar-acessivel-ao-usuario-de-forma-conveniente" class="md-nav__link">
+    1.15.5. Critério de Aceitação:  O arquivo de relatório gerado deve ser disponibilizado para download imediato e estar acessível ao usuário de forma conveniente.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#116-user-story-eu-como-usuario-quero-editar-medicamentos-para-altera-los-ao-meu-gosto" class="md-nav__link">
+    1.16. User Story: Eu como usuário quero editar medicamentos, para altera-los ao meu gosto.
+  </a>
+  
+    <nav class="md-nav" aria-label="1.16. User Story: Eu como usuário quero editar medicamentos, para altera-los ao meu gosto.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1161-criterio-de-aceitacao-o-usuario-deve-ter-a-opcao-de-editar-medicamentos-existentes" class="md-nav__link">
+    1.16.1. Critério de Aceitação: O usuário deve ter a opção de editar medicamentos existentes.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1162-criterio-de-aceitacao-a-funcionalidade-de-edicao-deve-estar-facilmente-acessivel-e-visivel-para-o-usuario" class="md-nav__link">
+    1.16.2. Critério de Aceitação: A funcionalidade de edição deve estar facilmente acessível e visível para o usuário.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1163-criterio-de-aceitacao-o-usuario-deve-ser-capaz-de-editar-informacoes-basicas-do-medicamento-como-nome-dosagem-e-horarios-de-administracao" class="md-nav__link">
+    1.16.3. Critério de Aceitação: O usuário deve ser capaz de editar informações básicas do medicamento, como nome, dosagem e horários de administração.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1164-criterio-de-aceitacao-o-sistema-deve-permitir-ao-usuario-adicionar-informacoes-adicionais-relevantes-como-notas-instrucoes-especiais-ou-restricoes" class="md-nav__link">
+    1.16.4. Critério de Aceitação: O sistema deve permitir ao usuário adicionar informações adicionais relevantes, como notas, instruções especiais ou restrições.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1165-criterio-de-aceitacao-o-usuario-deve-ser-capaz-de-salvar-as-alteracoes-feitas-no-medicamento" class="md-nav__link">
+    1.16.5. Critério de Aceitação: O usuário deve ser capaz de salvar as alterações feitas no medicamento.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1166-criterio-de-aceitacao-as-alteracoes-feitas-nos-medicamentos-devem-ser-refletidas-imediatamente-em-todas-as-partes-do-aplicativo-onde-os-medicamentos-sao-exibidos" class="md-nav__link">
+    1.16.6. Critério de Aceitação: As alterações feitas nos medicamentos devem ser refletidas imediatamente em todas as partes do aplicativo onde os medicamentos são exibidos.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1167-criterio-de-aceitacao-o-sistema-deve-garantir-a-consistencia-e-validade-dos-dados-inseridos-pelo-usuario-ao-editar-os-medicamentos" class="md-nav__link">
+    1.16.7. Critério de Aceitação: O sistema deve garantir a consistência e validade dos dados inseridos pelo usuário ao editar os medicamentos.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="behavior-driven-development">Behavior Driven Development</h1>
+<h2 id="historico-de-revisao">Histórico de Revisão</h2>
+<table>
+<thead>
+<tr>
+<th>Data</th>
+<th>Versão</th>
+<th>Descrição</th>
+<th>Autor(es)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>27/06/2023</td>
+<td>1.0</td>
+<td>Primeira versão do BDD</td>
+<td>Mateus de Almeida</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-bdd">1. BDD</h2>
+<h3 id="11-user-story-eu-como-usuario-quero-cadastrar-meus-medicamentos-para-consulta-los-depois">1.1. <strong>User Story: Eu como usuário quero cadastrar meus medicamentos para consultá-los depois.</strong></h3>
+<h4 id="111-criterio-de-aceitacao-cada-medicamento-deve-ter-nome-quantidade-de-conteudo-por-dosagem-unidade-de-medida-da-dosagem-comprimidos-ml-periodicidade-da-dosagem-quantidade-total-de-conteudo-do-remedio-observacoes-horario-de-comeco-do-alarme">1.1.1. Critério de Aceitação: Cada medicamento deve ter nome, quantidade de conteúdo por dosagem, unidade de medida da dosagem (comprimidos, ml…), periodicidade da dosagem, quantidade total de conteúdo do remédio, observações, horário de começo do alarme.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Cadastrar medicamento com sucesso
+    1. Dado que o usuário está na tela de cadastro de medicamento
+    2. Quando o usuário preenche todos os campos corretamente
+    3. Então o sistema cadastra o medicamento com nome, quantidade de conteúdo por dosagem, unidade de medida da dosagem, periodicidade da dosagem, quantidade total de conteúdo do remédio, observações e horário de começo do alarme
+</code></pre></div>
+<h4 id="112-criterio-de-aceitacao-eu-quero-que-apos-cadastrar-a-lista-de-medicamentos-seja-atualizada-imediatamente">1.1.2. Critério de Aceitação: Eu quero que após cadastrar, a lista de medicamentos seja atualizada imediatamente.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Atualizar lista de medicamentos após cadastro
+    1. Dado que o usuário cadastrou um novo medicamento
+    2. Quando o usuário finaliza o cadastro
+    3. Então o sistema atualiza a lista de medicamentos exibida na tela
+</code></pre></div>
+<h3 id="12-user-story-eu-como-usuario-quero-ver-uma-lista-com-todos-os-meus-medicamentos-cadastrados-para-consultar-em-outro-momento">1.2. <strong>User Story: Eu como usuário quero ver uma lista com todos os meus medicamentos cadastrados para consultar em outro momento.</strong></h3>
+<h4 id="121-criterio-de-aceitacao-cada-medicamento-na-lista-deve-ter-nome-quantidade-de-conteudo-por-dosagem-periodicidade-da-dosagem-temporizador-com-contagem-regressiva-para-proximo-alarme">1.2.1. Critério de Aceitação: Cada medicamento na lista deve ter nome, quantidade de conteúdo por dosagem, periodicidade da dosagem, temporizador com contagem regressiva para próximo alarme</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Exibir lista de medicamentos com informações relevantes
+    1. Dado que o usuário está na tela da lista de medicamentos
+    2. Quando o usuário visualiza a lista de medicamentos
+    3. Então o sistema exibe cada medicamento com nome, quantidade de conteúdo por dosagem, periodicidade da dosagem e um temporizador com contagem regressiva para o próximo alarme
+</code></pre></div>
+<h4 id="122-eu-quero-visualizar-a-barra-de-progresso-com-as-doses-que-ainda-faltam-para-o-remedio-no-dia">1.2.2. Eu quero visualizar a barra de progresso com as doses que ainda faltam para o remédio no dia.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Exibir barra de progresso das doses faltantes do medicamento do dia
+    1. Dado que o usuário está na tela da lista de medicamentos
+    2. Quando o usuário visualiza um medicamento da lista
+    3. Então o sistema exibe uma barra de progresso indicando as doses que ainda faltam para o medicamento no dia
+</code></pre></div>
+<h3 id="13-user-story-eu-como-usuario-quero-deletar-medicamentos-para-manter-somente-os-tratamentos-que-estou-realmente-fazendo">1.3. <strong>User Story: Eu como usuário quero deletar medicamentos, para manter somente os tratamentos que estou realmente fazendo.</strong></h3>
+<h4 id="131-criterio-de-aceitacao-eu-quero-ter-a-opcao-de-confirmar-a-delecao">1.3.1. Critério de Aceitação: Eu quero ter a opção de confirmar a deleção.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Confirmar a deleção de um medicamento
+    1. Dado que o usuário está na tela da lista de medicamentos
+    2. Quando o usuário seleciona a opção de deletar um medicamento e o usuário confirma a deleção
+    3. Então o sistema remove o medicamento da lista
+</code></pre></div>
+<h4 id="132-criterio-de-aceitacao-eu-quero-que-a-lista-de-medicamentos-seja-atualizada-assim-que-eu-deletar">1.3.2. Critério de Aceitação: Eu quero que a lista de medicamentos seja atualizada assim que eu deletar.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Atualizar lista de medicamentos após a deleção
+    1. Dado que o usuário está na tela da lista de medicamentos e a lista de medicamentos possui um medicamento a ser deletado
+    2. Quando o usuário confirma a deleção desse medicamento
+    3. Então o sistema remove o medicamento da lista e atualiza a lista de medicamentos exibida na tela
+</code></pre></div>
+<h3 id="14-user-story-eu-como-usuario-quero-poder-confirmar-o-uso-de-um-medicamento-por-uma-tela-de-confirmacao-gerada-pela-notificacao-do-remedio-para-registrar-o-uso-do-meu-medicamento">1.4. <strong>User Story: Eu como usuário quero poder confirmar o uso de um medicamento por uma tela de confirmação gerada pela notificação do remédio para registrar o uso do meu medicamento.</strong></h3>
+<h4 id="141-criterio-de-aceitacao-eu-quero-poder-confirmar-o-uso-a-partir-da-tela-de-bloqueio-do-celular">1.4.1. Critério de Aceitação: Eu quero poder confirmar o uso a partir da tela de bloqueio do celular.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Confirmar uso a partir da tela de bloqueio do celular
+    1. Dado que o celular está bloqueado
+    2. Quando o usuário recebe uma notificação de medicamento na tela de bloqueio
+    3. Então o usuário pode confirmar o uso do medicamento diretamente da tela de bloqueio do celular
+</code></pre></div>
+<h4 id="142-criterio-de-aceitacao-a-notificacao-deve-conter-o-medicamento-que-preciso-tomar-com-nome-dosagem-e-horario-que-deveria-tomar">1.4.2. Critério de Aceitação: A notificação deve conter o medicamento que preciso tomar com nome, dosagem, e horário que deveria tomar.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Exibir informações do medicamento na notificação
+    1. Dado que o usuário recebe uma notificação de medicamento
+    2. Quando o usuário visualiza a notificação
+    3. Então a notificação exibe o nome, a dosagem e o horário do medicamento que o usuário precisa tomar
+</code></pre></div>
+<h4 id="143-criterio-de-aceitacao-eu-quero-que-seja-subtraido-uma-dosagem-das-dosagens-que-possuo-apos-confirmar-o-uso">1.4.3. Critério de Aceitação: Eu quero que seja subtraído uma dosagem das dosagens que possuo após confirmar o uso.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Subtrair uma dosagem após confirmar o uso do medicamento
+    1. Dado que o usuário confirmou o uso de um medicamento pela notificação
+    2. Quando o sistema registra o uso do medicamento
+    3. Então o sistema subtrai uma dosagem das dosagens disponíveis para o medicamento registrado
+</code></pre></div>
+<h3 id="15-user-story-eu-como-usuario-quero-possuir-uma-notificacao-vinculado-ao-horario-correto-de-uso-de-meu-medicamento-para-me-lembrar-de-tomar-o-remedio">1.5. <strong>User Story: Eu como usuário quero possuir uma notificação vinculado ao horário correto de uso de meu medicamento para me lembrar de tomar o remédio.</strong></h3>
+<h4 id="151-criterio-de-aceitacao-eu-preciso-que-essa-notificacao-apareca-na-tela-de-travamento-do-meu-celular">1.5.1. Critério de Aceitação: Eu preciso que essa notificação apareça na tela de travamento do meu celular.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Mostrar notificação na tela de travamento do celular
+    1. Dado que o celular está bloqueado
+    2. Quando chegar o horário correto de uso de um medicamento
+    3. Então o sistema mostra uma notificação na tela de travamento do celular vinculada ao horário correto de uso do medicamento
+</code></pre></div>
+<h3 id="16-user-story-eu-como-usuario-quero-registrar-o-uso-do-meu-medicamento-por-meio-de-uma-tela-de-confirmacao-para-manter-um-registro-dos-remedios-que-tomei">1.6. <strong>User Story: Eu como usuário quero registrar o uso do meu medicamento por meio de uma tela de confirmação para manter um registro dos remédios que tomei.</strong></h3>
+<h4 id="161-criterio-de-aceitacao-eu-quero-que-essa-tela-de-confirmacao-seja-acessada-pelo-app">1.6.1. Critério de Aceitação: Eu quero que essa tela de confirmação seja acessada pelo app.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Acessar a tela de confirmação pelo app
+    1. Dado que o usuário está no aplicativo
+    2. Quando o usuário acessa a tela de confirmação
+    3. Então o sistema exibe a tela de confirmação para registrar o uso do medicamento
+</code></pre></div>
+<h4 id="162-criterio-de-aceitacao-eu-quero-poder-confirmar-o-uso-do-medicamento-a-qualquer-momento-depois-do-horario-de-tomar">1.6.2. Critério de Aceitação: Eu quero poder confirmar o uso do medicamento a qualquer momento depois do horário de tomar.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Confirmar o uso do medicamento após o horário de tomar
+    1. Dado que o usuário está na tela de confirmação
+    2. Quando o usuário confirma o uso do medicamento
+    3. Então o sistema registra o uso do medicamento mesmo após o horário programado
+</code></pre></div>
+<h4 id="163-criterio-de-aceitacao-a-tela-de-confirmacao-deve-conter-o-medicamento-que-preciso-tomar-com-nome-dosagem-e-horario-que-deveria-tomar">1.6.3. Critério de Aceitação: A tela de confirmação deve conter o medicamento que preciso tomar com nome, dosagem, e horário que deveria tomar.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Exibir informações do medicamento na tela de confirmação
+    1. Dado que o usuário está na tela de confirmação
+    2. Quando o usuário visualiza a tela de confirmação
+    3. Então o sistema exibe o nome, a dosagem e o horário do medicamento que o usuário precisa tomar
+</code></pre></div>
+<h4 id="164-criterio-de-aceitacao-eu-quero-que-seja-subtraido-uma-dosagem-das-dosagens-que-possuo-apos-confirmar-o-uso">1.6.4. Critério de Aceitação: Eu quero que seja subtraído uma dosagem das dosagens que possuo após confirmar o uso.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Subtrair uma dosagem após confirmar o uso do medicamento
+    1. Dado que o usuário está na tela de confirmação
+    2. Quando o usuário confirma o uso do medicamento
+    3. Então o sistema subtrai uma dosagem das dosagens disponíveis para o medicamento
+</code></pre></div>
+<h3 id="17-user-story-eu-como-usuario-quero-visualizar-o-registro-de-todos-os-remedios-que-tomei-no-dia-para-poder-ter-o-controle-do-uso-dos-meus-medicamentos">1.7. <strong>User Story: Eu como usuário quero visualizar o registro de todos os remédios que tomei no dia para poder ter o controle do uso dos meus medicamentos.</strong></h3>
+<h4 id="171-criterio-de-aceitacao-eu-quero-poder-diferenciar-visualmente-pela-coloracao-os-remedios-que-eu-tomei-dos-que-eu-nao-tomei">1.7.1. Critério de Aceitação: Eu quero poder diferenciar visualmente (pela coloração) os remédios que eu tomei dos que eu não tomei.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Visualizar registro de remédios tomados no dia
+    1. Dado que o usuário está na tela de registro de remédios
+    2. Quando o usuário visualiza o registro dos remédios tomados no dia
+    3. Então o sistema exibe a lista de remédios com diferenciação visual entre os tomados e os não tomados
+</code></pre></div>
+<h4 id="172-criterio-de-aceitacao-eu-quero-ver-o-horario-que-tomei-o-remedio">1.7.2. Critério de Aceitação: Eu quero ver o horário que tomei o remédio.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Visualizar horário de tomada do remédio
+    1. Dado que o usuário está na tela de registro de remédios
+    2. Quando o usuário visualiza o registro de um remédio específico
+    3. Então o sistema exibe o horário em que o remédio foi tomado
+</code></pre></div>
+<h3 id="18-user-story-eu-como-usuario-quero-ver-uma-lista-de-medicamentos-que-devo-tomar-no-dia-atual-para-me-planejar-antecipadamente">1.8. <strong>User Story: Eu como usuário quero ver uma lista de medicamentos que devo tomar no dia atual, para me planejar antecipadamente.</strong></h3>
+<h4 id="181-criterio-de-aceitacao-eu-quero-que-essa-lista-seja-atualizada-as-0000">1.8.1. Critério de Aceitação: Eu quero que essa lista seja atualizada às 00:00.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Atualizar lista de medicamentos diariamente
+    1. Dado que o dia atual é um novo dia
+    2. Quando o relógio marca 00:00
+    3. Então o sistema atualiza a lista de medicamentos para o dia atual
+</code></pre></div>
+<h4 id="182-criterio-de-aceitacao-essa-lista-deve-conter-o-nome-e-o-horario-que-eu-tenho-que-tomar-cada-medicamento-no-dia">1.8.2. Critério de Aceitação: Essa lista deve conter o nome e o horário que eu tenho que tomar cada medicamento no dia.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Exibir lista de medicamentos do dia atual
+    1. Dado que o usuário está na tela de visualização de medicamentos do dia
+    2. Quando o usuário acessa a lista de medicamentos do dia atual
+    3. Então o sistema exibe uma lista com o nome e o horário de cada medicamento a ser tomado no dia
+</code></pre></div>
+<h3 id="19-user-story-eu-como-usuario-quero-programar-a-notificacao-para-tocar-novamente-daqui-5-minutos-para-eu-poder-me-planejar-melhor">1.9. <strong>User Story: Eu como usuário quero programar a notificação para tocar novamente daqui 5 minutos para eu poder me planejar melhor.</strong></h3>
+<h4 id="191-criterio-de-aceitacao-o-usuario-deve-ter-a-opcao-de-ativar-a-notificacao-para-tocar-novamente-em-5-minutos">1.9.1. Critério de Aceitação: O usuário deve ter a opção de ativar a notificação para tocar novamente em 5 minutos.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Opção de repetição da notificação em 5 minutos
+    1. Dado que o usuário está na tela de confirmação do uso do medicamento
+    2. Quando o usuário visualiza as opções da notificação
+    3. Então o sistema exibe a opção de ativar a repetição em 5 minutos
+</code></pre></div>
+<h4 id="192-criterio-de-aceitacao-a-tela-de-confirmacao-deve-incluir-um-botao-para-ativar-a-repeticao-da-notificacao-em-5-minutos">1.9.2. Critério de Aceitação: A tela de confirmação deve incluir um botão para ativar a repetição da notificação em 5 minutos.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Botão para ativar repetição da notificação em 5 minutos
+    1. Dado que o usuário está na tela de confirmação do uso do medicamento
+    2. Quando o usuário visualiza a tela de confirmação
+    3. Então o sistema exibe um botão para ativar a repetição da notificação em 5 minutos
+</code></pre></div>
+<h4 id="193-ao-selecionar-a-opcao-de-repeticao-a-notificacao-deve-ser-programada-para-tocar-novamente-exatamente-apos-5-minutos">1.9.3. Ao selecionar a opção de repetição, a notificação deve ser programada para tocar novamente exatamente após 5 minutos.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Programação da repetição da notificação em 5 minutos
+    1. Dado que o usuário selecionou a opção de repetição em 5 minutos
+    2. Quando o sistema recebe a confirmação da repetição
+    3. Então o sistema programa a notificação para tocar novamente exatamente após 5 minutos
+</code></pre></div>
+<h4 id="194-a-repeticao-da-notificacao-em-5-minutos-deve-funcionar-corretamente-mesmo-se-o-aplicativo-estiver-em-segundo-plano-ou-o-dispositivo-estiver-bloqueado">1.9.4. A repetição da notificação em 5 minutos deve funcionar corretamente mesmo se o aplicativo estiver em segundo plano ou o dispositivo estiver bloqueado.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Repetição da notificação em 5 minutos em segundo plano ou dispositivo bloqueado
+    1. Dado que o usuário ativou a repetição da notificação em 5 minutos
+    2. Quando o aplicativo estiver em segundo plano ou o dispositivo estiver bloqueado
+    3. Então o sistema deve garantir que a notificação seja repetida corretamente após 5 minutos
+</code></pre></div>
+<h3 id="110-user-story-eu-como-usuario-quero-receber-uma-notificacao-e-um-alerta-quando-possuir-apenas-3-dosagens-para-pedir-para-o-medico-uma-nova-receita">1.10. <strong>User Story: Eu como usuário quero receber uma notificação e um alerta quando possuir apenas 3 dosagens para pedir para o médico uma nova receita.</strong></h3>
+<h4 id="1101-criterio-de-aceitacao-quando-o-numero-de-dosagens-restantes-atingir-3-o-usuario-deve-receber-uma-notificacao">1.10.1. Critério de Aceitação: Quando o número de dosagens restantes atingir 3, o usuário deve receber uma notificação.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Notificação quando restarem 3 dosagens
+    1. Dado que o usuário possui um medicamento cadastrado e o número de dosagens restantes é igual a 3
+    2. Quando o usuário estiver na tela principal do aplicativo
+    3. Então o sistema deve exibir uma notificação informando ao usuário que restam apenas 3 dosagens
+</code></pre></div>
+<h4 id="1102-criterio-de-aceitacao-a-notificacao-deve-ser-exibida-de-forma-clara-e-visivel-para-o-usuario">1.10.2. Critério de Aceitação: A notificação deve ser exibida de forma clara e visível para o usuário.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Exibição clara e visível da notificação
+    1. Dado que o usuário recebeu uma notificação informando sobre as 3 dosagens restantes
+    2. Quando o usuário visualizar a notificação
+    3. Então a notificação deve ser exibida de forma clara e visível, sem ser obstruída por outros elementos da interface
+</code></pre></div>
+<h4 id="1103-criterio-de-aceitacao-a-notificacao-deve-incluir-informacoes-relevantes-como-o-medicamento-em-questao-e-a-quantidade-restante">1.10.3. Critério de Aceitação:  A notificação deve incluir informações relevantes, como o medicamento em questão e a quantidade restante.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Informações relevantes na notificação
+    1. Dado que o usuário recebeu uma notificação informando sobre as 3 dosagens restantes do medicamento A
+    2. Quando o usuário visualizar a notificação
+    3. Então a notificação deve exibir o nome do medicamento (A) e a quantidade restante (3 dosagens)
+</code></pre></div>
+<h4 id="1104-criterio-de-aceitacao-o-usuario-deve-receber-a-notificacao-em-um-momento-adequado-depois-de-tomar-a-4-dose">1.10.4. Critério de Aceitação: O usuário deve receber a notificação em um momento adequado, depois de tomar a 4 dose.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Momento adequado para recebimento da notificação
+    1. Dado que o usuário tomou a 4ª dose do medicamento
+    2. Quando o usuário estiver na tela principal do aplicativo
+    3. Então o sistema deve exibir uma notificação informando ao usuário que restam apenas 3 dosagens
+</code></pre></div>
+<h4 id="1105-criterio-de-aceitacao-a-notificacao-deve-ser-persistente-ate-que-o-usuario-a-acesse-ou-a-marque-como-lida">1.10.5. Critério de Aceitação: A notificação deve ser persistente até que o usuário a acesse ou a marque como lida.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Persistência da notificação até que seja acessada ou marcada como lida
+    1. Dado que o usuário recebeu uma notificação informando sobre as 3 dosagens restantes
+    2. Quando o usuário visualizar a notificação
+    3. Então a notificação deve permanecer visível até que o usuário a acesse ou a marque como lida
+</code></pre></div>
+<h4 id="1106-criterio-de-aceitacao-o-usuario-deve-receber-um-feedback-visual-ou-sonoro-quando-a-notificacao-for-recebida">1.10.6. Critério de Aceitação: O usuário deve receber um feedback visual ou sonoro quando a notificação for recebida.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Feedback visual ou sonoro ao receber a notificação
+    1. Dado que o usuário recebeu uma notificação informando sobre as 3 dosagens restantes
+    2. Quando o usuário visualizar a notificação
+    3. Então o sistema deve fornecer um feedback visual ou sonoro para indicar ao usuário que a notificação foi recebida
+</code></pre></div>
+<h4 id="1107-criterio-de-aceitacao-a-contagem-de-dosagens-deve-ser-precisa-levando-em-consideracao-as-dosagens-corretamente-consumidas-e-excluindo-quaisquer-dosagens-descartadas">1.10.7. Critério de Aceitação: A contagem de dosagens deve ser precisa, levando em consideração as dosagens corretamente consumidas e excluindo quaisquer dosagens descartadas.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Precisão na contagem de dosagens
+    1. Dado que o usuário possui um medicamento cadastrado com uma certa quantidade de dosagens
+    2. Quando o sistema calcular a quantidade restante de dosagens
+    3. Então o sistema deve exibir o valor correto de dosagens restantes
+</code></pre></div>
+<h3 id="111-user-story-eu-como-usuario-quero-visualizar-um-temporizador-em-contagem-regressiva-apos-confirmar-na-tela-de-confirmacao-para-saber-quando-devo-tomar-minha-proxima-dose">1.11. <strong>User Story: Eu como usuário quero visualizar um temporizador em contagem regressiva após confirmar na tela de confirmação para saber quando devo tomar minha próxima dose</strong></h3>
+<h4 id="1111-criterio-de-aceitacao-apos-confirmar-na-tela-de-confirmacao-para-tomar-a-dose-do-medicamento-o-usuario-na-tela-de-meus-remedios-e-remedio-dos-dia-deve-ver-uma-tela-que-exibe-um-temporizador-em-contagem-regressiva">1.11.1. Critério de Aceitação: Após confirmar na tela de confirmação para tomar a dose do medicamento, o usuário na tela de meus remédios e remédio dos dia deve ver uma tela que exibe um temporizador em contagem regressiva.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Exibição do temporizador após confirmação para tomar a dose
+    1. Dado que o usuário confirmou a tomada da dose na tela de confirmação
+    2. Quando o usuário estiver na tela &quot;Meus Remédios&quot; ou &quot;Remédios do Dia&quot;
+    3. Então o sistema deve exibir um temporizador em contagem regressiva para a próxima dose do medicamento
+</code></pre></div>
+<h4 id="1112-criterio-de-aceitacao-o-temporizador-deve-ser-claramente-visivel-para-o-usuario-e-exibido-de-forma-intuitiva">1.11.2. Critério de Aceitação: O temporizador deve ser claramente visível para o usuário e exibido de forma intuitiva.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Visibilidade e exibição intuitiva do temporizador
+    1 .Dado que o usuário está visualizando o temporizador em contagem regressiva
+    2. Quando o usuário olhar para a tela
+    3. Então o temporizador deve ser claramente visível e exibido de forma intuitiva, sem confundir ou obstruir a informação
+</code></pre></div>
+<h4 id="1113-criterio-de-aceitacao-o-tempo-exibido-no-temporizador-deve-corresponder-ao-intervalo-de-tempo-restante-ate-a-proxima-dose">1.11.3. Critério de Aceitação: O tempo exibido no temporizador deve corresponder ao intervalo de tempo restante até a próxima dose.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Tempo correspondente ao intervalo de tempo restante no temporizador
+    1. Dado que o usuário tem uma próxima dose programada para daqui a 2 horas
+    2. Quando o usuário visualizar o temporizador
+    3. Então o tempo exibido no temporizador deve ser de 2 horas, contando regressivamente até a próxima dose
+</code></pre></div>
+<h4 id="1114-criterio-de-aceitacao-o-temporizador-deve-ser-atualizado-em-tempo-real-mostrando-a-contagem-regressiva-de-forma-precisa-e-consistente">1.11.4. Critério de Aceitação: O temporizador deve ser atualizado em tempo real, mostrando a contagem regressiva de forma precisa e consistente.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Atualização em tempo real do temporizador
+    1. Dado que o usuário está visualizando o temporizador em contagem regressiva
+    2. Quando o tempo decorrido desde a visualização do temporizador aumentar
+    3. Então o temporizador deve ser atualizado em tempo real, mostrando a contagem regressiva de forma precisa e consistente
+</code></pre></div>
+<h4 id="1115-criterio-de-aceitacao-o-sistema-deve-considerar-eventuais-atrasos-ou-adiantamentos-na-administracao-da-dose-e-ajustar-o-temporizador-de-acordo">1.11.5. Critério de Aceitação: O sistema deve considerar eventuais atrasos ou adiantamentos na administração da dose e ajustar o temporizador de acordo.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Ajuste do temporizador para acomodar atrasos ou adiantamentos na administração da dose
+    1. Dado que o usuário possui uma próxima dose programada para daqui a 4 horas
+    2. E o usuário adianta a administração da dose em 30 minutos
+    Quando o usuário visualizar o temporizador
+    3. Então o tempo exibido no temporizador deve ser de 3 horas e 30 minutos, considerando o adiantamento na administração da dose
+</code></pre></div>
+<h3 id="112-user-story-eu-como-usuario-quero-buscar-os-medicamentos-por-nome-para-saber-quando-devo-toma-los">1.12. <strong>User Story: Eu como usuário quero buscar os medicamentos por nome para saber quando devo tomá-los.</strong></h3>
+<h4 id="1121-criterio-de-aceitacao-o-usuario-deve-ter-a-opcao-de-realizar-uma-busca-por-nome-de-medicamento">1.12.1. Critério de Aceitação:  O usuário deve ter a opção de realizar uma busca por nome de medicamento.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Opção de busca por nome de medicamento
+    1. Dado que o usuário está na tela de busca
+    2. Quando o usuário selecionar a opção de busca por nome de medicamento
+    3. Então o sistema deve disponibilizar um campo de busca para o usuário inserir o nome do medicamento desejado
+</code></pre></div>
+<h4 id="1122-criterio-de-aceitacao-a-funcionalidade-de-busca-por-nome-deve-ser-facilmente-acessivel-e-visivel-para-o-usuario">1.12.2. Critério de Aceitação: A funcionalidade de busca por nome deve ser facilmente acessível e visível para o usuário.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Acessibilidade e visibilidade da funcionalidade de busca por nome
+    1. Dado que o usuário está na tela principal do aplicativo
+    2. Quando o usuário procurar pela funcionalidade de busca por nome
+    3. Então a funcionalidade de busca por nome deve ser facilmente acessível e visível, seja por um ícone de busca ou outro elemento claramente identificável
+</code></pre></div>
+<h4 id="1123-criterio-de-aceitacao-o-usuario-deve-ser-capaz-de-inserir-o-nome-do-medicamento-na-barra-de-busca">1.12.3. Critério de Aceitação: O usuário deve ser capaz de inserir o nome do medicamento na barra de busca.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Inserção do nome do medicamento na barra de busca
+    1. Dado que o usuário está na tela de busca por nome de medicamento
+    2. Quando o usuário digitar o nome do medicamento desejado na barra de busca
+    3. Então o sistema deve permitir a inserção do nome do medicamento na barra de busca
+</code></pre></div>
+<h4 id="1124-criterio-de-aceitacao-o-sistema-deve-retornar-os-resultados-da-busca-de-forma-precisa-e-relevante-exibindo-os-medicamentos-que-correspondem-ao-nome-pesquisado">1.12.4. Critério de Aceitação: O sistema deve retornar os resultados da busca de forma precisa e relevante, exibindo os medicamentos que correspondem ao nome pesquisado.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Resultados precisos e relevantes da busca por nome de medicamento
+    1. Dado que o usuário inseriu o nome de um medicamento na barra de busca
+    2. Quando o usuário iniciar a busca
+    3. Então o sistema deve retornar os resultados da busca de forma precisa e relevante, exibindo os medicamentos que correspondem ao nome pesquisado
+</code></pre></div>
+<h4 id="1125-criterio-de-aceitacao-os-resultados-da-busca-devem-incluir-informacoes-relevantes-sobre-os-medicamentos-como-nome-dosagem-e-etc">1.12.5. Critério de Aceitação: Os resultados da busca devem incluir informações relevantes sobre os medicamentos, como nome, dosagem e etc.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Informações relevantes nos resultados da busca por nome de medicamento
+    1. Dado que o usuário realizou uma busca por nome de medicamento
+    2. Quando o sistema retornar os resultados da busca
+    3. Então os resultados da busca devem incluir informações relevantes sobre os medicamentos, como nome, dosagem, etc.
+</code></pre></div>
+<h4 id="1126-criterio-de-aceitacao-o-sistema-deve-permitir-que-o-usuario-clique-em-um-medicamento-nos-resultados-da-busca-para-visualizar-mais-detalhes-sobre-ele">1.12.6. Critério de Aceitação: O sistema deve permitir que o usuário clique em um medicamento nos resultados da busca para visualizar mais detalhes sobre ele.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Visualização de detalhes de um medicamento nos resultados da busca
+    1. Dado que o usuário realizou uma busca por nome de medicamento
+    2. Quando o sistema retornar os resultados da busca e o usuário selecionar um medicamento nos resultados
+    3. Então o sistema deve permitir que o usuário clique em um medicamento nos resultados da busca para visualizar mais detalhes sobre ele
+</code></pre></div>
+<h4 id="1127-criterio-de-aceitacao-caso-nenhum-medicamento-corresponda-ao-nome-pesquisado-o-sistema-deve-fornecer-um-feedback-claro-ao-usuario-informando-que-nenhum-resultado-foi-encontrado">1.12.7. Critério de Aceitação:  Caso nenhum medicamento corresponda ao nome pesquisado, o sistema deve fornecer um feedback claro ao usuário, informando que nenhum resultado foi encontrado.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Feedback de nenhum resultado encontrado na busca por nome de medicamento
+    1. Dado que o usuário realizou uma busca por nome de medicamento e nenhum medicamento corresponde ao nome pesquisado
+    2. Quando o sistema retornar os resultados da busca
+    3. Então o sistema deve fornecer um feedback claro ao usuário, informando que nenhum resultado foi encontrado
+</code></pre></div>
+<h3 id="113-user-story-eu-como-usuario-quero-enviar-uma-mensagem-programada-para-uma-pessoa-quando-tiver-poucas-dosagens-disponiveis-para-solicitar-novos-medicamentos-antes-de-acabar">1.13. <strong>User Story: Eu como usuário quero enviar uma mensagem programada para uma pessoa quando tiver poucas dosagens disponíveis para solicitar novos medicamentos antes de acabar.</strong></h3>
+<h4 id="1131-criterio-de-aceitacao-o-usuario-deve-ter-a-opcao-de-programar-o-envio-de-uma-mensagem-para-uma-pessoa-especifica-quando-tiver-poucas-dosagens-de-um-medicamento-disponiveis">1.13.1. Critério de Aceitação: O usuário deve ter a opção de programar o envio de uma mensagem para uma pessoa específica quando tiver poucas dosagens de um medicamento disponíveis</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Opção de programar o envio de mensagem com poucas dosagens
+    1. Dado que o usuário está com poucas dosagens de um medicamento disponíveis
+    2. Quando o usuário selecionar a opção de programar o envio de uma mensagem
+    3. Então o sistema deve fornecer a opção para programar o envio de uma mensagem para uma pessoa específica
+</code></pre></div>
+<h4 id="1132-criterio-de-aceitacao-o-usuario-deve-poder-selecionar-a-pessoa-para-quem-a-mensagem-sera-enviada">1.13.2. Critério de Aceitação: O usuário deve poder selecionar a pessoa para quem a mensagem será enviada</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Seleção da pessoa para quem a mensagem será enviada
+    1. Dado que o usuário está programando o envio de uma mensagem
+    2. Quando o usuário selecionar a pessoa para quem a mensagem será enviada
+    3. Então o sistema deve permitir que o usuário selecione a pessoa desejada
+</code></pre></div>
+<h4 id="1133-criterio-de-aceitacao-o-sistema-deve-fornecer-uma-opcao-para-personalizar-o-conteudo-da-mensagem-incluindo-informacoes-relevantes-como-o-nome-do-medicamento-a-quantidade-restante-e-a-solicitacao-para-obter-uma-nova-receita">1.13.3. Critério de Aceitação: O sistema deve fornecer uma opção para personalizar o conteúdo da mensagem, incluindo informações relevantes, como o nome do medicamento, a quantidade restante e a solicitação para obter uma nova receita</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Personalização do conteúdo da mensagem com informações relevantes
+    1. Dado que o usuário está programando o envio de uma mensagem
+    2. Quando o usuário selecionar a opção de personalizar o conteúdo da mensagem
+    3. Então o sistema deve fornecer uma opção para personalizar o conteúdo da mensagem, incluindo informações relevantes, como o nome do medicamento, a quantidade restante e a solicitação para obter uma nova receita
+</code></pre></div>
+<h4 id="1134-criterio-de-aceitacao-o-usuario-deve-ter-a-opcao-de-revisar-a-mensagem-antes-do-envio">1.13.4. Critério de Aceitação: O usuário deve ter a opção de revisar a mensagem antes do envio</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Opção de revisar a mensagem antes do envio
+    1. Dado que o usuário personalizou o conteúdo da mensagem
+    2. Quando o usuário revisar a mensagem antes do envio
+    3. Então o sistema deve permitir que o usuário revise a mensagem antes de confirmar o envio
+</code></pre></div>
+<h4 id="1135-criterio-de-aceitacao-o-sistema-deve-enviar-a-mensagem-por-meio-do-metodo-de-comunicacao-especificado-por-exemplo-sms-e-mail-aplicativo-de-mensagens-para-a-pessoa-selecionada">1.13.5. Critério de Aceitação: O sistema deve enviar a mensagem por meio do método de comunicação especificado (por exemplo, SMS, e-mail, aplicativo de mensagens) para a pessoa selecionada</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Envio da mensagem para a pessoa selecionada
+    1. Dado que o usuário revisou a mensagem e confirmou o envio
+    2. Quando o sistema enviar a mensagem por meio do método de comunicação especificado
+    3. Então o sistema deve enviar a mensagem para a pessoa selecionada
+</code></pre></div>
+<h4 id="1136-criterio-de-aceitacao-o-sistema-deve-fornecer-um-feedback-claro-em-caso-de-erros-ou-problemas-durante-o-processo-de-programacao-ou-envio-da-mensagem">1.13.6. Critério de Aceitação: O sistema deve fornecer um feedback claro em caso de erros ou problemas durante o processo de programação ou envio da mensagem</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Feedback claro em caso de erros ou problemas no envio da mensagem
+    1. Dado que ocorreu um erro ou problema durante o processo de programação ou envio da mensagem
+    2. Quando o sistema identificar o erro ou problema
+    3. Então o sistema deve fornecer um feedback claro ao usuário, informando o ocorrido
+</code></pre></div>
+<h3 id="114-user-story-eu-como-usuario-quero-um-registro-com-nome-e-data-de-todos-os-remedios-que-tomei-desde-que-baixei-o-app-para-poder-ter-acesso-a-essas-informacoes-futuramente">1.14. <strong>User Story: Eu como usuário quero um registro com nome e data de todos os remédios que tomei desde que baixei o APP para poder ter acesso a essas informações futuramente.</strong></h3>
+<h4 id="1141-criterio-de-aceitacao-o-sistema-deve-registrar-automaticamente-o-nome-e-a-data-de-cada-remedio-tomado-pelo-usuario-desde-o-momento-em-que-o-aplicativo-foi-baixado">1.14.1. Critério de Aceitação: O sistema deve registrar automaticamente o nome e a data de cada remédio tomado pelo usuário desde o momento em que o aplicativo foi baixado.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Registro automático de remédios tomados
+    1. Dado que o usuário tomou um remédio
+    2. Quando o sistema registrar automaticamente o nome e a data do remédio tomado
+    3. Então o sistema deve armazenar essas informações de forma segura e persistente
+</code></pre></div>
+<h4 id="1142-criterio-de-aceitacao-o-registro-dos-remedios-tomados-deve-ser-armazenado-de-forma-segura-e-persistente-no-sistema-permitindo-o-acesso-futuro-as-informacoes">1.14.2. Critério de Aceitação: O registro dos remédios tomados deve ser armazenado de forma segura e persistente no sistema, permitindo o acesso futuro às informações.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Acesso futuro ao registro dos remédios tomados
+    1. Dado que o usuário deseja acessar o registro dos remédios tomados
+    2. Quando o usuário solicitar o acesso ao registro
+    3. Então o sistema deve fornecer o registro completo dos remédios tomados desde que o aplicativo foi baixado
+</code></pre></div>
+<h4 id="1143-criterio-de-aceitacao-o-usuario-deve-ter-a-opcao-de-visualizar-o-registro-completo-dos-remedios-tomados">1.14.3. Critério de Aceitação: O usuário deve ter a opção de visualizar o registro completo dos remédios tomados.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Opção de visualizar o registro completo dos remédios tomados
+    1. Dado que o usuário deseja visualizar o registro completo dos remédios tomados
+    2. Quando o usuário selecionar a opção de visualizar o registro
+    3 .Então o sistema deve exibir o registro completo dos remédios tomados
+</code></pre></div>
+<h4 id="1144-criterio-de-aceitacao-o-registro-deve-exibir-as-informacoes-relevantes-de-cada-remedio-tomado-incluindo-o-nome-do-medicamento-e-a-data-em-que-foi-tomado">1.14.4. Critério de Aceitação: O registro deve exibir as informações relevantes de cada remédio tomado, incluindo o nome do medicamento e a data em que foi tomado.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Exibição das informações relevantes no registro de remédios tomados
+    1. Dado que o usuário está visualizando o registro dos remédios tomados
+    2. Quando o usuário acessar o registro
+    3. Então o sistema deve exibir as informações relevantes de cada remédio tomado, incluindo o nome do medicamento e a data em que foi tomado
+</code></pre></div>
+<h4 id="1145-criterio-de-aceitacao-o-sistema-deve-manter-a-integridade-do-registro-garantindo-que-as-informacoes-registradas-nao-sejam-perdidas-ou-corrompidas">1.14.5. Critério de Aceitação: O sistema deve manter a integridade do registro, garantindo que as informações registradas não sejam perdidas ou corrompidas.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Manter a integridade do registro de remédios tomados
+    1. Dado que o sistema registrou os remédios tomados
+    2. Quando o sistema armazenar as informações
+    3. Então o sistema deve garantir a integridade do registro, evitando perda ou corrupção das informações registradas
+</code></pre></div>
+<h4 id="1146-criterio-de-aceitacao-o-sistema-deve-separar-os-remedios-tomados-em-relacao-a-cada-mes-de-cada-ano">1.14.6. Critério de Aceitação: O sistema deve separar os remédios tomados em relação a cada mês de cada ano.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Separação dos remédios tomados por mês e ano
+    1. Dado que o usuário deseja visualizar o registro dos remédios tomados
+    2. Quando o sistema exibir o registro
+    3. Então o sistema deve separar os remédios tomados em relação a cada mês de cada ano
+</code></pre></div>
+<h3 id="115-user-story-eu-como-usuario-quero-gerar-um-arquivo-com-o-registro-de-nome-e-data-de-todos-os-remedios-que-tomei-desde-que-baixei-o-app-para-poder-baixar-esse-relatorio">1.15. <strong>User Story: Eu como usuário quero gerar um arquivo com o registro de nome e data de todos os remédios que tomei desde que baixei o APP para poder baixar esse relatório.</strong></h3>
+<h4 id="1151-criterio-de-aceitacao-o-usuario-deve-ter-a-opcao-de-gerar-um-arquivo-de-relatorio-com-o-registro-completo-dos-remedios-tomados-desde-o-momento-em-que-o-aplicativo-foi-baixado">1.15.1. Critério de Aceitação: O usuário deve ter a opção de gerar um arquivo de relatório com o registro completo dos remédios tomados desde o momento em que o aplicativo foi baixado.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Opção para gerar arquivo de relatório de remédios tomados
+    1. Dado que o usuário deseja gerar um relatório dos remédios tomados
+    2. Quando o usuário selecionar a opção de gerar o relatório
+    3. Então o sistema deve gerar um arquivo de relatório com o registro completo dos remédios tomados desde o momento em que o aplicativo foi baixado
+</code></pre></div>
+<h4 id="1152-criterio-de-aceitacao-o-formato-do-arquivo-de-relatorio-deve-ser-compativel-e-adequado-para-download">1.15.2. Critério de Aceitação: O formato do arquivo de relatório deve ser compatível e adequado para download.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Formato adequado para download do arquivo de relatório
+    1. Dado que o sistema gerou o arquivo de relatório
+    2. Quando o usuário solicitar o download do arquivo
+    3. Então o sistema deve fornecer o arquivo de relatório em um formato compatível e adequado para download
+</code></pre></div>
+<h4 id="1153-criterio-de-aceitacao-o-relatorio-gerado-deve-incluir-o-nome-e-a-data-de-cada-remedio-tomado-organizados-de-forma-clara-e-legivel">1.15.3. Critério de Aceitação: O relatório gerado deve incluir o nome e a data de cada remédio tomado, organizados de forma clara e legível.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Conteúdo claro e legível no arquivo de relatório
+    1. Dado que o sistema gerou o arquivo de relatório
+    2. Quando o usuário abrir o arquivo de relatório
+    3. Então o relatório deve incluir o nome e a data de cada remédio tomado, organizados de forma clara e legível
+</code></pre></div>
+<h4 id="1154-criterio-de-aceitacao-o-relatorio-gerado-deve-refletir-as-informacoes-mais-atualizadas-do-registro-de-remedios-tomados-no-momento-em-que-o-relatorio-e-gerado">1.15.4. Critério de Aceitação: O relatório gerado deve refletir as informações mais atualizadas do registro de remédios tomados no momento em que o relatório é gerado.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Informações atualizadas no arquivo de relatório
+    1. Dado que o sistema gerou o arquivo de relatório
+    2. Quando o usuário abrir o arquivo de relatório
+    3. Então o relatório deve refletir as informações mais atualizadas do registro de remédios tomados no momento em que o relatório é gerado
+</code></pre></div>
+<h4 id="1155-criterio-de-aceitacao-o-arquivo-de-relatorio-gerado-deve-ser-disponibilizado-para-download-imediato-e-estar-acessivel-ao-usuario-de-forma-conveniente">1.15.5. Critério de Aceitação:  O arquivo de relatório gerado deve ser disponibilizado para download imediato e estar acessível ao usuário de forma conveniente.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Download imediato do arquivo de relatório
+    1. Dado que o sistema gerou o arquivo de relatório
+    2. Quando o usuário solicitar o download do arquivo
+    3. Então o arquivo de relatório deve estar disponível para download imediato e ser acessível ao usuário de forma conveniente
+</code></pre></div>
+<h3 id="116-user-story-eu-como-usuario-quero-editar-medicamentos-para-altera-los-ao-meu-gosto">1.16. <strong>User Story: Eu como usuário quero editar medicamentos, para altera-los ao meu gosto.</strong></h3>
+<h4 id="1161-criterio-de-aceitacao-o-usuario-deve-ter-a-opcao-de-editar-medicamentos-existentes">1.16.1. Critério de Aceitação: O usuário deve ter a opção de editar medicamentos existentes.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Opção para editar medicamentos existentes
+    1. Dado que o usuário deseja editar um medicamento existente
+    2. Quando o usuário selecionar a opção de edição do medicamento
+    3. Então o sistema deve permitir que o usuário faça as alterações necessárias no medicamento
+</code></pre></div>
+<h4 id="1162-criterio-de-aceitacao-a-funcionalidade-de-edicao-deve-estar-facilmente-acessivel-e-visivel-para-o-usuario">1.16.2. Critério de Aceitação: A funcionalidade de edição deve estar facilmente acessível e visível para o usuário.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Acessibilidade da funcionalidade de edição de medicamento
+    1. Dado que o usuário está visualizando um medicamento
+    2. Quando o usuário procurar pela opção de edição do medicamento
+    3. Então a funcionalidade de edição deve estar facilmente acessível e visível para o usuário
+</code></pre></div>
+<h4 id="1163-criterio-de-aceitacao-o-usuario-deve-ser-capaz-de-editar-informacoes-basicas-do-medicamento-como-nome-dosagem-e-horarios-de-administracao">1.16.3. Critério de Aceitação: O usuário deve ser capaz de editar informações básicas do medicamento, como nome, dosagem e horários de administração.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Edição de informações básicas do medicamento
+    1. Dado que o usuário está editando um medicamento
+    2. Quando o usuário fizer alterações nas informações básicas do medicamento, como nome, dosagem e horários de administração
+    3. Então o sistema deve permitir que o usuário salve as alterações feitas
+</code></pre></div>
+<h4 id="1164-criterio-de-aceitacao-o-sistema-deve-permitir-ao-usuario-adicionar-informacoes-adicionais-relevantes-como-notas-instrucoes-especiais-ou-restricoes">1.16.4. Critério de Aceitação: O sistema deve permitir ao usuário adicionar informações adicionais relevantes, como notas, instruções especiais ou restrições.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Adição de informações adicionais ao medicamento
+    1. Dado que o usuário está editando um medicamento
+    2. Quando o usuário adicionar informações adicionais relevantes, como notas, instruções especiais ou restrições
+    3. Então o sistema deve permitir que o usuário salve as alterações feitas
+</code></pre></div>
+<h4 id="1165-criterio-de-aceitacao-o-usuario-deve-ser-capaz-de-salvar-as-alteracoes-feitas-no-medicamento">1.16.5. Critério de Aceitação: O usuário deve ser capaz de salvar as alterações feitas no medicamento.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Salvamento das alterações feitas no medicamento
+    1. Dado que o usuário fez alterações em um medicamento
+    2. Quando o usuário selecionar a opção de salvar as alterações
+    3. Então o sistema deve atualizar as informações do medicamento com as alterações feitas
+</code></pre></div>
+<h4 id="1166-criterio-de-aceitacao-as-alteracoes-feitas-nos-medicamentos-devem-ser-refletidas-imediatamente-em-todas-as-partes-do-aplicativo-onde-os-medicamentos-sao-exibidos">1.16.6. Critério de Aceitação: As alterações feitas nos medicamentos devem ser refletidas imediatamente em todas as partes do aplicativo onde os medicamentos são exibidos.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Refletindo alterações nos medicamentos em todas as partes do aplicativo
+    1. Dado que o usuário fez alterações em um medicamento
+    2. Quando o usuário salvar as alterações feitas
+    3. Então as alterações devem ser refletidas imediatamente em todas as partes do aplicativo onde os medicamentos são exibidos
+</code></pre></div>
+<h4 id="1167-criterio-de-aceitacao-o-sistema-deve-garantir-a-consistencia-e-validade-dos-dados-inseridos-pelo-usuario-ao-editar-os-medicamentos">1.16.7. Critério de Aceitação: O sistema deve garantir a consistência e validade dos dados inseridos pelo usuário ao editar os medicamentos.</h4>
+<p>CASO VÁLIDO:</p>
+<div class="highlight"><pre><span></span><code>Cenário - Garantia de consistência e validade dos dados ao editar medicamentos
+    1. Dado que o usuário está editando um medicamento
+    2. Quando o usuário fizer alterações nos dados do medicamento
+    3. Então o sistema deve validar e garantir a consistência dos dados inseridos pelo usuário
+</code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Voltar para o topo
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/mdsreq-fga-unb/2023.1-Remediario" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.section", "navigation.path", "navigation.top", "tabs"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+    
+  </body>
+</html>
