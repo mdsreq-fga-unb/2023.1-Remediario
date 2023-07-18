@@ -51,10 +51,6 @@ export default function AddRemedio({remedio, navigation, execute }) {
         return minute;
       });
       
-    useEffect(() => {
-        console.log(Horario);
-    }, [Horario]);
-      
 
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
@@ -190,7 +186,6 @@ export default function AddRemedio({remedio, navigation, execute }) {
                                     <Picker.Item label="meses" value="meses" />
                                     <Picker.Item label="dias" value="dias" />
                                     <Picker.Item label="horas" value="horas" />
-                                    <Picker.Item label="minutos" value="minutos" />
                                 </Picker>
                                 <Icon name={isDropdownOpen ? 'angle-up' : 'angle-down'} style={styles.icon} />
                             </View>
