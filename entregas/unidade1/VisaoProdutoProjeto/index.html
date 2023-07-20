@@ -1,0 +1,2085 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../../documentacao/Reuni%C3%B5es%20de%20Sprints/Sprint11/">
+      
+      
+        <link rel="next" href="../../unidade2/Backlog/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
+    
+    
+      
+        <title>Visão Geral do Produto - Remediário</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#visao-do-produto-e-projeto" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../.." title="Remediário" class="md-header__button md-logo" aria-label="Remediário" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Remediário
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Visão Geral do Produto
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mdsreq-fga-unb/2023.1-Remediario" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    2023.1-Remediário
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Remediário" class="md-nav__button md-logo" aria-label="Remediário" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Remediário
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mdsreq-fga-unb/2023.1-Remediario" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    2023.1-Remediário
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Documentação de Atividades
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Documentação de Atividades
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          Apresentações
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Apresentações
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+          Seminários
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          Seminários
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Seminarios/Apresentacao1/" class="md-nav__link">
+        Apresentação do problema
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Seminarios/Apresentacao2/" class="md-nav__link">
+        Diagrama de Ishikawa
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Seminarios/Apresentacao3/" class="md-nav__link">
+        SAFe Scrum
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
+          Unidades
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          Unidades
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Unidades/Unidade1/" class="md-nav__link">
+        Unidade 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Unidades/Unidade2/" class="md-nav__link">
+        Unidade 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Unidades/Unidade3/" class="md-nav__link">
+        Unidade 3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Unidades/Unidade4/" class="md-nav__link">
+        Unidade 4
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          Reuniões de Sprints
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Reuniões de Sprints
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Reuni%C3%B5es%20de%20Sprints/Sprint1/" class="md-nav__link">
+        Sprint 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Reuni%C3%B5es%20de%20Sprints/Sprint2/" class="md-nav__link">
+        Sprint 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Reuni%C3%B5es%20de%20Sprints/Sprint3/" class="md-nav__link">
+        Sprint 3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Reuni%C3%B5es%20de%20Sprints/Sprint4/" class="md-nav__link">
+        Sprint 4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Reuni%C3%B5es%20de%20Sprints/Sprint5/" class="md-nav__link">
+        Sprint 5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Reuni%C3%B5es%20de%20Sprints/Sprint6/" class="md-nav__link">
+        Sprint 6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Reuni%C3%B5es%20de%20Sprints/Sprint7/" class="md-nav__link">
+        Sprint 7
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Reuni%C3%B5es%20de%20Sprints/Sprint8/" class="md-nav__link">
+        Sprint 8
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Reuni%C3%B5es%20de%20Sprints/Sprint9/" class="md-nav__link">
+        Sprint 9
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Reuni%C3%B5es%20de%20Sprints/Sprint10/" class="md-nav__link">
+        Sprint 10
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/Reuni%C3%B5es%20de%20Sprints/Sprint11/" class="md-nav__link">
+        Sprint 11
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Entregas
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Entregas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          Unidade 1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Unidade 1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Visão Geral do Produto
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Visão Geral do Produto
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-visao-geral-do-produto" class="md-nav__link">
+    1. VISÃO GERAL DO PRODUTO
+  </a>
+  
+    <nav class="md-nav" aria-label="1. VISÃO GERAL DO PRODUTO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-problema" class="md-nav__link">
+    1.1. Problema
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-declaracao-de-posicao-do-produto" class="md-nav__link">
+    1.2. Declaração de Posição do Produto
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2. Declaração de Posição do Produto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#13-objetivo-do-produto" class="md-nav__link">
+    1.3 Objetivo do Produto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-tecnologias-a-serem-utilizadas" class="md-nav__link">
+    1.4 Tecnologias a Serem Utilizadas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-visao-geral-do-projeto" class="md-nav__link">
+    2. VISÃO GERAL DO PROJETO
+  </a>
+  
+    <nav class="md-nav" aria-label="2. VISÃO GERAL DO PROJETO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-organizacao-do-projeto" class="md-nav__link">
+    2.1. Organização do Projeto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-planejamento-das-fases-eou-iteracoes-do-projeto" class="md-nav__link">
+    2.2. Planejamento das Fases e/ou Iterações do Projeto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-matriz-de-comunicacao" class="md-nav__link">
+    2.3. Matriz de Comunicação
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-gerenciamento-de-riscos" class="md-nav__link">
+    2.4. Gerenciamento de Riscos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-criterios-de-replanejamento" class="md-nav__link">
+    2.5. Critérios de Replanejamento
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-processos-escolhidos" class="md-nav__link">
+    3. PROCESSOS ESCOLHIDOS
+  </a>
+  
+    <nav class="md-nav" aria-label="3. PROCESSOS ESCOLHIDOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-processos-de-engenharia-de-software" class="md-nav__link">
+    3.1. PROCESSOS DE ENGENHARIA DE SOFTWARE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-processo-de-engenharia-de-requisitos" class="md-nav__link">
+    3.2. PROCESSO DE ENGENHARIA DE REQUISITOS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-atividades" class="md-nav__link">
+    4. ATIVIDADES
+  </a>
+  
+    <nav class="md-nav" aria-label="4. ATIVIDADES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-atividade-1-requisitos" class="md-nav__link">
+    4.1. Atividade 1 - Requisitos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-atividade-2-design" class="md-nav__link">
+    4.2. Atividade 2 - Design
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-atividade-3-construcao" class="md-nav__link">
+    4.3. Atividade 3 - Construção
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-atividade-4-teste" class="md-nav__link">
+    4.4. Atividade 4 - Teste
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-licoes-aprendidas" class="md-nav__link">
+    5. LIÇÕES APRENDIDAS
+  </a>
+  
+    <nav class="md-nav" aria-label="5. LIÇÕES APRENDIDAS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-unidade-1" class="md-nav__link">
+    5.1. Unidade 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-unidade-2" class="md-nav__link">
+    5.2. Unidade 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-unidade-3" class="md-nav__link">
+    5.3. Unidade 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-unidade-4" class="md-nav__link">
+    5.4. Unidade 4
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-referencias-bibliograficas" class="md-nav__link">
+    6 REFERÊNCIAS BIBLIOGRÁFICAS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#historico-de-revisao" class="md-nav__link">
+    Historico de revisão
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          Unidade 2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Unidade 2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade2/Backlog/" class="md-nav__link">
+        Backlog do Produto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade2/Mural/" class="md-nav__link">
+        Mural de requisitos
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          Unidade 3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Unidade 3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade3/MVP1/" class="md-nav__link">
+        MVP 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade3/PBB/" class="md-nav__link">
+        PBB
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade3/SaFE/" class="md-nav__link">
+        SaFE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade3/BDD/" class="md-nav__link">
+        BDD
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+          Unidade 4
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Unidade 4
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade4/MVP2/" class="md-nav__link">
+        MVP 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade4/CasosdeUso/" class="md-nav__link">
+        Casos de Uso
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade4/USM/" class="md-nav__link">
+        USM
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-visao-geral-do-produto" class="md-nav__link">
+    1. VISÃO GERAL DO PRODUTO
+  </a>
+  
+    <nav class="md-nav" aria-label="1. VISÃO GERAL DO PRODUTO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-problema" class="md-nav__link">
+    1.1. Problema
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-declaracao-de-posicao-do-produto" class="md-nav__link">
+    1.2. Declaração de Posição do Produto
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2. Declaração de Posição do Produto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#13-objetivo-do-produto" class="md-nav__link">
+    1.3 Objetivo do Produto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-tecnologias-a-serem-utilizadas" class="md-nav__link">
+    1.4 Tecnologias a Serem Utilizadas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-visao-geral-do-projeto" class="md-nav__link">
+    2. VISÃO GERAL DO PROJETO
+  </a>
+  
+    <nav class="md-nav" aria-label="2. VISÃO GERAL DO PROJETO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-organizacao-do-projeto" class="md-nav__link">
+    2.1. Organização do Projeto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-planejamento-das-fases-eou-iteracoes-do-projeto" class="md-nav__link">
+    2.2. Planejamento das Fases e/ou Iterações do Projeto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-matriz-de-comunicacao" class="md-nav__link">
+    2.3. Matriz de Comunicação
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-gerenciamento-de-riscos" class="md-nav__link">
+    2.4. Gerenciamento de Riscos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-criterios-de-replanejamento" class="md-nav__link">
+    2.5. Critérios de Replanejamento
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-processos-escolhidos" class="md-nav__link">
+    3. PROCESSOS ESCOLHIDOS
+  </a>
+  
+    <nav class="md-nav" aria-label="3. PROCESSOS ESCOLHIDOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-processos-de-engenharia-de-software" class="md-nav__link">
+    3.1. PROCESSOS DE ENGENHARIA DE SOFTWARE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-processo-de-engenharia-de-requisitos" class="md-nav__link">
+    3.2. PROCESSO DE ENGENHARIA DE REQUISITOS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-atividades" class="md-nav__link">
+    4. ATIVIDADES
+  </a>
+  
+    <nav class="md-nav" aria-label="4. ATIVIDADES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-atividade-1-requisitos" class="md-nav__link">
+    4.1. Atividade 1 - Requisitos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-atividade-2-design" class="md-nav__link">
+    4.2. Atividade 2 - Design
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-atividade-3-construcao" class="md-nav__link">
+    4.3. Atividade 3 - Construção
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-atividade-4-teste" class="md-nav__link">
+    4.4. Atividade 4 - Teste
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-licoes-aprendidas" class="md-nav__link">
+    5. LIÇÕES APRENDIDAS
+  </a>
+  
+    <nav class="md-nav" aria-label="5. LIÇÕES APRENDIDAS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-unidade-1" class="md-nav__link">
+    5.1. Unidade 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-unidade-2" class="md-nav__link">
+    5.2. Unidade 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-unidade-3" class="md-nav__link">
+    5.3. Unidade 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-unidade-4" class="md-nav__link">
+    5.4. Unidade 4
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-referencias-bibliograficas" class="md-nav__link">
+    6 REFERÊNCIAS BIBLIOGRÁFICAS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#historico-de-revisao" class="md-nav__link">
+    Historico de revisão
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="visao-do-produto-e-projeto">VISÃO DO PRODUTO E PROJETO</h1>
+<h2 id="1-visao-geral-do-produto">1. VISÃO GERAL DO PRODUTO</h2>
+<h3 id="11-problema">1.1. Problema</h3>
+<p>Nosso projeto visa resolver problemas relacionados a má gestão do uso de medicamentos, com base em nossas pesquisas feitas, a indústria farmacêutica tem tido uma crescente nos últimos anos referente a fabricação de remédios mesmo com o crescimento populacional tendendo se estabilizar, ou seja, esse aumento dos medicamentos vendidos nos mostra que as pessoas estão consumindo mais remédios periodicamente, e muitas delas se esquecem de tomá-los no horário ou dosagem correta, outro fator agravante são que alguns usuários de remédios não se esquecem da última vez que tomaram o remédio.</p>
+<p><img alt="Ishikawa" src="../../../assets/Ishikawa.jpeg" /></p>
+<h2 id="12-declaracao-de-posicao-do-produto">1.2. Declaração de Posição do Produto</h2>
+<p><strong>1. Qual é o produto que você se propõe a desenvolver?</strong></p>
+<p>Uma aplicação mobile para controle de horário e dosagem de medicamentos, com alertas nos horários da medicação e registro de todas as vezes tomadas, e esse registro pode ser compartilhado e acompanhado, pretendemos também trazer algumas informações úteis sobre essa medicação.</p>
+<p><strong>2. O que torna este produto diferente dos seus concorrentes?</strong></p>
+<p>Pretendemos registrar todos os remédios e os dias que foram tomados em um banco de dados, onde o usuário e outras pessoas podem ter acesso, como médicos, familiares e etc, trazendo uma transparência e acompanhamento maior para esse usuário.</p>
+<p><strong>3. Quem são os usuários-alvo e clientes do produto?</strong></p>
+<p>Usuários recorrentes de medicamentos.</p>
+<p><strong>4. Por que os clientes deveriam utilizar / comprar este produto?</strong></p>
+<p>Pois ele vai poder ter registrado todos os dias e horários que deve tomar o remédio e também poderá enviar esses registros para outras pessoas acompanharem seus registros.</p>
+<table>
+<thead>
+<tr>
+<th>Para</th>
+<th>Usuários de medicamentos e Acompanhantes de usuários de medicamentos.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quem</td>
+<td>Possui dificuldades com o controle de seus medicamentos e o uso correto deles.</td>
+</tr>
+<tr>
+<td>O MedicaCerto</td>
+<td>é um Aplicativo.</td>
+</tr>
+<tr>
+<td>Que</td>
+<td>Auxilia com: Uso do medicamento correto, Horário correto do uso dos medicamentos, Dosagem correta dos medicamentos, Não esquecimento dos medicamentos usados pelo usuário, Não esquecimento do uso periódico dos medicamentos e Acompanhamento de profissionais ou familiares do uso de medicamento pelos usuários cadastrados.</td>
+</tr>
+<tr>
+<td>Ao contrário</td>
+<td>Dos aplicativos: <a href="https://play.google.com/store/apps/details?id=com.medisafe.android.client&amp;hl=pt_BR&amp;gl=US">Medisafe</a>, <a href="https://play.google.com/store/apps/details?id=com.medisafe.android.client&amp;hl=pt_BR&amp;gl=US">Pill Reminder</a> e <a href="https://play.google.com/store/apps/details?id=com.montunosoftware.dosecast&amp;hl=pt_BR&amp;gl=US">Dosecast</a></td>
+</tr>
+<tr>
+<td>Nosso produto</td>
+<td>Aborda as diversas causas de problemas com o uso de medicamentos procurando melhorar e/ou facilitar cada uma delas, além de trazer a possibilidade do paciente disponibilizar os dados do consumo dos seus medicamentos para acompanhantes e demais pessoas interessadas.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="13-objetivo-do-produto">1.3 Objetivo do Produto</h3>
+<p>O objetivo principal do produto será fornecer um meio para as pessoas que precisam tomar alguma medicação periodicamente, sejam lembradas de tomar a medicação no horário correto. Além disso, o projeto também têm alguns objetivos secundários, como:</p>
+<ul>
+<li>Guardar um registro dos remédios que o usuário tomou dentro de um período de tempo.</li>
+<li>Ter um auxílio com relação às dosagens dos medicamentos, para as pessoas que não sabem.</li>
+</ul>
+<h3 id="14-tecnologias-a-serem-utilizadas">1.4 Tecnologias a Serem Utilizadas</h3>
+<ul>
+<li>React Native</li>
+<li>NodeJS</li>
+<li>AsyncStorage</li>
+</ul>
+<h2 id="2-visao-geral-do-projeto">2. VISÃO GERAL DO PROJETO</h2>
+<h3 id="21-organizacao-do-projeto">2.1. Organização do Projeto</h3>
+<p><em>Tabela de Organização da Equipe</em></p>
+<table>
+<thead>
+<tr>
+<th>Papel</th>
+<th>Atribuições</th>
+<th>Responsável</th>
+<th>Participantes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Equipe1: Desenvolvedor Backend</td>
+<td>Garantir percistência de dados</td>
+<td>Rodrigo</td>
+<td>Carlos, Mateus</td>
+</tr>
+<tr>
+<td>Equipe 2: Desenvolvedor Frontend</td>
+<td>Desenvolver UI</td>
+<td>Júlio</td>
+<td>Luan, Mateus</td>
+</tr>
+<tr>
+<td>Product Owner</td>
+<td>Garantir interesses do cliente</td>
+<td>Luan</td>
+<td>X</td>
+</tr>
+<tr>
+<td>Scrum Master</td>
+<td>Garantir o uso do scrum</td>
+<td>Júlio</td>
+<td>X</td>
+</tr>
+<tr>
+<td>Designer de Interface do Usuário</td>
+<td>Desenvolver protótipos visuais</td>
+<td>Luan</td>
+<td>Júlio, Mateus</td>
+</tr>
+<tr>
+<td>Engenheiros de Requisitos</td>
+<td>Garantir atulização dos requisitos</td>
+<td>Carlos</td>
+<td>Rodrigo</td>
+</tr>
+<tr>
+<td>Cliente</td>
+<td>Definir o valor de negócio</td>
+<td>Mariana</td>
+<td>X</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22-planejamento-das-fases-eou-iteracoes-do-projeto">2.2. Planejamento das Fases e/ou Iterações do Projeto</h3>
+<p><strong>UNIDADE 2:</strong> Definição do Backlog, Definição das US, Definição do MVP e Protótipo de Alta Fidelidade:</p>
+<table>
+<thead>
+<tr>
+<th>Sprint</th>
+<th>Produto (Entrega)</th>
+<th>Data Início</th>
+<th>Data Fim</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sprint 1</td>
+<td>Elicitação de requisitos e Definição do Backlog</td>
+<td>03/05/23</td>
+<td>10/05/23</td>
+</tr>
+<tr>
+<td>sprint 2</td>
+<td>Equipe 1: Alterações do Backlog, Definição de US (User Story Mapping) e Definição de MVP <br/> Equipe 2: Protótipo de Alta Fidelidade.</td>
+<td>10/05/22</td>
+<td>17/05/23</td>
+</tr>
+<tr>
+<td>sprint 3</td>
+<td>Refinamento e Configuração de Ambiente</td>
+<td>17/05/23</td>
+<td>23/05/23</td>
+</tr>
+</tbody>
+</table>
+<p><strong>UNIDADE 3:</strong> MVP 1:</p>
+<table>
+<thead>
+<tr>
+<th>Sprint</th>
+<th>Produto (Entrega)</th>
+<th>Data Início</th>
+<th>Data Fim</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sprint 4</td>
+<td>Organização das Sprints e Confuguração de ambiente</td>
+<td>24/05/23</td>
+<td>31/05/23</td>
+</tr>
+<tr>
+<td>sprint 5</td>
+<td>US07, US09 &amp; US11</td>
+<td>31/05/23</td>
+<td>07/06/23</td>
+</tr>
+<tr>
+<td>sprint 6</td>
+<td>US13, US05 &amp; US10</td>
+<td>07/06/23</td>
+<td>14/06/23</td>
+</tr>
+<tr>
+<td>sprint 7</td>
+<td>US16 &amp; US21; Integrações finais</td>
+<td>14/06/23</td>
+<td>20/06/23</td>
+</tr>
+</tbody>
+</table>
+<p><strong>UNIDADE 4:</strong> MVP 2:</p>
+<table>
+<thead>
+<tr>
+<th>Sprint</th>
+<th>Produto (Entrega)</th>
+<th>Data Início</th>
+<th>Data Fim</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sprint 8</td>
+<td>US12, US17</td>
+<td>21/06/23</td>
+<td>28/06/23</td>
+</tr>
+<tr>
+<td>sprint 9</td>
+<td>US15, US20</td>
+<td>28/06/23</td>
+<td>05/07/23</td>
+</tr>
+<tr>
+<td>sprint 10</td>
+<td>US08, US06</td>
+<td>05/07/23</td>
+<td>12/07/23</td>
+</tr>
+<tr>
+<td>sprint 11</td>
+<td>US18, US19</td>
+<td>12/07/23</td>
+<td>18/07/23</td>
+</tr>
+</tbody>
+</table>
+<h3 id="23-matriz-de-comunicacao">2.3. Matriz de Comunicação</h3>
+<p>A equipe deverá ter uma comunicação periódica como evidenciado na tabela:</p>
+<table>
+<thead>
+<tr>
+<th>Descrição</th>
+<th>Área/ Envolvidos</th>
+<th>Periodicidade</th>
+<th>Produtos Gerados</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deily Meeting</td>
+<td>Equipe do Projeto</td>
+<td>Diário</td>
+<td>- Relatório das atividades feitas no dia por cada um dos membros</td>
+</tr>
+<tr>
+<td>Sprint Panning</td>
+<td>Equipe do Projeto</td>
+<td>Semanal (Toda Quarta)</td>
+<td>- Sprint Backlog</td>
+</tr>
+<tr>
+<td>Sprint Retrospective</td>
+<td>Equipe Projeto e monitora</td>
+<td>Semanal (Toda Quarta)</td>
+<td>- Lista do que pode ser melhorado</td>
+</tr>
+<tr>
+<td>Sprint Review</td>
+<td>Equipe do projeto</td>
+<td>Semanal (Toda Quarta)</td>
+<td>- Entregas feitas durante a sprint</td>
+</tr>
+</tbody>
+</table>
+<h3 id="24-gerenciamento-de-riscos">2.4. Gerenciamento de Riscos</h3>
+<table>
+<thead>
+<tr>
+<th>Possível risco</th>
+<th>Causa</th>
+<th>Prevenção de risco</th>
+<th>Correção</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Saída de membro do projeto</td>
+<td>Trancamento de disciplina, afastamento por motivos de saúde e entre outros</td>
+<td>Contato contínuo com os membros da equipe, verificando a saúde e desenvolvimento deles</td>
+<td>Reatribuição das atividades entre os demais membros</td>
+</tr>
+<tr>
+<td>Comunicação Ineficiente com Cliente</td>
+<td>Falta de disponibilidade do cliente</td>
+<td>Verificação semanal do tempo de resposta do cliente</td>
+<td>Redefinição do escopo e planejamento, além da escolha de novo cliente</td>
+</tr>
+<tr>
+<td>Alteração do escopo</td>
+<td>Definição de um escopo muito grande se tornando a sua execução inviável</td>
+<td>Não subestimar a quantidade de funcionalidades que podem ser entregues em um ciclo</td>
+<td>Revisão do backlog e do planejamento dos ciclos</td>
+</tr>
+<tr>
+<td>Baixo comprometimento da equipe</td>
+<td>Baixo rendimento dos membros nas entregas ao longo do projeto</td>
+<td>Manter um alinhamento de todos os membros com as demandas das atividades realizadas</td>
+<td>Reatribuição das atividades entre os demais membros</td>
+</tr>
+<tr>
+<td>Planejamento ruim</td>
+<td>Planejamento com definição de datas não condizentes com o contexto da equipe e do projeto</td>
+<td>Alinhamento da equipe com os prazos estabelecidos durante todo o contexto do projeto</td>
+<td>Revisão do backlog e do planejamento dos ciclos</td>
+</tr>
+<tr>
+<td>Falta de comunicação da equipe</td>
+<td>Falta de conversa entre os membros da equipe sobre determinados tópicos</td>
+<td>Reforçar a importância da comunicação durante o andamento do projeto, e pontuar as falhas para não acontecerem mais</td>
+<td>Encorajar a comunicação e estabelecer uma cultura de comunicação</td>
+</tr>
+<tr>
+<td>Problemas de saúde pessoal ou familiar</td>
+<td>Membro da equipe fica menos ativo por ter que acompanhar algum familiar ou ele prórpio para tratamento médico</td>
+<td>O membro deve comunicar a equipe caso algo do tipo aconteça para que a equipe possa estabelecer os devidos planos de mitigação de riscos</td>
+<td>Menos atribuições de responsabilidade a esse membro, reatribuição de atividades entre a equipe e diminuição do escopo da sprint se possível (alteração no cronograma)</td>
+</tr>
+<tr>
+<td>Critérios mal definidos</td>
+<td>Critérios de US mal definidos ou pouco definidos, ocasionando em comportamentos indesejados das funcionalidades</td>
+<td>Revisar os critérios minuciosamente antes de aprová-los</td>
+<td>Incluir novos critérios para evitar os comportamentos indesejados.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="25-criterios-de-replanejamento">2.5. Critérios de Replanejamento</h3>
+<p>O projeto deverá ser replanejado em caso de:</p>
+<ul>
+<li>O projeto deverá ser replanejado em caso de:</li>
+<li>Escopo de projeto muito grande ou muito curto para o tempo da disciplina.</li>
+<li>Saída ou não participação de um ou mais membros da equipe.</li>
+<li>Alteração no escopo ou objetivos do projeto.</li>
+<li>Atraso acumulado de alguma parte do ciclo de desenvolvimento.</li>
+</ul>
+<p>Em caso de haver alteração no plano do projeto, a equipe deverá:</p>
+<ul>
+<li>Reavaliar os requisitos.</li>
+<li>Revisar os ciclos de desenvolvimento.</li>
+<li>Reavaliar o cronograma.</li>
+<li>Realocar as tarefas.</li>
+</ul>
+<h2 id="3-processos-escolhidos">3. PROCESSOS ESCOLHIDOS</h2>
+<h3 id="31-processos-de-engenharia-de-software">3.1. PROCESSOS DE ENGENHARIA DE SOFTWARE</h3>
+<p>Nosso projeto tem um prazo curto e fixo para entrega, e ainda não temos todos os requisitos do produto definidos. Para lidar com essas incertezas e aproveitar a disponibilidade do cliente, escolhemos adotar a abordagem de desenvolvimento ScrumXP. Essa metodologia ágil nos permite ser flexíveis e realizar atividades simultâneas, o que ajuda a adiantar nosso trabalho. Com o ScrumXP, teremos um ciclo de vida ágil e poderemos receber feedback constante do cliente para melhorar o produto. Isso traz mais transparência e controle, gerando confiança no cliente. Como temos um prazo curto e ainda não conhecemos todos os requisitos, as revisões e planejamentos de sprint serão fundamentais para refinamos os requisitos a cada sprint, aproveitando ao máximo a disponibilidade do cliente.</p>
+<h3 id="32-processo-de-engenharia-de-requisitos">3.2. PROCESSO DE ENGENHARIA DE REQUISITOS</h3>
+<p>Levando em conta que o processo de desenvolvimento escolhido foi ágil, também fizemos a escolha do Processo de Engenharia de Requisitos participativo. Isso porque o processo participativo prevê uma relação próxima e constante com o cliente e um fluxo de trabalho formado por iterações contínuas na qual a equipe de desenvolvimento realiza pequenas atividades que são validadas pelo cliente. Esse comportamento do processo participativo interage muito bem com o processo ágil por terem os mesmos princípios. Com isso, tendo como referência Sommerville, que diz que o processo de escolha de requisitos deve passar por um estudo de viabilidade, levantamento e análise, pela documentação e validação, todos esses processos terão a participação direta do cliente.</p>
+<h2 id="4-atividades">4. ATIVIDADES</h2>
+<h3 id="41-atividade-1-requisitos">4.1. Atividade 1 - Requisitos</h3>
+<table>
+<thead>
+<tr>
+<th>Atividade</th>
+<th>Método</th>
+<th>Ferramenta</th>
+<th>Entrega</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Elicitação e Descoberta</td>
+<td>Entrevista</td>
+<td>Discord</td>
+<td>Conversa da equipe com o cliente buscando extrair informações para a definição dos requisitos.</td>
+</tr>
+<tr>
+<td>Análise e Consenso</td>
+<td>Reunião</td>
+<td>Discord</td>
+<td>Conciliar desenvolvedor com cliente em relação aos requisitos para o projeto.</td>
+</tr>
+<tr>
+<td>Declaração</td>
+<td>Histórias de usuários</td>
+<td>Github e Miro</td>
+<td>Comunicação clara e com linguagem natural de uma forma a deixar claro os requisitos estabelecidos</td>
+</tr>
+<tr>
+<td>Organização e Atualização</td>
+<td>Product Backlog</td>
+<td>Kanban (Miro)</td>
+<td>Manter uma organização e observar o estado de cada requisito.</td>
+</tr>
+<tr>
+<td>Representação</td>
+<td>Protótipo</td>
+<td>Figma</td>
+<td>Apresentação visual de alta e baixa fidelidade dos requisitos simulando a sua aplicação final.</td>
+</tr>
+<tr>
+<td>Verificação e Validação</td>
+<td>Revisão e Inspeção dos requisitos</td>
+<td>Google Docs</td>
+<td>Confirmação de que os requisitos corretos foram feitos da maneira correta</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-atividade-2-design">4.2. Atividade 2 - Design</h3>
+<table>
+<thead>
+<tr>
+<th>Atividade</th>
+<th>Método</th>
+<th>Ferramenta</th>
+<th>Entrega</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Interface de usuário</td>
+<td>Protótipo de Baixa fidelidade</td>
+<td>Papel e Lápis</td>
+<td>Protótipo para entendimento inicial da aplicação</td>
+</tr>
+<tr>
+<td>Interface de usuário</td>
+<td>Protótipo de Alta fidelidade</td>
+<td>Figma</td>
+<td>Protótipo das interfaces do aplicativo</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-atividade-3-construcao">4.3. Atividade 3 - Construção</h3>
+<table>
+<thead>
+<tr>
+<th>Atividade</th>
+<th>Método</th>
+<th>Ferramenta</th>
+<th>Entrega</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Implementação do MVP1 e MVP2</td>
+<td>Programação em pares</td>
+<td></td>
+<td>Desenvolvimento das entregas da aplicação</td>
+</tr>
+<tr>
+<td>Validação do produto com o cliente</td>
+<td>Reunião</td>
+<td>Discord</td>
+<td>Validar se as entregas realizadas pela equipe atendem aos requisitos</td>
+</tr>
+</tbody>
+</table>
+<h3 id="44-atividade-4-teste">4.4. Atividade 4 - Teste</h3>
+<table>
+<thead>
+<tr>
+<th>Atividade</th>
+<th>Método</th>
+<th>Ferramenta</th>
+<th>Entrega</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Teste das unidades e métodos da aplicação</td>
+<td>Teste unitário</td>
+<td>VsCode</td>
+<td>Identificação e correção de erros no desenvolvimento da aplicação</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-licoes-aprendidas">5. LIÇÕES APRENDIDAS</h2>
+<h3 id="51-unidade-1">5.1. Unidade 1</h3>
+<p>Na Unidade 1 tivemos contato com o que é realmente a Engenharia de Requisitos. Então, tivemos um maior entendimento do papel dos requisitos no projeto e como eles devem ser trabalhados durante todo o processo, com todas as suas atividades fixas, as suas diferentes abordagens, seus valores, seus princípios que podem variar de acordo com o contexto do projeto. </p>
+<p>Ademais, tivemos um maior entendimento em relação as abordagens de desenvolvimento de software, os tipos de ciclos de vida  e os processos de desenvolvimento existentes. Logo após, utilizamos esse conhecimento adquirido para escolher um processo para o desenvolvimento do nosso produto juntamente com alguns critérios apresentados em sala.</p>
+<h3 id="52-unidade-2">5.2. Unidade 2</h3>
+<p>Nesta unidade foram apresentados questões sócio-técnicas e tipos de regras de negócio que são fatores que devem ser levados em consideração quando estamos tratando de requisitos.
+Além disso, foi discutido mais a fundo o que de fato é um requisito, quais são os tipos de requisitos e suas características, afunilando então em como deve ser feita as suas declarações.</p>
+<p>Também foram apresentadas as atividades de engenharia de requisitos, com todas as suas particularidades como: técnicas associadas e seus devidos resultados. Tais atividades nos guiaram a produzir diversos documentos e soluções que nos auxiliam no desenvolvimento do projeto.</p>
+<h3 id="53-unidade-3">5.3. Unidade 3</h3>
+<p>Em relação a unidade 3 estamos o SAFe entendendo alguns pontos importantes do framework e também seu meta-modelo de requisitos. Ademais, desenvolvemos alguns artefatos como o PBB e o BDD que nos ajudaram na construção e refinamento do product backlog.</p>
+<p>Comparando-se essa unidade com as demais, conseguimos perceber que foi uma unidade que tivemos a oportunidade de colocar em prática todas os métodos e modelos estudados anteriormente, fixando ainda mais o conhecimento. Tal fato nos ajudou a desenvolver o MVP1 e a oferecer ao nosso cliente um aplicativo que possua valor de mercado.</p>
+<h3 id="54-unidade-4">5.4. Unidade 4</h3>
+<p>Por ultimo vimos o User Story Mapping que oferece uma abordagem para entender e priorizar os requisitos de um software. Além disso, o User Story Mapping facilita a identificação de funcionalidades essenciais e permite que a equipe se concentre nas necessidades reais dos usuários, priorizando o desenvolvimento de recursos de maior valor.</p>
+<p>Ademais, estudamos os Casos de Uso que desempenham um papel crucial na especificação dos requisitos funcionais do sistema. Descrevendo as interações entre atores e o sistema em cenários específicos, fornecendo uma ideia de como o sistema deve se comportar em diferentes situações. </p>
+<h2 id="6-referencias-bibliograficas">6 REFERÊNCIAS BIBLIOGRÁFICAS</h2>
+<p>Uso de medicamentos de forma incorreta: <a href="http://www.conselho.saude.gov.br/ultimas_noticias/2005/medicamentos.htm">http://www.conselho.saude.gov.br/ultimas_noticias/2005/medicamentos.htm</a></p>
+<h2 id="historico-de-revisao">Historico de revisão</h2>
+<table>
+<thead>
+<tr>
+<th>Data</th>
+<th>Versão</th>
+<th>Descrição</th>
+<th>Autor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>24/04/23</td>
+<td>1.0</td>
+<td>Criação do arquivo</td>
+<td>Júlio, Luan e Rodrigo</td>
+</tr>
+<tr>
+<td>25/04/23</td>
+<td>1.1</td>
+<td>Correção unidade 1</td>
+<td></td>
+</tr>
+<tr>
+<td>26/06/23</td>
+<td>1.2</td>
+<td>Unidade 2, 3 e riscos</td>
+<td>Mateus de Almeida</td>
+</tr>
+<tr>
+<td>05/07/23</td>
+<td>1.3</td>
+<td>ATT Riscos</td>
+<td>Rodrigo Wright</td>
+</tr>
+<tr>
+<td>17/07/23</td>
+<td>1.4</td>
+<td>ATT lições aprendidas</td>
+<td>Mateus de Almeida</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Voltar para o topo
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/mdsreq-fga-unb/2023.1-Remediario" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.section", "navigation.path", "navigation.top", "tabs"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>
