@@ -1,15 +1,18 @@
 # Remediário
 
 ## Introdução
-Bem-vindo(a) a documentação do projeto Remediário, uma aplicação que está sendo criado para a disciplina de 
-Requisitos de Software, materia do curso de Engenharia de Software - Universidade de Brasília 2023.1.
+
+Bem-vindo(a) a documentação do projeto Remediário, uma aplicação que está sendo criado para a disciplina de Requisitos de Software, materia do curso de Engenharia de Software - Universidade de Brasília 2023.1.
+
+Você pode baixar o aplicativo pelo link: [Download](https://expo.dev/accounts/luanmq/projects/remediario/builds/0bf548bb-8e18-4635-88e9-d3e8d68b4c8d)
 
 ## Objetivo
+
 Nosso projeto visa resolver problemas relacionados a má gestão do uso de medicamentos. Decidimos criar uma aplicação que ajude os pacientes a manter um controle mais preciso sobre suas doses e horários de medicamentos. Com recursos como alertas de dosagem, lembretes de horário, informações sobre interações entre medicações e um registro de histórico de medicações feitas, acreditamos fortemente que podemos fazer a diferença na vida de muitas pessoas. Estamos animados para trabalhar neste projeto desafiador, nosso foco será criar uma solução inovadora e eficaz para melhorar a saúde e o bem-estar de muitos usuários de medicamentos.
 
-## Equipe 
-Nossa equipe é formada por:
+## Equipe
 
+Nossa equipe é formada por:
 
 <div style="display: flex; justify-content: center;">
 
@@ -46,8 +49,5 @@ Nossa equipe é formada por:
         </a>
       </td>
     </tr>
-    
   </table>
-
 </div>
-
