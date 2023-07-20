@@ -2,8 +2,9 @@
 
 ## Introdução
 
-Bem-vindo(a) a documentação do projeto Remediário, uma aplicação que está sendo criado para a disciplina de
-Requisitos de Software, materia do curso de Engenharia de Software - Universidade de Brasília 2023.1.
+Bem-vindo(a) a documentação do projeto Remediário, uma aplicação que está sendo criado para a disciplina de Requisitos de Software, materia do curso de Engenharia de Software - Universidade de Brasília 2023.1.
+
+Você pode baixar o aplicativo pelo link: [Download](https://expo.dev/accounts/luanmq/projects/remediario/builds/0bf548bb-8e18-4635-88e9-d3e8d68b4c8d)
 
 ## Objetivo
 
